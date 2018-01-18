@@ -23,30 +23,32 @@ $(document).ready(function () {
 
     if ($(this).gyro()) {
         if($(this).portrait()) {
+            $("#containerStaticLogo").hide();
+            $("#containerSpinLogo").show();
+
             spinLogoInterval = setInterval(function() {
                 $("#spinLogo").rotate(alpha);
             }, delay);
-            $("#containerSpinLogo").show();
-            $("#containerStaticLogo").hide();
         } else {
-            clearInterval(spinLogoInterval);
-            $("#spinLogo").rotate(0);
             $("#containerSpinLogo").hide();
             $("#containerStaticLogo").show();
         }
 
         $(window).on("orientationchange", function(event) {
             if($(this).portrait()) {
+                $("#containerStaticLogo").hide();
+                $("#containerSpinLogo").show();
+
                 spinLogoInterval = setInterval(function() {
                     $("#spinLogo").rotate(alpha);
                 }, delay);
-                $("#containerSpinLogo").show();
-                $("#containerStaticLogo").hide();
+
             } else {
-                clearInterval(spinLogoInterval);
-                $("#spinLogo").rotate(0);
                 $("#containerSpinLogo").hide();
                 $("#containerStaticLogo").show();
+
+                clearInterval(spinLogoInterval);
+                $("#spinLogo").rotate(0);
             }
         });
     } else {
