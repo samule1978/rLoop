@@ -6,6 +6,9 @@ $(document).ready(function () {
     });
 
     $(this).gyro();
+    window.orientationchange = function(event) {
+        $(this).gyro();
+    }
 });
 
 $.fn.gyro = function() {
