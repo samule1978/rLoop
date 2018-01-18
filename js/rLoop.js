@@ -6,10 +6,10 @@ $(document).ready(function () {
     });
 
     $(this).gyro();
-    window.orientationchange = function(event) {
+    $(window).on("orientationchange", function(event) {
         alert("flip");
         $(this).gyro();
-    }
+    });
 });
 
 $.fn.gyro = function() {
