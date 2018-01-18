@@ -21,13 +21,16 @@ $(document).ready(function () {
         menu: '#menu',*/
     });
 
-    $(this).gyro();
-
-    $(this).displayFeatureBasedOnOrientation();
-
-    $(window).on("orientationchange", function(event) {
+    if ($(this).gyro()) {
         $(this).displayFeatureBasedOnOrientation();
-    });
+
+        $(window).on("orientationchange", function(event) {
+            $(this).displayFeatureBasedOnOrientation();
+        });
+    } else {
+        $("#containerSpinLogo").hide();
+        $("#containerStaticLogo").show();
+    }
 });
 
 $.fn.displayFeatureBasedOnOrientation = function() {
@@ -51,7 +54,7 @@ $.fn.portrait = function() {
 
 $.fn.gyro = function() {
     if (window.DeviceMotionEvent === undefined) {
-        //
+        return false;
     } else {
         window.ondevicemotion = function(event) {
             ax = Math.round(Math.abs(event.accelerationIncludingGravity.x * 1));
@@ -71,6 +74,8 @@ $.fn.gyro = function() {
             beta = Math.round(event.beta);
             gamma = Math.round(event.gamma);
         }
+
+        return true;
     }
 };
 
