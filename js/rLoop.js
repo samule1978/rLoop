@@ -1,12 +1,4 @@
 $(document).ready(function () {
-    $(window).bind("resize", function(){
-        var orientation = window.orientation;
-        var new_orientation = (orientation) ? 0 : 180 + orientation;
-        $('body').css({
-            "-webkit-transform": "rotate(" + new_orientation + "deg)"
-        });
-    });
-    
     $('#fullpage').fullpage({
         /*sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
         anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
