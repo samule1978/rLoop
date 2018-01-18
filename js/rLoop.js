@@ -23,38 +23,24 @@ $(document).ready(function () {
 
     if ($(this).gyro()) {
         if(window.innerHeight > window.innerWidth) {
-            $("#containerStaticLogo").hide();
-            $("#containerSpinLogo").show();
-
             clearInterval(spinLogoInterval);
             spinLogoInterval = setInterval(function() {
                 $("#spinLogo").rotate(alpha);
             }, delay);
-        } else {
-            $("#containerSpinLogo").hide();
-            $("#containerStaticLogo").show();
         }
 
         $(window).on("orientationchange", function(event) {
             if(window.innerHeight > window.innerWidth) {
-                $("#containerStaticLogo").hide();
-                $("#containerSpinLogo").show();
-
                 clearInterval(spinLogoInterval);
                 spinLogoInterval = setInterval(function() {
                     $("#spinLogo").rotate(alpha);
                 }, delay);
             } else {
-                $("#containerSpinLogo").hide();
-                $("#containerStaticLogo").show();
-
                 clearInterval(spinLogoInterval);
                 $("#spinLogo").rotate(0);
             }
         });
     } else {
-        $("#containerSpinLogo").hide();
-        $("#containerStaticLogo").show();
     }
 });
 
