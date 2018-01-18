@@ -5,8 +5,32 @@ $(document).ready(function () {
         menu: '#menu',*/
     });
 
+    // Position Variables
+    var x = 0;
+    var y = 0;
+    var z = 0;
+
+    // Speed - Velocity
+    var vx = 0;
+    var vy = 0;
+    var vz = 0;
+
+    // Acceleration
+    var ax = 0;
+    var ay = 0;
+    var az = 0;
+    var ai = 0;
+    var arAlpha = 0;
+    var arBeta = 0;
+    var arGamma = 0;
+
     var delay = 100;
+    var vMultiplier = 0.01;
+    var alpha = 0;
+
+    var alpha = 0;
     var beta = 0;
+    var gamma = 0;
 
     if (window.DeviceMotionEvent === undefined) {
     } else {
@@ -33,7 +57,17 @@ $(document).ready(function () {
         function h2d(h) {return parseInt(h,16);}
 
         setInterval(function() {
-            document.getElementById("betalabel").innerHTML = "Beta 7: " + beta;
+            document.getElementById("xlabel").innerHTML = "X: " + ax;
+            document.getElementById("ylabel").innerHTML = "Y: " + ay;
+            document.getElementById("zlabel").innerHTML = "Z: " + az;
+            document.getElementById("ilabel").innerHTML = "I: " + ai;
+            document.getElementById("arAlphaLabel").innerHTML = "arA: " + arAlpha;
+            document.getElementById("arBetaLabel").innerHTML = "arB: " + arBeta;
+            document.getElementById("arGammaLabel").innerHTML = "arG: " + arGamma;
+            document.getElementById("alphalabel").innerHTML = "Alpha: " + alpha;
+            document.getElementById("betalabel").innerHTML = "Beta: " + beta;
+            document.getElementById("gammalabel").innerHTML = "Gamma: " + gamma;
+
             //$("#spinLogo").rotate({ startDeg:beta, endDeg:beta, easing:'ease-in' });
             $("#spinLogo").rotateSam(beta);
         }, delay);
