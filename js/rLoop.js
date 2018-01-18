@@ -1,3 +1,20 @@
+// Acceleration
+var ax = 0;
+var ay = 0;
+var az = 0;
+var ai = 0;
+var arAlpha = 0;
+var arBeta = 0;
+var arGamma = 0;
+
+var alpha = 0;
+var beta = 0;
+var gamma = 0;
+
+var delay = 100;
+
+var spinLogoInterval;
+
 $(document).ready(function () {
     $('#fullpage').fullpage({
         /*sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
@@ -6,28 +23,21 @@ $(document).ready(function () {
     });
 
     $(this).gyro();
+    spinLogoInterval =  setInterval(function() {
+                            $("#spinLogo").rotate(alpha);
+                        }, delay);
+
     $(window).on("orientationchange", function(event) {
-        $("#spinLogo").rotate(0);
+        clearInterval(spinLogoInterval);
+        spinLogoInterval =  setInterval(function() {
+            $("#spinLogo").rotate(alpha);
+        }, delay);
     });
 });
 
 $.fn.gyro = function() {
-    // Acceleration
-    var ax = 0;
-    var ay = 0;
-    var az = 0;
-    var ai = 0;
-    var arAlpha = 0;
-    var arBeta = 0;
-    var arGamma = 0;
-
-    var delay = 100;
-
-    var alpha = 0;
-    var beta = 0;
-    var gamma = 0;
-
     if (window.DeviceMotionEvent === undefined) {
+        //
     } else {
         window.ondevicemotion = function(event) {
             ax = Math.round(Math.abs(event.accelerationIncludingGravity.x * 1));
@@ -59,8 +69,6 @@ $.fn.gyro = function() {
             document.getElementById("alphalabel").innerHTML = "Alpha: " + alpha;
             document.getElementById("betalabel").innerHTML = "Beta: " + beta;
             document.getElementById("gammalabel").innerHTML = "Gamma: " + gamma;
-
-            $("#spinLogo").rotate(alpha);
         }, delay);
     }
 };
