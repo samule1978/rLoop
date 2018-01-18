@@ -25,7 +25,7 @@ $(document).ready(function () {
 
     $(this).gyro();
 
-    gyroInfoInterval = setInterval(function() {
+    /*gyroInfoInterval = setInterval(function() {
         document.getElementById("xlabel").innerHTML = "X: " + ax;
         document.getElementById("ylabel").innerHTML = "Y: " + ay;
         document.getElementById("zlabel").innerHTML = "Z: " + az;
@@ -36,7 +36,7 @@ $(document).ready(function () {
         document.getElementById("alphalabel").innerHTML = "Alpha: " + alpha;
         document.getElementById("betalabel").innerHTML = "Beta: " + beta;
         document.getElementById("gammalabel").innerHTML = "Gamma: " + gamma;
-    }, delay);
+    }, delay);*/
 
     spinLogoInterval = setInterval(function() {
         $("#spinLogo").rotate(alpha);
