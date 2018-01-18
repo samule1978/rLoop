@@ -13,6 +13,7 @@ var gamma = 0;
 
 var delay = 100;
 
+var gyroInfoInterval;
 var spinLogoInterval;
 
 $(document).ready(function () {
@@ -23,14 +24,33 @@ $(document).ready(function () {
     });
 
     $(this).gyro();
-    spinLogoInterval =  setInterval(function() {
-                            $("#spinLogo").rotate(alpha);
-                        }, delay);
+
+    gyroInfoInterval = setInterval(function() {
+        document.getElementById("xlabel").innerHTML = "X: " + ax;
+        document.getElementById("ylabel").innerHTML = "Y: " + ay;
+        document.getElementById("zlabel").innerHTML = "Z: " + az;
+        document.getElementById("ilabel").innerHTML = "I: " + ai;
+        document.getElementById("arAlphaLabel").innerHTML = "arA: " + arAlpha;
+        document.getElementById("arBetaLabel").innerHTML = "arB: " + arBeta;
+        document.getElementById("arGammaLabel").innerHTML = "arG: " + arGamma;
+        document.getElementById("alphalabel").innerHTML = "Alpha: " + alpha;
+        document.getElementById("betalabel").innerHTML = "Beta: " + beta;
+        document.getElementById("gammalabel").innerHTML = "Gamma: " + gamma;
+    }, delay);
+
+    spinLogoInterval = setInterval(function() {
+        $("#spinLogo").rotate(alpha);
+    }, delay);
 
     $(window).on("orientationchange", function(event) {
-        clearInterval(spinLogoInterval);
-        $("#spinLogo").rotate(0);
-        alert(UIDevice.currentDevice().orientation);
+        if(window.innerHeight > window.innerWidth){
+            clearInterval(spinLogoInterval);
+            $("#spinLogo").rotate(0);
+        } else {
+            spinLogoInterval = setInterval(function() {
+                $("#spinLogo").rotate(alpha);
+            }, delay);
+        }
     });
 });
 
@@ -56,19 +76,6 @@ $.fn.gyro = function() {
             beta = Math.round(event.beta);
             gamma = Math.round(event.gamma);
         }
-
-        setInterval(function() {
-            document.getElementById("xlabel").innerHTML = "X: " + ax;
-            document.getElementById("ylabel").innerHTML = "Y: " + ay;
-            document.getElementById("zlabel").innerHTML = "Z: " + az;
-            document.getElementById("ilabel").innerHTML = "I: " + ai;
-            document.getElementById("arAlphaLabel").innerHTML = "arA: " + arAlpha;
-            document.getElementById("arBetaLabel").innerHTML = "arB: " + arBeta;
-            document.getElementById("arGammaLabel").innerHTML = "arG: " + arGamma;
-            document.getElementById("alphalabel").innerHTML = "Alpha: " + alpha;
-            document.getElementById("betalabel").innerHTML = "Beta: " + beta;
-            document.getElementById("gammalabel").innerHTML = "Gamma: " + gamma;
-        }, delay);
     }
 };
 
