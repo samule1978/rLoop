@@ -22,33 +22,38 @@ $(document).ready(function () {
     });
 
     if ($(this).gyro()) {
-        $(this).displayFeatureBasedOnOrientation();
+        if($(this).portrait()) {
+            spinLogoInterval = setInterval(function() {
+                $("#spinLogo").rotate(alpha);
+            }, delay);
+            $("#containerSpinLogo").show();
+            $("#containerStaticLogo").hide();
+        } else {
+            clearInterval(spinLogoInterval);
+            $("#spinLogo").rotate(0);
+            $("#containerSpinLogo").hide();
+            $("#containerStaticLogo").show();
+        }
 
         $(window).on("orientationchange", function(event) {
-            $(this).displayFeatureBasedOnOrientation();
+            if($(this).portrait()) {
+                spinLogoInterval = setInterval(function() {
+                    $("#spinLogo").rotate(alpha);
+                }, delay);
+                $("#containerSpinLogo").show();
+                $("#containerStaticLogo").hide();
+            } else {
+                clearInterval(spinLogoInterval);
+                $("#spinLogo").rotate(0);
+                $("#containerSpinLogo").hide();
+                $("#containerStaticLogo").show();
+            }
         });
     } else {
         $("#containerSpinLogo").hide();
         $("#containerStaticLogo").show();
     }
 });
-
-$.fn.displayFeatureBasedOnOrientation = function() {
-
-    alert("sam");
-    if($(this).portrait()) {
-        spinLogoInterval = setInterval(function() {
-            $("#spinLogo").rotate(alpha);
-        }, delay);
-        $("#containerSpinLogo").show();
-        $("#containerStaticLogo").hide();
-    } else {
-        clearInterval(spinLogoInterval);
-        $("#spinLogo").rotate(0);
-        $("#containerSpinLogo").hide();
-        $("#containerStaticLogo").show();
-    }
-};
 
 $.fn.portrait = function() {
     return window.innerHeight > window.innerWidth;
