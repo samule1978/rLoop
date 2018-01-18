@@ -5,16 +5,10 @@ $(document).ready(function () {
         menu: '#menu',*/
     });
 
-    // Position Variables
-    var x = 0;
-    var y = 0;
-    var z = 0;
+    $(this).gyro();
+});
 
-    // Speed - Velocity
-    var vx = 0;
-    var vy = 0;
-    var vz = 0;
-
+$.fn.gyro = function() {
     // Acceleration
     var ax = 0;
     var ay = 0;
@@ -25,8 +19,6 @@ $(document).ready(function () {
     var arGamma = 0;
 
     var delay = 100;
-    var vMultiplier = 0.01;
-    var alpha = 0;
 
     var alpha = 0;
     var beta = 0;
@@ -53,9 +45,6 @@ $(document).ready(function () {
             gamma = Math.round(event.gamma);
         }
 
-        function d2h(d) {return d.toString(16);}
-        function h2d(h) {return parseInt(h,16);}
-
         setInterval(function() {
             document.getElementById("xlabel").innerHTML = "X: " + ax;
             document.getElementById("ylabel").innerHTML = "Y: " + ay;
@@ -71,7 +60,7 @@ $(document).ready(function () {
             $("#spinLogo").rotate(alpha);
         }, delay);
     }
-});
+};
 
 $.fn.rotate = function(degrees) {
     $(this).css({'transform' : 'rotate('+ degrees +'deg)'});
