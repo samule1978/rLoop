@@ -21,7 +21,8 @@ $(document).ready(function () {
         menu: '#menu',*/
     });
 
-    if ($(this).gyro()) {
+    $(this).gyro();
+
         if(window.innerHeight > window.innerWidth) {
             clearInterval(spinLogoInterval);
             spinLogoInterval = setInterval(function() {
@@ -40,8 +41,7 @@ $(document).ready(function () {
                 $("#spinLogo").rotate(0);
             }
         });
-    } else {
-    }
+
 });
 
 $.fn.portrait = function() {
