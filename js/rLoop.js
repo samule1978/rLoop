@@ -23,25 +23,31 @@ $(document).ready(function () {
 
     $(this).gyro();
 
-    spinLogoInterval = setInterval(function() {
-        $("#spinLogo").rotate(alpha);
-    }, delay);
+    $(this).displayFeatureBasedOnOrientation();
 
     $(window).on("orientationchange", function(event) {
-        if(window.innerHeight > window.innerWidth){
-            clearInterval(spinLogoInterval);
-            $("#spinLogo").rotate(0);
-            $("#containerSpinLogo").hide();
-            $("#containerStaticLogo").show();
-        } else {
-            spinLogoInterval = setInterval(function() {
-                $("#spinLogo").rotate(alpha);
-            }, delay);
-            $("#containerSpinLogo").show();
-            $("#containerStaticLogo").hide();
-        }
+        $(this).displayFeatureBasedOnOrientation();
     });
 });
+
+$.fn.displayFeatureBasedOnOrientation = function() {
+    if($(this).portrait()) {
+        clearInterval(spinLogoInterval);
+        $("#spinLogo").rotate(0);
+        $("#containerSpinLogo").hide();
+        $("#containerStaticLogo").show();
+    } else {
+        spinLogoInterval = setInterval(function() {
+            $("#spinLogo").rotate(alpha);
+        }, delay);
+        $("#containerSpinLogo").show();
+        $("#containerStaticLogo").hide();
+    }
+};
+
+$.fn.portrait = function() {
+    return window.innerHeight > window.innerWidth;
+};
 
 $.fn.gyro = function() {
     if (window.DeviceMotionEvent === undefined) {
