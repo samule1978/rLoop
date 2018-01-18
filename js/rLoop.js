@@ -7,8 +7,7 @@ $(document).ready(function () {
 
     $(this).gyro();
     $(window).on("orientationchange", function(event) {
-        alert("flip");
-        $(this).gyro();
+        $("#spinLogo").rotate(0);
     });
 });
 
