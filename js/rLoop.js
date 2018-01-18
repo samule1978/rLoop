@@ -34,6 +34,8 @@ $(document).ready(function () {
 });
 
 $.fn.displayFeatureBasedOnOrientation = function() {
+
+    alert("sam");
     if($(this).portrait()) {
         spinLogoInterval = setInterval(function() {
             $("#spinLogo").rotate(alpha);
