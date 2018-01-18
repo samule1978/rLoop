@@ -4,10 +4,4 @@ $(document).ready(function () {
         anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
         menu: '#menu',*/
     });
-
-    if (window.DeviceMotionEvent==undefined) {
-        // Default to Static Logic
-    } else {
-        alert("sam");
-    }
 });
