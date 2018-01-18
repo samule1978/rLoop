@@ -30,10 +30,7 @@ $(document).ready(function () {
     $(window).on("orientationchange", function(event) {
         clearInterval(spinLogoInterval);
         $("#spinLogo").rotate(0);
-
-        spinLogoInterval =  setInterval(function() {
-            $("#spinLogo").rotate(alpha);
-        }, delay);
+        alert(UIDevice.currentDevice().orientation);
     });
 });
 
