@@ -22,7 +22,7 @@ $(document).ready(function () {
     });
 
     if ($(this).gyro()) {
-        if($(this).portrait()) {
+        if(window.innerHeight > window.innerWidth) {
             $("#containerStaticLogo").hide();
             $("#containerSpinLogo").show();
 
@@ -36,7 +36,7 @@ $(document).ready(function () {
         }
 
         $(window).on("orientationchange", function(event) {
-            if($(this).portrait()) {
+            if(window.innerHeight > window.innerWidth) {
                 $("#containerStaticLogo").hide();
                 $("#containerSpinLogo").show();
 
@@ -44,7 +44,6 @@ $(document).ready(function () {
                 spinLogoInterval = setInterval(function() {
                     $("#spinLogo").rotate(alpha);
                 }, delay);
-
             } else {
                 $("#containerSpinLogo").hide();
                 $("#containerStaticLogo").show();
