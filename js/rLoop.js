@@ -33,8 +33,8 @@ $(document).ready(function () {
         function h2d(h) {return parseInt(h,16);}
 
         setInterval(function() {
-            document.getElementById("betalabel").innerHTML = "Beta sgg: " + beta;
-            $(this).rotate({ endDeg:beta });
+            document.getElementById("betalabel").innerHTML = "Beta 7: " + beta;
+            $("#spinLogo").rotate({ endDeg:beta });
         }, delay);
     }
 });
