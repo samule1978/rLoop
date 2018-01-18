@@ -23,31 +23,29 @@ $(document).ready(function () {
 
     if ($(this).gyro()) {
         if($(this).portrait()) {
-            alert("portrait");
             $("#containerStaticLogo").hide();
             $("#containerSpinLogo").show();
 
+            clearInterval(spinLogoInterval);
             spinLogoInterval = setInterval(function() {
                 $("#spinLogo").rotate(alpha);
             }, delay);
         } else {
-            alert("landscape");
             $("#containerSpinLogo").hide();
             $("#containerStaticLogo").show();
         }
 
         $(window).on("orientationchange", function(event) {
             if($(this).portrait()) {
-                alert("portrait");
                 $("#containerStaticLogo").hide();
                 $("#containerSpinLogo").show();
 
+                clearInterval(spinLogoInterval);
                 spinLogoInterval = setInterval(function() {
                     $("#spinLogo").rotate(alpha);
                 }, delay);
 
             } else {
-                alert("landscape");
                 $("#containerSpinLogo").hide();
                 $("#containerStaticLogo").show();
 
