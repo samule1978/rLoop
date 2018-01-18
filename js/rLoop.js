@@ -12,8 +12,6 @@ var beta = 0;
 var gamma = 0;
 
 var delay = 100;
-
-var gyroInfoInterval;
 var spinLogoInterval;
 
 $(document).ready(function () {
@@ -25,19 +23,6 @@ $(document).ready(function () {
 
     $(this).gyro();
 
-    /*gyroInfoInterval = setInterval(function() {
-        document.getElementById("xlabel").innerHTML = "X: " + ax;
-        document.getElementById("ylabel").innerHTML = "Y: " + ay;
-        document.getElementById("zlabel").innerHTML = "Z: " + az;
-        document.getElementById("ilabel").innerHTML = "I: " + ai;
-        document.getElementById("arAlphaLabel").innerHTML = "arA: " + arAlpha;
-        document.getElementById("arBetaLabel").innerHTML = "arB: " + arBeta;
-        document.getElementById("arGammaLabel").innerHTML = "arG: " + arGamma;
-        document.getElementById("alphalabel").innerHTML = "Alpha: " + alpha;
-        document.getElementById("betalabel").innerHTML = "Beta: " + beta;
-        document.getElementById("gammalabel").innerHTML = "Gamma: " + gamma;
-    }, delay);*/
-
     spinLogoInterval = setInterval(function() {
         $("#spinLogo").rotate(alpha);
     }, delay);
@@ -46,10 +31,14 @@ $(document).ready(function () {
         if(window.innerHeight > window.innerWidth){
             clearInterval(spinLogoInterval);
             $("#spinLogo").rotate(0);
+            $("#containerSpinLogo").hide();
+            $("#containerStaticLogo").show();
         } else {
             spinLogoInterval = setInterval(function() {
                 $("#spinLogo").rotate(alpha);
             }, delay);
+            $("#containerSpinLogo").show();
+            $("#containerStaticLogo").hide();
         }
     });
 });
