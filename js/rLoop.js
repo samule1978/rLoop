@@ -34,6 +34,7 @@ $(document).ready(function () {
 
         setInterval(function() {
             document.getElementById("betalabel").innerHTML = "Betas: " + beta;
+            $('#spinLogo').rotateLeft([angle=beta]);
         }, delay);
     }
 });
