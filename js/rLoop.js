@@ -23,14 +23,12 @@ $(document).ready(function () {
 
     $(this).gyro();
 
-    clearInterval(spinLogoInterval);
     spinLogoInterval = setInterval(function() {
         $("#spinLogo").rotate(alpha);
     }, delay);
 
     $(window).on("orientationchange", function(event) {
         if(window.innerHeight > window.innerWidth) {
-            clearInterval(spinLogoInterval);
             spinLogoInterval = setInterval(function() {
                 $("#spinLogo").rotate(alpha);
             }, delay);
