@@ -32,16 +32,16 @@ $(document).ready(function () {
 
 $.fn.displayFeatureBasedOnOrientation = function() {
     if($(this).portrait()) {
-        clearInterval(spinLogoInterval);
-        $("#spinLogo").rotate(0);
-        $("#containerSpinLogo").hide();
-        $("#containerStaticLogo").show();
-    } else {
         spinLogoInterval = setInterval(function() {
             $("#spinLogo").rotate(alpha);
         }, delay);
         $("#containerSpinLogo").show();
         $("#containerStaticLogo").hide();
+    } else {
+        clearInterval(spinLogoInterval);
+        $("#spinLogo").rotate(0);
+        $("#containerSpinLogo").hide();
+        $("#containerStaticLogo").show();
     }
 };
 
