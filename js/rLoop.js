@@ -7,6 +7,7 @@ $(document).ready(function () {
 
     $(this).gyro();
     window.orientationchange = function(event) {
+        alert("flip");
         $(this).gyro();
     }
 });
