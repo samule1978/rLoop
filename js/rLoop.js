@@ -34,10 +34,16 @@ $(document).ready(function () {
 
         setInterval(function() {
             document.getElementById("betalabel").innerHTML = "Beta 7: " + beta;
-            $("#spinLogo").rotate({ startDeg:beta, endDeg:beta, easing:'ease-in' });
+            //$("#spinLogo").rotate({ startDeg:beta, endDeg:beta, easing:'ease-in' });
+            $("#spinLogo").rotateSam(beta);
         }, delay);
     }
 });
+
+$.fn.rotateSam = function(degrees) {
+    $(this).css({'transform' : 'rotate('+ degrees +'deg)'});
+    return $(this);
+};
 
 /*
  jQuery-Rotate-Plugin v0.2 by anatol.at
