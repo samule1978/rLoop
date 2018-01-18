@@ -29,12 +29,14 @@ $(document).ready(function () {
 
     $(window).on("orientationchange", function(event) {
         if($(this).portrait()) {
+            $("#spinLogo").show();
             spinLogoInterval = setInterval(function() {
                 $("#spinLogo").rotate(alpha);
             }, delay);
         } else {
             clearInterval(spinLogoInterval);
-            $("#spinLogo").rotate(0);
+            $("#spinLogo").hide();
+            //$("#spinLogo").rotate(0);
         }
     });
 });
