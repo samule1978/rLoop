@@ -28,7 +28,7 @@ $(document).ready(function () {
     }, delay);
 
     $(window).on("orientationchange", function(event) {
-        if(window.innerHeight > window.innerWidth) {
+        if($(this).portrait()) {
             spinLogoInterval = setInterval(function() {
                 $("#spinLogo").rotate(alpha);
             }, delay);
@@ -38,6 +38,15 @@ $(document).ready(function () {
         }
     });
 });
+
+$.fn.portrait = function() {
+    switch(window.orientation) {
+        case -90 || 90:
+            return false;
+        default:
+            return true;
+    }
+};
 
 $.fn.gyro = function() {
     if (window.DeviceMotionEvent === undefined) {
