@@ -68,8 +68,8 @@ $(document).ready(function () {
             document.getElementById("betalabel").innerHTML = "Beta: " + beta;
             document.getElementById("gammalabel").innerHTML = "Gamma: " + gamma;
 
-            //$("#spinLogo").rotate({ startDeg:beta, endDeg:beta, easing:'ease-in' });
-            $("#spinLogo").rotateSam(beta);
+            //$("#spinLogo").rotate({ startDeg:alpha, endDeg:alpha, easing:'ease-in' });
+            $("#spinLogo").rotateSam(alpha);
         }, delay);
     }
 });
