@@ -24,7 +24,7 @@ $(document).ready(function () {
     $(this).gyro();
 
     spinLogoInterval = setInterval(function() {
-        $("#spinLogo").rotate(alpha);
+        $("#spinLogo").rotate(0);
     }, delay);
 
     $(window).on("orientationchange", function(event) {
