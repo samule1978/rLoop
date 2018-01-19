@@ -88,12 +88,7 @@ $.fn.showDebugInfo = function(show) {
 };
 
 $.fn.portrait = function() {
-    switch(window.orientation) {
-        case -90 || 90:
-            return false;
-        default:
-            return true;
-    }
+    return window.innerHeight > window.innerWidth;
 };
 
 $.fn.gyro = function() {
