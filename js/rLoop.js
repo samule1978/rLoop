@@ -21,7 +21,7 @@ $(document).ready(function () {
         menu: '#menu',*/
     });
 
-    //$(this).showDebugInfo(true, debugInterval);
+    $(this).showDebugInfo(false, debugInterval);
 
     if ($(this).gyro()) {
         if($(this).portrait()) {
@@ -45,7 +45,13 @@ $.fn.gyroItem = function(item, interval, delay, degrees, start) {
         if (item && delay && degrees) {
             interval = setInterval(function() {
                 item.rotate(degrees);
-                document.getElementById("otherlabel").innerHTML = "Othergee: " + degrees;
+
+                if($(this).portrait()) {
+                    document.getElementById("orientationlabel").innerHTML = "Orientation: Portrait";
+                } else {
+                    document.getElementById("orientationlabel").innerHTML = "Orientation: Landscape";
+                }
+                document.getElementById("otherlabel").innerHTML = "Degrees: " + degrees;
             }, delay);
         }
     } else {
@@ -56,7 +62,9 @@ $.fn.gyroItem = function(item, interval, delay, degrees, start) {
 
 $.fn.showDebugInfo = function(show, interval) {
     if (show) {
-        $("#debugInfo").show();
+        $("#accel").show();
+        $("#gyro").show();
+        $("#other").show();
 
         interval = setInterval(function() {
             document.getElementById("xlabel").innerHTML = "X: " + ax;
@@ -69,16 +77,16 @@ $.fn.showDebugInfo = function(show, interval) {
             document.getElementById("alphalabel").innerHTML = "Alpha: " + alpha;
             document.getElementById("betalabel").innerHTML = "Beta: " + beta;
             document.getElementById("gammalabel").innerHTML = "Gamma: " + gamma;
-
             if($(this).portrait()) {
                 document.getElementById("orientationlabel").innerHTML = "Orientation: Portrait";
             } else {
                 document.getElementById("orientationlabel").innerHTML = "Orientation: Landscape";
             }
-
         }, delay);
     } else {
-        $("#debugInfo").hide();
+        $("#accel").hide();
+        $("#gyro").hide();
+        $("#other").hide();
     }
 };
 
