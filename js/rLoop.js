@@ -21,17 +21,16 @@ $(document).ready(function () {
         menu: '#menu',*/
     });
 
-    $(this).showDebugInfo(true, debugInterval);
+    $(this).showDebugInfo(false, debugInterval);
 
     if ($(this).gyro()) {
+        /*
         if($(this).portrait()) {
             //$(this).gyroItem($("#spinLogo"), spinLogoInterval, delay, true);
             spinLogoInterval = setInterval(function() {
                 $("#spinLogo").rotate(alpha);
             }, delay);
         }
-
-
 
         window.onload = function() {
             $(window).on("orientationchange", function(event) {
@@ -40,14 +39,15 @@ $(document).ready(function () {
                         $("#spinLogo").rotate(alpha);
                     }, delay);
                 } else {
-                    //clearInterval(spinLogoInterval);
-                    //spinLogoInterval = undefined;
-                    //$("#spinLogo").rotate(0);
+                    clearInterval(spinLogoInterval);
+                    spinLogoInterval = undefined;
+                    $("#spinLogo").rotate(0);
                 }
             });
 
-            //$(window).orientationchange();
+            $(window).orientationchange();
         };
+        */
 
         /*$(window).on("orientationchange", function(event) {
          if ($(this).portrait()) {
@@ -125,6 +125,8 @@ $.fn.gyro = function() {
             alpha = Math.round(event.alpha);
             beta = Math.round(event.beta);
             gamma = Math.round(event.gamma);
+
+            $("#spinLogo").rotate(alpha);
         }
 
         return true;
