@@ -76,9 +76,9 @@ $.fn.showDebugInfo = function(show) {
             document.getElementById("gammalabel").innerHTML = "Gamma: " + gamma;
 
             if($(this).portrait()) {
-                document.getElementById("orientationlabel").innerHTML = "Orientationsss: Portrait";
+                document.getElementById("orientationlabel").innerHTML = "Orientationsg: Portrait";
             } else {
-                document.getElementById("orientationlabel").innerHTML = "Orientationsss: Landscape";
+                document.getElementById("orientationlabel").innerHTML = "Orientationsg: Landscape";
             }
 
         }, delay);
