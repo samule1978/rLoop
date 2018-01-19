@@ -56,6 +56,35 @@ $.fn.gyroItem = function(item, interval, delay, degrees, start) {
     }
 };
 
+$.fn.showDebugInfo = function(show) {
+    if (show) {
+        $("#debugInfo").show();
+
+        setInterval(function() {
+            document.getElementById("xlabel").innerHTML = "X: " + ax;
+            document.getElementById("ylabel").innerHTML = "Y: " + ay;
+            document.getElementById("zlabel").innerHTML = "Z: " + az;
+            document.getElementById("ilabel").innerHTML = "I: " + ai;
+            document.getElementById("arAlphaLabel").innerHTML = "arA: " + arAlpha;
+            document.getElementById("arBetaLabel").innerHTML = "arB: " + arBeta;
+            document.getElementById("arGammaLabel").innerHTML = "arG: " + arGamma;
+            document.getElementById("alphalabel").innerHTML = "Alpha: " + alpha;
+            document.getElementById("betalabel").innerHTML = "Beta: " + beta;
+            document.getElementById("gammalabel").innerHTML = "Gamma: " + gamma;
+
+            if($(this).portrait()) {
+                document.getElementById("orientationlabel").innerHTML = "Orientation: Portrait";
+            } else {
+                document.getElementById("orientationlabel").innerHTML = "Orientation: Portrait";
+            }
+
+        }, delay);
+
+    } else {
+        $("#debugInfo").hide();
+    }
+};
+
 $.fn.portrait = function() {
     switch(window.orientation) {
         case -90 || 90:
