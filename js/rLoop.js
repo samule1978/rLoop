@@ -31,8 +31,8 @@ $(document).ready(function () {
             }, delay);
         }
 
-        window.ondeviceorientation = function(event) {
-            if($(this).portrait()) {
+        window.orientationchange = function(event) {
+            if ($(this).portrait()) {
                 //$(this).gyroItem($("#spinLogo"), spinLogoInterval, delay, true);
                 alert("portait");
                 spinLogoInterval = setInterval(function() {
