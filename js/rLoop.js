@@ -34,13 +34,11 @@ $(document).ready(function () {
         window.orientationchange = function(event) {
             if ($(this).portrait()) {
                 //$(this).gyroItem($("#spinLogo"), spinLogoInterval, delay, true);
-                alert("portait");
                 spinLogoInterval = setInterval(function() {
                     $("#spinLogo").rotate(alpha);
                 }, delay);
             } else {
                 //$(this).gyroItem($("#spinLogo"), spinLogoInterval, null, false);
-                alert("landscape");
                 clearInterval(spinLogoInterval);
                 $("#spinLogo").rotate(0);
             };
