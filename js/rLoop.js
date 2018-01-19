@@ -31,7 +31,7 @@ $(document).ready(function () {
         if($(this).portrait()) {
             //$("#spinLogo").show();
             spinLogoInterval = setInterval(function() {
-                $("#spinLogo").rotate(alpha);
+                $("#spinLogo").rotate(0);
             }, delay);
         } else {
             clearInterval(spinLogoInterval);
