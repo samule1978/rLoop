@@ -45,7 +45,7 @@ $(document).ready(function () {
 $.fn.gyroItem = function(item, interval, delay, degrees, start) {
     if (start) {
         if (item && interval && delay && degrees) {
-            clearInterval(interval);
+            if (interval) clearInterval(interval);
             item.rotate(0);
 
             interval = setInterval(function() {
