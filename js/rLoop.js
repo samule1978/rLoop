@@ -77,7 +77,7 @@ $.fn.showDebugInfo = function(show) {
             if($(this).portrait()) {
                 document.getElementById("orientationlabel").innerHTML = "Orientation: Portrait";
             } else {
-                document.getElementById("orientationlabel").innerHTML = "Orientation: Portrait";
+                document.getElementById("orientationlabel").innerHTML = "Orientation: Landscape";
             }
 
         }, delay);
