@@ -46,7 +46,7 @@ $(document).ready(function () {
                 }
             });
 
-            $(window).orientationchange();
+            //$(window).orientationchange();
         };
 
         /*$(window).on("orientationchange", function(event) {
