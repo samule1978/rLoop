@@ -25,14 +25,22 @@ $(document).ready(function () {
 
     if ($(this).gyro()) {
         if($(this).portrait()) {
-            $(this).gyroItem($("#spinLogo"), spinLogoInterval, delay, true);
+            //$(this).gyroItem($("#spinLogo"), spinLogoInterval, delay, true);
+            spinLogoInterval = setInterval(function() {
+                $("#spinLogo").rotate(alpha);
+            }, delay);
         }
 
         $(window).on("orientationchange", function(event) {
             if($(this).portrait()) {
-                $(this).gyroItem($("#spinLogo"), spinLogoInterval, delay, true);
+                //$(this).gyroItem($("#spinLogo"), spinLogoInterval, delay, true);
+                spinLogoInterval = setInterval(function() {
+                    $("#spinLogo").rotate(alpha);
+                }, delay);
             } else {
-                $(this).gyroItem($("#spinLogo"), spinLogoInterval, null, false);
+                //$(this).gyroItem($("#spinLogo"), spinLogoInterval, null, false);
+                if (spinLogoInterval) clearInterval(spinLogoInterval);
+                $("#spinLogo").rotate(0);
             }
         });
     }
