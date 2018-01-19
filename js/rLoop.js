@@ -21,7 +21,7 @@ $(document).ready(function () {
         menu: '#menu',*/
     });
 
-    $(this).showDebugInfo(true, debugInterval);
+    $(this).showDebugInfo(false, debugInterval);
 
     if ($(this).gyro()) {
         if($(this).portrait()) {
@@ -39,6 +39,7 @@ $(document).ready(function () {
                     spinLogoInterval = setInterval(function() {
                         $("#spinLogo").rotate(alpha);
                     }, delay);
+                    alert("sssmsms");
                 } else {
                     clearInterval(spinLogoInterval);
                     $("#spinLogo").rotate(0);
