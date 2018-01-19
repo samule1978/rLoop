@@ -43,7 +43,7 @@ $(document).ready(function () {
 });
 
 $.fn.gyroItem = function(item, interval, delay, degrees, start) {
-    alert(start):
+    alert(start);
     if (start) {
         if (item && interval && delay && degrees) {
             if (interval) clearInterval(interval);
