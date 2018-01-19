@@ -31,21 +31,24 @@ $(document).ready(function () {
             }, delay);
         }
 
-        window.orientationchange = function(event) {
-            if ($(this).portrait()) {
-                //$(this).gyroItem($("#spinLogo"), spinLogoInterval, delay, true);
+        $(window).on("orientationchange", function(event) {
+            if (event.orientation == "portrait") {
                 spinLogoInterval = setInterval(function() {
                     $("#spinLogo").rotate(alpha);
                 }, delay);
             } else {
-                //$(this).gyroItem($("#spinLogo"), spinLogoInterval, null, false);
                 clearInterval(spinLogoInterval);
                 $("#spinLogo").rotate(0);
-            };
-        }
+            }
+        });
 
         /*$(window).on("orientationchange", function(event) {
+         if ($(this).portrait()) {
+         $(this).gyroItem($("#spinLogo"), spinLogoInterval, delay, true);
 
+         } else {
+         $(this).gyroItem($("#spinLogo"), spinLogoInterval, null, false);
+         };
         });*/
     }
 });
