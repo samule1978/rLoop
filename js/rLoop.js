@@ -39,7 +39,7 @@ $(document).ready(function () {
                 }, delay);
             } else {
                 //$(this).gyroItem($("#spinLogo"), spinLogoInterval, null, false);
-                if (spinLogoInterval) clearInterval(spinLogoInterval);
+                clearInterval(spinLogoInterval);
                 $("#spinLogo").rotate(0);
             }
         });
