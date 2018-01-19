@@ -21,13 +21,11 @@ $(document).ready(function () {
         menu: '#menu',*/
     });
 
-    $(this).showDebugInfo(false, debugInterval);
+    $(this).showDebugInfo(true, debugInterval);
 
     if ($(this).gyro()) {
         if($(this).portrait()) {
             $(this).gyroItem($("#spinLogo"), spinLogoInterval, delay, alpha, true);
-        } else {
-            $(this).gyroItem($("#spinLogo"), spinLogoInterval, null, null, false);
         }
 
         $(window).on("orientationchange", function(event) {
@@ -43,17 +41,10 @@ $(document).ready(function () {
 $.fn.gyroItem = function(item, interval, delay, degrees, start) {
     if (start) {
         $("#other").show();
-        
+
         if (item && delay && degrees) {
             interval = setInterval(function() {
                 item.rotate(degrees);
-
-                if($(this).portrait()) {
-                    document.getElementById("orientationlabel").innerHTML = "Orientation: Portrait";
-                } else {
-                    document.getElementById("orientationlabel").innerHTML = "Orientation: Landscape";
-                }
-                document.getElementById("otherlabel").innerHTML = "Degrees: " + degrees;
             }, delay);
         }
     } else {
@@ -64,9 +55,7 @@ $.fn.gyroItem = function(item, interval, delay, degrees, start) {
 
 $.fn.showDebugInfo = function(show, interval) {
     if (show) {
-        $("#accel").show();
-        $("#gyro").show();
-        $("#other").show();
+        $("#debugInfo").show();
 
         interval = setInterval(function() {
             document.getElementById("xlabel").innerHTML = "X: " + ax;
@@ -79,6 +68,7 @@ $.fn.showDebugInfo = function(show, interval) {
             document.getElementById("alphalabel").innerHTML = "Alpha: " + alpha;
             document.getElementById("betalabel").innerHTML = "Beta: " + beta;
             document.getElementById("gammalabel").innerHTML = "Gamma: " + gamma;
+
             if($(this).portrait()) {
                 document.getElementById("orientationlabel").innerHTML = "Orientation: Portrait";
             } else {
@@ -86,9 +76,7 @@ $.fn.showDebugInfo = function(show, interval) {
             }
         }, delay);
     } else {
-        $("#accel").hide();
-        $("#gyro").hide();
-        $("#other").hide();
+        $("#debugInfo").hide();
     }
 };
 
