@@ -21,6 +21,8 @@ $(document).ready(function () {
         menu: '#menu',*/
     });
 
+    $(this).showDebugInfo(true);
+
     if ($(this).gyro()) {
         if($(this).portrait()) {
             $(this).gyroItem($("#spinLogo"), spinLogoInterval, delay, alpha, true);
