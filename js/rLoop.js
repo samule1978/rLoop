@@ -40,9 +40,9 @@ $(document).ready(function () {
                         $("#spinLogo").rotate(alpha);
                     }, delay);
                 } else {
-                    clearInterval(spinLogoInterval);
-                    spinLogoInterval = undefined;
-                    $("#spinLogo").rotate(0);
+                    //clearInterval(spinLogoInterval);
+                    //spinLogoInterval = undefined;
+                    //$("#spinLogo").rotate(0);
                 }
             });
 
