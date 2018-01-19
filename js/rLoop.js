@@ -51,6 +51,7 @@ $.fn.gyroItem = function(item, interval, delay, degrees, start) {
 
             interval = setInterval(function() {
                 item.rotate(degrees);
+                document.getElementById("otherlabel").innerHTML = "Other: " + degrees;
             }, delay);
         }
     } else {
@@ -76,9 +77,9 @@ $.fn.showDebugInfo = function(show) {
             document.getElementById("gammalabel").innerHTML = "Gamma: " + gamma;
 
             if($(this).portrait()) {
-                document.getElementById("orientationlabel").innerHTML = "Orientationsg: Portrait";
+                document.getElementById("orientationlabel").innerHTML = "Orientation: Portrait";
             } else {
-                document.getElementById("orientationlabel").innerHTML = "Orientationsg: Landscape";
+                document.getElementById("orientationlabel").innerHTML = "Orientation: Landscape";
             }
 
         }, delay);
