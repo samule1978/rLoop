@@ -21,7 +21,7 @@ $(document).ready(function () {
         menu: '#menu',*/
     });
 
-    $(this).showDebugInfo(true, debugInterval);
+    //$(this).showDebugInfo(true, debugInterval);
 
     if ($(this).gyro()) {
         if($(this).portrait()) {
