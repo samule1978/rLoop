@@ -12,7 +12,7 @@ var beta = 0;
 var gamma = 0;
 
 var delay = 100;
-var debugInterval, spinLogoInterval;
+var debugInterval;
 
 $(document).ready(function () {
     $('#fullpage').fullpage({
@@ -24,60 +24,15 @@ $(document).ready(function () {
     $(this).showDebugInfo(false, debugInterval);
 
     if ($(this).gyro()) {
-        /*
-        if($(this).portrait()) {
-            //$(this).gyroItem($("#spinLogo"), spinLogoInterval, delay, true);
-            spinLogoInterval = setInterval(function() {
-                $("#spinLogo").rotate(alpha);
-            }, delay);
-        }
 
-        window.onload = function() {
-            $(window).on("orientationchange", function(event) {
-                if (event.orientation == "portrait") {
-                    spinLogoInterval = setInterval(function() {
-                        $("#spinLogo").rotate(alpha);
-                    }, delay);
-                } else {
-                    clearInterval(spinLogoInterval);
-                    spinLogoInterval = undefined;
-                    $("#spinLogo").rotate(0);
-                }
-            });
-
-            $(window).orientationchange();
-        };
-        */
-
-        /*$(window).on("orientationchange", function(event) {
-         if ($(this).portrait()) {
-         $(this).gyroItem($("#spinLogo"), spinLogoInterval, delay, true);
-
-         } else {
-         $(this).gyroItem($("#spinLogo"), spinLogoInterval, null, false);
-         };
-        });*/
     }
 });
-
-$.fn.gyroItem = function(item, interval, delay, start) {
-    if (start) {
-        if (item && delay) {
-            interval = setInterval(function() {
-                item.rotate(alpha);
-            }, delay);
-        }
-    } else {
-        if (interval) clearInterval(interval);
-        if (item) item.rotate(0);
-    }
-};
 
 $.fn.showDebugInfo = function(show, interval) {
     if (show) {
         $("#debugInfo").show();
 
-        interval = setInterval(function() {
+        setInterval(function() {
             document.getElementById("xlabel").innerHTML = "X: " + ax;
             document.getElementById("ylabel").innerHTML = "Y: " + ay;
             document.getElementById("zlabel").innerHTML = "Z: " + az;
@@ -126,7 +81,11 @@ $.fn.gyro = function() {
             beta = Math.round(event.beta);
             gamma = Math.round(event.gamma);
 
-            $("#spinLogo").rotate(alpha);
+            if($(this).portrait()) {
+                $("#spinLogo").rotate(alpha);
+            } else {
+                $("#spinLogo").rotate(0);
+            }
         }
 
         return true;

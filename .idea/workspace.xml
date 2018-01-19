@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90f050f4-5f5e-46b9-a025-b617daeebec7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/rLoop.js" afterPath="$PROJECT_DIR$/js/rLoop.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +20,8 @@
           <file leaf-file-name="rLoop.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/rLoop.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="282">
-                  <caret line="130" column="0" lean-forward="true" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+                <state relative-caret-position="383">
+                  <caret line="87" column="13" lean-forward="false" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -55,8 +56,8 @@
               <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/index.html">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="55">
-                      <caret line="34" column="40" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="40" />
+                    <state relative-caret-position="154">
+                      <caret line="53" column="75" lean-forward="false" selection-start-line="53" selection-start-column="75" selection-end-line="53" selection-end-column="75" />
                       <folding>
                         <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                       </folding>
@@ -315,12 +316,12 @@
       <updated>1516277461570</updated>
       <workItem from="1516277463134" duration="15235000" />
       <workItem from="1516378900170" duration="47000" />
-      <workItem from="1516390668882" duration="5957000" />
+      <workItem from="1516390668882" duration="6254000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21239000" />
+    <option name="totallyTimeSpent" value="21536000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="988" extended-state="6" />
@@ -482,8 +483,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="34" column="40" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="40" />
+        <state relative-caret-position="154">
+          <caret line="53" column="75" lean-forward="false" selection-start-line="53" selection-start-column="75" selection-end-line="53" selection-end-column="75" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -492,8 +493,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/rLoop.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="130" column="0" lean-forward="true" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+        <state relative-caret-position="383">
+          <caret line="87" column="13" lean-forward="false" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
           <folding />
         </state>
       </provider>
