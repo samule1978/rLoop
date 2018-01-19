@@ -50,7 +50,7 @@ $.fn.gyroItem = function(item, interval, delay, degrees, start) {
 
             interval = setInterval(function() {
                 item.rotate(degrees);
-                document.getElementById("otherlabel").innerHTML = "Other: " + degrees;
+                document.getElementById("otherlabel").innerHTML = "Otherss: " + degrees;
             }, delay);
         }
     } else {
