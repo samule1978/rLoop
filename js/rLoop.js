@@ -39,9 +39,9 @@ $(document).ready(function () {
                     spinLogoInterval = setInterval(function() {
                         $("#spinLogo").rotate(alpha);
                     }, delay);
-                    alert("sssmsms");
                 } else {
                     clearInterval(spinLogoInterval);
+                    spinLogoInterval = undefined;
                     $("#spinLogo").rotate(0);
                 }
             });
