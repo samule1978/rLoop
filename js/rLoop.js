@@ -25,26 +25,24 @@ $(document).ready(function () {
 
     if ($(this).gyro()) {
         if($(this).portrait()) {
-            $(this).gyroItem($("#spinLogo"), spinLogoInterval, delay, alpha, true);
+            $(this).gyroItem($("#spinLogo"), spinLogoInterval, delay, true);
         }
 
         $(window).on("orientationchange", function(event) {
             if($(this).portrait()) {
-                $(this).gyroItem($("#spinLogo"), spinLogoInterval, delay, alpha, true);
+                $(this).gyroItem($("#spinLogo"), spinLogoInterval, delay, true);
             } else {
-                $(this).gyroItem($("#spinLogo"), spinLogoInterval, null, null, false);
+                $(this).gyroItem($("#spinLogo"), spinLogoInterval, null, false);
             }
         });
     }
 });
 
-$.fn.gyroItem = function(item, interval, delay, degrees, start) {
+$.fn.gyroItem = function(item, interval, delay, start) {
     if (start) {
-        $("#other").show();
-
-        if (item && delay && degrees) {
+        if (item && delay) {
             interval = setInterval(function() {
-                item.rotate(degrees);
+                item.rotate(alpha);
             }, delay);
         }
     } else {
