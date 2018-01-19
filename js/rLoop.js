@@ -44,6 +44,7 @@ $(document).ready(function () {
 
 $.fn.gyroItem = function(item, interval, delay, degrees, start) {
     if (start) {
+        alert(item && interval && delay && degrees);
         if (item && interval && delay && degrees) {
             alert("starting...");
             if (interval) clearInterval(interval);
