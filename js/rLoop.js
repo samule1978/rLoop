@@ -21,25 +21,40 @@ $(document).ready(function () {
         menu: '#menu',*/
     });
 
-    $(this).gyro();
-
-    spinLogoInterval = setInterval(function() {
-        $("#spinLogo").rotate(0);
-    }, delay);
-
-    $(window).on("orientationchange", function(event) {
+    if ($(this).gyro()) {
         if($(this).portrait()) {
-            //$("#spinLogo").show();
-            spinLogoInterval = setInterval(function() {
-                $("#spinLogo").rotate(0);
-            }, delay);
+            $(this).gyroItem($("#spinLogo"), spinLogoInterval, delay, alpha, true);
         } else {
-            clearInterval(spinLogoInterval);
-            //$("#spinLogo").hide();
-            $("#spinLogo").rotate(0);
+            $(this).gyroItem($("#spinLogo"), spinLogoInterval, null, null, false);
         }
-    });
+
+        $(window).on("orientationchange", function(event) {
+            if($(this).portrait()) {
+                $(this).gyroItem($("#spinLogo"), spinLogoInterval, delay, alpha, true);
+            } else {
+                $(this).gyroItem($("#spinLogo"), spinLogoInterval, null, null, false);
+            }
+        });
+    } else {
+        $(this).gyroItem($("#spinLogo"), null, null, null, false);
+    }
 });
+
+$.fn.gyroItem = function(item, interval, delay, degrees, start) {
+    if (start) {
+        if (item && interval && delay && degrees) {
+            clearInterval(interval);
+            item.rotate(0);
+
+            interval = setInterval(function() {
+                item.rotate(degrees);
+            }, delay);
+        }
+    } else {
+        if (interval) clearInterval(interval);
+        if (item) item.rotate(0);
+    }
+};
 
 $.fn.portrait = function() {
     switch(window.orientation) {
