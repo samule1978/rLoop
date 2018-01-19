@@ -42,6 +42,8 @@ $(document).ready(function () {
 
 $.fn.gyroItem = function(item, interval, delay, degrees, start) {
     if (start) {
+        $("#other").show();
+        
         if (item && delay && degrees) {
             interval = setInterval(function() {
                 item.rotate(degrees);
