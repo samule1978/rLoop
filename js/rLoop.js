@@ -31,7 +31,7 @@ $(document).ready(function () {
             }, delay);
         }
 
-        $(window).on("orientationchange", function(event) {
+        window.ondeviceorientation = function(event) {
             if($(this).portrait()) {
                 //$(this).gyroItem($("#spinLogo"), spinLogoInterval, delay, true);
                 alert("portait");
@@ -43,8 +43,12 @@ $(document).ready(function () {
                 alert("landscape");
                 clearInterval(spinLogoInterval);
                 $("#spinLogo").rotate(0);
-            }
-        });
+            };
+        }
+
+        /*$(window).on("orientationchange", function(event) {
+
+        });*/
     }
 });
 
