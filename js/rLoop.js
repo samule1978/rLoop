@@ -28,9 +28,55 @@ $(document).ready(function () {
     }
 });
 
+$.fn.portrait = function() {
+    return window.innerHeight > window.innerWidth;
+};
+
+$.fn.gyro = function() {
+    if (window.DeviceMotionEvent === undefined) {
+        return false;
+    } else {
+        window.ondeviceorientation = function(event) {
+            alpha = Math.round(event.alpha);
+
+            if($(this).portrait()) {
+                $("#spinLogo").rotate(alpha);
+            } else {
+                $("#spinLogo").rotate(0);
+            }
+        }
+
+        return true;
+    }
+};
+
+$.fn.rotate = function(degrees) {
+    $(this).css({'transform' : 'rotate('+ degrees +'deg)'});
+    return $(this);
+};
+
 $.fn.showDebugInfo = function(show, interval) {
     if (show) {
         $("#debugInfo").show();
+
+        window.ondevicemotion = function(event) {
+            ax = Math.round(Math.abs(event.accelerationIncludingGravity.x * 1));
+            ay = Math.round(Math.abs(event.accelerationIncludingGravity.y * 1));
+            az = Math.round(Math.abs(event.accelerationIncludingGravity.z * 1));
+            ai = Math.round(event.interval * 100) / 100;
+            rR = event.rotationRate;
+            if (rR != null) {
+                arAlpha = Math.round(rR.alpha);
+                arBeta = Math.round(rR.beta);
+                arGamma = Math.round(rR.gamma);
+            }
+        }
+
+        window.ondeviceorientation = function(event) {
+            alpha = Math.round(event.alpha);
+            beta = Math.round(event.beta);
+            gamma = Math.round(event.gamma);
+        }
 
         setInterval(function() {
             document.getElementById("xlabel").innerHTML = "X: " + ax;
@@ -53,46 +99,4 @@ $.fn.showDebugInfo = function(show, interval) {
     } else {
         $("#debugInfo").hide();
     }
-};
-
-$.fn.portrait = function() {
-    return window.innerHeight > window.innerWidth;
-};
-
-$.fn.gyro = function() {
-    if (window.DeviceMotionEvent === undefined) {
-        return false;
-    } else {
-        window.ondevicemotion = function(event) {
-            ax = Math.round(Math.abs(event.accelerationIncludingGravity.x * 1));
-            ay = Math.round(Math.abs(event.accelerationIncludingGravity.y * 1));
-            az = Math.round(Math.abs(event.accelerationIncludingGravity.z * 1));
-            ai = Math.round(event.interval * 100) / 100;
-            rR = event.rotationRate;
-            if (rR != null) {
-                arAlpha = Math.round(rR.alpha);
-                arBeta = Math.round(rR.beta);
-                arGamma = Math.round(rR.gamma);
-            }
-        }
-
-        window.ondeviceorientation = function(event) {
-            alpha = Math.round(event.alpha);
-            beta = Math.round(event.beta);
-            gamma = Math.round(event.gamma);
-
-            if($(this).portrait()) {
-                $("#spinLogo").rotate(alpha);
-            } else {
-                $("#spinLogo").rotate(0);
-            }
-        }
-
-        return true;
-    }
-};
-
-$.fn.rotate = function(degrees) {
-    $(this).css({'transform' : 'rotate('+ degrees +'deg)'});
-    return $(this);
 };
