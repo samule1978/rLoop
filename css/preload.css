@@ -48,18 +48,3 @@
     left: 0;
     overflow: hidden;
 }
-
-@keyframes animation {
-    10% {
-        opacity: 0.9;
-    }
-    30% {
-        opacity: 0.86;
-    }
-    60% {
-        opacity: 0.8;
-    }
-    80% {
-        opacity: 0.75;
-    }
-}
