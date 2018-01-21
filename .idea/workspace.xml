@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90f050f4-5f5e-46b9-a025-b617daeebec7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/rloop.css" afterPath="$PROJECT_DIR$/css/rloop.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/functions.js" afterPath="$PROJECT_DIR$/js/functions.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,11 +26,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="functions.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="functions.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/functions.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="206">
-                  <caret line="45" column="31" lean-forward="false" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+                <state relative-caret-position="221">
+                  <caret line="46" column="20" lean-forward="true" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -50,7 +48,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="rloop.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="rloop.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/rloop.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="265">
@@ -221,8 +219,8 @@
         <option value="$PROJECT_DIR$/css/preload.css" />
         <option value="$PROJECT_DIR$/js/rLoop.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/functions.js" />
         <option value="$PROJECT_DIR$/css/rloop.css" />
+        <option value="$PROJECT_DIR$/js/functions.js" />
       </list>
     </option>
   </component>
@@ -406,12 +404,12 @@
       <workItem from="1516390668882" duration="6298000" />
       <workItem from="1516441718145" duration="5979000" />
       <workItem from="1516494642448" duration="1596000" />
-      <workItem from="1516538715496" duration="6291000" />
+      <workItem from="1516538715496" duration="6367000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35446000" />
+    <option name="totallyTimeSpent" value="35522000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="988" extended-state="6" />
@@ -825,14 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/preload.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="49" column="1" lean-forward="false" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/rLoop.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
@@ -849,16 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="45" column="31" lean-forward="false" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
@@ -872,6 +852,24 @@
         <state relative-caret-position="265">
           <caret line="74" column="12" lean-forward="false" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/preload.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="49" column="1" lean-forward="false" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="46" column="20" lean-forward="true" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
