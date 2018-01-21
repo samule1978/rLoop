@@ -4,6 +4,8 @@
  */
 
 $(document).ready(function () {
+    $(this).setup();
+
     $('#fullpage').fullpage({
         /*sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
         anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
@@ -14,7 +16,7 @@ $(document).ready(function () {
     $(this).showDebugInfo(false);
 
     if ($(this).gyro()) {
-
+        $(this).animateOnOrientationChange();
     }
 });
 

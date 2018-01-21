@@ -32,8 +32,14 @@ var start = 0,
 
 
 /******* FUNCTIONS *******/
+$.fn.setup = function() {
+    $("#containerSpinLogo").hide();
+    $("#containerStaticLogo").show();
+};
+
 $.fn.gyro = function() {
     if (window.DeviceMotionEvent === undefined) {
+
         return false;
     } else {
         window.ondeviceorientation = function(event) {
@@ -42,9 +48,13 @@ $.fn.gyro = function() {
             degrees = Math.round(event.gamma);
 
             if($(this).portrait()) {
+                $("#containerSpinLogo").show();
+                $("#containerStaticLogo").hide();
                 $("#spinLogo").rotate(-degrees);
                 $("#spiniPhoneX").rotate(-degrees);
             } else {
+                $("#containerSpinLogo").hide();
+                $("#containerStaticLogo").show();
                 $("#spinLogo").rotate(0);
                 $("#spiniPhoneX").rotate(0);
             }
@@ -72,7 +82,7 @@ $.fn.showLoader = function(show) {
             width: width + "%"
         }, time);
 
-        // Fading Out Loadbar on Finised
+        // Fading Out Loadbar on Finished
         setTimeout(function(){
             $('.preloader-wrap').fadeOut(700);
         }, time);
@@ -80,6 +90,19 @@ $.fn.showLoader = function(show) {
         $('.preloader-wrap').hide();
     }
 };
+
+$.fn.animateOnOrientationChange = function() {
+    window.orientationchange = function(event) {
+        if($(this).portrait()) {
+            $("#staticLogo").removeAttr('style');
+            $("#staticiPhoneX").removeAttr('style');
+        } else {
+            setTimeout(function(){
+                $("#staticiPhoneX").fadeOut(700);
+            }, 1000);
+        }
+    };
+}
 
 $.fn.showDebugInfo = function(show) {
     if (show) {
