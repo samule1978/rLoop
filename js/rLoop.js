@@ -10,11 +10,11 @@ $(document).ready(function () {
         menu: '#menu',*/
     });
 
-    $(this).showLoader(false);
-    $(this).showDebugInfo(true);
+    $(this).showLoader(true);
+    $(this).showDebugInfo(false);
 
-    /*if ($(this).gyro()) {
+    if ($(this).gyro()) {
 
-    }*/
+    }
 });
 
