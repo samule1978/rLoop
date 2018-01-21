@@ -1,4 +1,9 @@
-// Acceleration
+/**
+ * **** BISMILLAH-HIRRAHMAH-NIRRAHEEM ***
+ * Created by samuleghurry on 20/01/2018.
+ */
+
+// Acceleration/Gyro
 var ax = 0;
 var ay = 0;
 var az = 0;
@@ -6,11 +11,9 @@ var ai = 0;
 var arAlpha = 0;
 var arBeta = 0;
 var arGamma = 0;
-
 var alpha = 0;
 var beta = 0;
 var gamma = 0;
-
 var delay = 100;
 var debugInterval;
 
