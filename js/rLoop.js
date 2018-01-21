@@ -10,7 +10,7 @@ $(document).ready(function () {
         menu: '#menu',*/
     });
 
-    $(this).showLoader(true);
+    $(this).showLoader(false);
     $(this).showDebugInfo(false);
 
     if ($(this).gyro()) {
