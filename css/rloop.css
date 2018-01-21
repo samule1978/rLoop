@@ -57,14 +57,21 @@ body {
     cursor: pointer;
 }
 
-#spinLogo,
-#staticLogo {
-    /*position: relative;
-    width : 50%;
-    left : 25%;*/
+/*#spinLogo,
+#spiniPhoneX {
     display: block;
     margin: 0px auto;
-    /*width: 25%;*/
     width: 200px;
+}*/
+#spinLogo {
+    position: relative;
+    width: 20%;
+    left: 40%;
+    z-index: 1;
 }
-
+#spiniPhoneX {
+    position: absolute;
+    width: 20%;
+    left: 40%;
+    z-index: 2;
+}
