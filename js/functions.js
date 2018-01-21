@@ -92,7 +92,7 @@ $.fn.showLoader = function(show) {
 };
 
 $.fn.animateOnOrientationChange = function() {
-    window.orientationchange = function(event) {
+    $( window ).on( "orientationchange", function( event ) {
         alert("flip");
         if($(this).portrait()) {
             $("#staticLogo").removeAttr('style');
@@ -103,7 +103,7 @@ $.fn.animateOnOrientationChange = function() {
                 $("#staticiPhoneX").fadeOut(700);
             }, 1000);
         }
-    };
+    });
 }
 
 $.fn.showDebugInfo = function(show) {
