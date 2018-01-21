@@ -50,13 +50,15 @@ $.fn.gyro = function() {
             if($(this).portrait()) {
                 $("#containerSpinLogo").show();
                 $("#containerStaticLogo").hide();
+
                 $("#spinLogo").rotate(-degrees);
                 $("#spiniPhoneX").rotate(-degrees);
             } else {
-                $("#containerSpinLogo").hide();
-                $("#containerStaticLogo").show();
                 $("#spinLogo").rotate(0);
                 $("#spiniPhoneX").rotate(0);
+
+                $("#containerSpinLogo").hide();
+                $("#containerStaticLogo").show();
             }
         }
 
@@ -104,6 +106,8 @@ $.fn.animateOnOrientationChange = function() {
             }, 1000);
         }
     });
+
+    $( window ).orientationchange();
 }
 
 $.fn.showDebugInfo = function(show) {
