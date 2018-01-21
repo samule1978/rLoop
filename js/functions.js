@@ -39,7 +39,7 @@ $.fn.gyro = function() {
         window.ondeviceorientation = function(event) {
 
             //degrees = Math.round(event.alpha);
-            degrees = -(Math.round(event.gamma+even.beta));
+            degrees = -(Math.round(event.gamma+10));
 
             if($(this).portrait()) {
                 $("#spinLogo").rotate(degrees);
