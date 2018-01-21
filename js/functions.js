@@ -97,7 +97,9 @@ $.fn.animateOnOrientationChange = function() {
             $("#staticLogo").removeAttr('style');
             $("#staticiPhoneX").removeAttr('style');
         } else {
-            $("#staticiPhoneX").delay(1000).fadeOut(1000);
+            $("#staticiPhoneX").delay(1000).fadeOut(1000,
+                $("#staticLogo").animate({top:'-70px'}, 1000)
+            );
         }
     }, false);
 };
