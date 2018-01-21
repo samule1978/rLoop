@@ -39,11 +39,9 @@ $.fn.setup = function() {
 
 $.fn.gyro = function() {
     if (window.DeviceMotionEvent === undefined) {
-
         return false;
     } else {
         window.ondeviceorientation = function(event) {
-
             //degrees = Math.round(event.alpha);
             degrees = Math.round(event.gamma);
 
@@ -94,9 +92,7 @@ $.fn.showLoader = function(show) {
 };
 
 $.fn.animateOnOrientationChange = function() {
-    $( window ).orientationchange();
-    
-    $( window ).on( "orientationchange", function( event ) {
+    window.addEventListener("resize", function() {
         if($(this).portrait()) {
             $("#staticLogo").removeAttr('style');
             $("#staticiPhoneX").removeAttr('style');
@@ -105,10 +101,8 @@ $.fn.animateOnOrientationChange = function() {
                 $("#staticiPhoneX").fadeOut(700);
             }, 1000);
         }
-    });
-
-
-}
+    }, false);
+};
 
 $.fn.showDebugInfo = function(show) {
     if (show) {

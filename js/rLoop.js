@@ -14,6 +14,7 @@ $(document).ready(function () {
 
     $(this).showLoader(true);
     $(this).showDebugInfo(false);
+    $(this).animateOnOrientationChange();
 
     if ($(this).gyro()) {
 
