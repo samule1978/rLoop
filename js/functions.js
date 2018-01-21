@@ -93,10 +93,12 @@ $.fn.showLoader = function(show) {
 
 $.fn.animateOnOrientationChange = function() {
     window.orientationchange = function(event) {
+        alert("flip");
         if($(this).portrait()) {
             $("#staticLogo").removeAttr('style');
             $("#staticiPhoneX").removeAttr('style');
         } else {
+            alert("sam");
             setTimeout(function(){
                 $("#staticiPhoneX").fadeOut(700);
             }, 1000);
