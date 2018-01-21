@@ -13,8 +13,8 @@ $(document).ready(function () {
     $(this).showLoader(false);
     $(this).showDebugInfo(true);
 
-    if ($(this).gyro()) {
+    /*if ($(this).gyro()) {
 
-    }
+    }*/
 });
 
