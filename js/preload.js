@@ -10,8 +10,7 @@ var width = 100,
 
 // Percentage Increment Animation
 var start = 0,
-    end = 100,
-    durataion = time;
+    end = 100;
 
 $(document).ready(function () {
     // Loadbar Animation
