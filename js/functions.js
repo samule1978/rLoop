@@ -98,7 +98,7 @@ $.fn.animateOnOrientationChange = function() {
             $("#staticiPhoneX").removeAttr('style');
         } else {
             $("#staticiPhoneX").delay(1000).fadeOut(1000);
-            $("#staticLogo").delay(1500).animate({top:-70}, 1000, function() {
+            $("#staticLogo").delay(1500).animate({top:'-70px'}, 1000, function() {
                 //callback
             });
         }
