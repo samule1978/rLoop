@@ -37,10 +37,10 @@ $.fn.gyro = function() {
         return false;
     } else {
         window.ondeviceorientation = function(event) {
-            alpha = Math.round(event.alpha);
+            degrees = Math.round(event.alpha);
 
             if($(this).portrait()) {
-                $("#spinLogo").rotate(alpha);
+                $("#spinLogo").rotate(degrees);
             } else {
                 $("#spinLogo").rotate(0);
             }
