@@ -94,20 +94,20 @@ $.fn.showLoader = function(show) {
 };
 
 $.fn.animateOnOrientationChange = function() {
+    $( window ).orientationchange();
+    
     $( window ).on( "orientationchange", function( event ) {
-        alert("flip");
         if($(this).portrait()) {
             $("#staticLogo").removeAttr('style');
             $("#staticiPhoneX").removeAttr('style');
         } else {
-            alert("sam");
             setTimeout(function(){
                 $("#staticiPhoneX").fadeOut(700);
             }, 1000);
         }
     });
 
-    $( window ).orientationchange();
+
 }
 
 $.fn.showDebugInfo = function(show) {
