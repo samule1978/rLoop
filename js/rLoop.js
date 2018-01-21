@@ -11,7 +11,7 @@ $(document).ready(function () {
     });
 
     $(this).showLoader(true);
-    $(this).showDebugInfo(false);
+    $(this).showDebugInfo(true);
 
     if ($(this).gyro()) {
 
