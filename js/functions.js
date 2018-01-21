@@ -42,7 +42,7 @@ $.fn.gyro = function() {
             degrees = Math.round(event.gamma);
 
             if($(this).portrait()) {
-                $("#spinLogo").rotate(degrees);
+                $("#spinLogo").rotate(-degrees);
                 $("#spiniPhoneX").rotate(-degrees);
             } else {
                 $("#spinLogo").rotate(0);
