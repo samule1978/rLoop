@@ -33,8 +33,6 @@ var start = 0,
 
 /******* FUNCTIONS *******/
 $.fn.setup = function() {
-    $("#containerSpinLogo").hide();
-    $("#containerStaticLogo").show();
 };
 
 $.fn.gyro = function() {
@@ -46,17 +44,11 @@ $.fn.gyro = function() {
             degrees = Math.round(event.gamma);
 
             if($(this).portrait()) {
-                $("#containerSpinLogo").show();
-                $("#containerStaticLogo").hide();
-
                 $("#spinLogo").rotate(-degrees);
                 $("#spiniPhoneX").rotate(-degrees);
             } else {
                 $("#spinLogo").rotate(0);
                 $("#spiniPhoneX").rotate(0);
-
-                $("#containerSpinLogo").hide();
-                $("#containerStaticLogo").show();
             }
         }
 
@@ -94,11 +86,17 @@ $.fn.showLoader = function(show) {
 $.fn.animateOnOrientationChange = function() {
     window.addEventListener("resize", function() {
         if($(this).portrait()) {
-            $("#staticLogo").removeAttr('style');
-            $("#staticiPhoneX").removeAttr('style');
+            $("#spinLogo").removeAttr('style');
+            $("#spiniPhoneX").removeAttr('style');
+
+            $("#spinLogo").rotate(0);
+            $("#spiniPhoneX").rotate(0);
         } else {
-            $("#staticiPhoneX").delay(1000).fadeOut(1000);
-            $("#staticLogo").delay(1500).animate({top:'-235px'}, 1000, function() {
+            $("#spinLogo").rotate(0);
+            $("#spiniPhoneX").rotate(0);
+
+            $("#spiniPhoneX").delay(1000).fadeOut(1000);
+            $("#spinLogo").delay(1500).animate({top:'-235px'}, 1000, function() {
                 //callback
             });
         }
