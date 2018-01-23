@@ -29,8 +29,8 @@
           <file leaf-file-name="functions.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/functions.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="141">
-                  <caret line="68" column="69" lean-forward="false" selection-start-line="68" selection-start-column="69" selection-end-line="68" selection-end-column="69" />
+                <state relative-caret-position="196">
+                  <caret line="66" column="32" lean-forward="true" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -448,12 +448,12 @@
       <workItem from="1516617441340" duration="4323000" />
       <workItem from="1516700172089" duration="286000" />
       <workItem from="1516703811228" duration="8940000" />
-      <workItem from="1516718621966" duration="5088000" />
+      <workItem from="1516718621966" duration="5215000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60404000" />
+    <option name="totallyTimeSpent" value="60531000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="116" y="1223" width="1680" height="988" extended-state="6" />
@@ -911,8 +911,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="68" column="69" lean-forward="false" selection-start-line="68" selection-start-column="69" selection-end-line="68" selection-end-column="69" />
+        <state relative-caret-position="196">
+          <caret line="66" column="32" lean-forward="true" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
