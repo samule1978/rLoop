@@ -66,7 +66,7 @@ $.fn.animateOnOrientationChange = function() {
         if($(this).portrait()) {
 
         } else {
-            $("#spiniPhoneX").delay(500).fadeOut(500);
+            $('#spiniPhoneX').delay(500).animate({opacity:0, scale: '+=10'}, 500);
             $("#spinLogo").delay(500).animate({top:'-235px'}, 500, function() {
                 //callback
             });
@@ -78,15 +78,30 @@ $.fn.spinOut = function() {
 
 }
 
-$.fn.rotate = function(degrees) {
-    $(this).css({'transform' : 'rotate('+ degrees +'deg)'});
-    return $(this);
-};
+/*$.fn.rotate = function(degrees) {
+    //$(this).css({'transform' : 'rotate('+ degrees +'deg)'});
+    $(this).css({
+        '-webkit-transform' : 'rotate('+ degrees +'deg)',
+        '-moz-transform'    : 'rotate('+ degrees +'deg)',
+        '-ms-transform'     : 'rotate('+ degrees +'deg)',
+        '-o-transform'      : 'rotate('+ degrees +'deg)',
+        'transform'         : 'rotate('+ degrees +'deg)'
+    });
 
-$.fn.scale = function(size) {
-    $(this).css({'transform' : 'scale('+ size +')'});
     return $(this);
-};
+};*/
+
+/*$.fn.scale = function(size) {
+    //$(this).css({'transform' : 'scale('+ size +')'});
+    $(this).css({
+        '-webkit-transform' : 'scale('+ size +')',
+        '-moz-transform'    : 'scale('+ size +')',
+        '-ms-transform'     : 'scale('+ size +')',
+        '-o-transform'      : 'scale('+ size +')',
+        'transform'         : 'scale('+ size +')'
+    });
+    return $(this);
+};*/
 
 $.fn.portrait = function() {
     return window.innerHeight > window.innerWidth;
