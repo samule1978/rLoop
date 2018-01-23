@@ -91,9 +91,10 @@ $.fn.animateOnOrientationChange = function() {
         if($(this).portrait()) {
 
         } else {
-            $("#spiniPhoneX").delay(750).animate({
+            $("#containerSpinLogo").delay(750).animate({
                     opacity:0,
-                    transform:'scale(10)'
+                    width:"200%",
+                    height:"200%"
                 },
                 500,
                 function() {
