@@ -12,11 +12,11 @@ $(document).ready(function () {
         menu: '#menu',*/
     });
 
-    $(this).showLoader(false);
+    $(this).showLoader(true);
     $(this).showDebugInfo(false);
 
-    /*if ($(this).gyro()) {
+    if ($(this).gyro()) {
         $(this).animateOnOrientationChange();
-    }*/
+    }
 });
 
