@@ -89,10 +89,21 @@ $.fn.animateOnOrientationChange = function() {
             $("#spinLogo").removeAttr('style');
             $("#spiniPhoneX").removeAttr('style');
         } else {
-            $("#spiniPhoneX").delay(500).fadeOut(500);
+
+            $("#spiniPhoneX").delay(750).animate({
+                    opacity:0,
+                    transform:'scale(78)'
+                },
+                500,
+                function() {
+                    //callback
+                }
+            );
+
+            /*$("#spiniPhoneX").delay(500).fadeOut(500);
             $("#spinLogo").delay(750).animate({top:'-235px'}, 500, function() {
                 //callback
-            });
+            });*/
         }
     }, false);
 };
