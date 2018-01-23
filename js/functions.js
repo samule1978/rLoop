@@ -58,12 +58,12 @@ $.fn.gyro = function() {
 
 $.fn.animateOnOrientationChange = function() {
     window.addEventListener("resize", function() {
-        $("#spinLogo").removeAttr('style');
-        $("#spiniPhoneX").removeAttr('style');
-
         if($(this).portrait()) {
 
         } else {
+            $("#spinLogo").removeAttr('style');
+            $("#spiniPhoneX").removeAttr('style');
+            
             $("#spiniPhoneX").delay(500).fadeOut(500);
             $("#spinLogo").delay(500).animate({top:'-235px'}, 500, function() {
                 //callback
