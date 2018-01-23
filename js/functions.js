@@ -47,8 +47,10 @@ $.fn.gyro = function() {
                 $("#spinLogo").rotate(-degrees);
                 $("#spiniPhoneX").rotate(-degrees);
             } else {
-                $("#spinLogo").rotate(0);
-                $("#spiniPhoneX").rotate(0);
+                //$("#spinLogo").rotate(0);
+                //$("#spiniPhoneX").rotate(0);
+                $("#spinLogo").removeAttr('style');
+                $("#spiniPhoneX").removeAttr('style');
             }
         }
 
@@ -85,13 +87,15 @@ $.fn.showLoader = function(show) {
 
 $.fn.animateOnOrientationChange = function() {
     window.addEventListener("resize", function() {
+        $("#spinLogo").removeAttr('style');
+        $("#spiniPhoneX").removeAttr('style');
+
         if($(this).portrait()) {
-            $("#spinLogo").removeAttr('style');
-            $("#spiniPhoneX").removeAttr('style');
+
         } else {
             $("#spiniPhoneX").delay(750).animate({
                     opacity:0,
-                    transform:'scale(78)'
+                    transform:'scale(10)'
                 },
                 500,
                 function() {
