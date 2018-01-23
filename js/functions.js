@@ -74,6 +74,7 @@ $.fn.animateOnOrientationChange = function() {
             $('#spiniPhoneX').delay(500).animate({opacity:0, scale: '10'}, 500);
             $("#spinLogo").delay(500).animate({top:'-235px'}, 500, function() {
                 //callback
+                clearInterval(spinPhone);
             });
         }
     }, false);
