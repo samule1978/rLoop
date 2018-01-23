@@ -2,282 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90f050f4-5f5e-46b9-a025-b617daeebec7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jQuery/jquery-animate-css-rotate-scale.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/css/jquery.fullPage.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/css/preload.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/css/rloop.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/dist/jquery.fullpage.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/dist/jquery.fullpage.extensions.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/dist/jquery.fullpage.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/dist/jquery.fullpage.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/dist/jquery.fullpage.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/dist/jquery.fullpage.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/dist/jquery.fullpage.min.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/assets/coin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/assets/iPhoneX.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/assets/iPhoneX.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/assets/logo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/bg/pod_conv.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/bg/pod_conv_2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/bg/pod_conv_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/bg/pod_conv_3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/bg/pod_h.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/bg/pod_v.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/bg/section2bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/bg/section2bg_old.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/bg/stars.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/btn/arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/btn/logoTwitter.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/btn/logoYoutube.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/btn/portrait_warning.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/btn/portrait_warning_rloop.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/btn/smallLogo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/logos/iPhoneX.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/logos/phoneLogo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/logos/rLoopLogo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/arrow_small.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/circle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/circleWhite.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/circleWhite2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/coins.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/earth.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/ico__01.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/ico__02.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/ico__03.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/ico__04.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/ico__large_01.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/ico__large_02.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/ico__large_03.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/ico__large_04.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/infinity.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/logos/logoArx.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/logos/logoDigi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/logos/logoDungi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/logos/logoP.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/logos/logoSlack.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/logos/logoTE.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/logos/logoTata.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/logos/logosaAuto.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/logos/media/logosBBC.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/logos/media/logosCBS.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/logos/media/logosCNBC.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/logos/media/logosEcono.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/logos/media/logosEngi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/logos/media/logosForbes.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/logos/media/logosWSJ.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/logos/media/logosWired.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/projectX.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/sprites/rocket.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/steps/arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/steps/arrow_small.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/steps/arrow_small_3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/steps/arrow_small_3_rev.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/steps/backdots.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/steps/brain.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/steps/earthmap.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/steps/hyperloop.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/steps/infinity.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/steps/justdots.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/steps/musk.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/steps/musk_sm.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/steps/ppl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/img/steps/theraceison.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/js/functions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/js/jquery.rotate.1-1.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/js/preload.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/js/rLoop.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/lib/jQuery/jquery-1.11.3.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/lib/jQuery/jquery-1.11.3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/lib/jQuery/jquery-2.2.4.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/lib/jQuery/jquery-3.1.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/lib/jQuery/jquery.fullPage.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/lib/jQuery/jquery.sticky.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.14/logo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/css/jquery.fullPage.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/css/preload.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/css/rloop.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/dist/jquery.fullpage.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/dist/jquery.fullpage.extensions.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/dist/jquery.fullpage.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/dist/jquery.fullpage.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/dist/jquery.fullpage.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/dist/jquery.fullpage.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/dist/jquery.fullpage.min.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/assets/coin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/assets/iPhoneX.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/assets/iPhoneX.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/assets/logo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/bg/pod_conv.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/bg/pod_conv_2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/bg/pod_conv_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/bg/pod_conv_3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/bg/pod_h.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/bg/pod_v.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/bg/section2bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/bg/section2bg_old.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/bg/stars.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/btn/arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/btn/logoTwitter.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/btn/logoYoutube.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/btn/portrait_warning.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/btn/portrait_warning_rloop.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/btn/smallLogo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/logos/iPhoneX.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/logos/phoneLogo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/logos/rLoopLogo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/arrow_small.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/circle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/circleWhite.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/circleWhite2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/coins.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/earth.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/ico__01.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/ico__02.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/ico__03.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/ico__04.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/ico__large_01.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/ico__large_02.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/ico__large_03.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/ico__large_04.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/infinity.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/logos/logoArx.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/logos/logoDigi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/logos/logoDungi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/logos/logoP.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/logos/logoSlack.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/logos/logoTE.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/logos/logoTata.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/logos/logosaAuto.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/logos/media/logosBBC.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/logos/media/logosCBS.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/logos/media/logosCNBC.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/logos/media/logosEcono.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/logos/media/logosEngi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/logos/media/logosForbes.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/logos/media/logosWSJ.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/logos/media/logosWired.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/projectX.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/sprites/rocket.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/steps/arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/steps/arrow_small.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/steps/arrow_small_3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/steps/arrow_small_3_rev.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/steps/backdots.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/steps/brain.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/steps/earthmap.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/steps/hyperloop.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/steps/infinity.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/steps/justdots.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/steps/musk.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/steps/musk_sm.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/steps/ppl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/img/steps/theraceison.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/js/functions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/js/jquery.rotate.1-1.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/js/preload.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/js/rLoop.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/lib/jQuery/jquery-1.11.3.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/lib/jQuery/jquery-1.11.3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/lib/jQuery/jquery-2.2.4.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/lib/jQuery/jquery-3.1.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/lib/jQuery/jquery.fullPage.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/lib/jQuery/jquery.sticky.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.15/logo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/css/jquery.fullPage.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/css/preload.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/css/rloop.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/dist/jquery.fullpage.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/dist/jquery.fullpage.extensions.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/dist/jquery.fullpage.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/dist/jquery.fullpage.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/dist/jquery.fullpage.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/dist/jquery.fullpage.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/dist/jquery.fullpage.min.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/assets/coin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/assets/iPhoneX.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/assets/iPhoneX.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/assets/logo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/bg/pod_conv.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/bg/pod_conv_2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/bg/pod_conv_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/bg/pod_conv_3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/bg/pod_h.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/bg/pod_v.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/bg/section2bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/bg/section2bg_old.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/bg/stars.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/btn/arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/btn/logoTwitter.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/btn/logoYoutube.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/btn/portrait_warning.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/btn/portrait_warning_rloop.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/btn/smallLogo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/logos/iPhoneX.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/logos/phoneLogo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/logos/rLoopLogo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/arrow_small.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/circle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/circleWhite.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/circleWhite2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/coins.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/earth.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/ico__01.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/ico__02.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/ico__03.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/ico__04.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/ico__large_01.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/ico__large_02.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/ico__large_03.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/ico__large_04.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/infinity.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/logos/logoArx.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/logos/logoDigi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/logos/logoDungi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/logos/logoP.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/logos/logoSlack.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/logos/logoTE.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/logos/logoTata.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/logos/logosaAuto.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/logos/media/logosBBC.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/logos/media/logosCBS.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/logos/media/logosCNBC.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/logos/media/logosEcono.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/logos/media/logosEngi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/logos/media/logosForbes.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/logos/media/logosWSJ.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/logos/media/logosWired.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/projectX.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/sprites/rocket.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/steps/arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/steps/arrow_small.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/steps/arrow_small_3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/steps/arrow_small_3_rev.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/steps/backdots.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/steps/brain.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/steps/earthmap.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/steps/hyperloop.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/steps/infinity.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/steps/justdots.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/steps/musk.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/steps/musk_sm.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/steps/ppl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/img/steps/theraceison.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/js/functions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/js/jquery.rotate.1-1.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/js/preload.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/js/rLoop.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/lib/jQuery/jquery-1.11.3.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/lib/jQuery/jquery-1.11.3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/lib/jQuery/jquery-2.2.4.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/lib/jQuery/jquery-3.1.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/lib/jQuery/jquery.fullPage.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/lib/jQuery/jquery.sticky.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2.0.0.16/logo.svg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/rloop.css" afterPath="$PROJECT_DIR$/css/rloop.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/functions.js" afterPath="$PROJECT_DIR$/js/functions.js" />
     </list>
@@ -306,8 +30,8 @@
           <file leaf-file-name="functions.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/functions.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="74" column="2" lean-forward="false" selection-start-line="74" selection-start-column="2" selection-end-line="74" selection-end-column="2" />
+                <state relative-caret-position="249">
+                  <caret line="68" column="69" lean-forward="true" selection-start-line="68" selection-start-column="69" selection-end-line="68" selection-end-column="69" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -367,7 +91,7 @@
                 <entry file="file://$PROJECT_DIR$/index.html">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="38">
-                      <caret line="34" column="60" lean-forward="true" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="78" />
+                      <caret line="34" column="78" lean-forward="false" selection-start-line="34" selection-start-column="78" selection-end-line="34" selection-end-column="78" />
                       <folding>
                         <element signature="n#style#0;n#span#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                       </folding>
@@ -383,7 +107,7 @@
                 <entry file="file://$PROJECT_DIR$/../../rLoop/v1.0.0.0/index.html">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="25">
-                      <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+                      <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
                       <folding />
                     </state>
                   </provider>
@@ -512,12 +236,12 @@
         <option value="$PROJECT_DIR$/css/preload.css" />
         <option value="$PROJECT_DIR$/css/rloop.css" />
         <option value="$PROJECT_DIR$/lib/jQuery/jquery-animate-css-rotate-scale.js" />
-        <option value="$PROJECT_DIR$/js/functions.js" />
         <option value="$PROJECT_DIR$/2.0.1.0/index.html" />
         <option value="$PROJECT_DIR$/2.0.2.0/index.html" />
         <option value="$PROJECT_DIR$/2.0.3.0/index.html" />
         <option value="$PROJECT_DIR$/js/rLoop.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/functions.js" />
       </list>
     </option>
   </component>
@@ -725,12 +449,12 @@
       <workItem from="1516617441340" duration="4323000" />
       <workItem from="1516700172089" duration="286000" />
       <workItem from="1516703811228" duration="8940000" />
-      <workItem from="1516718621966" duration="4817000" />
+      <workItem from="1516718621966" duration="4977000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60133000" />
+    <option name="totallyTimeSpent" value="60293000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="116" y="1223" width="1680" height="988" extended-state="6" />
@@ -1118,14 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../rLoop/v1.0.0.0/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/jQuery/jquery-animate-css-rotate-scale.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
@@ -1176,22 +892,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/functions.js">
+    <entry file="file://$PROJECT_DIR$/../../rLoop/v1.0.0.0/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="74" column="2" lean-forward="false" selection-start-line="74" selection-start-column="2" selection-end-line="74" selection-end-column="2" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="25">
+          <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
-          <caret line="34" column="60" lean-forward="true" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="78" />
+          <caret line="34" column="78" lean-forward="false" selection-start-line="34" selection-start-column="78" selection-end-line="34" selection-end-column="78" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="68" column="69" lean-forward="true" selection-start-line="68" selection-start-column="69" selection-end-line="68" selection-end-column="69" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
