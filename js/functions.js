@@ -63,7 +63,6 @@ $.fn.animateOnOrientationChange = function() {
         $("#spiniPhoneX").removeAttr('style');
         $("#spinLogo").rotate(0);
         $("#spiniPhoneX").rotate(0);
-        alert('resize');
 
         if($(this).portrait()) {
         } else {
