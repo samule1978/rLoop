@@ -63,15 +63,13 @@ body {
     margin: 0px auto;
     width: 200px;
 }*/
-#spinLogo,
-#staticLogo {
+#spinLogo {
     position: relative;
     width: 20%;
     left: 40%;
     z-index: 1;
 }
-#spiniPhoneX,
-#staticiPhoneX {
+#spiniPhoneX {
     position: absolute;
     width: 20%;
     left: 40%;
