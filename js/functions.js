@@ -40,10 +40,10 @@ $.fn.gyro = function() {
         return false;
     } else {
         window.ondeviceorientation = function(event) {
-            //degrees = Math.round(event.alpha);
-            degrees = Math.round(event.gamma);
-
             if($(this).portrait()) {
+                //degrees = Math.round(event.alpha);
+                degrees = Math.round(event.gamma);
+
                 $("#spinLogo").rotate(-degrees);
                 $("#spiniPhoneX").rotate(-degrees);
             } else {
