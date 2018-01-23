@@ -49,8 +49,6 @@ $.fn.gyro = function() {
             } else {
                 //$("#spinLogo").rotate(0);
                 //$("#spiniPhoneX").rotate(0);
-                $("#spinLogo").removeAttr('style');
-                $("#spiniPhoneX").removeAttr('style');
             }
         }
 
