@@ -63,7 +63,9 @@ $.fn.animateOnOrientationChange = function() {
         } else {
             $("#spinLogo").removeAttr('style');
             $("#spiniPhoneX").removeAttr('style');
-            
+            $("#spinLogo").rotate(0);
+            $("#spiniPhoneX").rotate(0);
+
             $("#spiniPhoneX").delay(500).fadeOut(500);
             $("#spinLogo").delay(500).animate({top:'-235px'}, 500, function() {
                 //callback
