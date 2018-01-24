@@ -1,0 +1,124 @@
+%!Adobe-FontList 1.18
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:BPdots-Light
+FamilyName:BPdots
+StyleName:Light
+MenuName:BPdots
+StyleBits:0
+WeightClass:300
+WidthClass:5
+AngleClass:0
+FullName:BPdots Light
+WritingScript:Roman
+OutlineFileName:\BPdotsLight.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:31492
+FileModTime:1196787752
+NameArray:0,Mac,4,BPdots Light
+NameArray:0,Win,1,BPdots
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:MinionPro-Regular
+FamilyName:Minion Pro
+StyleName:Regular
+MenuName:Minion Pro
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Minion Pro
+WritingScript:Roman
+OutlineFileName:\MinionPro-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:217280
+FileModTime:1339088807
+DesignSize:110
+NameArray:0,Mac,4,Minion Pro
+NameArray:0,Win,1,Minion Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:RobotoSlab-Bold
+FamilyName:Roboto Slab
+StyleName:Bold
+MenuName:Roboto Slab
+StyleBits:2
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:Roboto Slab Bold
+WritingScript:Roman
+OutlineFileName:\RobotoSlab-Bold.ttf
+DataFormat:sfntData
+hasSVG:no
+FileLength:170616
+FileModTime:1373990780
+NameArray:0,Mac,18,Roboto Slab Bold
+NameArray:0,Mac,4,Roboto Slab Bold
+NameArray:0,Win,1,Roboto Slab
+NameArray:0,Win,16,Roboto Slab
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:RobotoSlab-Light
+FamilyName:Roboto Slab
+StyleName:Light
+MenuName:Roboto Slab
+StyleBits:0
+WeightClass:300
+WidthClass:5
+AngleClass:0
+FullName:Roboto Slab Light
+WritingScript:Roman
+OutlineFileName:\RobotoSlab-Light.ttf
+DataFormat:sfntData
+hasSVG:no
+FileLength:179096
+FileModTime:1373990780
+NameArray:0,Mac,18,Roboto Slab Light
+NameArray:0,Mac,4,Roboto Slab Light
+NameArray:0,Win,1,Roboto Slab
+NameArray:0,Win,16,Roboto Slab
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:RobotoSlab-Regular
+FamilyName:Roboto Slab
+StyleName:Regular
+MenuName:Roboto Slab
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Roboto Slab Regular
+WritingScript:Roman
+OutlineFileName:\RobotoSlab-Regular.ttf
+DataFormat:sfntData
+hasSVG:no
+FileLength:169064
+FileModTime:1373990780
+NameArray:0,Mac,18,Roboto Slab Regular
+NameArray:0,Mac,4,Roboto Slab Regular
+NameArray:0,Win,1,Roboto Slab
+NameArray:0,Win,16,Roboto Slab
+%EndFont
+
