@@ -10,9 +10,8 @@
 
 .loader {
     height: 5px;
-    width: 400px;
+    width: 100%;
     position: absolute;
-    border-radius: 5px;
     top: 0;
     bottom: 0;
     left: 0;
@@ -34,14 +33,12 @@
     background-color: #ebebeb;
     width:100%;
     height: 100%;
-    border-radius: 5px;
     overflow: hidden;
 }
 
 .loadbar {
     width: 0%;
     height: 100%;
-    border-radius: 5px;
     background-color: #3096ca;
     position: absolute;
     top: 0;

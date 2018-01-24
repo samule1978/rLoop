@@ -122,9 +122,13 @@ $.fn.showLoader = function(show) {
             width: width + "%"
         }, time);
 
+
+
         // Fading Out Loadbar on Finished
         setTimeout(function(){
-            $('.preloader-wrap').fadeOut(700);
+            $(".trackbar").delay(100).animate({opacity:0, scale: '0'}, 500, function() {
+                $('.preloader-wrap').fadeOut(500);
+            });
         }, time);
     } else {
         $('.preloader-wrap').hide();
