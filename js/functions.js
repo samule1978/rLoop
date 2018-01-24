@@ -125,7 +125,8 @@ $.fn.showLoader = function(show) {
 
         // Loadbar Animation on Finished
         setTimeout(function(){
-            $(".preloader-wrap").addClass("hide").delay(6000).addClass("finished");
+            $(".preloader-wrap").addClass("hide");
+            $(".preloader-wrap").delay(10000).addClass("finished");
 
             /*$(".trackbar").delay(100).animate({opacity:0, scale: '0'}, 500, function() {
                 $('.preloader-wrap').fadeOut(500);
