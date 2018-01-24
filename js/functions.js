@@ -122,13 +122,13 @@ $.fn.showLoader = function(show) {
             width: width + "%"
         }, time);
 
-
-
-        // Fading Out Loadbar on Finished
+        // Loadbar Animation on Finished
         setTimeout(function(){
-            $(".trackbar").delay(100).animate({opacity:0, scale: '0'}, 500, function() {
+            $(".preloader-wrap").addClass("hide");
+
+            /*$(".trackbar").delay(100).animate({opacity:0, scale: '0'}, 500, function() {
                 $('.preloader-wrap').fadeOut(500);
-            });
+            });*/
         }, time);
     } else {
         $('.preloader-wrap').hide();
