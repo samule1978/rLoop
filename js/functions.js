@@ -43,13 +43,14 @@ $.fn.gyro = function() {
         return false;
     } else {
         window.ondeviceorientation = function(event) {
-            if($(this).portrait()) {
-                //degrees = Math.round(event.alpha);
-                degrees = Math.round(event.gamma);
+            if ($(".preloader-wrap").hasClass("finished")) {
+                if($(this).portrait()) {
+                    //degrees = Math.round(event.alpha);
+                    degrees = Math.round(event.gamma);
 
-                $("#spinLogo").rotate(-degrees);
-                $("#spiniPhoneX").rotate(-degrees);
-            } else {
+                    $("#spinLogo").rotate(-degrees);
+                    $("#spiniPhoneX").rotate(-degrees);
+                }
             }
         }
 
@@ -124,7 +125,7 @@ $.fn.showLoader = function(show) {
 
         // Loadbar Animation on Finished
         setTimeout(function(){
-            $(".preloader-wrap").addClass("hide");
+            $(".preloader-wrap").addClass("hide").delay(6000).addClass("finished");
 
             /*$(".trackbar").delay(100).animate({opacity:0, scale: '0'}, 500, function() {
                 $('.preloader-wrap').fadeOut(500);

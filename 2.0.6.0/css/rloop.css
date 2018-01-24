@@ -1,0 +1,101 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400');
+
+/*font-family: 'Open Sans', sans-serif;*/
+font-family: 'Roboto Slab', serif;
+font-family: 'Roboto', sans-serif;
+
+html{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family:  'Roboto Slab', serif;
+    /*background-color: rgb(200, 200, 200);*/
+    color: white;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    -webkit-text-size-adjust: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: auto;
+
+    background-image: url(../img/bg/section2bg.jpg);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#header {
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+#logoCont {
+    pointer-events: auto;
+    cursor: pointer;
+}
+#logo, #logo-click-area {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 0px;
+    height: 0px;
+    opacity: 1;
+}
+#logo {
+    top: 5vw;
+    left: 5vw;
+    width: 7vw;
+    height: 4vw;
+}
+#logo-click-area {
+    cursor: pointer;
+}
+
+/*#spinLogo,
+#spiniPhoneX {
+    display: block;
+    margin: 0px auto;
+    width: 200px;
+}*/
+/*#containerSpinLogo {
+
+}
+#spinLogo {
+    position: relative;
+    width: 20%;
+    left: 40%;
+    z-index: 1;
+}
+#spiniPhoneX {
+    position: absolute;
+    width: 20%;
+    left: 40%;
+    z-index: 2;
+}*/
+#containerSpinLogo {
+    /*width: 200px;
+    height: 98px;*/
+    width: 400px;
+    height: 196px;
+    display: block;
+    margin: auto;
+    position: relative;
+}
+#spinLogo {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+#spiniPhoneX {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+
