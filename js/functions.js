@@ -43,12 +43,6 @@ $.fn.gyro = function() {
         return false;
     } else {
         window.ondeviceorientation = function(event) {
-            $('#spiniPhoneX').scale(1);
-            $("#spinLogo").removeAttr('style');
-            $("#spiniPhoneX").removeAttr('style');
-            $("#spinLogo").rotate(0);
-            $("#spiniPhoneX").rotate(0);
-
             if($(this).portrait()) {
                 //degrees = Math.round(event.alpha);
                 degrees = Math.round(event.gamma);
@@ -56,10 +50,6 @@ $.fn.gyro = function() {
                 $("#spinLogo").rotate(-degrees);
                 $("#spiniPhoneX").rotate(-degrees);
             } else {
-                $('#spiniPhoneX').delay(500).animate({opacity:0, scale: '10'}, 500);
-                $("#spinLogo").delay(500).animate({top:'-235px'}, 500, function() {
-                    //callback
-                });
             }
         }
 
