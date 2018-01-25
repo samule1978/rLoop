@@ -7,6 +7,7 @@
     /*background: #ffffff;*/
     background: #000000;
     z-index:7;
+    visibility: visible;
 }
 .loader {
     height: 5px;
@@ -109,18 +110,11 @@
     opacity: 0 !important;
 }
 .preloader-wrap.hide {
-    -webkit-transition: opacity 2s 2s;
-    -moz-transition: opacity 2s 2s;
-    -ms-transition: opacity 2s 2s;
-    -o-transition: opacity 2s 2s;
-    transition: opacity 2s 2s;
+    -webkit-transition: opacity 2s 2s, visibility 0s 7s;
+    -moz-transition: opacity 2s 2s, visibility 0s 7s;
+    -ms-transition: opacity 2s 2s, visibility 0s 7s;
+    -o-transition: opacity 2s 2s, visibility 0s 7s;
+    transition: opacity 2s 2s, visibility 0s 7s;
     opacity: 0 !important;
-}
-.preloader-wrap.hide {
-    -webkit-transition: display 0s 5s;
-    -moz-transition: display 0s 5s;
-    -ms-transition: display 0s 5s;
-    -o-transition: display 0s 5s;
-    transition: display 0s 5s;
-    display: none !important;
+    visibility: hidden;
 }
