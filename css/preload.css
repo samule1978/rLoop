@@ -6,7 +6,6 @@
     bottom: 0;
     /*background: #ffffff;*/
     background: #000000;
-    z-index:7;
     visibility: visible;
 }
 .loader {
