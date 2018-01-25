@@ -4,18 +4,11 @@
  */
 
 $(document).ready(function () {
-    $(this).setup();
+    $("#main").hide();
 
-    $('#fullpage').fullpage({
-        /*sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
-        anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
-        menu: '#menu',*/
-    });
+    isMobile = $(this).isMobile();
+    if (!isMobile) $('#spiniPhoneX').hide();
 
-    $(this).showLoader(true);
-
-    if ($(this).gyro()) {
-        $(this).animateOnOrientationChange();
-    }
+    $(this).load();
 });
 

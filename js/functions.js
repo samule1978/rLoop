@@ -27,7 +27,7 @@ var width = 100,
 // Percentage Increment Animation
 var start = 0,
     end = 100;
-
+var loadingTimer;
 
 
 
@@ -35,8 +35,47 @@ var start = 0,
 
 /******* FUNCTIONS *******/
 $.fn.setup = function() {
-    isMobile = $(this).isMobile();
-    $("#main").hide();
+    if (isMobile) {
+        if ($(this).gyro()) {
+            $(this).animateOnMobile();
+        }
+    } else {
+        $(this).animateOnDesktop();
+    }
+
+    $('#fullpage').fullpage({
+        /*sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+         anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+         menu: '#menu',*/
+    });
+};
+
+$.fn.animateOnDesktop = function() {
+    $('#containerSpinLogo').delay(500).animate({opacity:0, scale: '17'}, 1000, function() {
+        $(".spinlogo-wrap").hide();
+        $("#main").show();
+    });
+};
+
+$.fn.animateOnMobile = function() {
+    window.addEventListener("resize", function() {
+        $('#spiniPhoneX').scale(1);
+        $("#spinLogo").removeAttr('style');
+        $("#spiniPhoneX").removeAttr('style');
+        $("#spinLogo").rotate(0);
+        $("#spiniPhoneX").rotate(0);
+
+        if(!$(this).portrait()) {
+            /*$('#spiniPhoneX').delay(500).animate({opacity:0, scale: '10'}, 500);
+            $("#spinLogo").delay(500).animate({top:'-235px'}, 500, function() {
+                //callback
+            });*/
+            $('#containerSpinLogo').delay(500).animate({opacity:0, scale: '17'}, 1000, function() {
+                $(".spinlogo-wrap").hide();
+                $("#main").show();
+            });
+        }
+    }, false);
 };
 
 $.fn.gyro = function() {
@@ -44,7 +83,7 @@ $.fn.gyro = function() {
         return false;
     } else {
         window.ondeviceorientation = function(event) {
-            if ($(".preloader-wrap").hasClass("finished")) {
+            if ($(this).finishedLoading()) {
                 if($(this).portrait()) {
                     degrees = Math.round(event.gamma);
 
@@ -56,29 +95,6 @@ $.fn.gyro = function() {
 
         return true;
     }
-};
-
-$.fn.animateOnOrientationChange = function() {
-    window.addEventListener("resize", function() {
-        $('#spiniPhoneX').scale(1);
-        $("#spinLogo").removeAttr('style');
-        $("#spiniPhoneX").removeAttr('style');
-        $("#spinLogo").rotate(0);
-        $("#spiniPhoneX").rotate(0);
-
-        if($(this).portrait()) {
-
-        } else {
-            /*$('#spiniPhoneX').delay(500).animate({opacity:0, scale: '10'}, 500);
-            $("#spinLogo").delay(500).animate({top:'-235px'}, 500, function() {
-                //callback
-            });*/
-            $('#containerSpinLogo').delay(500).animate({opacity:0, scale: '17'}, 1000, function() {
-                $(".spinlogo-wrap").hide();
-                $("#main").show();
-            });
-        }
-    }, false);
 };
 
 $.fn.portrait = function() {
@@ -93,18 +109,24 @@ $.fn.isMobile = function() {
 
 }
 
-$.fn.showLoader = function(show) {
-    if (show) {
-        // Loadbar Animation
-        $(".loadbar").animate({
-            width: width + "%"
-        }, time);
+$.fn.load = function() {
+    // Loadbar Animation
+    $(".loadbar").animate({
+        width: width + "%"
+    }, time);
 
-        // Loadbar Animation on Finished
-        setTimeout(function(){
-            $(".preloader-wrap").addClass("hide").delay(10000).addClass("finished");
-        }, time);
-    } else {
-        $('.preloader-wrap').hide();
-    }
+    // Loadbar Animation on Finished
+    setTimeout(function(){
+        //$(".preloader-wrap").addClass("hide").delay(10000).addClass("finished");
+
+        $(".preloader-wrap").addClass("hide").delay(2000).queue(function(){
+            $(this).addClass("finished").dequeue().delay(1000).queue(function(){
+                $(this).setup().dequeue();
+            });
+        });
+    }, time);
+};
+
+$.fn.finishedLoading = function() {
+    return $(".preloader-wrap").hasClass("finished");
 };
