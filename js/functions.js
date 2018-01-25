@@ -36,6 +36,7 @@ var start = 0,
 /******* FUNCTIONS *******/
 $.fn.setup = function() {
     isMobile = $(this).isMobile();
+    $("#main").hide();
 };
 
 $.fn.gyro = function() {
@@ -73,7 +74,8 @@ $.fn.animateOnOrientationChange = function() {
                 //callback
             });*/
             $('#containerSpinLogo').delay(500).animate({opacity:0, scale: '17'}, 1000, function() {
-                //$("sectionContainerSpinLogo").remove();
+                $(".spinlogo-wrap").hide();
+                $("#main").show();
             });
         }
     }, false);
