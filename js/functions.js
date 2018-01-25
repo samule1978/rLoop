@@ -68,9 +68,12 @@ $.fn.animateOnOrientationChange = function() {
         if($(this).portrait()) {
 
         } else {
-            $('#spiniPhoneX').delay(500).animate({opacity:0, scale: '10'}, 500);
+            /*$('#spiniPhoneX').delay(500).animate({opacity:0, scale: '10'}, 500);
             $("#spinLogo").delay(500).animate({top:'-235px'}, 500, function() {
                 //callback
+            });*/
+            $('#containerSpinLogo').delay(500).animate({opacity:0, scale: '17'}, 1000, function() {
+                //$("sectionContainerSpinLogo").remove();
             });
         }
     }, false);
