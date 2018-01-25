@@ -44,7 +44,7 @@ $.fn.gyro = function() {
     } else {
         window.ondeviceorientation = function(event) {
             if ($(".preloader-wrap").hasClass("finished")) {
-                $(".preloader-wrap").hide();
+                //$(".preloader-wrap").hide();
 
                 if($(this).portrait()) {
                     //degrees = Math.round(event.alpha);

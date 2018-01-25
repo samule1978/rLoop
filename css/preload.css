@@ -116,3 +116,11 @@
     transition: opacity 2s 2s;
     opacity: 0 !important;
 }
+.preloader-wrap.hide {
+    -webkit-transition: display 0s 5s;
+    -moz-transition: display 0s 5s;
+    -ms-transition: display 0s 5s;
+    -o-transition: display 0s 5s;
+    transition: display 0s 5s;
+    display: none !important;
+}
