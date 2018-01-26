@@ -9,9 +9,9 @@ $(document).ready(function () {
         var y = Math.round(event.gamma); // In degree in the range [-90,90]
 
         if($(this).portrait()) {
-            $(".containerRLoopIcon").rotate(y + "deg");
-            $(".loader-wrap-top").clipPathPolygonTop(y, 49.75 - y, 49.75 + y);
-            $(".loader-wrap-bottom").clipPathPolygonBottom(y, 50.25 - y, 50.25 + y);
+            $(".containerRLoopIcon").rotate(-y + "deg");
+            $(".loader-wrap-top").clipPathPolygonTop(y, 49.75 + y, 49.75 - y);
+            $(".loader-wrap-bottom").clipPathPolygonBottom(y, 50.25 + y, 50.25 - y);
 
         } else {
             // Because we don't want to have the device upside down
