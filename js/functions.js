@@ -100,8 +100,8 @@ $.fn.gyro = function() {
 };
 
 $.fn.clipPathPolygon = function(degrees) {
-    var leftCorner = '50%';
-    var rightCorner = degrees + '%';
+    var leftCorner = $(this).clientHeight - degrees + '%';
+    var rightCorner = $(this).clientHeight + degrees + '%';
 
     $(this).css({
         '-webkit-clip-path' : 'polygon(0 0, 100% 0, 100% ' + rightCorner + ', 0 ' + leftCorner + ')',
