@@ -11,6 +11,10 @@
     height: 147px;
     position: absolute;
 }
+.output {
+    position: absolute;
+    z-index: 100;
+}
 
 .preloader-wrap {
     width: 100%;
