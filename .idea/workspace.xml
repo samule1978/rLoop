@@ -19,8 +19,8 @@
           <file leaf-file-name="rLoop.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/rLoop.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="287">
-                  <caret line="33" column="77" lean-forward="true" selection-start-line="33" selection-start-column="77" selection-end-line="33" selection-end-column="77" />
+                <state relative-caret-position="175">
+                  <caret line="29" column="69" lean-forward="false" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
                   <folding />
                 </state>
               </provider>
@@ -476,12 +476,12 @@
       <workItem from="1516718621966" duration="9159000" />
       <workItem from="1516815895292" duration="9350000" />
       <workItem from="1516869744451" duration="18177000" />
-      <workItem from="1516981240517" duration="7762000" />
+      <workItem from="1516981240517" duration="8033000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99764000" />
+    <option name="totallyTimeSpent" value="100035000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="987" extended-state="6" />
@@ -938,8 +938,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/rLoop.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="33" column="77" lean-forward="true" selection-start-line="33" selection-start-column="77" selection-end-line="33" selection-end-column="77" />
+        <state relative-caret-position="175">
+          <caret line="29" column="69" lean-forward="false" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
           <folding />
         </state>
       </provider>
