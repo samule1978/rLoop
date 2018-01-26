@@ -18,15 +18,19 @@ $(document).ready(function () {
         //x += 90;
         //y += 90;
 
+        var containerHeight = $('.preloader-wrap').clientHeight;
+        var left =  containerHeight + y;
+        var right = containerHeight - y;
+
         $(".containerRLoopIcon").rotate(y + "deg");
-        $(".loader-wrap-top").clipPathPolygon(y);
+        $(".loader-wrap-top").clipPathPolygon(y, left, right);
 
         var debug = document.querySelector('.debug');
         debug.innerHTML  = "beta : " + x + "<br />";
         debug.innerHTML += "gamma: " + y + "<br />";
-        debug.innerHTML += "loader-wrap-top: " + $('.loader-wrap-top').clientHeight + "<br />";
-        debug.innerHTML += "left: " + ($('.loader-wrap-top').clientHeight - y) + "%" + "<br />";
-        debug.innerHTML += "right: " + ($('.loader-wrap-top').clientHeight + y) + "%" + "<br />";
+        debug.innerHTML += "preloader-wrap: " + containerHeight + "<br />";
+        debug.innerHTML += "left: " + left + "%" + "<br />";
+        debug.innerHTML += "right: " + right + "%" + "<br />";
     }
 
     $("#main").hide();
