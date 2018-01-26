@@ -4,6 +4,16 @@
  */
 
 $(document).ready(function () {
+    window.ondeviceorientation = function(event) {
+        if ($(this).finishedLoading()) {
+            if($(this).portrait()) {
+                degrees = Math.round(event.gamma);
+
+                $("#containerRLoopIcon").rotate(-degrees);
+            }
+        }
+    }
+
     $("#main").hide();
 
     isMobile = $(this).isMobile();

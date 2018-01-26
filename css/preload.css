@@ -46,19 +46,21 @@
 }
 .loader-wrap-top {
     width: 100%;
-    height: 50%;
+    height: 100%;
     background-color: #404040;
     position: absolute;
     left: 0px;
     top: 0px;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
 }
 .loader-wrap-bottom {
     width: 100%;
-    height: 50%;
+    height: 100%;
     background-color: #333333;
     position: absolute;
     left: 0px;
     bottom: 0px;
+    clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
 }
 .containerRLoopIcon {
     /*width: 200px;
