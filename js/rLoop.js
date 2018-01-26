@@ -19,7 +19,7 @@ $(document).ready(function () {
         //y += 90;
 
         $(".containerRLoopIcon").rotate(y + "deg");
-        $(".containerRLoopIcon").clipPathPolygon(y);
+        $(".loader-wrap-top").clipPathPolygon(y);
     }
 
     $("#main").hide();
