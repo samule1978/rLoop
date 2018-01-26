@@ -11,7 +11,7 @@ $(document).ready(function () {
         if($(this).portrait()) {
             $(".containerRLoopIcon").rotate(y + "deg");
             $(".loader-wrap-top").clipPathPolygonTop(y, 49.75 - y, 49.75 + y);
-            $(".loader-wrap-bottom").clipPathPolygonBottom(y, 49.75 - y, 49.75 + y);
+            $(".loader-wrap-bottom").clipPathPolygonBottom(y, 50.25 - y, 50.25 + y);
 
         } else {
             // Because we don't want to have the device upside down
@@ -25,7 +25,7 @@ $(document).ready(function () {
             //y += 90;
 
             $(".containerRLoopIcon").rotate(-x + "deg");
-            $(".loader-wrap-top").clipPathPolygonTop(x, 50.25 + x, 50.25 - x);
+            $(".loader-wrap-top").clipPathPolygonTop(x, 49.75 + x, 49.75 - x);
             $(".loader-wrap-bottom").clipPathPolygonBottom(x, 50.25 + x, 50.25 - x);
         }
 
