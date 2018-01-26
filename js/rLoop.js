@@ -4,13 +4,6 @@
  */
 
 $(document).ready(function () {
-    var preLoaderlogo   = document.querySelector('.preLoaderlogo');
-    var preloader = document.querySelector('.preloader');
-    var output = document.querySelector('.output');
-
-    var maxX = preloader.clientWidth  - preLoaderlogo.clientWidth;
-    var maxY = preloader.clientHeight - preLoaderlogo.clientHeight;
-
     window.ondeviceorientation = function(event) {
         var x = event.beta;  // In degree in the range [-180,180]
         var y = event.gamma; // In degree in the range [-90,90]
@@ -25,17 +18,7 @@ $(document).ready(function () {
         x += 90;
         y += 90;
 
-        // 10 is half the size of the preLoaderlogo
-        // It center the positioning point to the center of the preLoaderlogo
-        preLoaderlogo.style.top  = (maxX*x/(preloader.clientHeight) - (preLoaderlogo.clientHeight/2)) + "px";
-        preLoaderlogo.style.left = (maxY*y/(preloader.clientWidth) - (preLoaderlogo.clientWidth/2)) + "px";
-
-        output.innerHTML  = "beta : " + x + "\n";
-        output.innerHTML += "gamma: " + y + "\n";
-        output.innerHTML += "preloader : " + preloader.clientWidth + " x " + preloader.clientHeight + "\n";
-        output.innerHTML += "preLoaderlogo : " + preLoaderlogo.clientWidth + " x " + preLoaderlogo.clientHeight + "\n";
-        output.innerHTML += "top : " + preLoaderlogo.style.top + "\n";
-        output.innerHTML += "left : " + preLoaderlogo.style.left + "\n";
+        $(".containerRLoopIcon").rotate(y + "deg");
     }
 
     $("#main").hide();
