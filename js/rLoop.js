@@ -32,8 +32,8 @@ $(document).ready(function () {
 
         // 10 is half the size of the preLoaderlogo
         // It center the positioning point to the center of the preLoaderlogo
-        preLoaderlogo.style.top  = (maxX*x/180 - (preLoaderlogo.clientHeight/2)) + "px";
-        preLoaderlogo.style.left = (maxY*y/180 - (preLoaderlogo.clientWidth/2)) + "px";
+        preLoaderlogo.style.top  = (maxX*x/180 - (preLoaderlogo.clientHeight)) + "px";
+        preLoaderlogo.style.left = (maxY*y/180 - (preLoaderlogo.clientWidth)) + "px";
     }
 
     $("#main").hide();
