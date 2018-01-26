@@ -10,8 +10,8 @@ $(document).ready(function () {
 
         if($(this).portrait()) {
             $(".containerRLoopIcon").rotate(-y + "deg");
-            $(".loader-wrap-top").clipPathPolygonTop(y, 49.75 + y, 49.75 - y);
-            $(".loader-wrap-bottom").clipPathPolygonBottom(y, 50.25 + y, 50.25 - y);
+            $(".loader-wrap-top").clipPathPolygonTop(y, 49.85 + y, 49.85 - y);
+            $(".loader-wrap-bottom").clipPathPolygonBottom(y, 50.15 + y, 50.15 - y);
 
         } else {
             // Because we don't want to have the device upside down
@@ -24,14 +24,14 @@ $(document).ready(function () {
             //x += 90;
             //y += 90;
 
-            $(".containerRLoopIcon").rotate(-x + "deg");
-            $(".loader-wrap-top").clipPathPolygonTop(x, 49.75 + x, 49.75 - x);
-            $(".loader-wrap-bottom").clipPathPolygonBottom(x, 50.25 + x, 50.25 - x);
+            $(".containerRLoopIcon").rotate(x + "deg");
+            $(".loader-wrap-top").clipPathPolygonTop(x, 49.85 - x, 49.85 + x);
+            $(".loader-wrap-bottom").clipPathPolygonBottom(x, 50.15 - x, 50.15 + x);
         }
 
         var debug = document.querySelector('.debug');
-        debug.innerHTML  = "beta : " + x + "<br />";
-        debug.innerHTML += "gamma: " + y + "<br />";
+        debug.innerHTML  = "beta (x) : " + x + "<br />";
+        debug.innerHTML += "gamma (y) : " + y + "<br />";
     }
 
     $("#main").hide();
