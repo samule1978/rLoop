@@ -19,8 +19,8 @@
           <file leaf-file-name="rLoop.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/rLoop.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+                <state relative-caret-position="140">
+                  <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
@@ -463,12 +463,12 @@
       <workItem from="1516718621966" duration="9159000" />
       <workItem from="1516815895292" duration="9350000" />
       <workItem from="1516869744451" duration="18177000" />
-      <workItem from="1516981240517" duration="12511000" />
+      <workItem from="1516981240517" duration="12624000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104513000" />
+    <option name="totallyTimeSpent" value="104626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="987" extended-state="6" />
@@ -929,8 +929,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/rLoop.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        <state relative-caret-position="140">
+          <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
           <folding />
         </state>
       </provider>
