@@ -27,8 +27,8 @@ $(document).ready(function () {
 
         // 10 is half the size of the preLoaderlogo
         // It center the positioning point to the center of the preLoaderlogo
-        preLoaderlogo.style.top  = (maxX*x/(preLoaderlogo.clientHeight) - (preLoaderlogo.clientHeight/2)) + "px";
-        preLoaderlogo.style.left = (maxY*y/(preLoaderlogo.clientWidth) - (preLoaderlogo.clientWidth/2)) + "px";
+        preLoaderlogo.style.top  = (maxX*x/(preloader.clientHeight) - (preLoaderlogo.clientHeight/2)) + "px";
+        preLoaderlogo.style.left = (maxY*y/(preloader.clientWidth) - (preLoaderlogo.clientWidth/2)) + "px";
 
         output.innerHTML  = "beta : " + x + "\n";
         output.innerHTML += "gamma: " + y + "\n";
