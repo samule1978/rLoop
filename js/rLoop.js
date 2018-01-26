@@ -10,8 +10,8 @@ $(document).ready(function () {
         var left, right;
 
         if($(this).portrait()) {
-            left = 50 - y;
-            right = 50 + y;
+            left = 49 - y;
+            right = 49 + y;
 
             $(".containerRLoopIcon").rotate(y + "deg");
             $(".loader-wrap-top").clipPathPolygonTop(y, left, right);
@@ -28,8 +28,8 @@ $(document).ready(function () {
             //x += 90;
             //y += 90;
 
-            left = 50 + x;
-            right = 50 - x;
+            left = 49 + x;
+            right = 49 - x;
 
             $(".containerRLoopIcon").rotate(-x + "deg");
             $(".loader-wrap-top").clipPathPolygonTop(x, left, right);
