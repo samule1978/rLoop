@@ -101,11 +101,11 @@ $.fn.gyro = function() {
 
 $.fn.clipPathPolygonTop = function(degrees, leftCornerPercent, rightCornerPercent) {
     $(this).css({
-        '-webkit-clip-path' : 'polygon(0 0, 99% 0, 99% ' + rightCornerPercent + '%, 0 ' + leftCornerPercent + '%)',
-        '-moz-clip-path'    : 'polygon(0 0, 99% 0, 99% ' + rightCornerPercent + '%, 0 ' + leftCornerPercent + '%)',
-        '-ms-clip-path'     : 'polygon(0 0, 99% 0, 99% ' + rightCornerPercent + '%, 0 ' + leftCornerPercent + '%)',
-        '-o-clip-path'      : 'polygon(0 0, 99% 0, 99% ' + rightCornerPercent + '%, 0 ' + leftCornerPercent + '%)',
-        'clip-path'         : 'polygon(0 0, 99% 0, 99% ' + rightCornerPercent + '%, 0 ' + leftCornerPercent + '%)'
+        '-webkit-clip-path' : 'polygon(0 0, 100% 0, 100% ' + rightCornerPercent + '%, 0 ' + leftCornerPercent + '%)',
+        '-moz-clip-path'    : 'polygon(0 0, 100% 0, 100% ' + rightCornerPercent + '%, 0 ' + leftCornerPercent + '%)',
+        '-ms-clip-path'     : 'polygon(0 0, 100% 0, 100% ' + rightCornerPercent + '%, 0 ' + leftCornerPercent + '%)',
+        '-o-clip-path'      : 'polygon(0 0, 100% 0, 100% ' + rightCornerPercent + '%, 0 ' + leftCornerPercent + '%)',
+        'clip-path'         : 'polygon(0 0, 100% 0, 100% ' + rightCornerPercent + '%, 0 ' + leftCornerPercent + '%)'
     });
 
     return $(this);
@@ -113,11 +113,11 @@ $.fn.clipPathPolygonTop = function(degrees, leftCornerPercent, rightCornerPercen
 
 $.fn.clipPathPolygonBottom = function(degrees, leftCornerPercent, rightCornerPercent) {
     $(this).css({
-        '-webkit-clip-path' : 'polygon(0 ' + leftCornerPercent + '%, 99% ' + rightCornerPercent + '%, 99% 99%, 0 99%)',
-        '-moz-clip-path'    : 'polygon(0 ' + leftCornerPercent + '%, 99% ' + rightCornerPercent + '%, 99% 99%, 0 99%)',
-        '-ms-clip-path'     : 'polygon(0 ' + leftCornerPercent + '%, 99% ' + rightCornerPercent + '%, 99% 99%, 0 99%)',
-        '-o-clip-path'      : 'polygon(0 ' + leftCornerPercent + '%, 99% ' + rightCornerPercent + '%, 99% 99%, 0 99%)',
-        'clip-path'         : 'polygon(0 ' + leftCornerPercent + '%, 99% ' + rightCornerPercent + '%, 99% 99%, 0 99%)'
+        '-webkit-clip-path' : 'polygon(0 ' + leftCornerPercent + '%, 100% ' + rightCornerPercent + '%, 100% 100%, 0 100%)',
+        '-moz-clip-path'    : 'polygon(0 ' + leftCornerPercent + '%, 100% ' + rightCornerPercent + '%, 100% 100%, 0 100%)',
+        '-ms-clip-path'     : 'polygon(0 ' + leftCornerPercent + '%, 100% ' + rightCornerPercent + '%, 100% 100%, 0 100%)',
+        '-o-clip-path'      : 'polygon(0 ' + leftCornerPercent + '%, 100% ' + rightCornerPercent + '%, 100% 100%, 0 100%)',
+        'clip-path'         : 'polygon(0 ' + leftCornerPercent + '%, 100% ' + rightCornerPercent + '%, 100% 100%, 0 100%)'
     });
 
     return $(this);
