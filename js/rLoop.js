@@ -18,7 +18,9 @@ $(document).ready(function () {
         //x += 90;
         //y += 90;
 
-        var loaderWrapTop = document.querySelector('.loader-wrap-top').clientHeight;
+        x = math.round(x);
+        y = math.round(y);
+
         var left = 50 - y;
         var right = 50 + y;
 
@@ -29,7 +31,6 @@ $(document).ready(function () {
         var debug = document.querySelector('.debug');
         debug.innerHTML  = "beta : " + x + "<br />";
         debug.innerHTML += "gamma: " + y + "<br />";
-        debug.innerHTML += "loaderWrapTop: " + loaderWrapTop + "<br />";
         debug.innerHTML += "left: " + left + "%" + "<br />";
         debug.innerHTML += "right: " + right + "%" + "<br />";
     }
