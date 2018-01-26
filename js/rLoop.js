@@ -24,7 +24,7 @@ $(document).ready(function () {
 
         $(".containerRLoopIcon").rotate(y + "deg");
         $(".loader-wrap-top").clipPathPolygonTop(y, left, right);
-        $(".loader-wrap-top").clipPathPolygonTop(y, left, right);
+        $(".loader-wrap-bottom").clipPathPolygonTop(y, left, right);
 
         var debug = document.querySelector('.debug');
         debug.innerHTML  = "beta : " + x + "<br />";
