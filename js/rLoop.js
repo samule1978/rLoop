@@ -6,6 +6,7 @@
 $(document).ready(function () {
     var preLoaderlogo   = document.querySelector('.preLoaderlogo');
     var preloader = document.querySelector('.preloader');
+    var output = document.querySelector('.output');
 
     var maxX = preloader.clientWidth  - preLoaderlogo.clientWidth;
     var maxY = preloader.clientHeight - preLoaderlogo.clientHeight;
@@ -16,8 +17,8 @@ $(document).ready(function () {
 
         output.innerHTML  = "beta : " + x + "\n";
         output.innerHTML += "gamma: " + y + "\n";
-        output.innerHTML  = "preloader : " + preloader.clientWidth + " x " + preloader.clientHeight + "\n";
-        output.innerHTML  = "preLoaderlogo : " + preLoaderlogo.clientWidth + " x " + preLoaderlogo.clientHeight + "\n";
+        output.innerHTML += "preloader : " + preloader.clientWidth + " x " + preloader.clientHeight + "\n";
+        output.innerHTML += "preLoaderlogo : " + preLoaderlogo.clientWidth + " x " + preLoaderlogo.clientHeight + "\n";
 
         // Because we don't want to have the device upside down
         // We constrain the x value to the range [-90,90]
