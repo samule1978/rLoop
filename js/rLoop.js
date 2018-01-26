@@ -28,10 +28,10 @@ $(document).ready(function () {
             //x += 90;
             //y += 90;
 
-            left = 50 - x;
-            right = 50 + x;
+            left = 50 + x;
+            right = 50 - x;
 
-            $(".containerRLoopIcon").rotate(x + "deg");
+            $(".containerRLoopIcon").rotate(-x + "deg");
             $(".loader-wrap-top").clipPathPolygonTop(x, left, right);
             $(".loader-wrap-bottom").clipPathPolygonBottom(x, left, right);
         }
