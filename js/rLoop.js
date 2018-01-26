@@ -15,10 +15,11 @@ $(document).ready(function () {
 
         // To make computation easier we shift the range of
         // x and y to [0,180]
-        x += 90;
-        y += 90;
+        //x += 90;
+        //y += 90;
 
         $(".containerRLoopIcon").rotate(y + "deg");
+        $(".containerRLoopIcon").clipPathPolygon(y);
     }
 
     $("#main").hide();

@@ -99,6 +99,21 @@ $.fn.gyro = function() {
     }
 };
 
+$.fn.clipPathPolygon = function(degrees) {
+    var leftCorner = '50%';
+    var rightCorner = degrees + '%';
+
+    $(this).css({
+        '-webkit-clip-path' : 'polygon(0 0, 100% 0, 100% ' + rightCorner + ', 0 ' + leftCorner + ')',
+        '-moz-clip-path'    : 'polygon(0 0, 100% 0, 100% ' + rightCorner + ', 0 ' + leftCorner + ')',
+        '-ms-clip-path'     : 'polygon(0 0, 100% 0, 100% ' + rightCorner + ', 0 ' + leftCorner + ')',
+        '-o-clip-path'      : 'polygon(0 0, 100% 0, 100% ' + rightCorner + ', 0 ' + leftCorner + ')',
+        'clip-path'         : 'polygon(0 0, 100% 0, 100% ' + rightCorner + ', 0 ' + leftCorner + ')'
+    });
+
+    return $(this);
+};
+
 $.fn.portrait = function() {
     return window.innerHeight > window.innerWidth;
 };
