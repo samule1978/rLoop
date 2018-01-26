@@ -20,6 +20,10 @@ $(document).ready(function () {
 
         $(".containerRLoopIcon").rotate(y + "deg");
         $(".loader-wrap-top").clipPathPolygon(y);
+
+        var debug = document.querySelector('.debug');
+        debug.innerHTML  = "beta : " + x + "\n";
+        debug.innerHTML += "gamma: " + y + "\n";
     }
 
     $("#main").hide();

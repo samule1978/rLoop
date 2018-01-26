@@ -10,6 +10,13 @@ html{
     height: 100%;
 }
 
+.debug {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 100;
+}
+
 body {
     font-family:  'Roboto Slab', serif;
     /*background-color: rgb(200, 200, 200);*/
