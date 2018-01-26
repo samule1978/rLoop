@@ -7,7 +7,6 @@ $(document).ready(function () {
     window.ondeviceorientation = function(event) {
         var x = Math.round(event.beta);  // In degree in the range [-180,180]
         var y = Math.round(event.gamma); // In degree in the range [-90,90]
-        var left, right;
 
         if($(this).portrait()) {
             $(".containerRLoopIcon").rotate(y + "deg");
@@ -33,8 +32,6 @@ $(document).ready(function () {
         var debug = document.querySelector('.debug');
         debug.innerHTML  = "beta : " + x + "<br />";
         debug.innerHTML += "gamma: " + y + "<br />";
-        debug.innerHTML += "left: " + left + "%" + "<br />";
-        debug.innerHTML += "right: " + right + "%" + "<br />";
     }
 
     $("#main").hide();
