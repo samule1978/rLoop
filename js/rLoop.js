@@ -5,7 +5,7 @@
 
 $(document).ready(function () {
     window.ondeviceorientation = function(event) {
-        degrees = Math.round(event.gamma);
+        var degrees = Math.round(event.gamma);
 
         $("#containerRLoopIcon").rotate(-degrees);
     }
