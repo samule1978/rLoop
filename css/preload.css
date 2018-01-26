@@ -7,6 +7,7 @@
     /*background: #ffffff;*/
     background: #000000;
     visibility: visible;
+    z-index: 99;
 }
 .loader {
     height: 5px;

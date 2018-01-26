@@ -57,35 +57,25 @@ body {
     cursor: pointer;
 }
 
-/*#spinLogo,
-#spiniPhoneX {
-    display: block;
-    margin: 0px auto;
-    width: 200px;
-}*/
-/*#containerSpinLogo {
-
+.spinlogo-wrap {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background: transparent;
 }
-#spinLogo {
-    position: relative;
-    width: 20%;
-    left: 40%;
-    z-index: 1;
-}
-#spiniPhoneX {
-    position: absolute;
-    width: 20%;
-    left: 40%;
-    z-index: 2;
-}*/
 #containerSpinLogo {
     /*width: 200px;
     height: 98px;*/
     width: 300px;
     height: 147px;
-    display: block;
-    margin: auto;
-    position: relative;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin : auto;
 }
 #spinLogo {
     width: 100%;
@@ -98,4 +88,32 @@ body {
     position: absolute;
 }
 
+
+/* Full Page Overrides */
+.fp-controlArrow.fp-prev {
+    left: 15px;
+    width: 6vh;
+    height: 6vh;
+    border: none;
+
+    background: url(../img/btn/arrow.png) no-repeat center center;
+    background-size: cover;
+
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+}
+.fp-controlArrow.fp-next {
+    right: 15px;
+    width: 6vh;
+    height: 6vh;
+    border: none;
+
+    background: url(../img/btn/arrow.png) no-repeat center center;
+    background-size: cover;
+
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+}
 
