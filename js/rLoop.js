@@ -24,6 +24,7 @@ $(document).ready(function () {
         var debug = document.querySelector('.debug');
         debug.innerHTML  = "beta : " + x + "<br />";
         debug.innerHTML += "gamma: " + y + "<br />";
+        debug.innerHTML += "loader-wrap-top: " + $('.loader-wrap-top').clientHeight + "<br />";
         debug.innerHTML += "left: " + ($('.loader-wrap-top').clientHeight - y) + "%" + "<br />";
         debug.innerHTML += "right: " + ($('.loader-wrap-top').clientHeight + y) + "%" + "<br />";
     }
