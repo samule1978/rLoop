@@ -24,9 +24,7 @@ $(document).ready(function () {
         var left = 50 - y;
         var right = 50 + y;
 
-        var containerRLoopIcon = document.querySelector('.containerRLoopIcon');
-
-        containerRLoopIcon.rotate(y + "deg");
+        $(".containerRLoopIcon").rotate(y + "deg");
         $(".loader-wrap-top").clipPathPolygonTop(y, left, right);
         $(".loader-wrap-bottom").clipPathPolygonBottom(y, left, right);
 
