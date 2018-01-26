@@ -18,9 +18,9 @@ $(document).ready(function () {
         //x += 90;
         //y += 90;
 
-        var containerHeight = $('.preloader-wrap').clientHeight;
-        var left =  containerHeight + y;
-        var right = containerHeight - y;
+        var loaderWrapTop = document.querySelector('.loader-wrap-top').clientHeight;
+        var left = 50 + y;
+        var right = 50 - y;
 
         $(".containerRLoopIcon").rotate(y + "deg");
         $(".loader-wrap-top").clipPathPolygon(y, left, right);
@@ -28,7 +28,7 @@ $(document).ready(function () {
         var debug = document.querySelector('.debug');
         debug.innerHTML  = "beta : " + x + "<br />";
         debug.innerHTML += "gamma: " + y + "<br />";
-        debug.innerHTML += "preloader-wrap: " + containerHeight + "<br />";
+        debug.innerHTML += "loaderWrapTop: " + loaderWrapTop + "<br />";
         debug.innerHTML += "left: " + left + "%" + "<br />";
         debug.innerHTML += "right: " + right + "%" + "<br />";
     }
