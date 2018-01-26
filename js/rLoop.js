@@ -22,10 +22,10 @@ $(document).ready(function () {
         $(".loader-wrap-top").clipPathPolygon(y);
 
         var debug = document.querySelector('.debug');
-        /*debug.innerHTML  = "beta : " + x + "<br />";
-        debug.innerHTML += "gamma: " + y + "<br />";*/
-        debug.innerHTML = "left: " + $('.loader-wrap-top').clientHeight - degrees + "%" + "<br />";
-        debug.innerHTML += "right: " + $('.loader-wrap-top').clientHeight + degrees + "%" + "<br />";
+        debug.innerHTML  = "beta : " + x + "<br />";
+        debug.innerHTML += "gamma: " + y + "<br />";
+        debug.innerHTML += "left: " + ($('.loader-wrap-top').clientHeight - y) + "%" + "<br />";
+        debug.innerHTML += "right: " + ($('.loader-wrap-top').clientHeight + y) + "%" + "<br />";
     }
 
     $("#main").hide();
