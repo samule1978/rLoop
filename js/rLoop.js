@@ -18,8 +18,8 @@ $(document).ready(function () {
         //x += 90;
         //y += 90;
 
-        x = math.round(x);
-        y = math.round(y);
+        x = Math.round(x);
+        y = Math.round(y);
 
         var left = 50 - y;
         var right = 50 + y;
