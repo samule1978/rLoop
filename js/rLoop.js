@@ -19,11 +19,12 @@ $(document).ready(function () {
         //y += 90;
 
         var loaderWrapTop = document.querySelector('.loader-wrap-top').clientHeight;
-        var left = 50 + y;
-        var right = 50 - y;
+        var left = 50 - y;
+        var right = 50 + y;
 
         $(".containerRLoopIcon").rotate(y + "deg");
-        $(".loader-wrap-top").clipPathPolygon(y, left, right);
+        $(".loader-wrap-top").clipPathPolygonTop(y, left, right);
+        $(".loader-wrap-top").clipPathPolygonTop(y, left, right);
 
         var debug = document.querySelector('.debug');
         debug.innerHTML  = "beta : " + x + "<br />";
