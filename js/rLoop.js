@@ -4,10 +4,30 @@
  */
 
 $(document).ready(function () {
-    window.ondeviceorientation = function(event) {
-        degrees = Math.round(event.gamma);
+    var preLoaderlogo   = document.querySelector('.preLoaderlogo');
+    var preloader = document.querySelector('.preloader');
 
-        $("#containerRLoopIcon").rotate(-degrees);
+    var maxX = preloader.clientWidth  - preLoaderlogo.clientWidth;
+    var maxY = preloader.clientHeight - preLoaderlogo.clientHeight;
+
+    window.ondeviceorientation = function(event) {
+        var x = event.beta;  // In degree in the range [-180,180]
+        var y = event.gamma; // In degree in the range [-90,90]
+
+        // Because we don't want to have the device upside down
+        // We constrain the x value to the range [-90,90]
+        if (x >  90) { x =  90};
+        if (x < -90) { x = -90};
+
+        // To make computation easier we shift the range of
+        // x and y to [0,180]
+        x += 90;
+        y += 90;
+
+        // 10 is half the size of the preLoaderlogo
+        // It center the positioning point to the center of the preLoaderlogo
+        preLoaderlogo.style.top  = (maxX*x/180 - 10) + "px";
+        preLoaderlogo.style.left = (maxY*y/180 - 10) + "px";
     }
 
     $("#main").hide();
