@@ -142,13 +142,13 @@ $.fn.load = function() {
     }, time);
 
     // Loadbar Animation on Finished
-    setTimeout(function(){
+    /*setTimeout(function(){
         $(".preloader-wrap").addClass("hide").delay(2000).queue(function(){
             $(this).addClass("finished").dequeue().delay(1000).queue(function(){
                 //$(this).setup();
             });
         });
-    }, time);
+    }, time);*/
 };
 
 $.fn.finishedLoading = function() {
