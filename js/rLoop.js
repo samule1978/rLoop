@@ -9,8 +9,8 @@ $(document).ready(function () {
         var y = Math.round(event.gamma); // In degree in the range [-90,90]
 
         if($(this).portrait()) {
-            if (y > 180) { y = 180};
-            if (y < -180) { y = -180};
+            if (y > 90) { y = 90};
+            if (y < -90) { y = -90};
             
             $(".containerRLoopIcon").rotate(-y + "deg");
             $(".loader-wrap-top").clipPathPolygonTop(y, 49.85 + y, 49.85 - y);
