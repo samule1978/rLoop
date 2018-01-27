@@ -13,7 +13,7 @@ $(document).ready(function () {
             if (y > 90) { y = 90};
             if (y < -90) { y = -90};
 		
-	y = y*0.15;
+	        y = y*0.15;
             degrees = -y;
 		
             $(".containerRLoopIcon").rotate(degrees + "deg");
