@@ -42,5 +42,5 @@ $(document).ready(function () {
     isMobile = $(this).isMobile();
     if (!isMobile) $('#spiniPhoneX').hide();
 
-    //$(this).load();
+    $(this).load();
 });
