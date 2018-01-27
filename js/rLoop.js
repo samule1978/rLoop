@@ -17,8 +17,8 @@ $(document).ready(function () {
             degrees = -y;
 		
             $(".containerRLoopIcon").rotate(degrees + "deg");
-            $(".loader-wrap-top").clipPathPolygonTop(y, 69.85 + y, 69.85 - y);
-            $(".loader-wrap-bottom").clipPathPolygonBottom(y, 70.15 + y, 70.15 - y);
+            $(".loader-wrap-top").clipPathPolygonTop(y, 89.85 + y, 89.85 - y);
+            $(".loader-wrap-bottom").clipPathPolygonBottom(y, 90.15 + y, 90.15 - y);
 
         } else {
             // Because we don't want to have the device upside down
@@ -34,8 +34,8 @@ $(document).ready(function () {
             degrees = x;
 
             $(".containerRLoopIcon").rotate(degrees + "deg");
-            $(".loader-wrap-top").clipPathPolygonTop(x, 69.85 - x, 69.85 + x);
-            $(".loader-wrap-bottom").clipPathPolygonBottom(x, 30.15 - x, 30.15 + x);
+            $(".loader-wrap-top").clipPathPolygonTop(x, 89.85 - x, 89.85 + x);
+            $(".loader-wrap-bottom").clipPathPolygonBottom(x, 90.15 - x, 90.15 + x);
         }
 
         var debug = document.querySelector('.debug');
