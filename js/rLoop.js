@@ -7,12 +7,15 @@ $(document).ready(function () {
     window.ondeviceorientation = function(event) {
         var x = Math.round(event.beta);  // In degree in the range [-180,180]
         var y = Math.round(event.gamma); // In degree in the range [-90,90]
-
+        var degrees;
+		
         if($(this).portrait()) {
             if (y > 90) { y = 90};
             if (y < -90) { y = -90};
             
-            $(".containerRLoopIcon").rotate(-y + "deg");
+            degrees = -y;
+            
+            $(".containerRLoopIcon").rotate(degrees + "deg");
             $(".loader-wrap-top").clipPathPolygonTop(y, 49.85 + y, 49.85 - y);
             $(".loader-wrap-bottom").clipPathPolygonBottom(y, 50.15 + y, 50.15 - y);
 
@@ -26,8 +29,10 @@ $(document).ready(function () {
             // x and y to [0,180]
             //x += 90;
             //y += 90;
+			
+			degrees = x;
 
-            $(".containerRLoopIcon").rotate(x + "deg");
+            $(".containerRLoopIcon").rotate(degrees + "deg");
             $(".loader-wrap-top").clipPathPolygonTop(x, 49.85 - x, 49.85 + x);
             $(".loader-wrap-bottom").clipPathPolygonBottom(x, 50.15 - x, 50.15 + x);
         }
