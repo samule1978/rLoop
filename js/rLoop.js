@@ -18,7 +18,7 @@ $(document).ready(function () {
 		
             $(".containerRLoopIcon").rotate(degrees + "deg");
             $(".loader-wrap-top").clipPathPolygonTop(y, 69.85 + y, 69.85 - y);
-            $(".loader-wrap-bottom").clipPathPolygonBottom(y, 30.15 + y, 30.15 - y);
+            $(".loader-wrap-bottom").clipPathPolygonBottom(y, 70.15 + y, 70.15 - y);
 
         } else {
             // Because we don't want to have the device upside down
