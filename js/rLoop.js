@@ -10,11 +10,11 @@ $(document).ready(function () {
         var degrees;
 		
         if($(this).portrait()) {
-            if (y > 90) { y = 90};
-            if (y < -90) { y = -90};
+            if (y > 45) { y = 45};
+            if (y < -45) { y = -45};
 	
             degrees = -y;
-		y = y*0.5;
+		y = y*0.25;
             $(".containerRLoopIcon").rotate(degrees + "deg");
             $(".loader-wrap-top").clipPathPolygonTop(y, 49.85 + y, 49.85 - y);
             $(".loader-wrap-bottom").clipPathPolygonBottom(y, 50.15 + y, 50.15 - y);
