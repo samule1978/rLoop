@@ -5,8 +5,8 @@
 
 $(document).ready(function () {
     window.ondeviceorientation = function(event) {
-        var x = Math.round(event.beta) / 10;  // In degree in the range [-180,180]
-        var y = Math.round(event.gamma) / 10; // In degree in the range [-90,90]
+        var x = Math.round(event.beta); // In degree in the range [-180,180]
+        var y = Math.round(event.gamma); // In degree in the range [-90,90]
         var degrees;
 		
         if($(this).portrait()) {
@@ -14,7 +14,7 @@ $(document).ready(function () {
             if (y < -90) { y = -90};
 	
             degrees = -y;
-            
+		y = y*0.5;
             $(".containerRLoopIcon").rotate(degrees + "deg");
             $(".loader-wrap-top").clipPathPolygonTop(y, 49.85 + y, 49.85 - y);
             $(".loader-wrap-bottom").clipPathPolygonBottom(y, 50.15 + y, 50.15 - y);
