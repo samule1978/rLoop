@@ -32,6 +32,12 @@
 .trackbar {
     position: relative;
     background-color: #404040;/*#ebebeb;*/
+    background-image: url(../img/bg/stars.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
     width:100%;
     height: 100%;
     overflow: hidden;
@@ -49,6 +55,13 @@
     width: 100%;
     height: 100%;
     background-color: #404040;
+    background-image: url(../img/bg/stars.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+    
     position: absolute;
     left: 0px;
     top: 0px;
