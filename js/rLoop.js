@@ -5,8 +5,8 @@
 
 $(document).ready(function () {
     window.ondeviceorientation = function(event) {
-        var x = Math.round(event.beta);  // In degree in the range [-180,180]
-        var y = Math.round(event.gamma); // In degree in the range [-90,90]
+        var x = Math.round(event.beta) / 10;  // In degree in the range [-180,180]
+        var y = Math.round(event.gamma) / 10; // In degree in the range [-90,90]
         var degrees;
 		
         if($(this).portrait()) {
