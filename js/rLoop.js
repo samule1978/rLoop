@@ -15,7 +15,7 @@ $(document).ready(function () {
 		
 	
             var containerRLoopIcon = document.querySelector('.containerRLoopIcon');
-            degrees = -y + (containerRLoopIcon.clientHeight / 2);
+            degrees = -y - (containerRLoopIcon.clientHeight / 2);
             
             $(".containerRLoopIcon").rotate(degrees + "deg");
             $(".loader-wrap-top").clipPathPolygonTop(y, 49.85 + y, 49.85 - y);
@@ -33,7 +33,7 @@ $(document).ready(function () {
             //y += 90;
 		
 	var containerRLoopIcon = document.querySelector('.containerRLoopIcon');
-            degrees = x + (containerRLoopIcon.clientHeight / 2);
+            degrees = x - (containerRLoopIcon.clientHeight / 2);
 
             $(".containerRLoopIcon").rotate(degrees + "deg");
             $(".loader-wrap-top").clipPathPolygonTop(x, 49.85 - x, 49.85 + x);
