@@ -141,6 +141,10 @@ $.fn.load = function() {
         var y = Math.round(event.gamma); // In degree in the range [-90,90]
         var degrees;
 
+        var thresholdGap = 0.3;
+        var thresholdTop = 79.85;
+        var thresholdBottom = thresholdTop + thresholdGap;
+
         if($(this).portrait()) {
             // Because we don't want to have the device upside down
             // We constrain the y value to the range [-90,90]
@@ -151,8 +155,8 @@ $.fn.load = function() {
             degrees = -y;
 
             $(".containerRLoopIcon").rotate(degrees + "deg");
-            $(".loader-wrap-top").clipPathPolygonTop(y, 79.85 + y, 79.85 - y);
-            $(".loader-wrap-bottom").clipPathPolygonBottom(y, 80.15 + y, 80.15 - y);
+            $(".loader-wrap-top").clipPathPolygonTop(y, thresholdTop + y, thresholdTop - y);
+            $(".loader-wrap-bottom").clipPathPolygonBottom(y, thresholdBottom + y, thresholdBottom - y);
 
         } else {
             // Because we don't want to have the device upside down
@@ -168,13 +172,8 @@ $.fn.load = function() {
             degrees = x;
 
             $(".containerRLoopIcon").rotate(degrees + "deg");
-            $(".loader-wrap-top").clipPathPolygonTop(x, 79.85 - x, 79.85 + x);
-            $(".loader-wrap-bottom").clipPathPolygonBottom(x, 80.15 - x, 80.15 + x);
-        }
-        
-        if (showDebug) {
-            debug.innerHTML  = "beta (x) : " + x + "<br />";
-            debug.innerHTML += "gamma (y) : " + y + "<br />";
+            $(".loader-wrap-top").clipPathPolygonTop(x, thresholdTop - x, thresholdTop + x);
+            $(".loader-wrap-bottom").clipPathPolygonBottom(x, thresholdBottom - x, thresholdBottom + x);
         }
     }
 
