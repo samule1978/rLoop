@@ -161,15 +161,18 @@ $.fn.load = function() {
 
         if($(this).portrait()) {
             // Because we don't want to have the device upside down
-            // We constrain the y value to the range [-45,45]
+            // We constrain the y value to the range [-90,90]
             if (y >  90) { y =  90};
             if (y < -90) { y = -90};
 
             y = y*0.15; // In portrait reduce amount of velocity on y axis
             degrees = -y;
 
+            if (x >  90) { x =  90};
+            if (x < -90) { x = -90};
+            sam = thresholdMinTop + (thresholdMaxTop / 90) * Math.abs(Math.round(x) / 90);
+
             thresholdTop = thresholdMinTop + thresholdMaxTop;
-            sam = thresholdTop - (thresholdMaxTop / 180) * Math.abs(Math.round(y));
             thresholdBottom = thresholdTop + thresholdGap;
 
             $(".containerRLoopIcon").rotate(degrees + "deg");
@@ -184,7 +187,6 @@ $.fn.load = function() {
             degrees = x;
 
             thresholdTop = thresholdMinTop + thresholdMaxTop;
-            sam = thresholdTop - (thresholdMaxTop / 180) * Math.abs(Math.round(x));
             thresholdBottom = thresholdTop + thresholdGap;
 
             $(".containerRLoopIcon").rotate(degrees + "deg");
