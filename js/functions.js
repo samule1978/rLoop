@@ -147,9 +147,9 @@ $.fn.load = function() {
 
         if($(this).portrait()) {
             // Because we don't want to have the device upside down
-            // We constrain the y value to the range [-90,90]
-            if (y > 90) { y = 90};
-            if (y < -90) { y = -90};
+            // We constrain the y value to the range [-45,45]
+            if (y > 45) { y = 45};
+            if (y < -45) { y = -45};
 
             y = y*0.15; // In portrait reduce amount of velocity on y axis
             degrees = -y;
