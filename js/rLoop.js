@@ -4,6 +4,7 @@
  */
 
 var showDebug = true;
+var debug = document.querySelector('.debug');
 
 $(document).ready(function () {
     $("#main").hide();
