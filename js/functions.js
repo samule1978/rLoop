@@ -191,6 +191,8 @@ $.fn.load = function() {
         debug.innerHTML = "Alpha : " + event.alpha + "<br />";
         debug.innerHTML += "Beta : " + event.beta + "<br />";
         debug.innerHTML += "Gamma : " + event.gamma + "<br />";
+        debug.innerHTML += "thresholdTop : " + thresholdTop + "<br />";
+        debug.innerHTML += "thresholdBottom : " + thresholdBottom + "<br />";
     }
 
     // Loadbar Animation
