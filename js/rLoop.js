@@ -4,44 +4,8 @@
  */
 
 $(document).ready(function () {
-    window.ondeviceorientation = function(event) {
-        var x = Math.round(event.beta); // In degree in the range [-180,180]
-        var y = Math.round(event.gamma); // In degree in the range [-90,90]
-        var degrees;
-		
-        if($(this).portrait()) {
-            if (y > 90) { y = 90};
-            if (y < -90) { y = -90};
-		
-	        y = y*0.15;
-            degrees = -y;
-		
-            $(".containerRLoopIcon").rotate(degrees + "deg");
-            $(".loader-wrap-top").clipPathPolygonTop(y, 79.85 + y, 79.85 - y);
-            $(".loader-wrap-bottom").clipPathPolygonBottom(y, 80.15 + y, 80.15 - y);
-
-        } else {
-            // Because we don't want to have the device upside down
-            // We constrain the x value to the range [-90,90]
-            if (x >  90) { x =  90};
-            if (x < -90) { x = -90};
-
-            // To make computation easier we shift the range of
-            // x and y to [0,180]
-            //x += 90;
-            //y += 90;
-		
-            degrees = x;
-
-            $(".containerRLoopIcon").rotate(degrees + "deg");
-            $(".loader-wrap-top").clipPathPolygonTop(x, 79.85 - x, 79.85 + x);
-            $(".loader-wrap-bottom").clipPathPolygonBottom(x, 80.15 - x, 80.15 + x);
-        }
-
-        var debug = document.querySelector('.debug');
-        debug.innerHTML  = "beta (x) : " + x + "<br />";
-        debug.innerHTML += "gamma (y) : " + y + "<br />";
-    }
+    var showDebug = true;
+    var debug = document.querySelector('.debug');
 
     $("#main").hide();
 
