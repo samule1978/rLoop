@@ -4,7 +4,6 @@
  */
 
 var showDebug = false;
-var debug = document.querySelector('.debug');
 
 $(document).ready(function () {
     showDebug = true;
@@ -23,8 +22,8 @@ $.fn.showDebugInfo = function() {
 
     // Show Gyro Info
     window.ondeviceorientation = function(event) {
-        debug.innerHTML += "Alpha : " + event.alpha + "<br />";
-        debug.innerHTML += "Beta : " + event.beta + "<br />";
-        debug.innerHTML += "Gamma : " + event.gamma + "<br />";
+        $(this).debugLog("Alpha : " + event.alpha);
+        $(this).debugLog("Beta : " + event.beta);
+        $(this).debugLog("Gamma : " + event.gamma);
     }
 };

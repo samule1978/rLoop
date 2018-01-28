@@ -195,3 +195,9 @@ $.fn.load = function() {
 $.fn.finishedLoading = function() {
     return $(".preloader-wrap").hasClass("finished");
 };
+
+$.fn.debugLog = function(statement) {
+    var debug = document.querySelector('.debug');
+
+    debug.innerHTML += statement + "<br />";
+};
