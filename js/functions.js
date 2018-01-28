@@ -157,7 +157,6 @@ $.fn.load = function() {
         var thresholdMaxTop = 29.85;
         var thresholdTop;
         var thresholdBottom;
-        var sam;
 
         if($(this).portrait()) {
             // Because we don't want to have the device upside down
@@ -170,9 +169,8 @@ $.fn.load = function() {
 
             if (x >  90) { x =  90};
             if (x < -90) { x = -90};
-            sam = thresholdMinTop + Math.round(Math.abs(((thresholdMaxTop / 90) * x)));
-
-            thresholdTop = thresholdMinTop + thresholdMaxTop;
+            thresholdTop = thresholdMinTop + Math.round(Math.abs(((thresholdMaxTop / 90) * x)));
+            //thresholdTop = thresholdMinTop + thresholdMaxTop;
             thresholdBottom = thresholdTop + thresholdGap;
 
             $(".containerRLoopIcon").rotate(degrees + "deg");
@@ -186,7 +184,10 @@ $.fn.load = function() {
 
             degrees = x;
 
-            thresholdTop = thresholdMinTop + thresholdMaxTop;
+            if (y >  90) { y =  90};
+            if (y < -90) { y = -90};
+            thresholdTop = thresholdMinTop + Math.round(Math.abs(((thresholdMaxTop / 90) * y)));
+            //thresholdTop = thresholdMinTop + thresholdMaxTop;
             thresholdBottom = thresholdTop + thresholdGap;
 
             $(".containerRLoopIcon").rotate(degrees + "deg");
@@ -203,7 +204,6 @@ $.fn.load = function() {
         debug.innerHTML += "z : " + z + "<br />";
         debug.innerHTML += "thresholdTop : " + thresholdTop + "<br />";
         debug.innerHTML += "thresholdBottom : " + thresholdBottom + "<br />";
-        debug.innerHTML += "sam : " + sam + "<br />";
     }
 
     // Loadbar Animation
