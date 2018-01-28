@@ -151,7 +151,7 @@ $.fn.load = function() {
             if (y > 45) { y = 45};
             if (y < -45) { y = -45};
 
-            y = y*0.15; // In portrait reduce amount of velocity on y axis
+            //y = y*0.15; // In portrait reduce amount of velocity on y axis
             degrees = -y;
 
             $(".containerRLoopIcon").rotate(degrees + "deg");
