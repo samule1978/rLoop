@@ -170,7 +170,7 @@ $.fn.load = function() {
 
             if (x >  90) { x =  90};
             if (x < -90) { x = -90};
-            sam = thresholdMinTop + (thresholdMaxTop / 90) * Math.abs(Math.round(x) / 90);
+            sam = thresholdMinTop + Math.round(Math.abs(((thresholdMaxTop / 90) * x)));
 
             thresholdTop = thresholdMinTop + thresholdMaxTop;
             thresholdBottom = thresholdTop + thresholdGap;
