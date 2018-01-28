@@ -155,8 +155,8 @@ $.fn.load = function() {
         var thresholdGap = 0.3;
         var thresholdMinTop = 50;
         var thresholdMaxTop = 29.85;
-        var thresholdTop = thresholdMinTop + thresholdMaxTop;
-        var thresholdBottom = thresholdTop + thresholdGap;
+        var thresholdTop;
+        var thresholdBottom;
         var sam;
 
         if($(this).portrait()) {
