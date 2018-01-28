@@ -137,11 +137,6 @@ $.fn.isMobile = function() {
 
 $.fn.load = function() {
     window.ondeviceorientation = function(event) {
-        var debug = document.querySelector('.debug');
-        debug.innerHTML = "Alpha : " + event.alpha + "<br />";
-        debug.innerHTML += "Beta : " + event.beta + "<br />";
-        debug.innerHTML += "Gamma : " + event.gamma + "<br />";
-
         var z, gamma = Math.round(event.alpha); // In degree in the range [0,360] - z-axis
         var x, beta = Math.round(event.beta); // In degree in the range [-180,180] - front to back
         var y, gamma = Math.round(event.gamma); // In degree in the range [-90,90] - left to right
@@ -164,7 +159,7 @@ $.fn.load = function() {
             y = y*0.15; // In portrait reduce amount of velocity on y axis
             degrees = -y;
 
-            thresholdMaxTop = (180 / thresholdMaxTop) * Math.abs(Math.round(beta));
+            thresholdMaxTop = (180 / thresholdMinTop) * Math.abs(Math.round(beta));
             thresholdTop = thresholdMinTop + thresholdMaxTop;
             thresholdBottom = thresholdTop + thresholdGap;
 
@@ -191,6 +186,11 @@ $.fn.load = function() {
             $(".loader-wrap-top").clipPathPolygonTop(x, thresholdTop - x, thresholdTop + x);
             $(".loader-wrap-bottom").clipPathPolygonBottom(x, thresholdBottom - x, thresholdBottom + x);
         }
+
+        var debug = document.querySelector('.debug');
+        debug.innerHTML = "Alpha : " + event.alpha + "<br />";
+        debug.innerHTML += "Beta : " + event.beta + "<br />";
+        debug.innerHTML += "Gamma : " + event.gamma + "<br />";
     }
 
     // Loadbar Animation
