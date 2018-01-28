@@ -142,13 +142,18 @@ $.fn.load = function() {
         debug.innerHTML += "Beta : " + event.beta + "<br />";
         debug.innerHTML += "Gamma : " + event.gamma + "<br />";
 
-        var x = Math.round(event.beta); // In degree in the range [-180,180] - front to back
-        var y = Math.round(event.gamma); // In degree in the range [-90,90] - left to right
+        var z, gamma = Math.round(event.alpha); // In degree in the range [0,360] - z-axis
+        var x, beta = Math.round(event.beta); // In degree in the range [-180,180] - front to back
+        var y, gamma = Math.round(event.gamma); // In degree in the range [-90,90] - left to right
+
         var degrees;
 
+        // Default values
         var thresholdGap = 0.3;
-        var thresholdTop = 79.85;
-        var thresholdBottom;
+        var thresholdMinTop = 50;
+        var thresholdMaxTop = 29.85;
+        var thresholdTop = thresholdMinTop + thresholdMaxTop;
+        var thresholdBottom = thresholdTop + thresholdGap;
 
         if($(this).portrait()) {
             // Because we don't want to have the device upside down
@@ -159,6 +164,8 @@ $.fn.load = function() {
             y = y*0.15; // In portrait reduce amount of velocity on y axis
             degrees = -y;
 
+            thresholdMaxTop = (180 / thresholdMaxTop) * Math.abs(Math.round(beta));
+            thresholdTop = thresholdMinTop + thresholdMaxTop;
             thresholdBottom = thresholdTop + thresholdGap;
 
             $(".containerRLoopIcon").rotate(degrees + "deg");
@@ -177,6 +184,7 @@ $.fn.load = function() {
 
             degrees = x;
 
+            thresholdTop = thresholdMinTop + thresholdMaxTop;
             thresholdBottom = thresholdTop + thresholdGap;
 
             $(".containerRLoopIcon").rotate(degrees + "deg");
