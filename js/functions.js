@@ -168,9 +168,8 @@ $.fn.load = function() {
             y = y*0.15; // In portrait reduce amount of velocity on y axis
             degrees = -y;
 
-            sam = (thresholdMaxTop / 180) * Math.abs(Math.round(beta));
-
             thresholdTop = thresholdMinTop + thresholdMaxTop;
+            sam = thresholdTop - (thresholdMaxTop / 180) * Math.abs(Math.round(y));
             thresholdBottom = thresholdTop + thresholdGap;
 
             $(".containerRLoopIcon").rotate(degrees + "deg");
@@ -182,15 +181,10 @@ $.fn.load = function() {
             if (x >  90) { x =  90};
             if (x < -90) { x = -90};
 
-            // To make computation easier we shift the range of
-            // x and y to [0,180]
-            //x += 90;
-            //y += 90;
-
             degrees = x;
 
-            //thresholdMaxTop = (thresholdMaxTop / 180) * Math.abs(Math.round(beta));
             thresholdTop = thresholdMinTop + thresholdMaxTop;
+            sam = thresholdTop - (thresholdMaxTop / 180) * Math.abs(Math.round(x));
             thresholdBottom = thresholdTop + thresholdGap;
 
             $(".containerRLoopIcon").rotate(degrees + "deg");
