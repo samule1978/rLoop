@@ -164,7 +164,7 @@ $.fn.load = function() {
             if (y >  90) { y =  90};
             if (y < -90) { y = -90};
 
-            //y = y*0.15; // In portrait reduce amount of velocity on y axis
+            y = y*0.25; // In portrait reduce amount of velocity on y axis
             degrees = -y;
 
             if (x >  90) { x =  90};
