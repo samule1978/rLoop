@@ -149,6 +149,7 @@ $.fn.load = function() {
         var thresholdMaxTop = 29.85;
         var thresholdTop = thresholdMinTop + thresholdMaxTop;
         var thresholdBottom = thresholdTop + thresholdGap;
+        var sam;
 
         if($(this).portrait()) {
             // Because we don't want to have the device upside down
@@ -159,7 +160,7 @@ $.fn.load = function() {
             y = y*0.15; // In portrait reduce amount of velocity on y axis
             degrees = -y;
 
-            //thresholdMaxTop = (thresholdMaxTop / 180) * Math.abs(Math.round(beta));
+            sam = (thresholdMaxTop / 180) * Math.abs(Math.round(beta));
             thresholdTop = thresholdMinTop + thresholdMaxTop;
             thresholdBottom = thresholdTop + thresholdGap;
 
@@ -194,6 +195,7 @@ $.fn.load = function() {
         debug.innerHTML += "Gamma : " + event.gamma + "<br />";
         debug.innerHTML += "thresholdTop : " + thresholdTop + "<br />";
         debug.innerHTML += "thresholdBottom : " + thresholdBottom + "<br />";
+        debug.innerHTML += "sam : " + sam + "<br />";
     }
 
     // Loadbar Animation
