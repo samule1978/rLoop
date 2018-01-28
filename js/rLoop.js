@@ -20,6 +20,8 @@ $(document).ready(function () {
 $.fn.showDebugInfo = function() {
     if (!showDebug) return;
 
+    $(this).debugLog("Debug Info.......");
+
     // Show Gyro Info
     window.ondeviceorientation = function(event) {
         $(this).debugLog("Alpha : " + event.alpha);
