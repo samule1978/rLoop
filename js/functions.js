@@ -137,13 +137,17 @@ $.fn.isMobile = function() {
 
 $.fn.load = function() {
     window.ondeviceorientation = function(event) {
-        var x = Math.round(event.beta); // In degree in the range [-180,180]
-        var y = Math.round(event.gamma); // In degree in the range [-90,90]
+        $(this).debugLog("Alpha : " + event.alpha);
+        $(this).debugLog("Beta : " + event.beta);
+        $(this).debugLog("Gamma : " + event.gamma);
+
+        var x = Math.round(event.beta); // In degree in the range [-180,180] - front to back
+        var y = Math.round(event.gamma); // In degree in the range [-90,90] - left to right
         var degrees;
 
         var thresholdGap = 0.3;
         var thresholdTop = 79.85;
-        var thresholdBottom = thresholdTop + thresholdGap;
+        var thresholdBottom;
 
         if($(this).portrait()) {
             // Because we don't want to have the device upside down
@@ -154,10 +158,11 @@ $.fn.load = function() {
             //y = y*0.15; // In portrait reduce amount of velocity on y axis
             degrees = -y;
 
+            thresholdBottom = thresholdTop + thresholdGap;
+
             $(".containerRLoopIcon").rotate(degrees + "deg");
             $(".loader-wrap-top").clipPathPolygonTop(y, thresholdTop + y, thresholdTop - y);
             $(".loader-wrap-bottom").clipPathPolygonBottom(y, thresholdBottom + y, thresholdBottom - y);
-
         } else {
             // Because we don't want to have the device upside down
             // We constrain the x value to the range [-90,90]
@@ -170,6 +175,8 @@ $.fn.load = function() {
             //y += 90;
 
             degrees = x;
+
+            thresholdBottom = thresholdTop + thresholdGap;
 
             $(".containerRLoopIcon").rotate(degrees + "deg");
             $(".loader-wrap-top").clipPathPolygonTop(x, thresholdTop - x, thresholdTop + x);
