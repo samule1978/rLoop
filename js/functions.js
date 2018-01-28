@@ -137,9 +137,17 @@ $.fn.isMobile = function() {
 
 $.fn.load = function() {
     window.ondeviceorientation = function(event) {
-        var z, gamma = Math.round(event.alpha); // In degree in the range [0,360] - z-axis
-        var x, beta = Math.round(event.beta); // In degree in the range [-180,180] - front to back
-        var y, gamma = Math.round(event.gamma); // In degree in the range [-90,90] - left to right
+        // In degree in the range [0,360] - z-axis
+        var z = Math.round(event.alpha);
+        var alpha = Math.round(event.alpha);
+
+        // In degree in the range [-180,180] - front to back
+        var x = Math.round(event.beta);
+        var beta = Math.round(event.beta);
+
+        // In degree in the range [-90,90] - left to right
+        var y = Math.round(event.gamma);
+        var gamma = Math.round(event.gamma);
 
         var degrees;
 
@@ -191,9 +199,9 @@ $.fn.load = function() {
         }
 
         var debug = document.querySelector('.debug');
-        debug.innerHTML = "Alpha : " + event.alpha + "<br />";
-        debug.innerHTML += "Beta : " + event.beta + "<br />";
-        debug.innerHTML += "Gamma : " + event.gamma + "<br />";
+        debug.innerHTML = "Alpha : " + alpha + "<br />";
+        debug.innerHTML += "Beta : " + beta + "<br />";
+        debug.innerHTML += "Gamma : " + gamma + "<br />";
         debug.innerHTML += "x : " + x + "<br />";
         debug.innerHTML += "y : " + y + "<br />";
         debug.innerHTML += "z : " + z + "<br />";
