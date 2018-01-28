@@ -3,12 +3,9 @@
  * Created by samuleghurry on 20/01/2018.
  */
 
-var showDebug = false;
+var showDebug = true;
 
 $(document).ready(function () {
-    showDebug = true;
-    $(this).showDebugInfo();
-
     $("#main").hide();
 
     isMobile = $(this).isMobile();
@@ -16,16 +13,3 @@ $(document).ready(function () {
 
     $(this).load();
 });
-
-$.fn.showDebugInfo = function() {
-    if (!showDebug) return;
-
-    $(this).debugLog("Debug Info.......");
-
-    // Show Gyro Info
-    window.ondeviceorientation = function(event) {
-        $(this).debugLog("Alpha : " + event.alpha);
-        $(this).debugLog("Beta : " + event.beta);
-        $(this).debugLog("Gamma : " + event.gamma);
-    }
-};

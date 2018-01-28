@@ -137,9 +137,11 @@ $.fn.isMobile = function() {
 
 $.fn.load = function() {
     window.ondeviceorientation = function(event) {
-        $(this).debugLog("Alpha : " + event.alpha);
-        $(this).debugLog("Beta : " + event.beta);
-        $(this).debugLog("Gamma : " + event.gamma);
+        if (showDebug) {
+            debug.innerHTML = "Alpha : " + event.alpha + "<br />";
+            debug.innerHTML += "Beta : " + event.beta + "<br />";
+            debug.innerHTML += "Gamma : " + event.gamma + "<br />";
+        }
 
         var x = Math.round(event.beta); // In degree in the range [-180,180] - front to back
         var y = Math.round(event.gamma); // In degree in the range [-90,90] - left to right
@@ -201,10 +203,4 @@ $.fn.load = function() {
 
 $.fn.finishedLoading = function() {
     return $(".preloader-wrap").hasClass("finished");
-};
-
-$.fn.debugLog = function(statement) {
-    var debug = document.querySelector('.debug');
-
-    debug.innerHTML += statement + "<br />";
 };
