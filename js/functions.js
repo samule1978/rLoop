@@ -137,11 +137,10 @@ $.fn.isMobile = function() {
 
 $.fn.load = function() {
     window.ondeviceorientation = function(event) {
-        if (showDebug) {
-            debug.innerHTML = "Alpha : " + event.alpha + "<br />";
-            debug.innerHTML += "Beta : " + event.beta + "<br />";
-            debug.innerHTML += "Gamma : " + event.gamma + "<br />";
-        }
+        var debug = document.querySelector('.debug');
+        debug.innerHTML = "Alpha : " + event.alpha + "<br />";
+        debug.innerHTML += "Beta : " + event.beta + "<br />";
+        debug.innerHTML += "Gamma : " + event.gamma + "<br />";
 
         var x = Math.round(event.beta); // In degree in the range [-180,180] - front to back
         var y = Math.round(event.gamma); // In degree in the range [-90,90] - left to right
