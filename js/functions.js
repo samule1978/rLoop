@@ -99,25 +99,13 @@ $.fn.gyro = function() {
     }
 };
 
-$.fn.clipPathPolygonTop = function(degrees, leftCornerPercent, rightCornerPercent) {
+$.fn.clipPathPolygon = function(topLeft, topRight, bottomLeft, bottomRight) {
     $(this).css({
-        '-webkit-clip-path' : 'polygon(0 0, 100% 0, 100% ' + rightCornerPercent + '%, 0 ' + leftCornerPercent + '%)',
-        '-moz-clip-path'    : 'polygon(0 0, 100% 0, 100% ' + rightCornerPercent + '%, 0 ' + leftCornerPercent + '%)',
-        '-ms-clip-path'     : 'polygon(0 0, 100% 0, 100% ' + rightCornerPercent + '%, 0 ' + leftCornerPercent + '%)',
-        '-o-clip-path'      : 'polygon(0 0, 100% 0, 100% ' + rightCornerPercent + '%, 0 ' + leftCornerPercent + '%)',
-        'clip-path'         : 'polygon(0 0, 100% 0, 100% ' + rightCornerPercent + '%, 0 ' + leftCornerPercent + '%)'
-    });
-
-    return $(this);
-};
-
-$.fn.clipPathPolygonBottom = function(degrees, leftCornerPercent, rightCornerPercent) {
-    $(this).css({
-        '-webkit-clip-path' : 'polygon(0 ' + leftCornerPercent + '%, 100% ' + rightCornerPercent + '%, 100% 100%, 0 100%)',
-        '-moz-clip-path'    : 'polygon(0 ' + leftCornerPercent + '%, 100% ' + rightCornerPercent + '%, 100% 100%, 0 100%)',
-        '-ms-clip-path'     : 'polygon(0 ' + leftCornerPercent + '%, 100% ' + rightCornerPercent + '%, 100% 100%, 0 100%)',
-        '-o-clip-path'      : 'polygon(0 ' + leftCornerPercent + '%, 100% ' + rightCornerPercent + '%, 100% 100%, 0 100%)',
-        'clip-path'         : 'polygon(0 ' + leftCornerPercent + '%, 100% ' + rightCornerPercent + '%, 100% 100%, 0 100%)'
+        '-webkit-clip-path' : 'polygon(0 ' + topLeft + '%, 100% ' + topRight + '%, 100% ' + bottomRight + '%, 0 ' + bottomLeft + '%)',
+        '-moz-clip-path'    : 'polygon(0 ' + topLeft + '%, 100% ' + topRight + '%, 100% ' + bottomRight + '%, 0 ' + bottomLeft + '%)',
+        '-ms-clip-path'     : 'polygon(0 ' + topLeft + '%, 100% ' + topRight + '%, 100% ' + bottomRight + '%, 0 ' + bottomLeft + '%)',
+        '-o-clip-path'      : 'polygon(0 ' + topLeft + '%, 100% ' + topRight + '%, 100% ' + bottomRight + '%, 0 ' + bottomLeft + '%)',
+        'clip-path'         : 'polygon(0 ' + topLeft + '%, 100% ' + topRight + '%, 100% ' + bottomRight + '%, 0 ' + bottomLeft + '%)'
     });
 
     return $(this);
@@ -174,8 +162,8 @@ $.fn.load = function() {
             thresholdBottom = thresholdTop + thresholdGap;
 
             $(".containerRLoopIcon").rotate(degrees + "deg");
-            $(".loader-wrap-top").clipPathPolygonTop(y, thresholdTop + y, thresholdTop - y);
-            $(".loader-wrap-bottom").clipPathPolygonBottom(y, thresholdBottom + y, thresholdBottom - y);
+            $(".loader-wrap-top").clipPathPolygon(0, 0, thresholdTop + y, thresholdTop - y);
+            $(".loader-wrap-bottom").clipPathPolygon(thresholdTop + y, thresholdTop - y, 100, 100);
         } else {
             // Because we don't want to have the device upside down
             // We constrain the x value to the range [-90,90]
@@ -191,8 +179,8 @@ $.fn.load = function() {
             thresholdBottom = thresholdTop + thresholdGap;
 
             $(".containerRLoopIcon").rotate(degrees + "deg");
-            $(".loader-wrap-top").clipPathPolygonTop(x, thresholdTop - x, thresholdTop + x);
-            $(".loader-wrap-bottom").clipPathPolygonBottom(x, thresholdBottom - x, thresholdBottom + x);
+            $(".loader-wrap-top").clipPathPolygon(0, 0, thresholdTop - x, thresholdTop + x);
+            $(".loader-wrap-bottom").clipPathPolygon(thresholdTop - x, thresholdTop + x, 100, 100);
         }
 
         var debug = document.querySelector('.debug');
