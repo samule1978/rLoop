@@ -184,7 +184,7 @@ $.fn.loadAnimation = function(usePerspective) {
                 thresholdTop = thresholdMinTop + thresholdMaxTop;
             }
             $(".loader-wrap-top").clipPathPolygon(  thresholdTop + y - thresholdGap,
-                                                    thresholdTop - y + thresholdGap,
+                                                    thresholdTop - y - thresholdGap,
                                                     thresholdTop + y,
                                                     thresholdTop - y);
 
@@ -213,7 +213,7 @@ $.fn.loadAnimation = function(usePerspective) {
             } else {
                 thresholdTop = thresholdMinTop + thresholdMaxTop;
             }
-            $(".loader-wrap-top").clipPathPolygon(  thresholdTop - x + thresholdGap,
+            $(".loader-wrap-top").clipPathPolygon(  thresholdTop - x - thresholdGap,
                                                     thresholdTop + x - thresholdGap,
                                                     thresholdTop - x,
                                                     thresholdTop + x);
