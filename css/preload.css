@@ -57,7 +57,6 @@
     -ms-clip-path: polygon(0 80.3%, 100% 80.3%, 100% 100%, 0 100%);
     -o-clip-path: polygon(0 80.3%, 100% 80.3%, 100% 100%, 0 100%);
     clip-path: polygon(0 80.3%, 100% 80.3%, 100% 100%, 0 100%);
-    display : none;
 }
 .containerRLoopIcon {
     /*width: 200px;

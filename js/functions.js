@@ -125,7 +125,7 @@ $.fn.isMobile = function() {
 }
 
 $.fn.load = function() {
-    $(this).loadAnimation(true);
+    $(this).loadAnimation(false);
 };
 
 $.fn.loadAnimation = function(usePerspective) {
