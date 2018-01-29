@@ -135,13 +135,13 @@ $.fn.loadAnimation = function(usePerspective) {
     }, time);
 
     // Finish Loading Animation
-    setTimeout(function(){
+    /*setTimeout(function(){
         $(".preloader-wrap").addClass("hide").delay(2000).queue(function(){
             $(this).addClass("finished").dequeue().delay(1000).queue(function(){
                 //$(this).setup();
             });
         });
-    }, time);
+    }, time);*/
 
     // Loading Gyro Animation
     window.ondeviceorientation = function(event) {
