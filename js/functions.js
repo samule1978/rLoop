@@ -189,8 +189,8 @@ $.fn.loadAnimation = function(usePerspective) {
                                                     thresholdTop - y);
 
             // Animate bottom polygon.
-            $(".loader-wrap-bottom").clipPathPolygon(   thresholdTop + y,
-                                                        thresholdTop - y,
+            $(".loader-wrap-bottom").clipPathPolygon(   thresholdTop + y + thresholdGap,
+                                                        thresholdTop - y + thresholdGap,
                                                         100,
                                                         100);
 
@@ -219,8 +219,8 @@ $.fn.loadAnimation = function(usePerspective) {
                                                     thresholdTop + x);
 
             // Animate bottom polygon.
-            $(".loader-wrap-bottom").clipPathPolygon(   thresholdTop - x,
-                                                        thresholdTop + x,
+            $(".loader-wrap-bottom").clipPathPolygon(   thresholdTop - x + thresholdGap,
+                                                        thresholdTop + x + thresholdGap,
                                                         100,
                                                         100);
 
