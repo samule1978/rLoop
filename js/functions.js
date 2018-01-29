@@ -163,7 +163,7 @@ $.fn.load = function() {
 
             $(".containerRLoopIcon").rotate(degrees + "deg");
             $(".loader-wrap-top").clipPathPolygon(0, 0, thresholdTop + y, thresholdTop - y);
-            $(".loader-wrap-bottom").clipPathPolygon(thresholdTop + y, thresholdTop - y, 100, 100);
+            $(".loader-wrap-bottom").clipPathPolygon(thresholdBottom + y, thresholdBottom - y, 100, 100);
         } else {
             // Because we don't want to have the device upside down
             // We constrain the x value to the range [-90,90]
@@ -180,7 +180,7 @@ $.fn.load = function() {
 
             $(".containerRLoopIcon").rotate(degrees + "deg");
             $(".loader-wrap-top").clipPathPolygon(0, 0, thresholdTop - x, thresholdTop + x);
-            $(".loader-wrap-bottom").clipPathPolygon(thresholdTop - x, thresholdTop + x, 100, 100);
+            $(".loader-wrap-bottom").clipPathPolygon(thresholdBottom - x, thresholdBottom + x, 100, 100);
         }
 
         var debug = document.querySelector('.debug');
