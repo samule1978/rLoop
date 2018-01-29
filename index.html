@@ -12,6 +12,7 @@
     <meta name="keywords" content="rLoop" />
 
     <script type="text/javascript" src="lib/jQuery/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="lib/jQuery/jquery-ui.min.js"></script>
     <!-- https://github.com/zachstronaut/jquery-animate-css-rotate-scale -->
     <script type="text/javascript" src="lib/jQuery/jquery-animate-css-rotate-scale.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
@@ -27,11 +28,8 @@
     <container class="debug"></container>
 
     <container class="preloader-wrap">
-        <div class="loader-wrap-top"></div>
-        <div class="loader">
-            <div class="trackbar">
+        <div class="loader-wrap-top">
                 <div class="loadbar"></div>
-            </div>
         </div>
         <div class="loader-wrap-bottom"></div>
         <container class="containerRLoopIcon">
@@ -39,7 +37,7 @@
         </container>
     </container>
 
-    <container class="spinlogo-wrap">
+    <container class="spinlogo-wrap" style="display: none;">
         <container id="containerSpinLogo">
             <img id="spinLogo" src="img/logos/rLoopLogo.svg" />
             <img id="spiniPhoneX" src="img/logos/iPhoneX.svg" />
