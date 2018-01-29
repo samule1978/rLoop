@@ -160,7 +160,7 @@ $.fn.loadAnimation = function(usePerspective) {
         var degrees;
 
         // Default values
-        var thresholdGap = 0.3;
+        var thresholdGap = 0.5;
         var thresholdMinTop = (isMobile) ? 50 : 80;
         var thresholdMaxTop = 29.85;
         var thresholdTop;
