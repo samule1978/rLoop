@@ -156,7 +156,6 @@ $.fn.loadAnimation = function(usePerspective) {
         var thresholdMinTop = 80;
         var thresholdMaxTop = 29.85;
         var thresholdTop;
-        var thresholdBottom;
 
         if($(this).portrait()) {
             // Because we don't want to have the device upside down
@@ -182,9 +181,8 @@ $.fn.loadAnimation = function(usePerspective) {
                                                     thresholdTop - y);
 
             // Animate bottom polygon.
-            thresholdBottom = thresholdTop + thresholdGap;
-            $(".loader-wrap-bottom").clipPathPolygon(   thresholdBottom + y,
-                                                        thresholdBottom - y,
+            $(".loader-wrap-bottom").clipPathPolygon(   thresholdTop + y,
+                                                        thresholdTop - y,
                                                         100,
                                                         100);
 
@@ -213,9 +211,8 @@ $.fn.loadAnimation = function(usePerspective) {
                 thresholdTop + x);
 
             // Animate bottom polygon.
-            thresholdBottom = thresholdTop + thresholdGap;
-            $(".loader-wrap-bottom").clipPathPolygon(   thresholdBottom - x,
-                                                        thresholdBottom + x,
+            $(".loader-wrap-bottom").clipPathPolygon(   thresholdTop - x,
+                                                        thresholdTop + x,
                                                         100,
                                                         100);
 
@@ -235,7 +232,6 @@ $.fn.loadAnimation = function(usePerspective) {
             debug.innerHTML += "y : " + y + "<br />";
             debug.innerHTML += "z : " + z + "<br />";
             debug.innerHTML += "thresholdTop : " + thresholdTop + "<br />";
-            debug.innerHTML += "thresholdBottom : " + thresholdBottom + "<br />";
         }
     }
 };

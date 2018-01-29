@@ -52,11 +52,11 @@
     bottom: 0px;
     z-index: 97;
 
-    -webkit-clip-path: polygon(0 80.3%, 100% 80.3%, 100% 100%, 0 100%);
-    -moz-clip-path: polygon(0 80.3%, 100% 80.3%, 100% 100%, 0 100%);
-    -ms-clip-path: polygon(0 80.3%, 100% 80.3%, 100% 100%, 0 100%);
-    -o-clip-path: polygon(0 80.3%, 100% 80.3%, 100% 100%, 0 100%);
-    clip-path: polygon(0 80.3%, 100% 80.3%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 80%, 100% 80%, 100% 100%, 0 100%);
+    -moz-clip-path: polygon(0 80%, 100% 80%, 100% 100%, 0 100%);
+    -ms-clip-path: polygon(0 80%, 100% 80%, 100% 100%, 0 100%);
+    -o-clip-path: polygon(0 80%, 100% 80%, 100% 100%, 0 100%);
+    clip-path: polygon(0 80%, 100% 80%, 100% 100%, 0 100%);
 }
 .containerRLoopIcon {
     /*width: 200px;
