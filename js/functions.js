@@ -129,10 +129,6 @@ $.fn.load = function() {
 };
 
 $.fn.loadAnimation = function(usePerspective) {
-    $.fn.polygon = function() {
-        $(this).loadAnimation(true);
-    };
-
     // Loadbar Animation
     $(".loadbar").animate({
         width: width + "%"
