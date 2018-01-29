@@ -231,13 +231,14 @@ $.fn.loadAnimation = function(usePerspective) {
         if (showDebug) {
             var debug = document.querySelector('.debug');
             debug.innerHTML = version + "<br />";
-            debug.innerHTML += "Alpha : " + alpha + "<br />";
+            debug.innerHTML += "loader-wrap-top : " + $(".loader-wrap-bottom").css("-webkit-clip-path") + "<br />";
+            /*debug.innerHTML += "Alpha : " + alpha + "<br />";
             debug.innerHTML += "Beta : " + beta + "<br />";
             debug.innerHTML += "Gamma : " + gamma + "<br />";
             debug.innerHTML += "x : " + x + "<br />";
             debug.innerHTML += "y : " + y + "<br />";
             debug.innerHTML += "z : " + z + "<br />";
-            debug.innerHTML += "thresholdTop : " + thresholdTop + "<br />";
+            debug.innerHTML += "thresholdTop : " + thresholdTop + "<br />";*/
         }
     }
 };

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="90f050f4-5f5e-46b9-a025-b617daeebec7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/preload.css" afterPath="$PROJECT_DIR$/css/preload.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/functions.js" afterPath="$PROJECT_DIR$/js/functions.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,8 +30,8 @@
           <file leaf-file-name="functions.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/functions.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="182">
-                  <caret line="186" column="70" lean-forward="true" selection-start-line="186" selection-start-column="70" selection-end-line="186" selection-end-column="70" />
+                <state relative-caret-position="400">
+                  <caret line="233" column="101" lean-forward="false" selection-start-line="233" selection-start-column="101" selection-end-line="233" selection-end-column="101" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -64,7 +65,7 @@
             <entry file="file://$PROJECT_DIR$/css/preload.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="205">
-                  <caret line="48" column="25" lean-forward="false" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+                  <caret line="48" column="31" lean-forward="false" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
                   <folding />
                 </state>
               </provider>
@@ -86,7 +87,7 @@
         <splitter split-orientation="vertical" split-proportion="0.76950353">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+              <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/index.html">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="37">
@@ -98,11 +99,11 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="functions.js" pinned="false" current-in-tab="false">
+              <file leaf-file-name="functions.js" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/2.0.13.0/js/functions.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="-1997">
-                      <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                    <state relative-caret-position="53">
+                      <caret line="103" column="26" lean-forward="true" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="26" />
                       <folding>
                         <element signature="n#!!doc" expanded="true" />
                       </folding>
@@ -282,8 +283,8 @@
         <option value="$PROJECT_DIR$/css/rloop.css" />
         <option value="$PROJECT_DIR$/2.0.11.0/index.html" />
         <option value="$PROJECT_DIR$/js/rLoop.js" />
-        <option value="$PROJECT_DIR$/js/functions.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/functions.js" />
         <option value="$PROJECT_DIR$/css/preload.css" />
       </list>
     </option>
@@ -516,12 +517,12 @@
       <workItem from="1517054342329" duration="3009000" />
       <workItem from="1517146560707" duration="11544000" />
       <workItem from="1517225211676" duration="14105000" />
-      <workItem from="1517249554041" duration="2505000" />
+      <workItem from="1517249554041" duration="2751000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142785000" />
+    <option name="totallyTimeSpent" value="143031000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="987" extended-state="6" />
@@ -922,16 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/2.0.13.0/js/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1997">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/jQuery/jquery.fullPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3598">
@@ -950,16 +941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="186" column="70" lean-forward="true" selection-start-line="186" selection-start-column="70" selection-end-line="186" selection-end-column="70" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="37">
@@ -970,10 +951,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/2.0.13.0/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="103" column="26" lean-forward="true" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="26" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="233" column="101" lean-forward="false" selection-start-line="233" selection-start-column="101" selection-end-line="233" selection-end-column="101" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/preload.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
-          <caret line="48" column="25" lean-forward="false" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+          <caret line="48" column="31" lean-forward="false" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
           <folding />
         </state>
       </provider>
