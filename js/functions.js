@@ -125,7 +125,7 @@ $.fn.isMobile = function() {
 }
 
 $.fn.load = function() {
-    $(this).loadAnimation(false);
+    $(this).loadAnimation(true);
 };
 
 $.fn.loadAnimation = function(usePerspective) {
@@ -164,6 +164,7 @@ $.fn.loadAnimation = function(usePerspective) {
         var thresholdMinTop = (isMobile) ? 50 : 80;
         var thresholdMaxTop = 29.85;
         var thresholdTop;
+        var thresholdBottom;
 
         if($(this).portrait()) {
             // Because we don't want to have the device upside down
@@ -183,14 +184,15 @@ $.fn.loadAnimation = function(usePerspective) {
             } else {
                 thresholdTop = thresholdMinTop + thresholdMaxTop;
             }
-            $(".loader-wrap-top").clipPathPolygon(  thresholdTop + y - thresholdGap,
-                                                    thresholdTop - y - thresholdGap,
+            $(".loader-wrap-top").clipPathPolygon(  0,
+                                                    0,
                                                     thresholdTop + y,
                                                     thresholdTop - y);
 
             // Animate bottom polygon.
-            $(".loader-wrap-bottom").clipPathPolygon(   thresholdTop + y,
-                                                        thresholdTop - y,
+            thresholdBottom = thresholdTop + thresholdGap;
+            $(".loader-wrap-bottom").clipPathPolygon(   thresholdBottom + y,
+                                                        thresholdBottom - y,
                                                         100,
                                                         100);
 
@@ -213,14 +215,15 @@ $.fn.loadAnimation = function(usePerspective) {
             } else {
                 thresholdTop = thresholdMinTop + thresholdMaxTop;
             }
-            $(".loader-wrap-top").clipPathPolygon(  thresholdTop - x - thresholdGap,
-                                                    thresholdTop + x - thresholdGap,
+            $(".loader-wrap-top").clipPathPolygon(  0,
+                                                    0,
                                                     thresholdTop - x,
                                                     thresholdTop + x);
 
             // Animate bottom polygon.
-            $(".loader-wrap-bottom").clipPathPolygon(   thresholdTop - x,
-                                                        thresholdTop + x,
+            thresholdBottom = thresholdTop + thresholdGap;
+            $(".loader-wrap-bottom").clipPathPolygon(   thresholdBottom - x,
+                                                        thresholdBottom + x,
                                                         100,
                                                         100);
 
