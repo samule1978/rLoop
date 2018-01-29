@@ -5,6 +5,8 @@
 
 $(document).ready(function () {
     showDebug = false;
+    
+    $(".loader").hide();
 
     $("#main").hide();
 
