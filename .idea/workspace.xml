@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90f050f4-5f5e-46b9-a025-b617daeebec7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/preload.css" afterPath="$PROJECT_DIR$/css/preload.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/functions.js" afterPath="$PROJECT_DIR$/js/functions.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,8 +29,8 @@
           <file leaf-file-name="functions.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/functions.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="511">
-                  <caret line="212" column="20" lean-forward="true" selection-start-line="212" selection-start-column="20" selection-end-line="212" selection-end-column="20" />
+                <state relative-caret-position="385">
+                  <caret line="222" column="74" lean-forward="false" selection-start-line="222" selection-start-column="74" selection-end-line="222" selection-end-column="74" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -283,8 +283,8 @@
         <option value="$PROJECT_DIR$/2.0.11.0/index.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/rLoop.js" />
-        <option value="$PROJECT_DIR$/js/functions.js" />
         <option value="$PROJECT_DIR$/css/preload.css" />
+        <option value="$PROJECT_DIR$/js/functions.js" />
       </list>
     </option>
   </component>
@@ -484,12 +484,12 @@
       <workItem from="1516981240517" duration="19620000" />
       <workItem from="1517054342329" duration="3009000" />
       <workItem from="1517146560707" duration="11544000" />
-      <workItem from="1517225211676" duration="12003000" />
+      <workItem from="1517225211676" duration="12232000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138178000" />
+    <option name="totallyTimeSpent" value="138407000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="118" y="1223" width="1680" height="987" extended-state="0" />
@@ -936,8 +936,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="212" column="20" lean-forward="true" selection-start-line="212" selection-start-column="20" selection-end-line="212" selection-end-column="20" />
+        <state relative-caret-position="385">
+          <caret line="222" column="74" lean-forward="false" selection-start-line="222" selection-start-column="74" selection-end-line="222" selection-end-column="74" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
