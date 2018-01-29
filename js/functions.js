@@ -124,6 +124,17 @@ $.fn.isMobile = function() {
 }
 
 $.fn.load = function() {
+    $(this).loadAnimation();
+
+    //$(this).finishLoadAnimation();
+};
+
+$.fn.loadAnimation = function() {
+    // Loadbar Animation
+    $(".loadbar").animate({
+        width: width + "%"
+    }, time);
+
     window.ondeviceorientation = function(event) {
         // In degree in the range [0,360] - z-axis
         var z = Math.round(event.alpha);
@@ -194,20 +205,16 @@ $.fn.load = function() {
         debug.innerHTML += "thresholdTop : " + thresholdTop + "<br />";
         debug.innerHTML += "thresholdBottom : " + thresholdBottom + "<br />";
     }
+};
 
-    // Loadbar Animation
-    $(".loadbar").animate({
-        width: width + "%"
-    }, time);
-
-    // Loadbar Animation on Finished
-    /*setTimeout(function(){
+$.fn.finishLoadAnimation = function() {
+    setTimeout(function(){
         $(".preloader-wrap").addClass("hide").delay(2000).queue(function(){
             $(this).addClass("finished").dequeue().delay(1000).queue(function(){
                 //$(this).setup();
             });
         });
-    }, time);*/
+    }, time);
 };
 
 $.fn.finishedLoading = function() {
