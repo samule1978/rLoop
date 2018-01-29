@@ -179,7 +179,8 @@ $.fn.loadAnimation = function(usePerspective) {
 
             // Animate top polygon.
             if (usePerspective) {
-                thresholdTop = thresholdMinTop + Math.abs(((thresholdMaxTop / 90) * x));
+                //thresholdTop = thresholdMinTop + Math.abs(((thresholdMaxTop / 90) * x));
+                thresholdTop = thresholdMinTop + Math.abs(((thresholdMaxTop / 180) * x));
             } else {
                 thresholdTop = thresholdMinTop + thresholdMaxTop;
             }
