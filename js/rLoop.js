@@ -4,7 +4,7 @@
  */
 
 $(document).ready(function () {
-    showDebug = true;
+    showDebug = false;
 
     $("#main").hide();
 
