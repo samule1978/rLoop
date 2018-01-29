@@ -231,8 +231,6 @@ $.fn.loadAnimation = function(usePerspective) {
         if (showDebug) {
             var debug = document.querySelector('.debug');
             debug.innerHTML = version + "<br /><br />";
-            debug.innerHTML += "Time left : " + time + "<br /><br />";
-
             debug.innerHTML += "Alpha : " + alpha + "<br />";
             debug.innerHTML += "Beta : " + beta + "<br />";
             debug.innerHTML += "Gamma : " + gamma + "<br />";
