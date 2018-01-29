@@ -129,23 +129,7 @@ $.fn.load = function() {
 };
 
 $.fn.loadAnimation = function(usePerspective) {
-    $(".loader").show();
-   
-    // Loadbar Animation
-    $(".loadbar").animate({
-        width: width + "%"
-    }, time);
-
-    // Finish Loading Animation
-    /*setTimeout(function(){
-        $(".preloader-wrap").addClass("hide").delay(2000).queue(function(){
-            $(this).addClass("finished").dequeue().delay(1000).queue(function(){
-                //$(this).setup();
-            });
-        });
-    }, time);*/
-
-    // Loading Gyro Animation
+   // Loading Gyro Animation
     window.ondeviceorientation = function(event) {
         // In degree in the range [0,360] - z-axis
         var z = Math.round(event.alpha);
@@ -233,6 +217,21 @@ $.fn.loadAnimation = function(usePerspective) {
             $(".containerRLoopIcon").rotate(degrees + "deg");
         }
 
+        
+        // Loadbar Animation
+    $(".loadbar").animate({
+        width: width + "%"
+    }, time);
+
+    // Finish Loading Animation
+    /*setTimeout(function(){
+        $(".preloader-wrap").addClass("hide").delay(2000).queue(function(){
+            $(this).addClass("finished").dequeue().delay(1000).queue(function(){
+                //$(this).setup();
+            });
+        });
+    }, time);*/
+        
         if (showDebug) {
             var debug = document.querySelector('.debug');
             debug.innerHTML = version + "<br />";
