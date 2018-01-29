@@ -184,7 +184,8 @@ $.fn.load = function() {
         }
 
         var debug = document.querySelector('.debug');
-        debug.innerHTML = "Alpha : " + alpha + "<br />";
+        debug.innerHTML = version + "<br /><br />";
+        debug.innerHTML += "Alpha : " + alpha + "<br />";
         debug.innerHTML += "Beta : " + beta + "<br />";
         debug.innerHTML += "Gamma : " + gamma + "<br />";
         debug.innerHTML += "x : " + x + "<br />";
