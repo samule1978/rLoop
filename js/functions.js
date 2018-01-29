@@ -129,6 +129,8 @@ $.fn.load = function() {
 };
 
 $.fn.loadAnimation = function(usePerspective) {
+    $(".loader").show();
+   
     // Loadbar Animation
     $(".loadbar").animate({
         width: width + "%"
