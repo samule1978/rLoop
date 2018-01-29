@@ -126,8 +126,6 @@ $.fn.isMobile = function() {
 
 $.fn.load = function() {
     $(this).loadAnimation(true);
-
-    //$(this).finishLoadAnimation();
 };
 
 $.fn.loadAnimation = function(usePerspective) {
@@ -136,6 +134,16 @@ $.fn.loadAnimation = function(usePerspective) {
         width: width + "%"
     }, time);
 
+    // Finish Loading Animation
+    setTimeout(function(){
+        $(".preloader-wrap").addClass("hide").delay(2000).queue(function(){
+            $(this).addClass("finished").dequeue().delay(1000).queue(function(){
+                //$(this).setup();
+            });
+        });
+    }, time);
+
+    // Loading Gyro Animation
     window.ondeviceorientation = function(event) {
         // In degree in the range [0,360] - z-axis
         var z = Math.round(event.alpha);
@@ -153,7 +161,7 @@ $.fn.loadAnimation = function(usePerspective) {
 
         // Default values
         var thresholdGap = 0.3;
-        var thresholdMinTop = 80;
+        var thresholdMinTop = (isMobile) ? 50 : 80;
         var thresholdMaxTop = 29.85;
         var thresholdTop;
 
@@ -234,16 +242,6 @@ $.fn.loadAnimation = function(usePerspective) {
             debug.innerHTML += "thresholdTop : " + thresholdTop + "<br />";
         }
     }
-};
-
-$.fn.finishLoadAnimation = function() {
-    setTimeout(function(){
-        $(".preloader-wrap").addClass("hide").delay(2000).queue(function(){
-            $(this).addClass("finished").dequeue().delay(1000).queue(function(){
-                //$(this).setup();
-            });
-        });
-    }, time);
 };
 
 $.fn.finishedLoading = function() {
