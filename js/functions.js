@@ -129,6 +129,10 @@ $.fn.load = function() {
 };
 
 $.fn.loadAnimation = function(usePerspective) {
+    $.fn.polygon = function() {
+        $(this).loadAnimation(true);
+    };
+
     // Loadbar Animation
     $(".loadbar").animate({
         width: width + "%"
@@ -179,8 +183,7 @@ $.fn.loadAnimation = function(usePerspective) {
 
             // Animate top polygon.
             if (usePerspective) {
-                //thresholdTop = thresholdMinTop + Math.abs(((thresholdMaxTop / 90) * x));
-                thresholdTop = thresholdMinTop + Math.abs(((thresholdMaxTop / 180) * x));
+                thresholdTop = thresholdMinTop + Math.abs(((thresholdMaxTop / 90) * x));
             } else {
                 thresholdTop = thresholdMinTop + thresholdMaxTop;
             }
@@ -190,8 +193,8 @@ $.fn.loadAnimation = function(usePerspective) {
                                                     thresholdTop - y);
 
             // Animate bottom polygon.
-            $(".loader-wrap-bottom").clipPathPolygon(   thresholdTop + y + thresholdGap,
-                                                        thresholdTop - y + thresholdGap,
+            $(".loader-wrap-bottom").clipPathPolygon(   thresholdTop + y,
+                                                        thresholdTop - y,
                                                         100,
                                                         100);
 
@@ -220,8 +223,8 @@ $.fn.loadAnimation = function(usePerspective) {
                                                     thresholdTop + x);
 
             // Animate bottom polygon.
-            $(".loader-wrap-bottom").clipPathPolygon(   thresholdTop - x + thresholdGap,
-                                                        thresholdTop + x + thresholdGap,
+            $(".loader-wrap-bottom").clipPathPolygon(   thresholdTop - x,
+                                                        thresholdTop + x,
                                                         100,
                                                         100);
 
