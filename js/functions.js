@@ -178,8 +178,8 @@ $.fn.loadAnimation = function(usePerspective) {
             y = y*0.15; // In portrait reduce amount of velocity on y axis
             degrees = -y;
 
-            if (x >  90) { x =  90};
-            if (x < -90) { x = -90};
+            if (x >  180) { x =  180};
+            if (x < -180) { x = -180};
 
             // Animate top polygon.
             if (usePerspective) {
@@ -208,8 +208,8 @@ $.fn.loadAnimation = function(usePerspective) {
 
             degrees = x;
 
-            if (y >  90) { y =  90};
-            if (y < -90) { y = -90};
+            if (y >  180) { y =  180};
+            if (y < -180) { y = -180};
 
             // Animate top polygon.
             if (usePerspective) {
