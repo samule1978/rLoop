@@ -100,11 +100,11 @@
     display:block;
 }
 .show-stars .stars {
-    background:#000000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+    background:#000000 url(../img/assets/anim_stars.png) repeat top center;
     z-index:0;
 }
 .show-stars .twinkling{
-    background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+    background:transparent url(../img/assets/anim_twinkling.png) repeat top center;
     z-index:1;
 
     -moz-animation:move-twink-back 200s linear infinite;
