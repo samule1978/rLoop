@@ -116,6 +116,9 @@ $.fn.loadAnimation = function(usePerspective, bePrecise, showStars) {
         $(".loadbar").animate({
             width: width + "%"
         }, time);
+        $(".loadbar").animate({
+            opacity: 0
+        }, time/2);
 
         // Finish Loading Animation
         /*setTimeout(function(){
