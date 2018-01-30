@@ -4,7 +4,7 @@
  */
 
 /******* VARIABLES *******/
-var version = "Version: 2.0.0.14.0";
+var version = "Version: 2.0.0.15.0";
 var isMobile = false;
 var showDebug = false;
 
@@ -26,6 +26,7 @@ var width = 100,
     perfData = window.performance.timing, // The PerformanceTiming interface represents timing-related performance information for the given page.
     EstimatedTime = -(perfData.loadEventEnd - perfData.navigationStart),
     time = parseInt((EstimatedTime/1000)%60)*100;
+
 // Percentage Increment Animation
 var start = 0,
     end = 100;
@@ -125,124 +126,37 @@ $.fn.isMobile = function() {
 }
 
 $.fn.load = function() {
-    $(this).loadAnimation(true);
+    $(this).loadAnimation(true, true);
 };
 
-$.fn.loadAnimation = function(usePerspective) {
-   // Loading Gyro Animation
+$.fn.loadAnimation = function(usePerspective, bePrecise) {
+    // Loading Gyro Animation
     window.ondeviceorientation = function(event) {
-        // In degree in the range [0,360] - z-axis
-        var z = Math.round(event.alpha);
-        var alpha = Math.round(event.alpha);
+        $(this).animatePolygons(usePerspective, bePrecise);
 
-        // In degree in the range [-180,180] - front to back
-        var x = Math.round(event.beta);
-        var beta = Math.round(event.beta);
-
-        // In degree in the range [-90,90] - left to right
-        var y = Math.round(event.gamma);
-        var gamma = Math.round(event.gamma);
-
-        var degrees;
-
-        // Default values
-        var thresholdGap = 0.3;
-        var thresholdMinTop = (isMobile) ? 50 : 80;
-        var thresholdMaxTop = 29.85;
-        var thresholdTop;
-        var thresholdBottom;
-
-        if($(this).portrait()) {
-            // Because we don't want to have the device upside down
-            // We constrain the y value to the range [-90,90]
-            if (y >  90) { y =  90};
-            if (y < -90) { y = -90};
-
-            y = y*0.15; // In portrait reduce amount of velocity on y axis
-            degrees = -y;
-
-            if (x >  180) { x =  180};
-            if (x < -180) { x = -180};
-
-            // Animate top polygon.
-            if (usePerspective) {
-                thresholdTop = thresholdMinTop + Math.abs(((thresholdMaxTop / 90) * x));
-            } else {
-                thresholdTop = thresholdMinTop + thresholdMaxTop;
-            }
-            $(".loader-wrap-top").clipPathPolygon(  0,
-                                                    0,
-                                                    thresholdTop + y,
-                                                    thresholdTop - y);
-
-            // Animate bottom polygon.
-            thresholdBottom = thresholdTop + thresholdGap;
-            $(".loader-wrap-bottom").clipPathPolygon(   thresholdBottom + y,
-                                                        thresholdBottom - y,
-                                                        100,
-                                                        100);
-
-            // Animate logo.
-            $(".containerRLoopIcon").rotate(degrees + "deg");
-        } else {
-            // Because we don't want to have the device upside down
-            // We constrain the x value to the range [-90,90]
-            if (x >  90) { x =  90};
-            if (x < -90) { x = -90};
-
-            degrees = x;
-
-            if (y >  180) { y =  180};
-            if (y < -180) { y = -180};
-
-            // Animate top polygon.
-            if (usePerspective) {
-                thresholdTop = thresholdMinTop + Math.abs(((thresholdMaxTop / 90) * y));
-            } else {
-                thresholdTop = thresholdMinTop + thresholdMaxTop;
-            }
-            $(".loader-wrap-top").clipPathPolygon(  0,
-                                                    0,
-                                                    thresholdTop - x,
-                                                    thresholdTop + x);
-
-            // Animate bottom polygon.
-            thresholdBottom = thresholdTop + thresholdGap;
-            $(".loader-wrap-bottom").clipPathPolygon(   thresholdBottom - x,
-                                                        thresholdBottom + x,
-                                                        100,
-                                                        100);
-
-            // Animate logo.
-            $(".containerRLoopIcon").rotate(degrees + "deg");
-        }
-
-        
         // Loadbar Animation
-    $(".loadbar").animate({
-        width: width + "%"
-    }, time);
+        $(".loadbar").animate({
+            width: width + "%"
+        }, time);
 
-    // Finish Loading Animation
-    /*setTimeout(function(){
-        $(".preloader-wrap").addClass("hide").delay(2000).queue(function(){
-            $(this).addClass("finished").dequeue().delay(1000).queue(function(){
-                //$(this).setup();
+        // Finish Loading Animation
+        /*setTimeout(function(){
+            $(".preloader-wrap").addClass("hide").delay(2000).queue(function(){
+                $(this).addClass("finished").dequeue().delay(1000).queue(function(){
+                    //$(this).setup();
+                });
             });
-        });
-    }, time);*/
+        }, time);*/
         
         if (showDebug) {
             var debug = document.querySelector('.debug');
             debug.innerHTML = version + "<br />";
-            debug.innerHTML += "loader-wrap-top : " + $(".loader-wrap-bottom").css("-webkit-clip-path") + "<br />";
-            /*debug.innerHTML += "Alpha : " + alpha + "<br />";
             debug.innerHTML += "Beta : " + beta + "<br />";
             debug.innerHTML += "Gamma : " + gamma + "<br />";
+            debug.innerHTML += "Alpha : " + alpha + "<br />";
             debug.innerHTML += "x : " + x + "<br />";
             debug.innerHTML += "y : " + y + "<br />";
             debug.innerHTML += "z : " + z + "<br />";
-            debug.innerHTML += "thresholdTop : " + thresholdTop + "<br />";*/
         }
     }
 };
@@ -250,3 +164,90 @@ $.fn.loadAnimation = function(usePerspective) {
 $.fn.finishedLoading = function() {
     return $(".preloader-wrap").hasClass("finished");
 };
+
+$.fn.constrain = function(value, boundary) {
+    // Because we don't want to have the device upside down
+    // We constrain the y value to the range [-boundary,boundary]
+    if (value >  boundary) { value =  boundary};
+    if (value < -boundary) { value = -boundary};
+    return value;
+};
+
+$.fn.animatePolygons = function(usePerspective, bePrecise) {
+    // In degree in the range [0,360] - z-axis
+    var z;
+    var alpha;
+    // In degree in the range [-180,180] - front to back
+    var x;
+    var beta;
+    // In degree in the range [-90,90] - left to right
+    var y;
+    var gamma;
+
+    if (bePrecise) {
+        x = event.beta;
+        y = event.gamma;
+        z = event.alpha;
+    } else {
+        x = Math.round(event.beta);
+        y = Math.round(event.gamma);
+        z = Math.round(event.alpha);
+    }
+    beta = x;
+    gamma = y;
+    alpha = z;
+
+    // Default values
+    var thresholdGap = 0.3;
+    var thresholdMinTop = (isMobile) ? 50 : 80;
+    var thresholdMaxTop = 29.85;
+    var thresholdTop;
+    var thresholdBottom;
+
+    if($(this).portrait()) {
+        y = $(this).constrain(y, 90);
+        x = $(this).constrain(x, 180);
+
+        y = y*0.15; // In portrait reduce amount of velocity on y axis
+
+        // Animate top polygon.
+        if (usePerspective) {
+            thresholdTop = thresholdMinTop + Math.abs(((thresholdMaxTop / 90) * x));
+        } else {
+            thresholdTop = thresholdMinTop + thresholdMaxTop;
+        }
+        $(".loader-wrap-top").clipPathPolygon(  0,
+            0,
+            thresholdTop + y,
+            thresholdTop - y);
+
+        // Animate bottom polygon.
+        thresholdBottom = thresholdTop + thresholdGap;
+        $(".loader-wrap-bottom").clipPathPolygon(   thresholdBottom + y,
+            thresholdBottom - y,
+            100,
+            100);
+    } else {
+        x = $(this).constrain(x, 90);
+        y = $(this).constrain(y, 180);
+
+        // Animate top polygon.
+        if (usePerspective) {
+            thresholdTop = thresholdMinTop + Math.abs(((thresholdMaxTop / 90) * y));
+        } else {
+            thresholdTop = thresholdMinTop + thresholdMaxTop;
+        }
+        $(".loader-wrap-top").clipPathPolygon(  0,
+            0,
+            thresholdTop - x,
+            thresholdTop + x);
+
+        // Animate bottom polygon.
+        thresholdBottom = thresholdTop + thresholdGap;
+        $(".loader-wrap-bottom").clipPathPolygon(   thresholdBottom - x,
+            thresholdBottom + x,
+            100,
+            100);
+    }
+};
+
