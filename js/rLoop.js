@@ -5,10 +5,9 @@
 
 $(document).ready(function () {
     showDebug = false;
+    isMobile = $(this).isMobile();
 
     $("#main").hide();
-
-    isMobile = $(this).isMobile();
     if (!isMobile) $('#spiniPhoneX').hide();
 
     $(this).load();
