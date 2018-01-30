@@ -96,10 +96,18 @@ $.fn.gyro = function() {
 
 
 $.fn.load = function() {
-    $(this).loadAnimation(true, true);
+    $(this).loadAnimation(true, true, true);
 };
 
-$.fn.loadAnimation = function(usePerspective, bePrecise) {
+$.fn.loadAnimation = function(usePerspective, bePrecise, showStars) {
+    if (showStars) {
+        $(".loader-wrap-top").addClass("show-stars");
+        $(".loader-wrap-top").removeClass("hide-stars");
+    } else {
+        $(".loader-wrap-top").addClass("hide-stars");
+        $(".loader-wrap-top").removeClass("show-stars");
+    }
+
     // Loading Gyro Animation
     window.ondeviceorientation = function(event) {
         $(this).animatePolygons(usePerspective, bePrecise);
