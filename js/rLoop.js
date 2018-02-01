@@ -12,9 +12,9 @@ $(document).ready(function () {
 
     $(".loader-wrap-top").append("<container class='pixels-wrap'></container>");
     $(".pixels-wrap").append("<pixels class='left'></pixels>");
-    $("pixels.left").pixxelate("MODIX", "white");
+    $("pixels.left").pixxelate("HYPE", "white");
     $(".pixels-wrap").append("<pixels class='right'></pixels>");
-    $("pixels.right").pixxelate("UK", "blue");
+    $("pixels.right").pixxelate("RLOOP", "blue");
 
     $(this).load();
 });

@@ -159,7 +159,7 @@ pixel.br {
 .loader-wrap-bottom {
     width: 100%;
     height: 100%;
-    background-color: #262626;/*#333333;*/
+    background-color: #1a1a1a;/*#333333;*/
     position: absolute;
     left: 0px;
     bottom: 0px;
