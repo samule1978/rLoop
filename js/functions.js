@@ -172,7 +172,7 @@ $.fn.animatePolygons = function(usePerspective, bePrecise) {
 
     // Default values
     var thresholdGap = 0.3;
-    var thresholdMinTop = (isMobile) ? 70 : 80;
+    var thresholdMinTop = (isMobile) ? 60 : 70;
     var thresholdMaxTop = 29.85;
     var thresholdTop;
     var thresholdBottom;

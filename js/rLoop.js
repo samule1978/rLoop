@@ -10,10 +10,11 @@ $(document).ready(function () {
     $("#main").hide();
     if (!isMobile) $('#spiniPhoneX').hide();
 
-    $(".loader-wrap-top").append("<pixels class='left'></pixels>");
-    $("pixels.left").pixxelate("HYPE", "white");
-    $(".loader-wrap-top").append("<pixels class='right'></pixels>");
-    $("pixels.right").pixxelate("RLOOP", "blue");
+    $(".loader-wrap-top").append("<container class='pixels-wrap'></container>");
+    $(".pixels-wrap").append("<pixels class='left'></pixels>");
+    $("pixels.left").pixxelate("MODIX", "white");
+    $(".pixels-wrap").append("<pixels class='right'></pixels>");
+    $("pixels.right").pixxelate("UK", "blue");
 
     $(this).load();
 });
