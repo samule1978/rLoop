@@ -129,7 +129,7 @@ pixels {
     right:0;
     bottom:0;
     top:0;
-    width:265px;
+    width:100%;
     height:60px;
     display:block;
     z-index: 1;

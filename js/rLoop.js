@@ -10,7 +10,7 @@ $(document).ready(function () {
     $("#main").hide();
     if (!isMobile) $('#spiniPhoneX').hide();
 
-    $(".loader-wrap-top").pixxelate("EFHEE");
+    $(".loader-wrap-top").pixxelate("ABCDEFGHIJKLMNOPQRSTUVWXYZ-./\\");
 
     $(this).load();
 });
