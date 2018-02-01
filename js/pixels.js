@@ -29,13 +29,14 @@ var pixelGeneratorCode = {
     "X":".___./.___./_._._/__.__/_._._/.___./.___.",
     "Y":".___./.___./.___./_._._/__.__/__.__/__.__",
     "Z":"...../____./___._/__.__/_.___/.____/.....",
-    ".":"___/___/___/___/___/___/_._",
+    ".":"__/__/__/__/__/__/_.",
     "-":"_____/_____/_____/_..._/_____/_____/_____",
     "/":"____./____./___._/__.__/_.___/.____/.____",
     "\\":".____/.____/_.___/__.__/___._/____./____.",
+    " ":"_____/_____/_____/_____/_____/_____/_____",
 };
 
-$.fn.pixxelate = function(word) {
+$.fn.pixxelate = function(word, color) {
     var pixelSpaceCode = "_";
     var pixelRows = 7;
 
@@ -65,12 +66,12 @@ $.fn.pixxelate = function(word) {
             var newline = (col == 0) ? " br" : "";
 
             if (rowCode.charAt(col) == ".") {
-                pixels += "<pixel class='r-" + row + " c-" + col + " white" + newline + "'></pixel>";
+                pixels += "<pixel class='r-" + row + " c-" + col + " " + color + newline + "'></pixel>";
             } else if (rowCode.charAt(col) == "_") {
                 pixels += "<pixel class='r-" + row + " c-" + col + " blank" + newline + "'></pixel>";
             }
         }
     }
 
-    return $(this).append("<pixels>" + pixels + "</pixels>");
+    return $(this).append(pixels);
 };
