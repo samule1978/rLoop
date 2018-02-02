@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="90f050f4-5f5e-46b9-a025-b617daeebec7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/preload.css" afterPath="$PROJECT_DIR$/css/preload.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/rLoop.js" afterPath="$PROJECT_DIR$/js/rLoop.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,11 +16,11 @@
     <splitter split-orientation="vertical" split-proportion="0.62453985">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="rLoop.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="rLoop.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/rLoop.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="16" column="38" lean-forward="false" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+                <state relative-caret-position="285">
+                  <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
                   <folding />
                 </state>
               </provider>
@@ -53,7 +51,7 @@
           <file leaf-file-name="functions.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/functions.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="215">
+                <state relative-caret-position="2550">
                   <caret line="173" column="27" lean-forward="false" selection-start-line="173" selection-start-column="27" selection-end-line="173" selection-end-column="27" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
@@ -65,18 +63,18 @@
           <file leaf-file-name="rloop.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/rloop.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-62">
+                <state relative-caret-position="345">
                   <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="preload.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="preload.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/preload.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="124">
-                  <caret line="164" column="16" lean-forward="true" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="16" />
+                <state relative-caret-position="439">
+                  <caret line="185" column="49" lean-forward="false" selection-start-line="185" selection-start-column="49" selection-end-line="185" selection-end-column="49" />
                   <folding />
                 </state>
               </provider>
@@ -271,6 +269,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -338,7 +337,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -465,12 +463,13 @@
       <workItem from="1517339901124" duration="3243000" />
       <workItem from="1517392543979" duration="18301000" />
       <workItem from="1517477582709" duration="6559000" />
-      <workItem from="1517505239238" duration="141000" />
+      <workItem from="1517505239238" duration="157000" />
+      <workItem from="1517567765477" duration="125000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181410000" />
+    <option name="totallyTimeSpent" value="181551000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="170" y="1269" width="1680" height="939" extended-state="0" />
@@ -607,7 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="2505" lean-forward="false" selection-start-line="0" selection-start-column="2505" selection-end-line="0" selection-end-column="2505" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -866,7 +864,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
+        <state relative-caret-position="2550">
           <caret line="173" column="27" lean-forward="false" selection-start-line="173" selection-start-column="27" selection-end-line="173" selection-end-column="27" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -874,17 +872,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/rLoop.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="38" lean-forward="false" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/rloop.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-62">
+        <state relative-caret-position="345">
           <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
           <folding />
         </state>
@@ -892,8 +882,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/preload.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="164" column="16" lean-forward="true" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="16" />
+        <state relative-caret-position="439">
+          <caret line="185" column="49" lean-forward="false" selection-start-line="185" selection-start-column="49" selection-end-line="185" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/rLoop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
           <folding />
         </state>
       </provider>
