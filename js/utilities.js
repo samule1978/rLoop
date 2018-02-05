@@ -39,7 +39,7 @@ $.fn.clipPathRectLeftToRight = function(percentage) {
         '-moz-clip-path'    : 'polygon(0 0, ' + percentage + '% 0, ' + percentage + '% 100%, 0 100%)',
         '-ms-clip-path'     : 'polygon(0 0, ' + percentage + '% 0, ' + percentage + '% 100%, 0 100%)',
         '-o-clip-path'      : 'polygon(0 0, ' + percentage + '% 0, ' + percentage + '% 100%, 0 100%)',
-        'clip-path'         : 'polygon(0 0, ' + percentage + '% 0, ' + percentage + '% 100%, 0 100%)',
+        'clip-path'         : 'polygon(0 0, ' + percentage + '% 0, ' + percentage + '% 100%, 0 100%)'
     });
 
     return $(this);
