@@ -136,6 +136,11 @@
     top: 0px;
     left: 0px;
     z-index: 2;
+
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    -moz-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    -ms-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    -o-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 }
 #hlHyperLoopWhite {

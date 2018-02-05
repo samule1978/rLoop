@@ -121,7 +121,8 @@ $.fn.loadAnimation = function(usePerspective, bePrecise, showStars) {
             {
                 step: function(now, fx) {
                     $(".headline-bottom").css('opacity', now / 100);
-                    $("#hlHyperLoop").css('clip-path', 'polygon(0 0, ' + now + '% 0, ' + now + '% 100%, 0 100%)');
+                    $("#hlHyperLoop").clipPathRectLeftToRight(now);
+                    //$("#hlHyperLoop").css('clip-path', 'polygon(0 0, ' + now + '% 0, ' + now + '% 100%, 0 100%)');
                 }
             }, time);
 
