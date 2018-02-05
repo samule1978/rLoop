@@ -33,6 +33,18 @@ $.fn.clipPathPolygon = function(topLeft, topRight, bottomLeft, bottomRight) {
     return $(this);
 };
 
+$.fn.clipPathRectLeftToRight = function(percentage) {
+    $(this).css({
+        '-webkit-clip-path' : 'polygon(0 0, ' + percentage + '% 0, ' + percentage + '% 100%, 0 100%)',
+        '-moz-clip-path'    : 'polygon(0 0, ' + percentage + '% 0, ' + percentage + '% 100%, 0 100%)',
+        '-ms-clip-path'     : 'polygon(0 0, ' + percentage + '% 0, ' + percentage + '% 100%, 0 100%)',
+        '-o-clip-path'      : 'polygon(0 0, ' + percentage + '% 0, ' + percentage + '% 100%, 0 100%)',
+        'clip-path'         : 'polygon(0 0, ' + percentage + '% 0, ' + percentage + '% 100%, 0 100%)',
+    });
+
+    return $(this);
+};
+
 $.fn.constrain = function(value, boundary) {
     // Because we don't want to have the device upside down
     // We constrain the y value to the range [-boundary,boundary]

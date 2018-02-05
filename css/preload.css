@@ -125,15 +125,34 @@
     margin: auto;
     z-index: 1;
 }
-#hlHyperLoop {
+.headline-top {
     width: 100%;
     position: absolute;
     top: 0px;
 }
-#hlRaceIsOn {
+#hlHyperLoop {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+}
+#hlHyperLoopWhite {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+.headline-bottom {
     width: 98%;
     position: absolute;
     bottom: 0px;
+    opacity: 0;
+}
+#hlRaceIsOn {
+    width: 100%;
 }
 
 .loader-wrap-bottom {

@@ -112,13 +112,22 @@ $.fn.loadAnimation = function(usePerspective, bePrecise, showStars) {
     window.ondeviceorientation = function(event) {
         $(this).animatePolygons(usePerspective, bePrecise);
 
+        time = time * 5;
+
         // Loadbar Animation
         $(".loadbar").animate({
-            width: width + "%"
-        }, time);
-        $(".loadbar").animate({
+                width: width + "%"
+            },
+            {
+                step: function(now, fx) {
+                    $(".headline-bottom").css('opacity', now / 100);
+                    $("#hlHyperLoop").css('clip-path', 'polygon(0 0, ' + now + '% 0, ' + now + '% 100%, 0 100%)');
+                }
+            }, time);
+
+        /*$(".loadbar").animate({
             opacity: 0
-        }, time/2);
+        }, time);*/
 
         // Finish Loading Animation
         /*setTimeout(function(){
