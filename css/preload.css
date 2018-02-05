@@ -67,56 +67,9 @@
     clip-path: polygon(0 0, 100% 0, 100% 79.85%, 0 79.85%);
 }
 
-.loader-wrap-top.show-stars {
-    background-image: none;
-}
-
-/* Stars Animation */
-@keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
-}
-@-webkit-keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
-}
-@-moz-keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
-}
-@-ms-keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
-}
-.show-stars .stars,
-.show-stars .twinkling {
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    width:100%;
-    height:100%;
-    display:block;
-}
-.show-stars .stars {
-    background:#000000 url(../img/assets/anim_stars.png) repeat top center;
-    z-index:0;
-}
-.show-stars .twinkling{
-    background:transparent url(../img/assets/anim_twinkling.png) repeat top center;
-    z-index:1;
-
-    -moz-animation:move-twink-back 200s linear infinite;
-    -ms-animation:move-twink-back 200s linear infinite;
-    -o-animation:move-twink-back 200s linear infinite;
-    -webkit-animation:move-twink-back 200s linear infinite;
-    animation:move-twink-back 200s linear infinite;
-}
-
 .headline-wrap {
-    width: 200px;
-    height: 50px;
+    width: 300px;
+    height: 75px;
     position: absolute;
     top: -150px;
     bottom: 0;
@@ -151,7 +104,7 @@
     z-index: 1;
 }
 .headline-bottom {
-    width: 98%;
+    width: 100%;
     position: absolute;
     bottom: 0px;
     opacity: 0;

@@ -93,21 +93,21 @@ $.fn.gyro = function() {
     }
 };
 
-
-
 $.fn.load = function() {
-    $(this).loadAnimation(true, true, true);
+    $(this).loadAnimation(true, true);
 };
 
-$.fn.loadAnimation = function(usePerspective, bePrecise, showStars) {
-    if (showStars) {
-        $(".loader-wrap-top").addClass("show-stars");
-        $(".loader-wrap-top").removeClass("hide-stars");
+$.fn.showStars = function(show) {
+    if (show) {
+        $(this).addClass("show-stars");
+        $(this).removeClass("hide-stars");
     } else {
-        $(".loader-wrap-top").addClass("hide-stars");
-        $(".loader-wrap-top").removeClass("show-stars");
+        $(this).addClass("hide-stars");
+        $(this).removeClass("show-stars");
     }
+};
 
+$.fn.loadAnimation = function(usePerspective, bePrecise) {
     // Loading Gyro Animation
     window.ondeviceorientation = function(event) {
         $(this).animatePolygons(usePerspective, bePrecise);
