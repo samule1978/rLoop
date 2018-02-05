@@ -112,33 +112,6 @@ $.fn.loadAnimation = function(usePerspective, bePrecise, showStars) {
     window.ondeviceorientation = function(event) {
         $(this).animatePolygons(usePerspective, bePrecise);
 
-        time = time * 5;
-
-        // Loadbar Animation
-        $(".loadbar").animate({
-                width: width + "%"
-            },
-            {
-                step: function(now, fx) {
-                    $(".headline-bottom").css('opacity', now / 100);
-                    $("#hlHyperLoop").clipPathRectLeftToRight(now);
-                    //$("#hlHyperLoop").css('clip-path', 'polygon(0 0, ' + now + '% 0, ' + now + '% 100%, 0 100%)');
-                }
-            }, time);
-
-        /*$(".loadbar").animate({
-            opacity: 0
-        }, time);*/
-
-        // Finish Loading Animation
-        /*setTimeout(function(){
-            $(".preloader-wrap").addClass("hide").delay(2000).queue(function(){
-                $(this).addClass("finished").dequeue().delay(1000).queue(function(){
-                    //$(this).setup();
-                });
-            });
-        }, time);*/
-        
         if (showDebug) {
             var debug = document.querySelector('.debug');
             debug.innerHTML = version + "<br />";
@@ -150,6 +123,33 @@ $.fn.loadAnimation = function(usePerspective, bePrecise, showStars) {
             debug.innerHTML += "z : " + z + "<br />";
         }
     }
+
+    time = time * 5;
+
+    // Loadbar Animation
+    $(".loadbar").animate({
+            width: width + "%"
+        },
+        {
+            step: function(now, fx) {
+                $(".headline-bottom").css('opacity', now / 100);
+                $("#hlHyperLoop").clipPathRectLeftToRight(now);
+                //$("#hlHyperLoop").css('clip-path', 'polygon(0 0, ' + now + '% 0, ' + now + '% 100%, 0 100%)');
+            }
+        }, time);
+
+    /*$(".loadbar").animate({
+     opacity: 0
+     }, time);*/
+
+    // Finish Loading Animation
+    /*setTimeout(function(){
+     $(".preloader-wrap").addClass("hide").delay(2000).queue(function(){
+     $(this).addClass("finished").dequeue().delay(1000).queue(function(){
+     //$(this).setup();
+     });
+     });
+     }, time);*/
 };
 
 $.fn.finishedLoading = function() {
