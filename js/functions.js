@@ -29,6 +29,9 @@ var start = 0,
 
 /******* FUNCTIONS *******/
 $.fn.setup = function() {
+    $("body").showStars(true);
+    $(".loader-wrap-top").showStars(false);
+
     if (isMobile) {
         if ($(this).gyro()) {
             $(this).animateOnMobile();
@@ -99,11 +102,10 @@ $.fn.load = function() {
 
 $.fn.showStars = function(show) {
     if (show) {
-        $(this).addClass("show-stars");
-        $(this).removeClass("hide-stars");
+        $(this).prepend("<div class='stars'></div><div class='twinkling'></div>");
     } else {
-        $(this).addClass("hide-stars");
-        $(this).removeClass("show-stars");
+        $(this).remove(".stars");
+        $(this).remove(".twinkling");
     }
 };
 
@@ -123,8 +125,6 @@ $.fn.loadAnimation = function(usePerspective, bePrecise) {
             debug.innerHTML += "z : " + z + "<br />";
         }
     }
-
-    time = time * 5;
 
     // Loadbar Animation
     $(".loadbar").animate({

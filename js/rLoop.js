@@ -7,7 +7,8 @@ $(document).ready(function () {
     showDebug = false;
     isMobile = $(this).isMobile();
 
-    $("body").showStars(true);
+    $("body").showStars(false);
+    $(".loader-wrap-top").showStars(true);
 
     $("#main").hide();
     if (!isMobile) $('#spiniPhoneX').hide();
