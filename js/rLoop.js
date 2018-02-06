@@ -3,16 +3,17 @@
  * Created by samuleghurry on 20/01/2018.
  */
 
-$(this).loadGyroEffects(true, true);
+//$(this).loadGyroEffects(true, true);
 
 $(document).ready(function () {
     isMobile = $(this).isMobile();
 
+    $("body").showStars(true);
+
     $("#main").hide();
     if (!isMobile) $('#spiniPhoneX').hide();
 
-    $("body").showStars(false);
-    $(".loader-wrap-top").showStars(true);
+
 
     /*$(".loader-wrap-top").append("<container class='pixels-wrap'></container>");
     $(".pixels-wrap").append("<pixels class='left'></pixels>");

@@ -29,8 +29,6 @@ var start = 0,
 
 /******* FUNCTIONS *******/
 $.fn.setup = function() {
-    $(".loader-wrap-top").showStars(false);
-
     if (isMobile) {
         if ($(this).gyro()) {
             $(this).animateOnMobile();
@@ -139,15 +137,13 @@ $.fn.loadAnimation = function() {
     }, time);
 
     // Finish Loading Animation
-    setTimeout(function(){
-        $("body").showStars(true);
-
+    /*setTimeout(function(){
         $(".preloader-wrap").addClass("hide").delay(2000).queue(function(){
             $(this).addClass("finished").dequeue().delay(1000).queue(function(){
                 $(this).setup();
             });
         });
-     }, time);
+     }, time);*/
 };
 
 $.fn.finishedLoading = function() {

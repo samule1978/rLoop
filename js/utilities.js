@@ -4,7 +4,7 @@
  */
 
 /******* VARIABLES *******/
-var version = "Version: 2.0.0.17.0";
+var version = "Version: 2.0.0.18.0";
 var isMobile = false;
 
 /******* FUNCTIONS *******/
