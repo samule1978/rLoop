@@ -29,7 +29,6 @@ var start = 0,
 
 /******* FUNCTIONS *******/
 $.fn.setup = function() {
-    $("#main").show();
     $(".loader-wrap-top").showStars(false);
 
     if (isMobile) {
@@ -52,6 +51,7 @@ $.fn.setup = function() {
 $.fn.animateOnDesktop = function() {
     $('#containerSpinLogo').delay(500).animate({opacity:0, scale: '20'}, 1000, function() {
         $(".spinlogo-wrap").hide();
+        $("#main").show();
     });
 };
 
