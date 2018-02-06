@@ -129,6 +129,12 @@ $.fn.loadAnimation = function() {
             }
         }, time);
 
+    setTimeout(function(){
+        $(".loadbar").animate({
+            opacity: 0
+        }, 1000);
+    }, time);
+
     // Finish Loading Animation
     /*setTimeout(function(){
      $(".preloader-wrap").addClass("hide").delay(2000).queue(function(){
