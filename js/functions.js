@@ -29,7 +29,7 @@ var start = 0,
 
 /******* FUNCTIONS *******/
 $.fn.setup = function() {
-    $("body").showStars(true);
+    $("#main").show();
     $(".loader-wrap-top").showStars(false);
 
     if (isMobile) {
@@ -52,7 +52,6 @@ $.fn.setup = function() {
 $.fn.animateOnDesktop = function() {
     $('#containerSpinLogo').delay(500).animate({opacity:0, scale: '20'}, 1000, function() {
         $(".spinlogo-wrap").hide();
-        $("#main").show();
     });
 };
 
@@ -136,13 +135,15 @@ $.fn.loadAnimation = function() {
     }, time);
 
     // Finish Loading Animation
-    /*setTimeout(function(){
-     $(".preloader-wrap").addClass("hide").delay(2000).queue(function(){
-     $(this).addClass("finished").dequeue().delay(1000).queue(function(){
-     //$(this).setup();
-     });
-     });
-     }, time);*/
+    setTimeout(function(){
+        $("body").showStars(true);
+
+        $(".preloader-wrap").addClass("hide").delay(2000).queue(function(){
+            $(this).addClass("finished").dequeue().delay(1000).queue(function(){
+                $(this).setup();
+            });
+        });
+     }, time);
 };
 
 $.fn.finishedLoading = function() {

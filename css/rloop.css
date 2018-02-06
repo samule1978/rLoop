@@ -133,6 +133,11 @@ body {
     to {background-position:-10000px 5000px;}
 }
 
+#main {
+    position: relative;
+    z-index: 10;
+}
+
 /* Full Page Overrides */
 .fp-controlArrow.fp-prev {
     left: 15px;
