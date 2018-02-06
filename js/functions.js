@@ -96,51 +96,36 @@ $.fn.gyro = function() {
     }
 };
 
-$.fn.load = function() {
-    $(this).loadAnimation(true, true);
-};
-
-$.fn.showStars = function(show) {
-    if (show) {
-        $(this).prepend("<div class='stars'></div><div class='twinkling'></div>");
-    } else {
-        $(this).remove(".stars");
-        $(this).remove(".twinkling");
-    }
-};
-
-$.fn.loadAnimation = function(usePerspective, bePrecise) {
-    // Loading Gyro Animation
+$.fn.loadGyroEffects = function(usePerspective, bePrecise) {
+    // Loading Gyro Effects
     window.ondeviceorientation = function(event) {
         $(this).animatePolygons(usePerspective, bePrecise);
-
-        if (showDebug) {
-            var debug = document.querySelector('.debug');
-            debug.innerHTML = version + "<br />";
-            debug.innerHTML += "Beta : " + beta + "<br />";
-            debug.innerHTML += "Gamma : " + gamma + "<br />";
-            debug.innerHTML += "Alpha : " + alpha + "<br />";
-            debug.innerHTML += "x : " + x + "<br />";
-            debug.innerHTML += "y : " + y + "<br />";
-            debug.innerHTML += "z : " + z + "<br />";
-        }
     }
+};
 
-    // Loadbar Animation
-    $(".loadbar").animate({
+$.fn.load = function() {
+    $(this).loadAnimation();
+};
+
+$.fn.loadAnimation = function() {
+    setTimeout(function(){
+        $(".headline-top").animate({
+            opacity: 1
+        }, 750);
+
+        $(".headline-bottom").animate({
+            opacity: 1
+        }, 1250);
+    }, 0);
+
+    $(".loadbar").delay(1500).animate({
             width: width + "%"
         },
         {
             step: function(now, fx) {
-                $(".headline-bottom").css('opacity', now / 100);
                 $("#hlHyperLoop").clipPathRectLeftToRight(now);
-                //$("#hlHyperLoop").css('clip-path', 'polygon(0 0, ' + now + '% 0, ' + now + '% 100%, 0 100%)');
             }
         }, time);
-
-    /*$(".loadbar").animate({
-     opacity: 0
-     }, time);*/
 
     // Finish Loading Animation
     /*setTimeout(function(){

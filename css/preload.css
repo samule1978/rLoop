@@ -75,6 +75,7 @@
     width: 100%;
     position: absolute;
     top: 0px;
+    opacity: 0;
 }
 #hlHyperLoop {
     width: 100%;

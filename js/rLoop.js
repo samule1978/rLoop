@@ -3,8 +3,9 @@
  * Created by samuleghurry on 20/01/2018.
  */
 
+$(this).loadGyroEffects(true, true);
+
 $(document).ready(function () {
-    showDebug = false;
     isMobile = $(this).isMobile();
 
     $("body").showStars(false);

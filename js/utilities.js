@@ -6,8 +6,6 @@
 /******* VARIABLES *******/
 var version = "Version: 2.0.0.17.0";
 var isMobile = false;
-var showDebug = false;
-
 
 /******* FUNCTIONS *******/
 $.fn.portrait = function() {
@@ -51,4 +49,13 @@ $.fn.constrain = function(value, boundary) {
     if (value >  boundary) { value =  boundary};
     if (value < -boundary) { value = -boundary};
     return value;
+};
+
+$.fn.showStars = function(show) {
+    if (show) {
+        $(this).prepend("<div class='stars'></div><div class='twinkling'></div>");
+    } else {
+        $(this).remove(".stars");
+        $(this).remove(".twinkling");
+    }
 };
