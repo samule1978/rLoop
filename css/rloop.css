@@ -65,6 +65,7 @@ body {
     bottom: 0;
     background: transparent;
     z-index: 10;
+    opacity: 0;
 }
 #containerSpinLogo {
     /*width: 200px;
@@ -140,6 +141,9 @@ body {
 }
 
 /* Full Page Overrides */
+.intro {
+    padding: 0px 55px;
+}
 .fp-controlArrow.fp-prev {
     left: 15px;
     width: 6vh;

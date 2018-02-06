@@ -49,7 +49,9 @@ $.fn.setup = function() {
 };
 
 $.fn.animateOnDesktop = function() {
-    $('#containerSpinLogo').delay(500).animate({opacity:0, scale: '20'}, 1000, function() {
+    $('.spinlogo-wrap').animate({opacity:1}, 1000);
+
+    $('#containerSpinLogo').delay(2000).animate({opacity:0, scale: '20'}, 1000, function() {
         $(".spinlogo-wrap").hide();
         $("#main").show();
     });
@@ -68,7 +70,9 @@ $.fn.animateOnMobile = function() {
             $("#spinLogo").delay(500).animate({top:'-235px'}, 500, function() {
                 //callback
             });*/
-            $('#containerSpinLogo').delay(500).animate({opacity:0, scale: '20'}, 1000, function() {
+            $('.spinlogo-wrap').animate({opacity:1}, 1000);
+
+            $('#containerSpinLogo').delay(2000).animate({opacity:0, scale: '20'}, 1000, function() {
                 $(".spinlogo-wrap").hide();
                 $("#main").show();
             });
