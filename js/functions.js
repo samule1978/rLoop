@@ -108,17 +108,19 @@ $.fn.load = function() {
 };
 
 $.fn.loadAnimation = function() {
+    var initialDelay = 1750;
+
     setTimeout(function(){
         $(".headline-top").animate({
             opacity: 1
-        }, 750);
+        }, 1000);
 
         $(".headline-bottom").animate({
             opacity: 1
-        }, 1250);
+        }, 1500);
     }, 0);
 
-    $(".loadbar").delay(1500).animate({
+    $(".loadbar").delay(initialDelay).animate({
             width: width + "%"
         },
         {
