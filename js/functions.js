@@ -126,7 +126,7 @@ $.fn.loadAnimation = function() {
         },
         {
             step: function(now, fx) {
-                $("#hlHyperLoop").clipPathRectLeftToRight(now);
+                $(".hyper-loop").clipPathRectLeftToRight(now);
             }
         }, time);
 
