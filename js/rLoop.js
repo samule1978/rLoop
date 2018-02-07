@@ -3,15 +3,23 @@
  * Created by samuleghurry on 20/01/2018.
  */
 
-//$(this).loadGyroEffects(true, true);
-
 $(document).ready(function () {
-    isMobile = $(this).isMobile();
+    $(this).initialise();
+});
 
-    $("body").showStars(true);
+$.fn.initialise = function() {
+    // Set mobile flag
+    isMobile = $(this).util_isMobile();
 
+    // Add twinkling stars to body.
+    $("body").util_showStars(true);
+
+    // Hide main content.
     $("#main").hide();
+
+    // Hide phone container image if not mobile.
     if (!isMobile) $('#spiniPhoneX').hide();
 
-    $(this).load();
-});
+    // Show loading animation.
+    $(this).showLoadingAnimation();
+};

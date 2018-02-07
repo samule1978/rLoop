@@ -27,11 +27,11 @@ body {
     overflow: hidden;
     -webkit-overflow-scrolling: auto;
 
-    /*background-image: url(../img/bg/section2bg.jpg);
+    background-image: url(../img/bg/section2bg.jpg);
     background-position: 0px 0px;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;*/
+    background-size: cover;
 }
 
 #header {
