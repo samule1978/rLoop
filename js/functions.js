@@ -29,6 +29,8 @@ var start = 0,
 
 /******* FUNCTIONS *******/
 $.fn.setup = function() {
+    $('.spinlogo-wrap').animate({opacity:1}, 1000);
+    
     if (isMobile) {
         if ($(this).gyro()) {
             //$(this).animateOnMobile();
@@ -68,7 +70,7 @@ $.fn.animateOnMobile = function() {
             $("#spinLogo").delay(500).animate({top:'-235px'}, 500, function() {
                 //callback
             });*/
-            $('.spinlogo-wrap').animate({opacity:1}, 1000);
+
 
             $('#containerSpinLogo').delay(2000).animate({opacity:0, scale: '20'}, 1000, function() {
                 $(".spinlogo-wrap").hide();
