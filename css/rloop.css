@@ -26,6 +26,12 @@ body {
     -webkit-text-size-adjust: none;
     overflow: hidden;
     -webkit-overflow-scrolling: auto;
+
+    /*background-image: url(../img/bg/section2bg.jpg);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;*/
 }
 
 #header {
