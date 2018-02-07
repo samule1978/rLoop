@@ -130,20 +130,21 @@ $.fn.loadAnimation = function() {
             }
         }, time);
 
-    setTimeout(function(){
+    /*setTimeout(function(){
         $(".loadbar").animate({
             opacity: 0
         }, 1000);
-    }, time);
+    }, time);*/
 
     // Finish Loading Animation
-    /*setTimeout(function(){
+    setTimeout(function(){
         $(".preloader-wrap").addClass("hide").delay(2000).queue(function(){
             $(this).addClass("finished").dequeue().delay(1000).queue(function(){
                 $(this).setup();
             });
         });
-     }, time);*/
+    }, initialDelay);
+     //}, time + initialDelay);
 };
 
 $.fn.finishedLoading = function() {

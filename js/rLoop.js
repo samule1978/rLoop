@@ -13,13 +13,5 @@ $(document).ready(function () {
     $("#main").hide();
     if (!isMobile) $('#spiniPhoneX').hide();
 
-
-
-    /*$(".loader-wrap-top").append("<container class='pixels-wrap'></container>");
-    $(".pixels-wrap").append("<pixels class='left'></pixels>");
-    $("pixels.left").pixxelate("HYPE", "white");
-    $(".pixels-wrap").append("<pixels class='right'></pixels>");
-    $("pixels.right").pixxelate("RLOOP", "blue");*/
-
     $(this).load();
 });
