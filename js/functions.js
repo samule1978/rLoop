@@ -31,7 +31,7 @@ var start = 0,
 $.fn.setup = function() {
     if (isMobile) {
         if ($(this).gyro()) {
-            $(this).animateOnMobile();
+            //$(this).animateOnMobile();
         }
     } else {
         $(this).animateOnDesktop();
@@ -97,6 +97,8 @@ $.fn.loadAnimation = function() {
         }, 4000);
     }, 0);
 
+    time += initialDelay;
+
     $(".loadbar").delay(initialDelay).animate({
             width: width + "%"
         },
@@ -113,7 +115,7 @@ $.fn.loadAnimation = function() {
                 $(this).setup();
             });
         });
-    }, time + 2000);
+    }, time);
 };
 
 $.fn.finishedLoading = function() {
