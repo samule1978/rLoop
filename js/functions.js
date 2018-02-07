@@ -78,6 +78,48 @@ $.fn.animateOnMobile = function() {
     }, false);
 };
 
+
+
+$.fn.load = function() {
+    $(this).loadAnimation();
+};
+
+$.fn.loadAnimation = function() {
+    var initialDelay = 3000;
+
+    setTimeout(function(){
+        $(".headline-top").animate({
+            opacity: 1
+        }, 2000);
+
+        $(".headline-bottom").animate({
+            opacity: 1
+        }, 4000);
+    }, 0);
+
+    $(".loadbar").delay(initialDelay).animate({
+            width: width + "%"
+        },
+        {
+            step: function(now, fx) {
+                $(".hyper-loop").clipPathRectLeftToRight(now);
+            }
+        }, time);
+
+    // Finish Loading Animation
+    setTimeout(function(){
+        $(".preloader-wrap").addClass("hide").delay(2000).queue(function(){
+            $(this).addClass("finished").dequeue().delay(1000).queue(function(){
+                $(this).setup();
+            });
+        });
+    }, time + 2000);
+};
+
+$.fn.finishedLoading = function() {
+    return $(".preloader-wrap").hasClass("finished");
+};
+
 $.fn.gyro = function() {
     if (window.DeviceMotionEvent === undefined) {
         return false;
@@ -102,53 +144,6 @@ $.fn.loadGyroEffects = function(usePerspective, bePrecise) {
     window.ondeviceorientation = function(event) {
         $(this).animatePolygons(usePerspective, bePrecise);
     }
-};
-
-$.fn.load = function() {
-    $(this).loadAnimation();
-};
-
-$.fn.loadAnimation = function() {
-    var initialDelay = 1750;
-
-    setTimeout(function(){
-        $(".headline-top").animate({
-            opacity: 1
-        }, 1000);
-
-        $(".headline-bottom").animate({
-            opacity: 1
-        }, 1500);
-    }, 0);
-
-    $(".loadbar").delay(initialDelay).animate({
-            width: width + "%"
-        },
-        {
-            step: function(now, fx) {
-                $(".hyper-loop").clipPathRectLeftToRight(now);
-            }
-        }, time);
-
-    /*setTimeout(function(){
-        $(".loadbar").animate({
-            opacity: 0
-        }, 1000);
-    }, time);*/
-
-    // Finish Loading Animation
-    setTimeout(function(){
-        $(".preloader-wrap").addClass("hide").delay(2000).queue(function(){
-            $(this).addClass("finished").dequeue().delay(1000).queue(function(){
-                $(this).setup();
-            });
-        });
-    }, initialDelay);
-     //}, time + initialDelay);
-};
-
-$.fn.finishedLoading = function() {
-    return $(".preloader-wrap").hasClass("finished");
 };
 
 $.fn.animatePolygons = function(usePerspective, bePrecise) {
