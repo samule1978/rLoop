@@ -87,7 +87,7 @@ $.fn.showGyroAnimation = function(bePrecise) {
                     } else {
                         degrees = Math.round(event.gamma);
                     }
-                    //degrees = $(this).util_constrain(degrees, 90);
+                    degrees = $(this).util_constrain(degrees, 90);
                     degrees = -degrees;
                 } else {
                     if (bePrecise) {
@@ -95,7 +95,7 @@ $.fn.showGyroAnimation = function(bePrecise) {
                     } else {
                         degrees = Math.round(event.beta);
                     }
-                    //degrees = $(this).util_constrain(degrees, 90);
+                    degrees = $(this).util_constrain(degrees, 90);
                 }
 
                 $("#spinLogo, #spiniPhoneX").rotate(degrees);
