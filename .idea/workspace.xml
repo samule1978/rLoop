@@ -29,8 +29,8 @@
           <file leaf-file-name="functions.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/functions.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="146">
-                  <caret line="98" column="22" lean-forward="false" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
+                <state relative-caret-position="118">
+                  <caret line="90" column="24" lean-forward="true" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -79,7 +79,7 @@
               <file leaf-file-name="functions.js" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/2.0.15.0/js/functions.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="-2501">
+                    <state relative-caret-position="-1157">
                       <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                       <folding>
                         <element signature="n#!!doc" expanded="true" />
@@ -547,12 +547,12 @@
       <workItem from="1517945521846" duration="2488000" />
       <workItem from="1517996136188" duration="8941000" />
       <workItem from="1518027539860" duration="5093000" />
-      <workItem from="1518083277677" duration="3936000" />
+      <workItem from="1518083277677" duration="4274000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224394000" />
+    <option name="totallyTimeSpent" value="224732000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="1223" width="1680" height="987" extended-state="0" />
@@ -954,7 +954,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/2.0.15.0/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2501">
+        <state relative-caret-position="-1157">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -964,8 +964,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="98" column="22" lean-forward="false" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
+        <state relative-caret-position="118">
+          <caret line="90" column="24" lean-forward="true" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

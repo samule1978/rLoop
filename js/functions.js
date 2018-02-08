@@ -83,24 +83,22 @@ $.fn.showGyroAnimation = function(bePrecise) {
                 var degrees;
                 if($(this).util_portrait()) {
                     if (bePrecise) {
-                        degrees = event.beta;
-                    } else {
-                        degrees = Math.round(event.beta);
-                    }
-                    //degrees = $(this).util_constrain(degrees, 90);
-                    //degrees = degrees * 0.15; // In portrait reduce amount of velocity on y axis
-                    degrees = -degrees;
-                } else {
-                    if (bePrecise) {
                         degrees = event.gamma;
                     } else {
                         degrees = Math.round(event.gamma);
                     }
                     //degrees = $(this).util_constrain(degrees, 90);
+                } else {
+                    if (bePrecise) {
+                        degrees = event.beta;
+                    } else {
+                        degrees = Math.round(event.beta);
+                    }
+                    //degrees = $(this).util_constrain(degrees, 90);
                 }
 
-                $("#spinLogo").rotate(degrees);
-                $("#spiniPhoneX").rotate(degrees);
+                $("#spinLogo").rotate(-degrees);
+                $("#spiniPhoneX").rotate(-degrees);
             }
         }
 
