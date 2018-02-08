@@ -98,8 +98,7 @@ $.fn.showGyroAnimation = function(bePrecise) {
                     //degrees = $(this).util_constrain(degrees, 90);
                 }
 
-                $("#spinLogo").rotate(degrees);
-                $("#spiniPhoneX").rotate(degrees);
+                $("#spinLogo, #spiniPhoneX").rotate(degrees);
             }
         }
 
