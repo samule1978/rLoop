@@ -59,10 +59,10 @@ $.fn.setup = function() {
 
     if (isMobile) {
         if ($(this).showGyroAnimation(true)) {
-            $(this).animateOnMobile();
+            //$(this).animateOnMobile();
         }
     } else {
-        $(this).animateOnDesktop();
+        //$(this).animateOnDesktop();
     }
 
     $('#fullpage').fullpage({
@@ -87,7 +87,7 @@ $.fn.showGyroAnimation = function(bePrecise) {
                     } else {
                         degrees = Math.round(event.beta);
                     }
-                    degrees = $(this).util_constrain(degrees, 90);
+                    //degrees = $(this).util_constrain(degrees, 90);
                     //degrees = degrees * 0.15; // In portrait reduce amount of velocity on y axis
                     degrees = -degrees;
                 } else {
@@ -96,7 +96,7 @@ $.fn.showGyroAnimation = function(bePrecise) {
                     } else {
                         degrees = Math.round(event.gamma);
                     }
-                    degrees = $(this).util_constrain(degrees, 90);
+                    //degrees = $(this).util_constrain(degrees, 90);
                 }
 
                 $("#spinLogo").rotate(degrees);
