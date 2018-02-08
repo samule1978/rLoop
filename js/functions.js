@@ -40,7 +40,7 @@ $.fn.showLoadingAnimation = function() {
                 $(this).setup();
             });
         });
-    }, time);
+    }, time + initialDelay);
 };
 
 $.fn.finishedLoading = function() {
@@ -58,7 +58,7 @@ $.fn.setup = function() {
     $('.spinlogo-wrap').animate({opacity:1}, 1000);
 
     if (isMobile) {
-        if ($(this).showGyroAnimation()) {
+        if ($(this).showGyroAnimation(true)) {
             $(this).animateOnMobile();
         }
     } else {
@@ -74,19 +74,34 @@ $.fn.setup = function() {
     });
 };
 
-$.fn.showGyroAnimation = function() {
+$.fn.showGyroAnimation = function(bePrecise) {
     if (window.DeviceMotionEvent === undefined) {
         return false;
     } else {
         window.ondeviceorientation = function(event) {
             if ($(this).finishedLoading()) {
+                var degrees;
                 if($(this).util_portrait()) {
-                    //degrees = Math.round(event.gamma);
-                    degrees = event.gamma;
-
-                    $("#spinLogo").rotate(-degrees);
-                    $("#spiniPhoneX").rotate(-degrees);
+                    if (bePrecise) {
+                        degrees = event.beta;
+                    } else {
+                        degrees = Math.round(event.beta);
+                    }
+                    degrees = $(this).util_constrain(degrees, 90);
+                    degrees = degrees * 0.15; // In portrait reduce amount of velocity on y axis
+                    degrees = -degrees;
+                } else {
+                    if (bePrecise) {
+                        degrees = event.gamma;
+                    } else {
+                        degrees = Math.round(event.gamma);
+                    }
+                    degrees = $(this).util_constrain(degrees, 90);
                 }
+
+                //$("#spinLogo").rotate(degrees);
+                //$("#spiniPhoneX").rotate(degrees);
+                $(".spinlogo-wrap").rotate(degrees);
             }
         }
 
