@@ -103,7 +103,7 @@ $.fn.showGyroAnimation = function(bePrecise) {
 };
 
 $.fn.fadeOutRLoopLogo = function() {
-    $('#containerSpinLogo').delay(3000).animate({opacity:0, scale: '20'}, 2000, function() {
+    $('#containerSpinLogo').delay(3000).animate({opacity:0, scale: '30'}, 1000, function() {
         $(".spinlogo-wrap").hide();
         $("#main").show();
     });
