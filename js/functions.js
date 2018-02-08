@@ -55,7 +55,7 @@ $.fn.finishedLoading = function() {
 
 /******* Functions *******/
 $.fn.setup = function() {
-    $('.spinlogo-wrap').animate({opacity:1}, 1000);
+    $('.spinlogo-wrap').animate({opacity:1}, 250);
 
     if (isMobile) {
         if ($(this).showGyroAnimation(true)) {
@@ -88,7 +88,7 @@ $.fn.showGyroAnimation = function(bePrecise) {
                         degrees = Math.round(event.beta);
                     }
                     degrees = $(this).util_constrain(degrees, 90);
-                    degrees = degrees * 0.15; // In portrait reduce amount of velocity on y axis
+                    //degrees = degrees * 0.15; // In portrait reduce amount of velocity on y axis
                     degrees = -degrees;
                 } else {
                     if (bePrecise) {
@@ -99,9 +99,8 @@ $.fn.showGyroAnimation = function(bePrecise) {
                     degrees = $(this).util_constrain(degrees, 90);
                 }
 
-                //$("#spinLogo").rotate(degrees);
-                //$("#spiniPhoneX").rotate(degrees);
-                $(".spinlogo-wrap").rotate(degrees);
+                $("#spinLogo").rotate(degrees);
+                $("#spiniPhoneX").rotate(degrees);
             }
         }
 
@@ -110,8 +109,6 @@ $.fn.showGyroAnimation = function(bePrecise) {
 };
 
 $.fn.animateOnDesktop = function() {
-    $('.spinlogo-wrap').animate({opacity:1}, 1000);
-
     $('#containerSpinLogo').delay(2000).animate({opacity:0, scale: '20'}, 1000, function() {
         $(".spinlogo-wrap").hide();
         $("#main").show();
@@ -127,12 +124,6 @@ $.fn.animateOnMobile = function() {
         $("#spiniPhoneX").rotate(0);
 
         if(!$(this).util_portrait()) {
-            /*$('#spiniPhoneX').delay(500).animate({opacity:0, scale: '10'}, 500);
-            $("#spinLogo").delay(500).animate({top:'-235px'}, 500, function() {
-                //callback
-            });*/
-
-
             $('#containerSpinLogo').delay(2000).animate({opacity:0, scale: '20'}, 1000, function() {
                 $(".spinlogo-wrap").hide();
                 $("#main").show();
