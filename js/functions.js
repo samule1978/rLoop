@@ -57,13 +57,9 @@ $.fn.finishedLoading = function() {
 $.fn.setup = function() {
     $('.spinlogo-wrap').animate({opacity:1}, 1000);
 
-    if (isMobile) {
-        if ($(this).showGyroAnimation(false)) {
-            //$(this).animateOnMobile();
-        }
-    } else {
-        //$(this).animateOnDesktop();
-    }
+    if (isMobile) $(this).showGyroAnimation(false);
+
+    $(this).fadeOutRLoopLogo();
 
     $('#fullpage').fullpage({
         /*sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
@@ -106,26 +102,9 @@ $.fn.showGyroAnimation = function(bePrecise) {
     }
 };
 
-$.fn.animateOnDesktop = function() {
+$.fn.fadeOutRLoopLogo = function() {
     $('#containerSpinLogo').delay(2000).animate({opacity:0, scale: '20'}, 1000, function() {
         $(".spinlogo-wrap").hide();
         $("#main").show();
     });
-};
-
-$.fn.animateOnMobile = function() {
-    window.addEventListener("resize", function() {
-        $('#spiniPhoneX').scale(1);
-        $("#spinLogo").removeAttr('style');
-        $("#spiniPhoneX").removeAttr('style');
-        $("#spinLogo").rotate(0);
-        $("#spiniPhoneX").rotate(0);
-
-        if(!$(this).util_portrait()) {
-            $('#containerSpinLogo').delay(2000).animate({opacity:0, scale: '20'}, 1000, function() {
-                $(".spinlogo-wrap").hide();
-                $("#main").show();
-            });
-        }
-    }, false);
 };
