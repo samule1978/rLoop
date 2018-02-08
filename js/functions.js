@@ -14,16 +14,6 @@ var width = 100,
 $.fn.showLoadingAnimation = function() {
     var initialDelay = 3000;
 
-    setTimeout(function(){
-        $(".headline-top").animate({
-            opacity: 1
-        }, 2000);
-
-        $(".headline-bottom").animate({
-            opacity: 1
-        }, 4000);
-    }, 0);
-
     $(".loadbar").delay(initialDelay).animate({
             width: width + "%"
         },
@@ -33,14 +23,24 @@ $.fn.showLoadingAnimation = function() {
             }
         }, time);
 
+    setTimeout(function(){
+        $(".headline-top").animate({
+            opacity: 1
+        }, initialDelay - 1000);
+
+        $(".headline-bottom").animate({
+            opacity: 1
+        }, initialDelay);
+    }, 0);
+
     // Finish Loading Animation
     setTimeout(function(){
-        $(".preloader-wrap").delay(initialDelay).addClass("hide").delay(2000).queue(function(){
-            $(this).addClass("finished").dequeue().delay(1000).queue(function(){
+        $(".preloader-wrap").addClass("hide").queue(function(){
+            $(this).dequeue().delay(initialDelay).addClass("finished").queue(function(){
                 $(this).setup();
             });
         });
-    }, time + initialDelay);
+    }, time);
 };
 
 $.fn.finishedLoading = function() {
@@ -55,7 +55,7 @@ $.fn.finishedLoading = function() {
 
 /******* Functions *******/
 $.fn.setup = function() {
-    $('.spinlogo-wrap').animate({opacity:1}, 250);
+    $('.spinlogo-wrap').animate({opacity:1}, 1000);
 
     if (isMobile) {
         if ($(this).showGyroAnimation(false)) {
