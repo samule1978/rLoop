@@ -31,16 +31,16 @@ $.fn.showLoadingAnimation = function() {
             step: function(now, fx) {
                 $(".hyper-loop").util_clipPathRectLeftToRight(now);
             }
-        }, time + initialDelay);
+        }, time);
 
     // Finish Loading Animation
     setTimeout(function(){
         $(".preloader-wrap").addClass("hide").queue(function(){
-            $(this).dequeue().delay(initialDelay).addClass("finished").queue(function(){
+            $(this).dequeue().delay(3000).addClass("finished").queue(function(){
                 $(this).setup();
             });
         });
-    }, time + initialDelay);
+    }, (time >= initialDelay) ? time : initialDelay);
 };
 
 $.fn.finishedLoading = function() {
@@ -103,7 +103,7 @@ $.fn.showGyroAnimation = function(bePrecise) {
 };
 
 $.fn.fadeOutRLoopLogo = function() {
-    $('#containerSpinLogo').delay(2000).animate({opacity:0, scale: '20'}, 1000, function() {
+    $('#containerSpinLogo').delay(3000).animate({opacity:0, scale: '20'}, 2000, function() {
         $(".spinlogo-wrap").hide();
         $("#main").show();
     });
