@@ -58,7 +58,7 @@ $.fn.setup = function() {
     $('.spinlogo-wrap').animate({opacity:1}, 250);
 
     if (isMobile) {
-        if ($(this).showGyroAnimation(true)) {
+        if ($(this).showGyroAnimation(false)) {
             //$(this).animateOnMobile();
         }
     } else {
@@ -88,6 +88,7 @@ $.fn.showGyroAnimation = function(bePrecise) {
                         degrees = Math.round(event.gamma);
                     }
                     //degrees = $(this).util_constrain(degrees, 90);
+                    degrees = -degrees;
                 } else {
                     if (bePrecise) {
                         degrees = event.beta;
@@ -97,8 +98,8 @@ $.fn.showGyroAnimation = function(bePrecise) {
                     //degrees = $(this).util_constrain(degrees, 90);
                 }
 
-                $("#spinLogo").rotate(-degrees);
-                $("#spiniPhoneX").rotate(-degrees);
+                $("#spinLogo").rotate(degrees);
+                $("#spiniPhoneX").rotate(degrees);
             }
         }
 
