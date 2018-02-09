@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90f050f4-5f5e-46b9-a025-b617daeebec7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/functions.js" afterPath="$PROJECT_DIR$/js/functions.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/utilities.js" afterPath="$PROJECT_DIR$/js/utilities.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/jQuery/jquery.mobile-1.5.0-alpha.1.min.js" afterPath="$PROJECT_DIR$/lib/jQuery/jquery.mobile-1.5.0-alpha.1.min.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,9 +15,9 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.83006537">
+    <splitter split-orientation="vertical" split-proportion="0.6775599">
       <split-first>
-        <splitter split-orientation="vertical" split-proportion="0.5203679">
+        <splitter split-orientation="vertical" split-proportion="0.66505635">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
               <file leaf-file-name="rLoop.js" pinned="false" current-in-tab="false">
@@ -32,8 +33,8 @@
               <file leaf-file-name="functions.js" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/js/functions.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="432">
-                      <caret line="66" column="2" lean-forward="false" selection-start-line="66" selection-start-column="2" selection-end-line="66" selection-end-column="2" />
+                    <state relative-caret-position="264">
+                      <caret line="63" column="29" lean-forward="false" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
                       <folding>
                         <element signature="n#!!doc" expanded="true" />
                       </folding>
@@ -41,14 +42,36 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="utilities.js" pinned="false" current-in-tab="true">
+              <file leaf-file-name="utilities.js" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/js/utilities.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="125">
-                      <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+                    <state relative-caret-position="95">
+                      <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
                       <folding>
                         <element signature="n#!!doc" expanded="true" />
                       </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="jquery.mobile-1.5.0-alpha.1.min.js" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/lib/jQuery/jquery.mobile-1.5.0-alpha.1.min.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="151">
+                      <caret line="9" column="19659" lean-forward="false" selection-start-line="9" selection-start-column="19659" selection-end-line="9" selection-end-column="19659" />
+                      <folding>
+                        <element signature="n#!!doc" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="jquery.fullPage.js" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/lib/jQuery/jquery.fullPage.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="264">
+                      <caret line="1009" column="34" lean-forward="false" selection-start-line="1009" selection-start-column="28" selection-end-line="1009" selection-end-column="34" />
+                      <folding />
                     </state>
                   </provider>
                 </entry>
@@ -89,16 +112,6 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="jquery.fullPage.js" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/lib/jQuery/jquery.fullPage.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="379">
-                      <caret line="1009" column="34" lean-forward="false" selection-start-line="1009" selection-start-column="28" selection-end-line="1009" selection-end-column="34" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
             </leaf>
           </split-second>
         </splitter>
@@ -108,7 +121,7 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../../rLoop/Resources/fullPage.js-master 2/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-917">
+                <state relative-caret-position="-527">
                   <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
                   <folding />
                 </state>
@@ -118,8 +131,8 @@
           <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/../../rLoop/Resources/fullPage.js-master 2/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="226">
-                  <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="31" />
+                <state relative-caret-position="-482">
+                  <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
@@ -140,8 +153,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>#hlHyperLoop</find>
-      <find>hlHyperLoop</find>
       <find>hlHyperLoopWhite</find>
       <find>loader-wrap-bottom</find>
       <find>hyper-loop</find>
@@ -170,6 +181,8 @@
       <find>main</find>
       <find>scroll</find>
       <find>util_setDeviceOrientation</find>
+      <find>util_portrait</find>
+      <find>loading</find>
     </findStrings>
     <replaceStrings>
       <replace>preloader</replace>
@@ -217,11 +230,12 @@
         <option value="$PROJECT_DIR$/../../rLoop/Resources/Scotch/Scotch Digital.htm" />
         <option value="$PROJECT_DIR$/../../rLoop/Resources/fullPage.js-master 2/index.html" />
         <option value="$PROJECT_DIR$/css/preload.css" />
-        <option value="$PROJECT_DIR$/js/functions.js" />
         <option value="$PROJECT_DIR$/css/rloop.css" />
         <option value="$PROJECT_DIR$/js/rLoop.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/functions.js" />
         <option value="$PROJECT_DIR$/js/utilities.js" />
+        <option value="$PROJECT_DIR$/lib/jQuery/jquery.mobile-1.5.0-alpha.1.min.js" />
       </list>
     </option>
   </component>
@@ -261,48 +275,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rloop.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fullPage.js-master 2" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rloop.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fullPage.js-master 2" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rloop.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="rloop.github.io" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -317,7 +289,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="2.0.18.0" />
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -331,43 +303,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="2.0.18.0" />
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rloop.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rloop.github.io" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2.0.12.0" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rloop.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rloop.github.io" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2.0.12.0" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="jQuery" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -511,12 +451,12 @@
       <workItem from="1518027539860" duration="5093000" />
       <workItem from="1518083277677" duration="8211000" />
       <workItem from="1518117439557" duration="3732000" />
-      <workItem from="1518172701263" duration="16835000" />
+      <workItem from="1518172701263" duration="17235000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="249236000" />
+    <option name="totallyTimeSpent" value="249636000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="987" extended-state="6" />
@@ -573,13 +513,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/2.0.7.0/js/rLoop.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/2.0.7.0/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-78">
@@ -1117,22 +1050,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../rLoop/Resources/fullPage.js-master 2/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-917">
-          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../rLoop/Resources/fullPage.js-master 2/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/2.0.18.0/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1">
@@ -1167,14 +1084,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/jQuery/jquery.fullPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="1009" column="34" lean-forward="false" selection-start-line="1009" selection-start-column="28" selection-end-line="1009" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/preload.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -1188,16 +1097,6 @@
         <state relative-caret-position="255">
           <caret line="104" column="18" lean-forward="true" selection-start-line="104" selection-start-column="18" selection-end-line="104" selection-end-column="18" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="66" column="2" lean-forward="false" selection-start-line="66" selection-start-column="2" selection-end-line="66" selection-end-column="2" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1219,10 +1118,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jQuery/jquery.fullPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="1009" column="34" lean-forward="false" selection-start-line="1009" selection-start-column="28" selection-end-line="1009" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../rLoop/Resources/fullPage.js-master 2/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-527">
+          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../rLoop/Resources/fullPage.js-master 2/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-482">
+          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="63" column="29" lean-forward="false" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/utilities.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        <state relative-caret-position="95">
+          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jQuery/jquery.mobile-1.5.0-alpha.1.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="9" column="19659" lean-forward="false" selection-start-line="9" selection-start-column="19659" selection-end-line="9" selection-end-column="19659" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
