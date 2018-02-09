@@ -11,16 +11,13 @@ $.fn.initialise = function() {
     // Set mobile flag
     isMobile = $(this).util_isMobile();
 
+    $(this).util_trackDeviceOrientation();
+
     // Add twinkling stars to body.
     $("body").util_showStars(true);
 
-    $('#fullpage').fullpage({
-        /*sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
-         anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
-         menu: '#menu',*/
-        /*slidesNavigation: true,
-         scrollHorizontally: true*/
-    });
+    // Hide main content.
+    $("#main").hide();
 
     // Show loading animation.
     $(this).showLoadingAnimation();
