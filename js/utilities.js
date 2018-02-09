@@ -12,19 +12,14 @@ $.fn.util_portrait = function() {
     return window.innerHeight > window.innerWidth;
 };
 
-$.fn.util_setDeviceOrientation = function() {
-    var device = (isMobile) ? "mobile" : "desktop";
-    var orientation = ($(this).util_portrait()) ? "portrait" : "landscape";
-
-    $("body").addClass(device + "-" + orientation);
-};
-
 $.fn.util_trackDeviceOrientation = function() {
-    $(this).util_setDeviceOrientation();
+    var device = (isMobile) ? "mobile" : "desktop";
+    
+    $(window).on("orientationchange", function( event ) {
+        $("body").addClass(device + "-" + event.orientation);
+    });
 
-    window.addEventListener("resize", function() {
-        $(this).util_setDeviceOrientation();
-    }, false);
+    $(window).orientationchange();
 };
 
 $.fn.util_isMobile = function() {
