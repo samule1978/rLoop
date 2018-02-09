@@ -92,13 +92,17 @@ body {
     display: block;
 }
 
-.mobile-portrait .section.horizontal,
-.mobile-landscape .section.vertical {
+.mobile-portrait .section.horizontal {
     display: none;
 }
-.mobile-portrait .section.vertical,
+.mobile-portrait .section.vertical {
+    display: block;
+}
 .mobile-landscape .section.horizontal {
     display: block;
+}
+.mobile-landscape .section.vertical {
+    display: none;
 }
 
 /* Full Page Overrides */
