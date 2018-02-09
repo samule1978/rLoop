@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../rLoop/Resources/.idea/Resources.iml" filepath="$PROJECT_DIR$/../../rLoop/Resources/.idea/Resources.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../rLoop/Resources/janpaepke-ScrollMagic-ae215ee/.idea/janpaepke-ScrollMagic-ae215ee.iml" filepath="$PROJECT_DIR$/../../rLoop/Resources/janpaepke-ScrollMagic-ae215ee/.idea/janpaepke-ScrollMagic-ae215ee.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/rloop.github.io.iml" filepath="$PROJECT_DIR$/.idea/rloop.github.io.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../rLoop/v1.0.0.0/.idea/v1.0.0.0.iml" filepath="$PROJECT_DIR$/../../rLoop/v1.0.0.0/.idea/v1.0.0.0.iml" />
     </modules>

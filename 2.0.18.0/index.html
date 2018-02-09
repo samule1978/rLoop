@@ -1,0 +1,152 @@
+﻿<!-- **** BISMILLAH-HIRRAHMAH-NIRRAHEEM *** -->
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1, user-scalable=0"></meta>
+    <title>rLoop</title>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Samule Ghurry" />
+    <meta name="description" content="rLoop" />
+    <meta name="keywords" content="rLoop" />
+
+    <script type="text/javascript" src="lib/jQuery/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="lib/scrollmagic/ScrollMagic.js"></script>
+    <!-- https://github.com/zachstronaut/jquery-animate-css-rotate-scale -->
+    <script type="text/javascript" src="lib/jQuery/jquery-animate-css-rotate-scale.js"></script>
+    <script type="text/javascript" src="lib/jQuery/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="js/utilities.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="js/rLoop.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="css/preload.css">
+    <link rel="stylesheet" type="text/css" href="css/rloop.css">
+</head>
+
+<body id="body">
+    <container class="preloader-wrap">
+        <div class="loader-wrap-top">
+            <div class="headline-wrap top">
+                <div class="headline-top">
+                    <img class="hyper-loop" src="img/assets/hyperloop.svg" />
+                    <img class="hyper-loop-white" src="img/assets/hyperloop_thin_white.svg" />
+                </div>
+                <div class="headline-bottom">
+                    <img class="race-is-on" src="img/assets/theraceison.svg" />
+                </div>
+            </div>
+
+            <div class="loader">
+                <div class="trackbar">
+                    <div class="loadbar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="loader-wrap-bottom">
+            <div class="headline-wrap bottom reflect">
+                <div class="headline-top">
+                    <img class="hyper-loop" src="img/assets/hyperloop.svg" />
+                    <img class="hyper-loop-white" src="img/assets/hyperloop_thin_white.svg" />
+                </div>
+                <div class="headline-bottom">
+                    <img class="race-is-on" src="img/assets/theraceison.svg" />
+                </div>
+            </div>
+
+            <div class="headline-overlay"></div>
+        </div>
+    </container>
+
+    <container class="spinlogo-wrap">
+        <container id="containerSpinLogo">
+            <img id="spinLogo" src="img/logos/rLoopLogo.svg" />
+            <img id="spiniPhoneX" src="img/logos/iPhoneX.svg" />
+        </container>
+    </container>
+
+    <div id="main" style="display: none;">
+        <!--div id="fullpage">
+            <div class="section active" id="section0">
+                <div class="slide1 slide active" id="slide1">
+                    <div class="intro">
+                        <h1>Slide One</h1>
+                    </div>
+                </div>
+                <div class="slide2 slide" id="slide2">
+                    <div class="intro">
+                        <h1>Slide Two</h1>
+                    </div>
+                </div>
+                <div class="slide3 slide" id="slide3">
+                    <div class="intro">
+                        <h1>Slide Three</h1>
+                    </div>
+                </div>
+            </div>
+        </div-->
+        <div id="content-wrapper">
+            <div id="example-wrapper">
+                <div class="scrollContent">
+                    <section id="titlechart">
+                        <div id="description">
+                            <h1>Section Wipes (natural)</h1>
+                            <h2>Wiping in content with the natural scroll movement</h2>
+                            <p>This commonly used effect can be very easily achieved using ScrollMagic's <code>Scene.setPin()</code> method.</p>
+                            <p>If you want to create a "pause" between the slides, simply add a <code>margin-bottom</code> to them (see between slide 3 and 4).</p>
+                            <a href="#" class="viewsource">view source</a>
+                        </div>
+                    </section>
+                    <section class="demo" id="section-wipes">
+                        <style type="text/css">
+                            .panel {
+                                height: 100%;
+                                width: 100%;
+                            }
+                            .panel.green {
+                                margin-bottom: 400px
+                            }
+                        </style>
+                        <section class="panel blue">
+                            <b>ONE</b>
+                        </section>
+                        <section class="panel turqoise">
+                            <b>TWO</b>
+                        </section>
+                        <section class="panel green">
+                            <b>THREE</b>
+                        </section>
+                        <section class="panel bordeaux">
+                            <b>FOUR</b>
+                        </section>
+                        <script>
+                            $(function () { // wait for document ready
+                                // init
+                                var controller = new ScrollMagic.Controller({
+                                    globalSceneOptions: {
+                                        triggerHook: 'onLeave'
+                                    }
+                                });
+
+                                // get all slides
+                                var slides = document.querySelectorAll("section.panel");
+
+                                // create scene for every slide
+                                for (var i=0; i<slides.length; i++) {
+                                    new ScrollMagic.Scene({
+                                        triggerElement: slides[i]
+                                    })
+                                        .setPin(slides[i])
+                                        .addIndicators() // add indicators (requires plugin)
+                                        .addTo(controller);
+                                }
+                            });
+                        </script>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

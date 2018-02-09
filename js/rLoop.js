@@ -14,11 +14,13 @@ $.fn.initialise = function() {
     // Add twinkling stars to body.
     $("body").util_showStars(true);
 
-    // Hide main content.
-    $("#main").hide();
-
-    // Hide phone container image if not mobile.
-    if (!isMobile) $('#spiniPhoneX').hide();
+    $('#fullpage').fullpage({
+        /*sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+         anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+         menu: '#menu',*/
+        /*slidesNavigation: true,
+         scrollHorizontally: true*/
+    });
 
     // Show loading animation.
     $(this).showLoadingAnimation();
