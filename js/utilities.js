@@ -17,6 +17,7 @@ $.fn.util_trackDeviceOrientation = function() {
 
     $(window).on("orientationchange", function( event ) {
         $("body").addClass(device + "-" + event.orientation);
+        if (isMobile) alert(event.orientation);
     });
 
     $(window).orientationchange();
