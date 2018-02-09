@@ -17,10 +17,9 @@ $.fn.util_trackDeviceOrientation = function() {
 
     $(window).bind('orientationchange resize', function(event) {
         $("body").addClass(device + "-" + event.orientation);
-        if (isMobile) alert(event.orientation);
     });
 
-    $(window).trigger('orientationchange');
+    $(window).trigger('orientationchange resize');
 };
 
 $.fn.util_isMobile = function() {
