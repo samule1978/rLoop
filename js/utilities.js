@@ -15,12 +15,12 @@ $.fn.util_portrait = function() {
 $.fn.util_trackDeviceOrientation = function() {
     var device = (isMobile) ? "mobile" : "desktop";
 
-    $(window).on("orientationchange", function( event ) {
+    $(window).bind('orientationchange resize', function(event) {
         $("body").addClass(device + "-" + event.orientation);
         if (isMobile) alert(event.orientation);
     });
 
-    $(window).orientationchange();
+    $(window).trigger('orientationchange');
 };
 
 $.fn.util_isMobile = function() {
