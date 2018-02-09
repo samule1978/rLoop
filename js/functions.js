@@ -58,8 +58,8 @@ $.fn.setup = function() {
     $("#main").show();
 
     $('#fullpage').fullpage({
-        navigation: true,
-        slidesNavigation: true,
+        navigation: false,
+        slidesNavigation: false,
         css3: true,
         controlArrows: false,
     });

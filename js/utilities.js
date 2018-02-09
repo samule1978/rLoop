@@ -16,7 +16,8 @@ $.fn.util_trackDeviceOrientation = function() {
     var device = (isMobile) ? "mobile" : "desktop";
 
     $(window).bind('orientationchange resize', function(event) {
-        $("body").addClass(device + "-" + event.orientation);
+        var orientation = $(this).util_portrait ? "portrait" : "landscape";
+        $("body").addClass(device + "-" + orientation);
     });
 
     $(window).trigger('orientationchange resize');
