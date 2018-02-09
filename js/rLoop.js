@@ -11,6 +11,10 @@ $.fn.initialise = function() {
     // Set mobile flag
     isMobile = $(this).util_isMobile();
 
+    var device = (isMobile) ? "mobile" : "desktop";
+    var orientation = ($(this).util_portrait()) ? "portrait" : "landscape";
+    $("body").addClass(device + "-" + orientation);
+
     $(this).util_trackDeviceOrientation();
 
     // Add twinkling stars to body.

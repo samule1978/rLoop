@@ -23,8 +23,6 @@ $.fn.util_trackDeviceOrientation = function() {
         $("body").addClass(device + "-" + orientation);
         alert($("body").attr("class"));
     });
-
-    $(window).trigger('orientationchange');
 };
 
 $.fn.util_isMobile = function() {
