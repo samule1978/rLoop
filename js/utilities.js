@@ -21,9 +21,10 @@ $.fn.util_trackDeviceOrientation = function() {
         $("body").removeClass(device + "-portrait");
         $("body").removeClass(device + "-landscape");
         $("body").addClass(device + "-" + orientation);
+        alert($("body").attr("class"));
     });
 
-    $(window).trigger('orientationchange resize');
+    $(window).trigger('orientationchange');
 };
 
 $.fn.util_isMobile = function() {
