@@ -67,3 +67,17 @@ $.fn.util_showStars = function(show) {
         });
     }
 };
+
+$.fn.util_addHorizontalSlides = function(verticalElement, horizontalClass) {
+    var horizontalSections = "";
+
+    if ($(verticalElement).length > 0) {
+        $(verticalElement).each(function(index) {
+            horizontalSections += "<div class='slide'>" + $(this).html() + "</div>";
+        });
+
+        horizontalSections = "<div class='" + horizontalClass + "'>" + horizontalSections + "</div>";
+    }
+
+    $(this).append(horizontalSections);
+};

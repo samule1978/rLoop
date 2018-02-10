@@ -1,0 +1,9 @@
+/* Landscape */
+@media screen and (orientation:landscape) {
+    .mobile .section.horizontal {
+        display: block;
+    }
+    .mobile .section.vertical {
+        display: none;
+    }
+}

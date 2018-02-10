@@ -1,0 +1,139 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400');
+
+/*font-family: 'Open Sans', sans-serif;*/
+font-family: 'Roboto Slab', serif;
+font-family: 'Roboto', sans-serif;
+
+html{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.debug {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 100;
+}
+
+body {
+    font-family:  'Roboto Slab', serif;
+    color: white;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    -webkit-text-size-adjust: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: auto;
+
+    background-image: url(../img/bg/section2bg.jpg);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Stars Animation */
+.stars,
+.twinkling {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    display:block;
+}
+.stars {
+    background:#000000 url(../img/assets/anim_stars.png) repeat top center;
+    z-index:0;
+}
+.twinkling {
+    background:transparent url(../img/assets/anim_twinkling.png) repeat top center;
+    z-index:1;
+
+    -moz-animation:move-twink-back 200s linear infinite;
+    -ms-animation:move-twink-back 200s linear infinite;
+    -o-animation:move-twink-back 200s linear infinite;
+    -webkit-animation:move-twink-back 200s linear infinite;
+    animation:move-twink-back 200s linear infinite;
+}
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+#main {
+    position: relative;
+    z-index: 10;
+}
+
+.desktop .section.horizontal {
+    display: none;
+}
+.desktop .section.vertical {
+    display: block;
+}
+
+/* Full Page Overrides */
+.intro {
+    padding: 0px 55px;
+}
+.fp-controlArrow.fp-prev {
+    left: 15px;
+    width: 6vh;
+    height: 6vh;
+    border: none;
+
+    background: url(../img/btn/arrow.png) no-repeat center center;
+    background-size: cover;
+
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+}
+.fp-controlArrow.fp-next {
+    right: 15px;
+    width: 6vh;
+    height: 6vh;
+    border: none;
+
+    background: url(../img/btn/arrow.png) no-repeat center center;
+    background-size: cover;
+
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+}
+
+.reflect {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+
+    -moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: FlipV;
+    -ms-filter: "FlipV";
+}
+
