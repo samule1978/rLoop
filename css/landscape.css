@@ -1,10 +1,10 @@
 /* Landscape */
 @media screen and (orientation:landscape) {
     .desktop .section.horizontal,
-    .mobile .section.portrait {
+    .mobile .section.vertical {
         display: none;
     }
-    .desktop .section.portrait,
+    .desktop .section.vertical,
     .mobile .section.horizontal {
         display: block;
     }
