@@ -57,7 +57,7 @@ $.fn.finishedLoading = function() {
 $.fn.setup = function() {
     $("#main").show();
 
-    $('#fullpage').fullpage({
+    $('#rLoopContent').fullpage({
         navigation: false,
         slidesNavigation: false,
         css3: true,

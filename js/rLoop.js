@@ -17,7 +17,7 @@ $.fn.initialise = function() {
 
     if (isMobile) {
         // Add Vertical Content to Horizontal Slides if mobile (for landscape view)
-        $('#fullpage').util_addHorizontalSlides(".section.vertical", "section horizontal");
+        $('#rLoopContent').util_addHorizontalSlides(".section.vertical", "section horizontal");
     }
 
     // Add twinkling stars to body.
