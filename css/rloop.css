@@ -83,24 +83,6 @@ body {
     z-index: 10;
 }
 
-.desktop-portrait .section.horizontal,
-.desktop-landscape .section.horizontal {
-    display: none;
-}
-.desktop-portrait .section.vertical,
-.desktop-landscape .section.vertical {
-    display: block;
-}
-
-.mobile-portrait .section.horizontal,
-.mobile-landscape .section.vertical {
-    display: none;
-}
-.mobile-landscape .section.horizontal,
-.mobile-portrait .section.vertical {
-    display: block;
-}
-
 /* Full Page Overrides */
 .intro {
     padding: 0px 55px;

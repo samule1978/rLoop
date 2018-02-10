@@ -1,0 +1,11 @@
+/* Portrait */
+@media screen and (orientation:portrait) {
+    .desktop .section.horizontal,
+    .mobile .section.horizontal {
+        display: none;
+    }
+    .desktop .section.portrait,
+    .mobile .section.portrait {
+        display: block;
+    }
+}
