@@ -83,6 +83,13 @@ body {
     z-index: 10;
 }
 
+.desktop .section.horizontal {
+    display: none;
+}
+.desktop .section.vertical {
+    display: block;
+}
+
 /* Full Page Overrides */
 .intro {
     padding: 0px 55px;
