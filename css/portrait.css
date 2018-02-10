@@ -1,11 +1,4 @@
 /* Portrait */
 @media screen and (orientation:portrait) {
-    .desktop .section.horizontal,
-    .mobile .section.horizontal {
-        display: none;
-    }
-    .desktop .section.vertical,
-    .mobile .section.vertical {
-        display: block;
-    }
+    #fullpage { background-color: red; }
 }

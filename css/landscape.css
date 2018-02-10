@@ -1,11 +1,4 @@
 /* Landscape */
 @media screen and (orientation:landscape) {
-    .desktop .section.horizontal,
-    .mobile .section.vertical {
-        display: none;
-    }
-    .desktop .section.vertical,
-    .mobile .section.horizontal {
-        display: block;
-    }
+    #fullpage { background-color: blue; }
 }
