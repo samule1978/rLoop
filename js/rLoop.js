@@ -8,7 +8,7 @@ isMobile = $(this).util_isMobile();
 
 // Set device type.
 var device = (isMobile) ? "mobile" : "desktop";
-$("body").addClass(device);
+$("html").addClass(device);
 
 // Add twinkling stars to body.
 $("body").util_showStars(true);
