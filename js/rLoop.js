@@ -14,15 +14,25 @@ $.fn.initialise = function() {
     // Set device type.
     $(this).util_setDeviceType(isMobile);
 
-    // Set device orientation markers.
-    $(this).util_addDeviceOrientationMarkers();
+    // Hide main content.
+    $("#main").hide();
 
     // Add twinkling stars to body.
     $("body").util_showStars(true);
 
-    // Hide main content.
-    $("#main").hide();
+    // Set device orientation markers.
+    $(this).util_addDeviceOrientationMarkers();
+
+    $(this).util_amendContentBasedOnOrientationChange();
 
     // Show loading animation.
     $(this).showLoadingAnimation();
+
+    $('#rLoopContent').fullpage({
+        /*navigation: false,
+         slidesNavigation: false,*/
+        css3: true,
+        controlArrows: false,
+        scrollingSpeed: 750
+    });
 };

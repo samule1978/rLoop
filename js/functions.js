@@ -57,13 +57,5 @@ $.fn.finishedLoading = function() {
 $.fn.setup = function() {
     $("#main").show();
 
-    $('#rLoopContent').fullpage({
-        /*navigation: false,
-         slidesNavigation: false,*/
-        css3: true,
-        controlArrows: false,
-        scrollingSpeed: 750
-    });
 
-    $(this).util_amendContentBasedOnOrientationChange();
 };
