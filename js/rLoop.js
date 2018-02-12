@@ -44,7 +44,7 @@ $.fn.initialise = function() {
                 $("#rLoopContent").html(landscapeSections);
             }
         }
-        alert($("#rLoopContent"));
+        alert($("#rLoopContent").html());
     };
 
     // Show loading animation.
