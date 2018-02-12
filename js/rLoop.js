@@ -23,18 +23,11 @@ $.fn.initialise = function() {
     // Set device orientation markers.
     //$(this).util_addDeviceOrientationMarkers();
 
-    
-    window.addEventListener("orientationchange", function() {
-        //$(this).util_amendContentBasedOnOrientation();
-        //alert($("orientation.portrait").is(":visible") ? "P" : "L");
-        if (window.matchMedia("(orientation: portrait)").matches) {
-            alert("PORT");
-        }
+    alert($("orientation.portrait").is(":visible") ? "R-Portrait" : "R-Landscape");
+    window.onresize = function (event) {
+        alert($("orientation.portrait").is(":visible") ? "R-Portrait" : "R-Landscape");
+    };
 
-        if (window.matchMedia("(orientation: landscape)").matches) {
-            alert("LAND");
-        }
-    }, false);
 
     $(this).util_amendContentBasedOnOrientationChange();
 
