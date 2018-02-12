@@ -29,7 +29,8 @@ $.fn.initialise = function() {
                     portraitSections += "<div class='section portrait'>" + $(this).html() + "</div>";
                 });
 
-                $("#rLoopContent").html(portraitSections);
+                $("#rLoopContent").empty();
+                $("#rLoopContent").append(portraitSections);
             }
         } else {
             if ($("#rLoopContent .section.portrait").length > 0) {
@@ -41,10 +42,10 @@ $.fn.initialise = function() {
 
                 landscapeSections = "<div class='section landscape'>" + landscapeSections + "</div>";
 
-                $("#rLoopContent").html(landscapeSections);
+                $("#rLoopContent").empty();
+                $("#rLoopContent").append(landscapeSections);
             }
         }
-        alert($("#rLoopContent").html());
     };
 
     // Show loading animation.
