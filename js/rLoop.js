@@ -21,7 +21,7 @@ $.fn.initialise = function() {
     $("body").util_showStars(true);
 
     // Set device orientation markers.
-    $(this).util_addDeviceOrientationMarkers();
+    //$(this).util_addDeviceOrientationMarkers();
 
     $(this).util_amendContentBasedOnOrientationChange();
 
