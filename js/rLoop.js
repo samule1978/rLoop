@@ -20,12 +20,33 @@ $.fn.initialise = function() {
     // Add twinkling stars to body.
     $("body").util_showStars(true);
 
-    alert($("orientation.portrait").is(":visible") ? "--Portrait" : "--Landscape");
+    alert($("orientation.portrait").is(":visible") ? "Portrait" : "Landscape");
     window.onresize = function (event) {
-        alert($("orientation.portrait").is(":visible") ? "--Portrait" : "--Landscape");
-    };
+        alert($("orientation.portrait").is(":visible") ? "Portrait" : "Landscape");
+        if($("orientation.portrait").is(":visible")) {
+            if ($("#rLoopContent .section.landscape").length > 0) {
+                var portraitSections = "";
 
-    $(this).util_amendContentBasedOnOrientationChange();
+                $("#rLoopContent .section.landscape .slide").each(function(index) {
+                    portraitSections += "<div class='section portrait'>" + $(this).html() + "</div>";
+                });
+
+                $("#rLoopContent").html(portraitSections);
+            }
+        } else {
+            if ($("#rLoopContent .section.portrait").length > 0) {
+                var landscapeSections = "";
+
+                $("#rLoopContent .section.portrait").each(function(index) {
+                    landscapeSections += "<div class='slide'>" + $(this).html() + "</div>";
+                });
+
+                landscapeSections = "<div class='section landscape'>" + landscapeSections + "</div>";
+
+                $("#rLoopContent").html(landscapeSections);
+            }
+        }
+    };
 
     // Show loading animation.
     $(this).showLoadingAnimation();

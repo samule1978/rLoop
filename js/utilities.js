@@ -116,7 +116,3 @@ $.fn.util_amendContentBasedOnOrientation = function() {
         }
     }
 };
-
-$.fn.util_amendContentBasedOnOrientationChange = function() {
-
-};
