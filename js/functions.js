@@ -57,5 +57,22 @@ $.fn.finishedLoading = function() {
 $.fn.setup = function() {
     $("#main").show();
 
+    $('#rLoopContentVertical').fullpage({
+        navigation: false,
+        slidesNavigation: false,
+        css3: true,
+        controlArrows: false,
+        scrollingSpeed: 500
+    });
+    if (!sMobile) {
+        $('#main').util_addHorizontalSlides(".section.vertical", "section horizontal");
 
+        $('#rLoopContentHorizontal').fullpage({
+            navigation: false,
+            slidesNavigation: false,
+            css3: true,
+            controlArrows: false,
+            scrollingSpeed: 500
+        });
+    }
 };
