@@ -1,9 +1,9 @@
 /* Portrait */
 @media screen and (orientation:portrait) {
-    .mobile .section.horizontal {
+    .mobile #rLoopContentHorizontal {
         display: none;
     }
-    .mobile .section.vertical {
+    .mobile #rLoopContentVertical {
         display: block;
     }
 }
