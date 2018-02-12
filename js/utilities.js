@@ -100,7 +100,6 @@ $.fn.util_amendContentBasedOnOrientation = function() {
                 portraitSections += "<div class='section portrait'>" + $(this).html() + "</div>";
             });
 
-            alert(portraitSections);
             $("#rLoopContent").html(portraitSections);
         }
     } else {
@@ -113,7 +112,6 @@ $.fn.util_amendContentBasedOnOrientation = function() {
 
             landscapeSections = "<div class='section landscape'>" + landscapeSections + "</div>";
 
-            alert(landscapeSections);
             $("#rLoopContent").html(landscapeSections);
         }
     }
@@ -121,6 +119,7 @@ $.fn.util_amendContentBasedOnOrientation = function() {
 
 $.fn.util_amendContentBasedOnOrientationChange = function() {
     window.addEventListener("orientationchange", function() {
-        $(this).util_amendContentBasedOnOrientation();
+        //$(this).util_amendContentBasedOnOrientation();
+        alert($(this).util_portrait() ? "Portrait..." : "Landscape...");
     }, false);
 };
