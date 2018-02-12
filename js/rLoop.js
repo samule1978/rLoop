@@ -41,9 +41,7 @@ $.fn.initialise = function() {
         });
 
         window.onresize = function (event) {
-            if ($.fn.fullPage) {
-                $.fn.fullpage.destroy('all');
-            }
+            $('#rLoopContent').fullpage.destroy(true);
 
             if($("orientation.landscape").is(":visible")) {
                 if ($("#rLoopContent .section.portrait").length > 0) {
