@@ -20,10 +20,10 @@ $.fn.initialise = function() {
 
     var orientation = (window.innerHeight > window.innerWidth) ? "Portrait" : "Lansdcape";
     alert(orientation);
-    window.addEventListener("orientationchange", function(){
+    window.onresize = function(){
         var orientation = (window.innerHeight > window.innerWidth) ? "Portrait" : "Lansdcape";
         alert(orientation);
-    });
+    };
 
     // Add twinkling stars to body.
     $("body").util_showStars(true);
