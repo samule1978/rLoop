@@ -20,42 +20,62 @@ $.fn.initialise = function() {
     // Add twinkling stars to body.
     $("body").util_showStars(true);
 
-    window.onresize = function (event) {
-        if($("orientation.portrait").is(":visible")) {
-            if ($("#rLoopContent .section.landscape").length > 0) {
-                var portraitSections = "";
+    if (isMobile) {
+        window.onresize = function (event) {
+            if($("orientation.portrait").is(":visible")) {
+                if ($("#rLoopContent .section.landscape").length > 0) {
+                    var portraitSections = "";
 
-                $("#rLoopContent .section.landscape .slide").each(function(index) {
-                    portraitSections += "<div class='section portrait'>" + $(this).html() + "</div>";
-                });
+                    $("#rLoopContent .section.landscape .slide").each(function(index) {
+                        portraitSections += "<div class='section portrait'>" + $(this).html() + "</div>";
+                    });
 
-                $("#rLoopContent").empty();
-                $("#rLoopContent").append(portraitSections);
+                    $("#rLoopContent").empty();
+                    $("#rLoopContent").append(portraitSections);
+                    $('#rLoopContent').fullpage({
+                        /*navigation: false,
+                         slidesNavigation: false,*/
+                        css3: true,
+                        controlArrows: false,
+                        scrollingSpeed: 750
+                    });
+                }
+            } else {
+                if ($("#rLoopContent .section.portrait").length > 0) {
+                    var landscapeSections = "";
+
+                    $("#rLoopContent .section.portrait").each(function(index) {
+                        landscapeSections += "<div class='slide'>" + $(this).html() + "</div>";
+                    });
+
+                    landscapeSections = "<div class='section landscape'>" + landscapeSections + "</div>";
+
+                    $("#rLoopContent").empty();
+                    $("#rLoopContent").append(landscapeSections);
+                    $('#rLoopContent').fullpage({
+                        /*navigation: false,
+                         slidesNavigation: false,*/
+                        css3: true,
+                        controlArrows: false,
+                        scrollingSpeed: 750
+                    });
+                }
             }
-        } else {
-            if ($("#rLoopContent .section.portrait").length > 0) {
-                var landscapeSections = "";
+        };
+    } else {
+        $('#rLoopContent').fullpage({
+            /*navigation: false,
+             slidesNavigation: false,*/
+            css3: true,
+            controlArrows: false,
+            scrollingSpeed: 750
+        });
+    }
 
-                $("#rLoopContent .section.portrait").each(function(index) {
-                    landscapeSections += "<div class='slide'>" + $(this).html() + "</div>";
-                });
 
-                landscapeSections = "<div class='section landscape'>" + landscapeSections + "</div>";
-
-                $("#rLoopContent").empty();
-                $("#rLoopContent").append(landscapeSections);
-            }
-        }
-    };
 
     // Show loading animation.
     $(this).showLoadingAnimation();
 
-    $('#rLoopContent').fullpage({
-        /*navigation: false,
-         slidesNavigation: false,*/
-        css3: true,
-        controlArrows: false,
-        scrollingSpeed: 750
-    });
+
 };
