@@ -62,9 +62,9 @@ $.fn.setup = function() {
         slidesNavigation: false,
         css3: true,
         controlArrows: false,
-        scrollingSpeed: 500
+        scrollingSpeed: 750
     });
-    if (!sMobile) {
+    if (isMobile) {
         $('#main').util_addHorizontalSlides(".section.vertical", "section horizontal");
 
         $('#rLoopContentHorizontal').fullpage({
@@ -72,7 +72,7 @@ $.fn.setup = function() {
             slidesNavigation: false,
             css3: true,
             controlArrows: false,
-            scrollingSpeed: 500
+            scrollingSpeed: 750
         });
     }
 };
