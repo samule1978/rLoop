@@ -100,6 +100,7 @@ $.fn.util_amendContentBasedOnOrientation = function() {
                 portraitSections += "<div class='section portrait'>" + $(this).html() + "</div>";
             });
 
+            alert(portraitSections);
             $("#rLoopContent").html(portraitSections);
         }
     } else {
@@ -112,6 +113,7 @@ $.fn.util_amendContentBasedOnOrientation = function() {
 
             landscapeSections = "<div class='section landscape'>" + landscapeSections + "</div>";
 
+            alert(landscapeSections);
             $("#rLoopContent").html(landscapeSections);
         }
     }
