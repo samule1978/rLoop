@@ -33,6 +33,6 @@ $.fn.initialise = function() {
          slidesNavigation: false,*/
         css3: true,
         controlArrows: false,
-        scrollingSpeed: 500
+        scrollingSpeed: 750
     });
 };
