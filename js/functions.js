@@ -62,6 +62,6 @@ $.fn.setup = function() {
         slidesNavigation: false,
         css3: true,
         controlArrows: false,
-        scrollingSpeed: 750
+        scrollingSpeed: 1000
     });
 };

@@ -15,7 +15,7 @@ $.fn.initialise = function() {
     var device = (isMobile) ? "mobile" : "desktop";
     $("html").addClass(device);
     if (isMobile) {
-        $('#rLoopContent').util_addHorizontalSlides(".section.vertical", "section horizontal");
+        $('#rLoopContent').util_addHorizontalSlides(".section.vertical");
     }
 
     // Add twinkling stars to body.

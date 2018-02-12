@@ -68,7 +68,7 @@ $.fn.util_showStars = function(show) {
     }
 };
 
-$.fn.util_addHorizontalSlides = function(verticalElement, horizontalClass) {
+$.fn.util_addHorizontalSlides = function(verticalElement) {
     var horizontalSections = "";
 
     if ($(verticalElement).length > 0) {
@@ -76,7 +76,7 @@ $.fn.util_addHorizontalSlides = function(verticalElement, horizontalClass) {
             horizontalSections += "<div class='slide'>" + $(this).html() + "</div>";
         });
 
-        horizontalSections = "<div class='" + horizontalClass + "'>" + horizontalSections + "</div>";
+        horizontalSections = "<div class='section horizontal'>" + horizontalSections + "</div>";
     }
 
     $(this).append(horizontalSections);
