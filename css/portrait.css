@@ -7,10 +7,10 @@
         display: none;
     }
 
-    .mobile .section.portrait {
+    .mobile #rLoopContentPortrait {
         display: block;
     }
-    .mobile .section.landscape {
+    .mobile #rLoopContentLandscape {
         display: none;
     }
 }

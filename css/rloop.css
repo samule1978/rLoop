@@ -83,6 +83,13 @@ body {
     z-index: 10;
 }
 
+.desktop #rLoopContentPortrait {
+    display: block;
+}
+.desktop #rLoopContentLandscape {
+    display: none;
+}
+
 /* Full Page Overrides */
 .intro {
     padding: 0px 55px;
