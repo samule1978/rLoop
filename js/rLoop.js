@@ -22,7 +22,6 @@ $.fn.initialise = function() {
 
     // Initialise Content.
     $(this).util_initialiseContent();
-    $(this).util_displayContentBasedOnOrientation();
 
     // Show loading animation.
     $(this).showLoadingAnimation();

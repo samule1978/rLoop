@@ -78,6 +78,7 @@ $.fn.util_initialiseContent = function() {
         $('#rLoopContent').util_applyFullPage();
     } else {
         $(this).util_createMobileContent();
+        $(this).util_displayContentBasedOnOrientation();
     }
 }
 
