@@ -31,8 +31,8 @@
               <file leaf-file-name="utilities.js" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/js/utilities.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="291">
-                      <caret line="115" column="35" lean-forward="false" selection-start-line="115" selection-start-column="35" selection-end-line="115" selection-end-column="35" />
+                    <state relative-caret-position="-73">
+                      <caret line="103" column="51" lean-forward="false" selection-start-line="103" selection-start-column="51" selection-end-line="103" selection-end-column="51" />
                       <folding>
                         <element signature="n#!!doc" expanded="true" />
                       </folding>
@@ -489,12 +489,12 @@
       <workItem from="1518172701263" duration="19938000" />
       <workItem from="1518284182985" duration="5107000" />
       <workItem from="1518363754006" duration="667000" />
-      <workItem from="1518425088410" duration="12374000" />
+      <workItem from="1518425088410" duration="12552000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="270487000" />
+    <option name="totallyTimeSpent" value="270665000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="987" extended-state="6" />
@@ -890,18 +890,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/rLoop.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/jQuery/jquery.fullPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1009" column="34" lean-forward="false" selection-start-line="1009" selection-start-column="28" selection-end-line="1009" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/rLoop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -918,8 +918,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/utilities.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="115" column="35" lean-forward="false" selection-start-line="115" selection-start-column="35" selection-end-line="115" selection-end-column="35" />
+        <state relative-caret-position="-73">
+          <caret line="103" column="51" lean-forward="false" selection-start-line="103" selection-start-column="51" selection-end-line="103" selection-end-column="51" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

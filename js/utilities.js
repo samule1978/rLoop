@@ -96,7 +96,7 @@ $.fn.util_amendContentBasedOnOrientation = function() {
         if ($("#rLoopContent .section.landscape").length > 0) {
             var portraitSections = "";
 
-            $("#rLoopContent section.landscape .slide").each(function(index) {
+            $("#rLoopContent .section.landscape .slide").each(function(index) {
                 portraitSections += "<div class='section portrait'>" + $(this).html() + "</div>";
             });
 
@@ -107,7 +107,7 @@ $.fn.util_amendContentBasedOnOrientation = function() {
         if ($("#rLoopContent .section.portrait").length > 0) {
             var landscapeSections = "";
 
-            $("#rLoopContent section.portrait").each(function(index) {
+            $("#rLoopContent .section.portrait").each(function(index) {
                 landscapeSections += "<div class='slide'>" + $(this).html() + "</div>";
             });
 
