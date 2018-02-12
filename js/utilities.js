@@ -118,8 +118,8 @@ $.fn.util_amendContentBasedOnOrientation = function() {
 };
 
 $.fn.util_amendContentBasedOnOrientationChange = function() {
-    alert($(this).util_portrait() ? "RR-Portrait" : "RR-Landscape");
+    alert($("orientation.portrait").is(":visible") ? "-Portrait" : "-Landscape");
     window.onresize = function (event) {
-        alert($(this).util_portrait() ? "RR-Portrait" : "RR-Landscape");
+        alert($("orientation.portrait").is(":visible") ? "-Portrait" : "-Landscape");
     };
 };
