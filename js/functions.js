@@ -65,8 +65,6 @@ $.fn.setup = function() {
         scrollingSpeed: 750
     });
     if (isMobile) {
-        $('#main').util_addHorizontalSlides(".section.vertical", "section horizontal");
-
         $('#rLoopContentHorizontal').fullpage({
             navigation: false,
             slidesNavigation: false,

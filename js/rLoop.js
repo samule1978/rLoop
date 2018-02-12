@@ -14,6 +14,9 @@ $.fn.initialise = function() {
     // Set device type.
     var device = (isMobile) ? "mobile" : "desktop";
     $("html").addClass(device);
+    if (isMobile) {
+        $('#main').util_addHorizontalSlides(".section.vertical", "section horizontal");
+    }
 
     // Add twinkling stars to body.
     $("body").util_showStars(true);
