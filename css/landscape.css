@@ -6,4 +6,11 @@
     .mobile #rLoopContentVertical {
         display: none;
     }
+
+    orientation.portrait {
+        display: none;
+    }
+    orientation.landscape {
+        display: block;
+    }
 }

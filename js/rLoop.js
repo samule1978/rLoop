@@ -18,12 +18,12 @@ $.fn.initialise = function() {
         //$('#rLoopContent').util_addHorizontalSlides(".section.vertical");
     }
 
-    var orientation = (window.innerHeight > window.innerWidth) ? "Portrait" : "Lansdcape";
+    var orientation = $("orientation.portrait").is(":visible") ? "Portraitttt" : "Lansdcapeeee";
     alert(orientation);
-    window.onresize = function(){
-        var orientation = (window.innerHeight > window.innerWidth) ? "Portrait" : "Lansdcape";
+    window.addEventListener("orientationchange", function() {
+        var orientation = $("orientation.portrait").is(":visible") ? "Portraitttt" : "Lansdcapeeee";
         alert(orientation);
-    };
+    }, false);
 
     // Add twinkling stars to body.
     $("body").util_showStars(true);
