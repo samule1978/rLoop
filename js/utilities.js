@@ -69,50 +69,60 @@ $.fn.util_setDeviceType = function(mobile) {
     $("html").addClass(device);
 };
 
-$.fn.util_addHorizontalSlides = function(verticalElement) {
-    var horizontalSections = "";
-
-    if ($(verticalElement).length > 0) {
-        $(verticalElement).each(function(index) {
-            horizontalSections += "<div class='slide'>" + $(this).html() + "</div>";
-        });
-
-        horizontalSections = "<div class='section horizontal'>" + horizontalSections + "</div>";
-    }
-
-    $(this).append(horizontalSections);
-};
-
-$.fn.util_addDeviceOrientationMarkers = function() {
-    $("head").append("<orientation class='portrait'></orientation><orientation class='landscape'></orientation>");
-};
-
 $.fn.util_portrait = function() {
     return $("orientation.portrait").is(":visible");
 };
 
-$.fn.util_amendContentBasedOnOrientation = function() {
-    if ($(this).util_portrait()) {
-        if ($("#rLoopContent .section.landscape").length > 0) {
-            var portraitSections = "";
-
-            $("#rLoopContent .section.landscape .slide").each(function(index) {
-                portraitSections += "<div class='section portrait'>P: " + $(this).html() + "</div>";
-            });
-
-            $("#rLoopContent").html(portraitSections);
-        }
+$.fn.util_initialiseContent = function() {
+    if (!isMobile) {
+        $('#rLoopContent').util_applyFullPage();
     } else {
-        if ($("#rLoopContent .section.portrait").length > 0) {
-            var landscapeSections = "";
+        $(this).util_createMobileContent();
+    }
+}
 
-            $("#rLoopContent .section.portrait").each(function(index) {
-                landscapeSections += "<div class='slide'>" + $(this).html() + "</div>";
-            });
+$.fn.util_createMobileContent = function() {
+    if ($("#rLoopContent .section").length > 0) {
+        var landscapeSections = "";
+        var portraitSections = "";
 
-            landscapeSections = "<div class='section landscape'>L: " + landscapeSections + "</div>";
+        $("#rLoopContent .section").each(function(index) {
+            landscapeSections += "<div class='slide'>" + $(this).html() + "</div>";
+            portraitSections += "<div class='section'>" + $(this).html() + "</div>";
+        });
 
-            $("#rLoopContent").html(landscapeSections);
+        landscapeSections = "<div id='rLoopContentLandscape'><div class='section landscape'>" + landscapeSections + "</div></div>";
+        portraitSections = "<div id='rLoopContentPortrait'>" + portraitSections + "</div>";
+
+        $("#rLoopContent").remove();
+        $("#main").append(landscapeSections);
+        $("#main").append(portraitSections);
+    }
+};
+
+$.fn.util_displayContentBasedOnOrientation = function() {
+    if($("orientation.landscape").is(":visible")) {
+        $('#rLoopContentLandscape').util_applyFullPage();
+    } else {
+        $('#rLoopContentPortrait').util_applyFullPage();
+    }
+
+    window.onresize = function (event) {
+        if ($('#rLoopContentLandscape').fullpage) $('#rLoopContentLandscape').fullpage.destroy(true);
+        if ($('#rLoopContentPortrait').fullpage) $('#rLoopContentPortrait').fullpage.destroy(true);
+
+        if($("orientation.landscape").is(":visible")) {
+            $('#rLoopContentLandscape').util_applyFullPage();
+        } else {
+            $('#rLoopContentPortrait').util_applyFullPage();
         }
     }
+};
+
+$.fn.util_applyFullPage = function() {
+    $(this).fullpage({
+        css3: true,
+        controlArrows: false,
+        scrollingSpeed: 750
+    });
 };
