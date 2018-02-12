@@ -15,8 +15,15 @@ $.fn.initialise = function() {
     var device = (isMobile) ? "mobile" : "desktop";
     $("html").addClass(device);
     if (isMobile) {
-        $('#rLoopContent').util_addHorizontalSlides(".section.vertical");
+        //$('#rLoopContent').util_addHorizontalSlides(".section.vertical");
     }
+
+    var orientation = (window.innerHeight > window.innerWidth) ? "Portrait" : "Lansdcape";
+    alert(orientation);
+    window.addEventListener("orientationchange", function(){
+        var orientation = (window.innerHeight > window.innerWidth) ? "Portrait" : "Lansdcape";
+        alert(orientation);
+    });
 
     // Add twinkling stars to body.
     $("body").util_showStars(true);
