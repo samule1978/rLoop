@@ -31,11 +31,22 @@ $.fn.initialise = function() {
 
                 landscapeSections = "<div class='section landscape'>" + landscapeSections + "</div>";
 
-                $("#rLoopContent").append(landscapeSections);
+                $("#rLoopContent").html(landscapeSections);
             }
         }
+        $('#rLoopContent').fullpage({
+            /*navigation: false,
+             slidesNavigation: false,*/
+            css3: true,
+            controlArrows: false,
+            scrollingSpeed: 750
+        });
 
         window.onresize = function (event) {
+            if ($.fn.fullPage) {
+                $.fn.fullpage.destroy('all');
+            }
+
             if($("orientation.landscape").is(":visible")) {
                 if ($("#rLoopContent .section.portrait").length > 0) {
                     var landscapeSections = "";
@@ -46,23 +57,33 @@ $.fn.initialise = function() {
 
                     landscapeSections = "<div class='section landscape'>" + landscapeSections + "</div>";
 
-                    $("#rLoopContent").append(landscapeSections);
+                    $("#rLoopContent").html(landscapeSections);
                 }
             } else {
-                $(".section.landscape").remove();
+                if ($("#rLoopContent .section.landscape").length > 0) {
+                    var portraitSections = "";
+
+                    $("#rLoopContent .section.landscape").each(function(index) {
+                        portraitSections += "<div class='section portrait'>" + $(this).html() + "</div>";
+                    });
+
+                    $("#rLoopContent").html(portraitSections);
+                }
             }
+
+            $('#rLoopContent').fullpage({
+                css3: true,
+                controlArrows: false,
+                scrollingSpeed: 750
+            });
         };
+    } else {
+        $('#rLoopContent').fullpage({
+            css3: true,
+            controlArrows: false,
+            scrollingSpeed: 750
+        });
     }
-
-    $('#rLoopContent').fullpage({
-        /*navigation: false,
-         slidesNavigation: false,*/
-        css3: true,
-        controlArrows: false,
-        scrollingSpeed: 750
-    });
-
-
 
     // Show loading animation.
     $(this).showLoadingAnimation();
