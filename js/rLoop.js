@@ -20,9 +20,7 @@ $.fn.initialise = function() {
     // Add twinkling stars to body.
     $("body").util_showStars(true);
 
-    alert($("orientation.portrait").is(":visible") ? "Portrait" : "Landscape");
     window.onresize = function (event) {
-        alert($("orientation.portrait").is(":visible") ? "Portrait" : "Landscape");
         if($("orientation.portrait").is(":visible")) {
             if ($("#rLoopContent .section.landscape").length > 0) {
                 var portraitSections = "";
@@ -46,6 +44,7 @@ $.fn.initialise = function() {
                 $("#rLoopContent").html(landscapeSections);
             }
         }
+        alert($("#rLoopContent"));
     };
 
     // Show loading animation.
