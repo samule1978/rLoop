@@ -35,8 +35,6 @@ $.fn.initialise = function() {
             }
         }
         $('#rLoopContent').fullpage({
-            /*navigation: false,
-             slidesNavigation: false,*/
             css3: true,
             controlArrows: false,
             scrollingSpeed: 750
