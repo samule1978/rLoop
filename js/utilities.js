@@ -118,9 +118,5 @@ $.fn.util_amendContentBasedOnOrientation = function() {
 };
 
 $.fn.util_amendContentBasedOnOrientationChange = function() {
-    alert($("orientation.portrait").is(":visible") ? "Portrait" : "Landscape");
-    window.addEventListener("orientationchange", function() {
-        //$(this).util_amendContentBasedOnOrientation();
-        alert($("orientation.portrait").is(":visible") ? "Portrait" : "Landscape");
-    }, false);
+
 };

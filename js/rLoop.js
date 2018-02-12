@@ -22,6 +22,11 @@ $.fn.initialise = function() {
 
     // Set device orientation markers.
     //$(this).util_addDeviceOrientationMarkers();
+    alert($("orientation.portrait").is(":visible") ? "Portrait" : "Landscape");
+    window.addEventListener("orientationchange", function() {
+        //$(this).util_amendContentBasedOnOrientation();
+        alert($("orientation.portrait").is(":visible") ? "Portrait" : "Landscape");
+    }, false);
 
     $(this).util_amendContentBasedOnOrientationChange();
 
