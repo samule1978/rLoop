@@ -21,13 +21,7 @@ $.fn.initialise = function() {
     $("body").util_showStars(true);
 
     // Set device orientation markers.
-    //$(this).util_addDeviceOrientationMarkers();
-
-    alert($("orientation.portrait").is(":visible") ? "R-Portrait" : "R-Landscape");
-    window.onresize = function (event) {
-        alert($("orientation.portrait").is(":visible") ? "R-Portrait" : "R-Landscape");
-    };
-
+    $(this).util_addDeviceOrientationMarkers();
 
     $(this).util_amendContentBasedOnOrientationChange();
 
