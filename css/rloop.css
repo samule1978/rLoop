@@ -83,10 +83,10 @@ body {
     z-index: 10;
 }
 
-.desktop #rLoopContentHorizontal {
+.desktop .section.horizontal {
     display: none;
 }
-.desktop #rLoopContentVertical {
+.desktop .section.vertical {
     display: block;
 }
 

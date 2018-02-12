@@ -1,9 +1,9 @@
 /* Landscape */
 @media screen and (orientation:landscape) {
-    .mobile #rLoopContentHorizontal {
+    .mobile .section.horizontal {
         display: block;
     }
-    .mobile #rLoopContentVertical {
+    .mobile .section.vertical {
         display: none;
     }
 }

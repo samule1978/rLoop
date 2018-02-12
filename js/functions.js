@@ -57,20 +57,11 @@ $.fn.finishedLoading = function() {
 $.fn.setup = function() {
     $("#main").show();
 
-    $('#rLoopContentVertical').fullpage({
+    $('#rLoopContent').fullpage({
         navigation: false,
         slidesNavigation: false,
         css3: true,
         controlArrows: false,
         scrollingSpeed: 750
     });
-    if (isMobile) {
-        $('#rLoopContentHorizontal').fullpage({
-            navigation: false,
-            slidesNavigation: false,
-            css3: true,
-            controlArrows: false,
-            scrollingSpeed: 750
-        });
-    }
 };
