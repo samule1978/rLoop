@@ -15,9 +15,23 @@ $.fn.initialise = function() {
     var device = (isMobile) ? "mobile" : "desktop";
     $("html").addClass(device);
 
+    $('#rLoopContentVertical').fullpage({
+        navigation: false,
+        slidesNavigation: false,
+        css3: true,
+        controlArrows: false,
+        scrollingSpeed: 1000
+    });
     if (isMobile) {
-        // Add Vertical Content to Horizontal Slides if mobile (for landscape view)
-        $('#rLoopContent').util_addHorizontalSlides(".section.vertical", "section horizontal");
+        $('#main').util_addHorizontalSlides(".section.vertical", "section horizontal");
+
+        $('#rLoopContentHorizontal').fullpage({
+            navigation: false,
+            slidesNavigation: false,
+            css3: true,
+            controlArrows: false,
+            scrollingSpeed: 1000
+        });
     }
 
     // Add twinkling stars to body.

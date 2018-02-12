@@ -76,7 +76,7 @@ $.fn.util_addHorizontalSlides = function(verticalElement, horizontalClass) {
             horizontalSections += "<div class='slide'>" + $(this).html() + "</div>";
         });
 
-        horizontalSections = "<div class='" + horizontalClass + "'>" + horizontalSections + "</div>";
+        horizontalSections = "<div id='rLoopContentHorizontal'><div class='" + horizontalClass + "'>" + horizontalSections + "</div></div>";
     }
 
     $(this).append(horizontalSections);
