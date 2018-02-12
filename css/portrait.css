@@ -6,4 +6,11 @@
     orientation.landscape {
         display: none;
     }
+
+    .mobile .section.portrait {
+        display: block;
+    }
+    .mobile .section.landscape {
+        display: none;
+    }
 }
