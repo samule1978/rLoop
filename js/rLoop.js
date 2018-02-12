@@ -22,10 +22,18 @@ $.fn.initialise = function() {
 
     // Set device orientation markers.
     //$(this).util_addDeviceOrientationMarkers();
-    alert($("orientation.portrait").is(":visible") ? "P" : "L");
+
+    
     window.addEventListener("orientationchange", function() {
         //$(this).util_amendContentBasedOnOrientation();
-        alert($("orientation.portrait").is(":visible") ? "P" : "L");
+        //alert($("orientation.portrait").is(":visible") ? "P" : "L");
+        if (window.matchMedia("(orientation: portrait)").matches) {
+            alert("PORT");
+        }
+
+        if (window.matchMedia("(orientation: landscape)").matches) {
+            alert("LAND");
+        }
     }, false);
 
     $(this).util_amendContentBasedOnOrientationChange();
