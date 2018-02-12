@@ -65,7 +65,5 @@ $.fn.setup = function() {
         scrollingSpeed: 750
     });
 
-    if (isMobile) {
-        $(this).util_amendContentBasedOnOrientationChange();
-    }
+    $(this).util_amendContentBasedOnOrientationChange();
 };
