@@ -20,9 +20,6 @@ $.fn.initialise = function() {
     // Add twinkling stars to body.
     $("body").util_showStars(true);
 
-    // Set device orientation markers.
-    $(this).util_addDeviceOrientationMarkers();
-
     alert($("orientation.portrait").is(":visible") ? "--Portrait" : "--Landscape");
     window.onresize = function (event) {
         alert($("orientation.portrait").is(":visible") ? "--Portrait" : "--Landscape");
