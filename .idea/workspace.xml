@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90f050f4-5f5e-46b9-a025-b617daeebec7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/utilities.js" afterPath="$PROJECT_DIR$/js/utilities.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,11 +28,11 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="utilities.js" pinned="false" current-in-tab="false">
+              <file leaf-file-name="utilities.js" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/js/utilities.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="457">
-                      <caret line="117" column="2" lean-forward="false" selection-start-line="117" selection-start-column="2" selection-end-line="117" selection-end-column="2" />
+                    <state relative-caret-position="382">
+                      <caret line="112" column="67" lean-forward="false" selection-start-line="112" selection-start-column="67" selection-end-line="112" selection-end-column="67" />
                       <folding>
                         <element signature="n#!!doc" expanded="true" />
                       </folding>
@@ -52,7 +52,7 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="jquery.fullPage.js" pinned="false" current-in-tab="true">
+              <file leaf-file-name="jquery.fullPage.js" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/lib/jQuery/jquery.fullPage.js">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="198">
@@ -254,11 +254,11 @@
         <option value="$PROJECT_DIR$/lib/jQuery/jquery.mobile-1.5.0-alpha.1.min.js" />
         <option value="$PROJECT_DIR$/css/rloop.css" />
         <option value="$PROJECT_DIR$/js/functions.js" />
-        <option value="$PROJECT_DIR$/js/utilities.js" />
         <option value="$PROJECT_DIR$/css/landscape.css" />
         <option value="$PROJECT_DIR$/css/portrait.css" />
         <option value="$PROJECT_DIR$/js/rLoop.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/utilities.js" />
       </list>
     </option>
   </component>
@@ -491,12 +491,12 @@
       <workItem from="1518172701263" duration="19938000" />
       <workItem from="1518284182985" duration="5107000" />
       <workItem from="1518363754006" duration="667000" />
-      <workItem from="1518425088410" duration="19596000" />
+      <workItem from="1518425088410" duration="19640000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277709000" />
+    <option name="totallyTimeSpent" value="277753000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="987" extended-state="6" />
@@ -881,26 +881,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/utilities.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="117" column="2" lean-forward="false" selection-start-line="117" selection-start-column="2" selection-end-line="117" selection-end-column="2" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
@@ -924,6 +904,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="2654" column="24" lean-forward="false" selection-start-line="2654" selection-start-column="17" selection-end-line="2654" selection-end-column="24" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/utilities.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="112" column="67" lean-forward="false" selection-start-line="112" selection-start-column="67" selection-end-line="112" selection-end-column="67" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
