@@ -32,13 +32,6 @@ $.fn.initialise = function() {
 
                     $("#rLoopContent").empty();
                     $("#rLoopContent").append(portraitSections);
-                    $('#rLoopContent').fullpage({
-                        /*navigation: false,
-                         slidesNavigation: false,*/
-                        css3: true,
-                        controlArrows: false,
-                        scrollingSpeed: 750
-                    });
                 }
             } else {
                 if ($("#rLoopContent .section.portrait").length > 0) {
@@ -52,25 +45,20 @@ $.fn.initialise = function() {
 
                     $("#rLoopContent").empty();
                     $("#rLoopContent").append(landscapeSections);
-                    $('#rLoopContent').fullpage({
-                        /*navigation: false,
-                         slidesNavigation: false,*/
-                        css3: true,
-                        controlArrows: false,
-                        scrollingSpeed: 750
-                    });
                 }
             }
         };
     } else {
-        $('#rLoopContent').fullpage({
-            /*navigation: false,
-             slidesNavigation: false,*/
-            css3: true,
-            controlArrows: false,
-            scrollingSpeed: 750
-        });
+
     }
+
+    $('#rLoopContent').fullpage({
+        /*navigation: false,
+         slidesNavigation: false,*/
+        css3: true,
+        controlArrows: false,
+        scrollingSpeed: 750
+    });
 
 
 
