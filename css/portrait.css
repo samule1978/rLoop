@@ -1,12 +1,5 @@
 /* Portrait */
 @media screen and (orientation:portrait) {
-    .mobile #rLoopContentHorizontal {
-        display: none;
-    }
-    .mobile #rLoopContentVertical {
-        display: block;
-    }
-
     orientation.portrait {
         display: block;
     }

@@ -8,10 +8,6 @@ var version = "Version: 2.0.0.18.0";
 var isMobile = false;
 
 /******* Functions *******/
-$.fn.util_portrait = function() {
-    return window.innerHeight > window.innerWidth;
-};
-
 $.fn.util_isMobile = function() {
     return (
         /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent)
@@ -68,6 +64,11 @@ $.fn.util_showStars = function(show) {
     }
 };
 
+$.fn.util_setDeviceType = function(mobile) {
+    var device = (mobile) ? "mobile" : "desktop";
+    $("html").addClass(device);
+};
+
 $.fn.util_addHorizontalSlides = function(verticalElement) {
     var horizontalSections = "";
 
@@ -80,4 +81,44 @@ $.fn.util_addHorizontalSlides = function(verticalElement) {
     }
 
     $(this).append(horizontalSections);
+};
+
+$.fn.util_addDeviceOrientationMarkers = function() {
+    $("head").append("<orientation class='portrait'></orientation><orientation class='landscape'></orientation>");
+};
+
+$.fn.util_portrait = function() {
+    return $("orientation.portrait").is(":visible");
+};
+
+$.fn.util_amendContentBasedOnOrientation = function() {
+    if ($(this).util_portrait()) {
+        if ($("#rLoopContent .section.landscape").length > 0) {
+            var portraitSections = "";
+
+            $("#rLoopContent section.landscape .slide").each(function(index) {
+                portraitSections += "<div class='section portrait'>" + $(this).html() + "</div>";
+            });
+
+            $("#rLoopContent").html(portraitSections);
+        }
+    } else {
+        if ($("#rLoopContent .section.portrait").length > 0) {
+            var landscapeSections = "";
+
+            $("#rLoopContent section.portrait").each(function(index) {
+                landscapeSections += "<div class='slide'>" + $(this).html() + "</div>";
+            });
+
+            landscapeSections = "<div class='section landscape'>" + landscapeSections + "</div>";
+
+            $("#rLoopContent").html(landscapeSections);
+        }
+    }
+};
+
+$.fn.util_amendContentBasedOnOrientationChange = function() {
+    window.addEventListener("orientationchange", function() {
+        $(this).util_amendContentBasedOnOrientation();
+    }, false);
 };

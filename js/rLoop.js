@@ -12,18 +12,10 @@ $.fn.initialise = function() {
     isMobile = $(this).util_isMobile();
 
     // Set device type.
-    var device = (isMobile) ? "mobile" : "desktop";
-    $("html").addClass(device);
-    if (isMobile) {
-        //$('#rLoopContent').util_addHorizontalSlides(".section.vertical");
-    }
+    $(this).util_setDeviceType(isMobile);
 
-    var orientation = $("orientation.portrait").is(":visible") ? "Portraitttt" : "Lansdcapeeee";
-    alert(orientation);
-    window.addEventListener("orientationchange", function() {
-        var orientation = $("orientation.portrait").is(":visible") ? "Portraitttt" : "Lansdcapeeee";
-        alert(orientation);
-    }, false);
+    // Set device orientation markers.
+    $(this).util_addDeviceOrientationMarkers();
 
     // Add twinkling stars to body.
     $("body").util_showStars(true);

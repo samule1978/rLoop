@@ -1,12 +1,5 @@
 /* Landscape */
 @media screen and (orientation:landscape) {
-    .mobile #rLoopContentHorizontal {
-        display: block;
-    }
-    .mobile #rLoopContentVertical {
-        display: none;
-    }
-
     orientation.portrait {
         display: none;
     }
