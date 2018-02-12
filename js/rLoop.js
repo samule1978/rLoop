@@ -20,6 +20,47 @@ $.fn.initialise = function() {
     // Add twinkling stars to body.
     $("body").util_showStars(true);
 
+    if (!isMobile) {
+        $('#rLoopContentPortrait').fullpage({
+            css3: true,
+            controlArrows: false,
+            scrollingSpeed: 750
+        });
+    } else {
+        if($("orientation.landscape").is(":visible")) {
+            $('#rLoopContentLandscape').fullpage({
+                css3: true,
+                controlArrows: false,
+                scrollingSpeed: 750
+            });
+        } else {
+            $('#rLoopContentPortrait').fullpage({
+                css3: true,
+                controlArrows: false,
+                scrollingSpeed: 750
+            });
+        }
+
+        window.onresize = function (event) {
+            if ($('#rLoopContentLandscape').fullpage) $('#rLoopContentLandscape').fullpage.destroy(true);
+            if ($('#rLoopContentPortrait').fullpage) $('#rLoopContentPortrait').fullpage.destroy(true);
+
+            if($("orientation.landscape").is(":visible")) {
+                $('#rLoopContentLandscape').fullpage({
+                    css3: true,
+                    controlArrows: false,
+                    scrollingSpeed: 750
+                });
+            } else {
+                $('#rLoopContentPortrait').fullpage({
+                    css3: true,
+                    controlArrows: false,
+                    scrollingSpeed: 750
+                });
+            }
+        }
+    }
+
     /*if (isMobile) {
         if($("orientation.landscape").is(":visible")) {
             if ($("#rLoopContent .section.portrait").length > 0) {
@@ -81,19 +122,9 @@ $.fn.initialise = function() {
         });
     }*/
 
-    $('#rLoopContentPortrait').fullpage({
-        css3: true,
-        controlArrows: false,
-        scrollingSpeed: 750
-    });
-    $('#rLoopContentLandscape').fullpage({
-        css3: true,
-        controlArrows: false,
-        scrollingSpeed: 750
-    });
+
+
 
     // Show loading animation.
     $(this).showLoadingAnimation();
-
-
 };
