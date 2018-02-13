@@ -100,7 +100,7 @@ $.fn.util_generateRLoopContent = function(contentType, sequenceType) {
         }
     }
 
-    return rLoopHtml;
+    return (contentType == "portrait") ? rLoopHtml : "<div class='section landscape'>" + rLoopHtml + "</div>";
 };
 
 $.fn.util_initialiseContent = function() {
@@ -111,7 +111,7 @@ $.fn.util_initialiseContent = function() {
 
     if (isMobile) {
         rLoopHtml = $(this).util_generateRLoopContent("landscape", "pre-load");
-        rLoopHtml = "<div id='rLoopContentLandscape'><div class='section landscape'>" + rLoopHtml + "</div></div>";
+        rLoopHtml = "<div id='rLoopContentLandscape'>" + rLoopHtml + "</div>";
         $(this).append(rLoopHtml);
 
         if($("orientation.landscape").is(":visible")) {

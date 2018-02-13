@@ -27,6 +27,13 @@ body {
     background-size: cover;
 }
 
+rLoopContentData {
+    display: none;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
 .reflect {
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
