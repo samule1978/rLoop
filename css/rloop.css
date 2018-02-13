@@ -34,6 +34,40 @@ rLoopContentData {
     opacity: 0;
 }
 
+/* Portrait */
+@media screen and (orientation:portrait) {
+    orientation.portrait {
+        display: block;
+    }
+    orientation.landscape {
+        display: none;
+    }
+
+    .mobile #rLoopContentPortrait {
+        display: block;
+    }
+    .mobile #rLoopContentLandscape {
+        display: none;
+    }
+}
+
+/* Landscape */
+@media screen and (orientation:landscape) {
+    orientation.portrait {
+        display: none;
+    }
+    orientation.landscape {
+        display: block;
+    }
+
+    .mobile #rLoopContentPortrait {
+        display: none;
+    }
+    .mobile #rLoopContentLandscape {
+        display: block;
+    }
+}
+
 .reflect {
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
