@@ -76,7 +76,7 @@ $.fn.util_portrait = function() {
 $.fn.util_generateRLoopContent = function(contentType, sequenceType) {
     var rLoopHtml = "";
 
-    if (sequenceType == null || sequenceType == "pre-load") {
+    if (sequenceType == "pre-load") {
         if ($("rLoopContentSection[data-sequence='pre-load']").length > 0) {
             $("rLoopContentSection[data-sequence='pre-load']").each(function() {
                 if (contentType == "portrait") {
@@ -88,7 +88,7 @@ $.fn.util_generateRLoopContent = function(contentType, sequenceType) {
         }
     }
 
-    if (sequenceType == null || sequenceType == "post-load") {
+    if (sequenceType == "post-load") {
         if ($("rLoopContentSection[data-sequence='post-load']").length > 0) {
             $("rLoopContentSection[data-sequence='post-load']").each(function() {
                 if (contentType == "portrait") {
