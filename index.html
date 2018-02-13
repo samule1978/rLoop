@@ -19,7 +19,6 @@
     <script type="text/javascript" src="js/rLoop.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
-    <link rel="stylesheet" type="text/css" href="css/preload.css">
     <link rel="stylesheet" type="text/css" href="css/rloop.css">
     <link rel="stylesheet" type="text/css" href="css/portrait.css">
     <link rel="stylesheet" type="text/css" href="css/landscape.css">
@@ -29,65 +28,67 @@
 </head>
 
 <body id="body">
-    <container class="preloader-wrap">
-        <div class="loader-wrap-top">
-            <div class="headline-wrap top">
-                <div class="headline-top">
-                    <img class="hyper-loop" src="img/assets/hyperloop.svg" />
-                    <img class="hyper-loop-white" src="img/assets/hyperloop_thin_white.svg" />
-                </div>
-                <div class="headline-bottom">
-                    <img class="race-is-on" src="img/assets/theraceison.svg" />
-                </div>
-            </div>
+    <rLoopContentData style="display: none;width: 0px;height: 0px;opacity: 0;">
+        <rLoopContentSection data-sequence="pre-load">
+            <div class="pre-load-outer">
+                <div class="pre-load-inner-top">
+                    <div class="headline-wrap top">
+                        <div class="headline-top">
+                            <img class="hyper-loop" src="img/assets/hyperloop.svg" />
+                            <img class="hyper-loop-white" src="img/assets/hyperloop_thin_white.svg" />
+                        </div>
+                        <div class="headline-bottom">
+                            <img class="race-is-on" src="img/assets/theraceison.svg" />
+                        </div>
+                    </div>
 
-            <div class="loader">
-                <div class="trackbar">
-                    <div class="loadbar"></div>
+                    <div class="loader">
+                        <div class="trackbar">
+                            <div class="loadbar"></div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="loader-wrap-bottom">
-            <div class="headline-wrap bottom reflect">
-                <div class="headline-top">
-                    <img class="hyper-loop" src="img/assets/hyperloop.svg" />
-                    <img class="hyper-loop-white" src="img/assets/hyperloop_thin_white.svg" />
-                </div>
-                <div class="headline-bottom">
-                    <img class="race-is-on" src="img/assets/theraceison.svg" />
-                </div>
-            </div>
+                <div class="pre-load-inner-bottom">
+                    <div class="headline-wrap bottom reflect">
+                        <div class="headline-top">
+                            <img class="hyper-loop" src="img/assets/hyperloop.svg" />
+                            <img class="hyper-loop-white" src="img/assets/hyperloop_thin_white.svg" />
+                        </div>
+                        <div class="headline-bottom">
+                            <img class="race-is-on" src="img/assets/theraceison.svg" />
+                        </div>
+                    </div>
 
-            <div class="headline-overlay"></div>
-        </div>
-    </container>
-
-    <div id="main" style="display: none;">
-        <div id="rLoopContent">
-            <div class="section">
-                <div class="intro">
-                    <h1>Section One</h1>
+                    <div class="headline-overlay"></div>
                 </div>
             </div>
+        </rLoopContentSection>
 
-            <div class="section">
-                <div class="intro">
-                    <h1>Section Two</h1>
-                </div>
+        <rLoopContentSection data-sequence="post-load">
+            <div class="intro">
+                <h1>Section One</h1>
             </div>
+        </rLoopContentSection>
 
-            <div class="section">
-                <div class="intro">
-                    <h1>Section Three</h1>
-                </div>
+        <rLoopContentSection data-sequence="post-load">
+            <div class="intro">
+                <h1>Section Two</h1>
             </div>
+        </rLoopContentSection>
 
-            <div class="section">
-                <div class="intro">
-                    <h1>Section Four</h1>
-                </div>
+        <rLoopContentSection data-sequence="post-load">
+            <div class="intro">
+                <h1>Section Three</h1>
             </div>
-        </div>
-    </div>
+        </rLoopContentSection>
+
+        <rLoopContentSection data-sequence="post-load">
+            <div class="intro">
+                <h1>Section Four</h1>
+            </div>
+        </rLoopContentSection>
+    </rLoopContentData>
+
+    <div id="main"></div>
 </body>
 </html>

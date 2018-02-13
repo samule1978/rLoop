@@ -73,44 +73,86 @@ $.fn.util_portrait = function() {
     return $("orientation.portrait").is(":visible");
 };
 
-$.fn.util_initialiseContent = function() {
-    if (!isMobile) {
-        $('#rLoopContent').util_applyFullPage();
-    } else {
-        $(this).util_createMobileContent();
-        $(this).util_displayContentBasedOnOrientation();
+$.fn.util_generateRLoopContent = function(contentType, sequenceType) {
+    var rLoopHtml = "";
+
+    if (sequenceType == null || sequenceType == "pre-load") {
+        if ($("rLoopContentSection[data-sequence='pre-load']").length > 0) {
+            $("rLoopContentSection[data-sequence='pre-load']").each(function() {
+                if (contentType == "portrait") {
+                    rLoopHtml += "<div class='section'>" + $(this).html() + "</div>";
+                } else if (contentType == "landscape") {
+                    rLoopHtml += "<div class='slide'>" + $(this).html() + "</div>";
+                }
+            });
+        }
     }
-}
 
-$.fn.util_createMobileContent = function() {
-    if ($("#rLoopContent .section").length > 0) {
-        var landscapeSections = "";
-        var portraitSections = "";
+    if (sequenceType == null || sequenceType == "post-load") {
+        if ($("rLoopContentSection[data-sequence='post-load']").length > 0) {
+            $("rLoopContentSection[data-sequence='post-load']").each(function() {
+                if (contentType == "portrait") {
+                    rLoopHtml += "<div class='section'>" + $(this).html() + "</div>";
+                } else if (contentType == "landscape") {
+                    rLoopHtml += "<div class='slide'>" + $(this).html() + "</div>";
+                }
+            });
+        }
+    }
 
-        $("#rLoopContent .section").each(function(index) {
-            landscapeSections += "<div class='slide'>" + $(this).html() + "</div>";
-            portraitSections += "<div class='section'>" + $(this).html() + "</div>";
-        });
+    return rLoopHtml;
+};
 
-        landscapeSections = "<div id='rLoopContentLandscape'><div class='section landscape'>" + landscapeSections + "</div></div>";
-        portraitSections = "<div id='rLoopContentPortrait'>" + portraitSections + "</div>";
+$.fn.util_initialiseContent = function() {
+    // Display portrait content regardless of device type.
+    var rLoopHtml = $(this).util_generateRLoopContent("portrait", "pre-load");
+    rLoopHtml = "<div id='rLoopContentPortrait'>" + rLoopHtml + "</div>";
+    $(this).append(rLoopHtml);
 
-        $("#rLoopContent").remove();
-        $("#main").append(landscapeSections);
-        $("#main").append(portraitSections);
+    if (isMobile) {
+        rLoopHtml = $(this).util_generateRLoopContent("landscape", "pre-load");
+        rLoopHtml = "<div id='rLoopContentLandscape'><div class='section landscape'>" + rLoopHtml + "</div></div>";
+        $(this).append(rLoopHtml);
+
+        if($("orientation.landscape").is(":visible")) {
+            $('#rLoopContentLandscape').util_applyFullPage();
+        } else {
+            $('#rLoopContentPortrait').util_applyFullPage();
+        }
+
+        $(this).util_displayContentBasedOnOrientation();
+    } else {
+        $("#rLoopContentPortrait").util_applyFullPage();
     }
 };
 
-$.fn.util_displayContentBasedOnOrientation = function() {
-    if($("orientation.landscape").is(":visible")) {
-        $('#rLoopContentLandscape').util_applyFullPage();
+$.fn.util_finaliseContent = function() {
+    // Display portrait content regardless of device type.
+    var rLoopHtml = $(this).util_generateRLoopContent("portrait", "post-load");
+    $("#rLoopContentPortrait").util_removeFullPage();
+    $("#rLoopContentPortrait").append(rLoopHtml);
+
+    if (isMobile) {
+        rLoopHtml = $(this).util_generateRLoopContent("landscape", "post-load");
+        $("#rLoopContentLandscape").util_removeFullPage();
+        $("#rLoopContentLandscape").append(rLoopHtml);
+
+        if($("orientation.landscape").is(":visible")) {
+            $('#rLoopContentLandscape').util_applyFullPage();
+        } else {
+            $('#rLoopContentPortrait').util_applyFullPage();
+        }
     } else {
-        $('#rLoopContentPortrait').util_applyFullPage();
+        $("#rLoopContentPortrait").util_applyFullPage();
     }
 
+    $("rLoopContentData").remove();
+};
+
+$.fn.util_displayContentBasedOnOrientation = function() {
     window.onresize = function (event) {
-        if ($('#rLoopContentLandscape').fullpage) $('#rLoopContentLandscape').fullpage.destroy(true);
-        if ($('#rLoopContentPortrait').fullpage) $('#rLoopContentPortrait').fullpage.destroy(true);
+        $('#rLoopContentLandscape').util_removeFullPage();
+        $('#rLoopContentPortrait').util_removeFullPage();
 
         if($("orientation.landscape").is(":visible")) {
             $('#rLoopContentLandscape').util_applyFullPage();
@@ -127,3 +169,8 @@ $.fn.util_applyFullPage = function() {
         scrollingSpeed: 750
     });
 };
+
+$.fn.util_removeFullPage = function() {
+    if ($(this).fullpage) $(this).fullpage.destroy(true);
+};
+

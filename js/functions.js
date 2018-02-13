@@ -35,7 +35,7 @@ $.fn.showLoadingAnimation = function() {
 
     // Finish Loading Animation
     setTimeout(function(){
-        $(".preloader-wrap").addClass("hide").queue(function(){
+        $(".pre-load-outer").addClass("hide").queue(function(){
             $(this).dequeue().delay(3000).addClass("finished").queue(function(){
                 $(this).setup();
             });
@@ -44,7 +44,7 @@ $.fn.showLoadingAnimation = function() {
 };
 
 $.fn.finishedLoading = function() {
-    return $(".preloader-wrap").hasClass("finished");
+    return $(".pre-load-outer").hasClass("finished");
 };
 /******* FINISH -- Loading Functionality *******/
 
@@ -55,7 +55,6 @@ $.fn.finishedLoading = function() {
 
 /******* Functions *******/
 $.fn.setup = function() {
-    $("#main").show();
-
-
+    // Finalise Content.
+    $(this).util_finaliseContent();
 };

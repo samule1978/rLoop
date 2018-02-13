@@ -10,13 +10,6 @@ html{
     height: 100%;
 }
 
-.debug {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: 100;
-}
-
 body {
     font-family:  'Roboto Slab', serif;
     color: white;
@@ -33,6 +26,185 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+
+.reflect {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+
+    -moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: FlipV;
+    -ms-filter: "FlipV";
+}
+
+/* Loading Styles */
+.pre-load-outer {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+}
+.pre-load-inner-top {
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    overflow: hidden;
+}
+.pre-load-inner-bottom {
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 2;
+    overflow: hidden;
+    border-top: solid 1.5px #2B2B2B;
+}
+
+.headline-wrap {
+    width: 300px;
+    height: 80px;
+    position: absolute;
+    margin: 0px auto;
+}
+.headline-wrap.top {
+    bottom: 20px;
+    left: 0;
+    right: 0;
+}
+.headline-wrap.bottom {
+    top: 20px;
+    left: 0;
+    right: 0;
+}
+.headline-top {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+}
+.headline-bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    opacity: 0;
+}
+
+.hyper-loop {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    -moz-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    -ms-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    -o-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+}
+.hyper-loop-white {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+.race-is-on {
+    width: 100%;
+}
+
+.loader {
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin : auto;
+    z-index: 3;
+}
+.loader:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.trackbar {
+    position: relative;
+    background-color: #000000;/*#ebebeb;*/
+
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+}
+.loadbar {
+    width: 0%;
+    height: 100%;
+    background-color: rgb(0, 252, 254);
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.headline-overlay {
+    background: rgba(0, 0, 0, .50);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+/*.hide .headline-wrap.top {
+    -webkit-transition: bottom 1s 1s, opacity 3s 2s;
+    -moz-transition: bottom 1s 1s, opacity 3s 2s;
+    -ms-transition: bottom 1s 1s, opacity 3s 2s;
+    -o-transition: bottom 1s 1s, opacity 3s 2s;
+    transition: bottom 1s 1s, opacity 3s 2s;
+    bottom: -100px !important;
+    opacity: 0 !important;
+}*/
+.hide .headline-wrap.bottom {
+    -webkit-transition: top 1s 1s, opacity 3s 2s;
+    -moz-transition: top 1s 1s, opacity 3s 2s;
+    -ms-transition: top 1s 1s, opacity 3s 2s;
+    -o-transition: top 1s 1s, opacity 3s 2s;
+    transition: top 1s 1s, opacity 3s 2s;
+    top: -100px !important;
+    opacity: 0 !important;
+}
+.hide .loader {
+    -webkit-transition: opacity 1s linear 1s;
+    -moz-transition: opacity 1s linear 1s;
+    -ms-transition: opacity 1s linear 1s;
+    -o-transition: opacity 1s linear 1s;
+    transition: opacity 1s linear 1s;
+    opacity: 0 !important;
+}
+/*.pre-load-outer.hide {
+    -webkit-transition: opacity 2s 2s, visibility 0s 7s;
+    -moz-transition: opacity 2s 2s, visibility 0s 7s;
+    -ms-transition: opacity 2s 2s, visibility 0s 7s;
+    -o-transition: opacity 2s 2s, visibility 0s 7s;
+    transition: opacity 2s 2s, visibility 0s 7s;
+    opacity: 0 !important;
+    visibility: hidden;
+}*/
 
 /* Stars Animation */
 .stars,
@@ -112,21 +284,5 @@ body {
     -ms-transform: rotate(-90deg); /* IE 9 */
     -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
     transform: rotate(-90deg);
-}
-
-.reflect {
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
-
-    -moz-transform: scaleY(-1);
-    -o-transform: scaleY(-1);
-    -webkit-transform: scaleY(-1);
-    transform: scaleY(-1);
-    filter: FlipV;
-    -ms-filter: "FlipV";
 }
 
