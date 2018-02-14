@@ -147,19 +147,19 @@ $.fn.util_finaliseContent = function() {
 
 $.fn.util_displayContentBasedOnOrientationChange = function() {
     window.onresize = function (event) {
-        $(this).util_amendContentBasedOnOrientation();
+        $("#plcLandscapeSection").util_amendContentBasedOnOrientation();
     }
 };
 
 $.fn.util_amendContentBasedOnOrientation = function() {
     if($("orientation.portrait").is(":visible")) {
-        if ($(this).find(".slide").length > 0) {
+        if ($("#plcLandscapeSection").find(".slide").length > 0) {
             // We are in portrait mode, and the content is formatted for landscape - so amend.
             $("#" + _idRLoopContent).util_removeFullPage();
 
-            $(this).removeClass("section");
+            $("#plcLandscapeSection").removeClass("section");
 
-            $(this).find(".slide").each(function() {
+            $("#plcLandscapeSection").find(".slide").each(function() {
                 $(this).removeClass("slide");
                 var active = ($(this).hasClass("active")) ? " active" : "";
                 $(this).addClass("section" + active);
@@ -168,19 +168,19 @@ $.fn.util_amendContentBasedOnOrientation = function() {
             $("#" + _idRLoopContent).util_applyFullPage();
         }
     } else {
-        if ($(this).find(".slide").length <= 0) {
+        if ($("#plcLandscapeSection").find(".slide").length <= 0) {
             // We are in landscape mode, and the content is formatted for portrait - so amend.
             $("#" + _idRLoopContent).util_removeFullPage();
 
-            $(this).removeClass("section");
+            $("#plcLandscapeSection").removeClass("section");
 
-            $(this).find(".section").each(function() {
+            $("#plcLandscapeSection").find(".section").each(function() {
                 $(this).removeClass("section");
                 var active = ($(this).hasClass("active")) ? " active" : "";
                 $(this).addClass("slide" + active);
             });
 
-            $(this).addClass("section");
+            $("#plcLandscapeSection").addClass("section");
             $("#" + _idRLoopContent).util_applyFullPage();
         }
     }
