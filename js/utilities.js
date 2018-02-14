@@ -156,11 +156,12 @@ $.fn.util_amendContentBasedOnOrientation = function() {
         if ($(this).find(".slide").length > 0) {
             // We are in portrait mode, and the content is formatted for landscape - so amend.
             $("#" + _idRLoopContent).util_removeFullPage();
-            $(this).removeClass(_fpClassSection);
+
+            $(this).removeClass("section");
 
             $(this).find(".slide").each(function() {
-                $(this).removeClass(_fpClassSlide);
-                $(this).addClass(_fpClassSection);
+                $(this).removeClass("slide");
+                $(this).addClass("section");
             });
 
             $("#" + _idRLoopContent).util_applyFullPage();
@@ -169,14 +170,15 @@ $.fn.util_amendContentBasedOnOrientation = function() {
         if ($(this).find(".slide").length <= 0) {
             // We are in landscape mode, and the content is formatted for portrait - so amend.
             $("#" + _idRLoopContent).util_removeFullPage();
-            $(this).removeClass(_fpClassSection);
+
+            $(this).removeClass("section");
 
             $(this).find(".section").each(function() {
-                $(this).removeClass(_fpClassSection);
-                $(this).addClass(_fpClassSlide);
+                $(this).removeClass("section");
+                $(this).addClass("slide");
             });
 
-            $(this).addClass(_fpClassSection);
+            $(this).addClass("section");
             $("#" + _idRLoopContent).util_applyFullPage();
         }
     }
