@@ -119,7 +119,7 @@ $.fn.util_initialiseContent = function() {
             rLoopHtml = "<div id='" + _idRLoopContent + "'><div id='" + _idOrientationContainer + "' class='" + _fpClassSection + "'>" + rLoopHtml + "</div></div>";
         }
 
-        $("#" + _idOrientationContainer).util_displayContentBasedOnOrientationChange();
+        $(this).util_displayContentBasedOnOrientationChange();
     }
 
     $("#main").append(rLoopHtml);
@@ -157,13 +157,13 @@ $.fn.util_displayContentBasedOnOrientationChange = function() {
 
 $.fn.util_amendContentBasedOnOrientation = function() {
     if($("orientation.portrait").is(":visible")) {
-        if ($(this).find("." + _classSlide).length > 0) {
+        if ($("#" + _idOrientationContainer).find("." + _classSlide).length > 0) {
             // We are in portrait mode, and the content is formatted for landscape - so amend.
             $("#" + _idRLoopContent).util_removeFullPage();
 
-            $(this).removeClass(_classSection);
+            $("#" + _idOrientationContainer).removeClass(_classSection);
 
-            $(this).find("." + _classSlide).each(function() {
+            $("#" + _idOrientationContainer).find("." + _classSlide).each(function() {
                 $(this).removeClass(_classSlide);
                 var active = ($(this).hasClass(_classActive)) ? " " + _classActive : "";
                 $(this).addClass(_classSection + active);
@@ -172,19 +172,19 @@ $.fn.util_amendContentBasedOnOrientation = function() {
             $("#" + _idRLoopContent).util_applyFullPage();
         }
     } else {
-        if ($(this).find("." + _classSlide).length <= 0) {
+        if ($("#" + _idOrientationContainer).find("." + _classSlide).length <= 0) {
             // We are in landscape mode, and the content is formatted for portrait - so amend.
             $("#" + _idRLoopContent).util_removeFullPage();
 
-            $(this).removeClass(_classSection);
+            $("#" + _idOrientationContainer).removeClass(_classSection);
 
-            $(this).find("." + _classSection).each(function() {
+            $("#" + _idOrientationContainer).find("." + _classSection).each(function() {
                 $(this).removeClass(_classSection);
                 var active = ($(this).hasClass(_classActive)) ? " " + _classActive : "";
                 $(this).addClass(_classSlide + active);
             });
 
-            $(this).addClass(_classSection);
+            $("#" + _idOrientationContainer).addClass(_classSection);
 
             $("#" + _idRLoopContent).util_applyFullPage();
         }
