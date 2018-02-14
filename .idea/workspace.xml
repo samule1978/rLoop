@@ -41,15 +41,10 @@
           <file leaf-file-name="utilities.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/utilities.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="280">
-                  <caret line="183" column="12" lean-forward="false" selection-start-line="183" selection-start-column="12" selection-end-line="183" selection-end-column="12" />
+                <state relative-caret-position="-12">
+                  <caret line="161" column="59" lean-forward="true" selection-start-line="161" selection-start-column="59" selection-end-line="161" selection-end-column="59" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
-                    <element signature="e#2628#3352#0" expanded="false" />
-                    <element signature="e#3412#3976#0" expanded="false" />
-                    <element signature="e#4027#4272#0" expanded="false" />
-                    <element signature="e#4312#4801#0" expanded="false" />
-                    <element signature="e#4847#4932#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -94,10 +89,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>'.spinlogo-wrap'</find>
-      <find>animateOnMobile</find>
-      <find>animateOnDesktop</find>
-      <find>demo</find>
       <find>main</find>
       <find>scroll</find>
       <find>util_setDeviceOrientation</find>
@@ -124,6 +115,10 @@
       <find>util_amendContentBasedOnOrientation</find>
       <find>util_initialiseContent</find>
       <find>clone</find>
+      <find>plcLandscapeSection</find>
+      <find>_idLandscapeSection</find>
+      <find>util_displayContentBasedOnOrientationChange</find>
+      <find>active</find>
     </findStrings>
     <replaceStrings>
       <replace>preloader</replace>
@@ -151,6 +146,7 @@
       <replace>_preLoad</replace>
       <replace>_postLoad</replace>
       <replace>headline</replace>
+      <replace>_idOrientationContainer</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/../../rLoop/v1.0.0.0</dir>
@@ -413,12 +409,12 @@
       <workItem from="1518363754006" duration="667000" />
       <workItem from="1518425088410" duration="24671000" />
       <workItem from="1518517659646" duration="12096000" />
-      <workItem from="1518600880226" duration="11097000" />
+      <workItem from="1518600880226" duration="12190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="305977000" />
+    <option name="totallyTimeSpent" value="307070000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="987" extended-state="6" />
@@ -837,15 +833,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/utilities.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="183" column="12" lean-forward="false" selection-start-line="183" selection-start-column="12" selection-end-line="183" selection-end-column="12" />
+        <state relative-caret-position="-12">
+          <caret line="161" column="59" lean-forward="true" selection-start-line="161" selection-start-column="59" selection-end-line="161" selection-end-column="59" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#2628#3352#0" expanded="false" />
-            <element signature="e#3412#3976#0" expanded="false" />
-            <element signature="e#4027#4272#0" expanded="false" />
-            <element signature="e#4312#4801#0" expanded="false" />
-            <element signature="e#4847#4932#0" expanded="false" />
           </folding>
         </state>
       </provider>

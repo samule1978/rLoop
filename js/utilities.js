@@ -9,12 +9,16 @@ var isMobile = false;
 
 /******* Constants *******/
 var _idRLoopContent = "rLoopContent";
+var _idOrientationContainer = "plcLandscapeSection";
 var _preLoad = "pre-load";
 var _postLoad = "post-load";
 var _portrait = "portrait";
 var _landscape = "landscape";
-var _fpClassSection = "section fp-section fp-table";
-var _fpClassSlide = "slide";
+var _classSection = "section";
+var _classSlide = "slide";
+var _classActive = "active";
+var _fpClassSection = _classSection + " fp-section fp-table";
+var _fpClassSlide = _classSlide;
 
 /******* Functions *******/
 $.fn.util_isMobile = function() {
@@ -109,13 +113,13 @@ $.fn.util_initialiseContent = function() {
     } else {
         if($("orientation.portrait").is(":visible")) {
             rLoopHtml = $(this).util_generateRLoopContent(_portrait, _preLoad);
-            rLoopHtml = "<div id='" + _idRLoopContent + "'><div id='plcLandscapeSection'>" + rLoopHtml + "</div></div>";
+            rLoopHtml = "<div id='" + _idRLoopContent + "'><div id='" + _idOrientationContainer + "'>" + rLoopHtml + "</div></div>";
         } else {
             rLoopHtml = $(this).util_generateRLoopContent(_landscape, _preLoad);
-            rLoopHtml = "<div id='" + _idRLoopContent + "'><div id='plcLandscapeSection' class='" + _fpClassSection + "'>" + rLoopHtml + "</div></div>";
+            rLoopHtml = "<div id='" + _idRLoopContent + "'><div id='" + _idOrientationContainer + "' class='" + _fpClassSection + "'>" + rLoopHtml + "</div></div>";
         }
 
-        $("#plcLandscapeSection").util_displayContentBasedOnOrientationChange();
+        $("#" + _idOrientationContainer).util_displayContentBasedOnOrientationChange();
     }
 
     $("#main").append(rLoopHtml);
@@ -133,11 +137,11 @@ $.fn.util_finaliseContent = function() {
     } else {
         if($("orientation.portrait").is(":visible")) {
             rLoopHtml = $(this).util_generateRLoopContent(_portrait, _postLoad);
-            $("#plcLandscapeSection").append(rLoopHtml);
+            
         } else {
             rLoopHtml = $(this).util_generateRLoopContent(_landscape, _postLoad);
-            $("#plcLandscapeSection").append(rLoopHtml);
         }
+        $("#" + _idOrientationContainer).append(rLoopHtml);
     }
 
     $("#" + _idRLoopContent).util_applyFullPage();
@@ -147,74 +151,45 @@ $.fn.util_finaliseContent = function() {
 
 $.fn.util_displayContentBasedOnOrientationChange = function() {
     window.onresize = function (event) {
-        $("#plcLandscapeSection").util_amendContentBasedOnOrientation();
+        $(this).util_amendContentBasedOnOrientation();
     }
 };
 
 $.fn.util_amendContentBasedOnOrientation = function() {
     if($("orientation.portrait").is(":visible")) {
-        if ($("#plcLandscapeSection").find(".slide").length > 0) {
+        if ($(this).find("." + _classSlide).length > 0) {
             // We are in portrait mode, and the content is formatted for landscape - so amend.
             $("#" + _idRLoopContent).util_removeFullPage();
 
-            $("#plcLandscapeSection").removeClass("section");
+            $(this).removeClass(_classSection);
 
-            $("#plcLandscapeSection").find(".slide").each(function() {
-                $(this).removeClass("slide");
-                var active = ($(this).hasClass("active")) ? " active" : "";
-                $(this).addClass("section" + active);
+            $(this).find("." + _classSlide).each(function() {
+                $(this).removeClass(_classSlide);
+                var active = ($(this).hasClass(_classActive)) ? " " + _classActive : "";
+                $(this).addClass(_classSection + active);
             });
 
             $("#" + _idRLoopContent).util_applyFullPage();
         }
     } else {
-        if ($("#plcLandscapeSection").find(".slide").length <= 0) {
+        if ($(this).find("." + _classSlide).length <= 0) {
             // We are in landscape mode, and the content is formatted for portrait - so amend.
             $("#" + _idRLoopContent).util_removeFullPage();
 
-            $("#plcLandscapeSection").removeClass("section");
+            $(this).removeClass(_classSection);
 
-            $("#plcLandscapeSection").find(".section").each(function() {
-                $(this).removeClass("section");
-                var active = ($(this).hasClass("active")) ? " active" : "";
-                $(this).addClass("slide" + active);
+            $(this).find("." + _classSection).each(function() {
+                $(this).removeClass(_classSection);
+                var active = ($(this).hasClass(_classActive)) ? " " + _classActive : "";
+                $(this).addClass(_classSlide + active);
             });
 
-            $("#plcLandscapeSection").addClass("section");
-            
+            $(this).addClass(_classSection);
+
             $("#" + _idRLoopContent).util_applyFullPage();
         }
     }
 };
-/*$.fn.util_amendContentBasedOnOrientation = function() {
-    var html = "";
-
-    if($("orientation.portrait").is(":visible")) {
-        if ($(this).find(".slide").length > 0) {
-            // We are in portrait mode, and the content is formatted for landscape - so amend.
-            $(this).find(".slide").each(function() {
-                var active = ($(this).hasClass("active")) ? " active" : "";
-                html += "<div class='" + _fpClassSection + active + "'>" + $(this).clone() + "</div>";
-            });
-        }
-    } else {
-        if ($(this).find(".slide").length <= 0) {
-            // We are in landscape mode, and the content is formatted for portrait - so amend.
-            $(this).find(".section").each(function() {
-                var active = ($(this).hasClass("active")) ? " active" : "";
-                html += "<div class='" + _fpClassSlide + active + "'>" + $(this).clone() + "</div>";
-            });
-            html += "<div class='" + _fpClassSection + "'>" + html + "</div>";
-        }
-    }
-
-    if (html != "") {
-        $(this).util_removeFullPage();
-        $(this).empty();
-        $(this).append(html);
-        $(this).util_applyFullPage();
-    }
-};*/
 
 $.fn.util_applyFullPage = function() {
     $(this).fullpage({
