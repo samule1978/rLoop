@@ -151,7 +151,7 @@ $.fn.util_finaliseContent = function() {
 
     $("#" + _idRLoopContent).util_applyFullPage();
 
-    //$("rLoopContentData").remove();
+    $("rLoopContentData").remove();
 };
 
 $.fn.util_displayContentBasedOnOrientationChange = function() {
