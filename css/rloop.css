@@ -47,13 +47,6 @@ orientation {
     orientation.landscape {
         display: none;
     }
-
-    .mobile #rLoopContentPortrait {
-        display: block;
-    }
-    .mobile #rLoopContentLandscape {
-        display: none;
-    }
 }
 
 /* Landscape */
@@ -62,13 +55,6 @@ orientation {
         display: none;
     }
     orientation.landscape {
-        display: block;
-    }
-
-    .mobile #rLoopContentPortrait {
-        display: none;
-    }
-    .mobile #rLoopContentLandscape {
         display: block;
     }
 }

@@ -14,12 +14,11 @@ $.fn.initialise = function() {
     // Set device type.
     $(this).util_setDeviceType(isMobile);
 
-    // Initialise Content.
-    if ($("#main").length <= 0) $("body").append("<div id='main'></div>");
-    $("#main").util_initialiseContent();
-
     // Add twinkling stars to body.
     $("body").util_showStars(true);
+
+    // Initialise Content.
+    $("body").util_initialiseContent();
 
     // Show loading animation.
     $(this).showLoadingAnimation();

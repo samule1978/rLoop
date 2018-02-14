@@ -8,12 +8,13 @@ var version = "Version: 2.0.0.18.0";
 var isMobile = false;
 
 /******* Constants *******/
+var _idRLoopContent = "rLoopContent";
 var _preLoad = "pre-load";
 var _postLoad = "post-load";
 var _portrait = "portrait";
 var _landscape = "landscape";
-var _idContentPortrait = "rLoopContentPortrait";
-var _idContentLandscape = "rLoopContentLandscape";
+var _fpClassSection = "section fp-section fp-table";
+var _fpClassSlide = "slide";
 
 /******* Functions *******/
 $.fn.util_isMobile = function() {
@@ -87,9 +88,9 @@ $.fn.util_generateRLoopContent = function(contentType, sequenceType) {
     if ($("rLoopContentSection[data-sequence='" + sequenceType + "']").length > 0) {
         $("rLoopContentSection[data-sequence='" + sequenceType + "']").each(function() {
             if (contentType == _portrait) {
-                rLoopHtml += "<div class='section'>" + $(this).html() + "</div>";
+                rLoopHtml += "<div class='" + _fpClassSection + "'>" + $(this).html() + "</div>";
             } else if (contentType == _landscape) {
-                rLoopHtml += "<div class='slide'>" + $(this).html() + "</div>";
+                rLoopHtml += "<div class='" + _fpClassSlide + "'>" + $(this).html() + "</div>";
             }
         });
     }
@@ -98,61 +99,85 @@ $.fn.util_generateRLoopContent = function(contentType, sequenceType) {
 };
 
 $.fn.util_initialiseContent = function() {
-    // Display portrait content regardless of device type.
-    var rLoopHtml = $(this).util_generateRLoopContent(_portrait, _preLoad);
-    rLoopHtml = "<div id='" + _idContentPortrait + "'>" + rLoopHtml + "</div>";
-    $(this).append(rLoopHtml);
+    if ($("#main").length <= 0) $("body").append("<div id='main'></div>");
 
-    if (isMobile) {
-        rLoopHtml = $(this).util_generateRLoopContent(_landscape, _preLoad);
-        rLoopHtml = "<div id='" + _idContentLandscape + "'><div class='section landscape'>" + rLoopHtml + "</div></div>";
-        $(this).append(rLoopHtml);
+    var rLoopHtml = "";
 
-        if($("orientation.landscape").is(":visible")) {
-            $("#" + _idContentLandscape).util_applyFullPage();
+    if (!isMobile) {
+        rLoopHtml = $(this).util_generateRLoopContent(_portrait, _preLoad);
+        rLoopHtml = "<div id='" + _idRLoopContent + "'>" + rLoopHtml + "</div>";
+    } else {
+        if($("orientation.portrait").is(":visible")) {
+            rLoopHtml = $(this).util_generateRLoopContent(_portrait, _preLoad);
+            rLoopHtml = "<div id='" + _idRLoopContent + "'>" + rLoopHtml + "</div>";
         } else {
-            $("#" + _idContentPortrait).util_applyFullPage();
+            rLoopHtml = $(this).util_generateRLoopContent(_landscape, _preLoad);
+            rLoopHtml = "<div id='" + _idRLoopContent + "'><div class='" + _fpClassSection + "'>" + rLoopHtml + "</div></div>";
         }
 
-        $(this).util_displayContentBasedOnOrientation();
-    } else {
-        $("#" + _idContentPortrait).util_applyFullPage();
+        $("#" + _idRLoopContent).util_displayContentBasedOnOrientationChange();
     }
+
+    $("#main").append(rLoopHtml);
+    $("#" + _idRLoopContent).util_applyFullPage();
 };
 
 $.fn.util_finaliseContent = function() {
-    // Display portrait content regardless of device type.
-    var rLoopHtml = $(this).util_generateRLoopContent(_portrait, _postLoad);
-    $("#" + _idContentPortrait).util_removeFullPage();
-    $("#" + _idContentPortrait).append(rLoopHtml);
+    $("#" + _idRLoopContent).util_removeFullPage();
 
-    if (isMobile) {
-        rLoopHtml = $(this).util_generateRLoopContent(_landscape, _postLoad);
-        $("#" + _idContentLandscape).util_removeFullPage();
-        $("#" + _idContentLandscape + " .section.landscape").append(rLoopHtml);
+    var rLoopHtml = "";
 
-        if($("orientation.landscape").is(":visible")) {
-            $("#" + _idContentLandscape).util_applyFullPage();
-        } else {
-            $("#" + _idContentPortrait).util_applyFullPage();
-        }
+    if (!isMobile) {
+        rLoopHtml = $(this).util_generateRLoopContent(_portrait, _postLoad);
+        $("#" + _idRLoopContent).append(rLoopHtml);
     } else {
-        $("#" + _idContentPortrait).util_applyFullPage();
+        if($("orientation.portrait").is(":visible")) {
+            rLoopHtml = $(this).util_generateRLoopContent(_portrait, _postLoad);
+            $("#" + _idRLoopContent).append(rLoopHtml);
+        } else {
+            rLoopHtml = $(this).util_generateRLoopContent(_landscape, _postLoad);
+            $("#" + _idRLoopContent + " .section").append(rLoopHtml);
+        }
     }
+
+    $("#" + _idRLoopContent).util_applyFullPage();
 
     $("rLoopContentData").remove();
 };
 
-$.fn.util_displayContentBasedOnOrientation = function() {
+$.fn.util_displayContentBasedOnOrientationChange = function() {
     window.onresize = function (event) {
-        $("#" + _idContentLandscape).util_removeFullPage();
-        $("#" + _idContentPortrait).util_removeFullPage();
+        $("#" + _idRLoopContent).util_amendContentBasedOnOrientation();
+    }
+};
 
-        if($("orientation.landscape").is(":visible")) {
-            $("#" + _idContentLandscape).util_applyFullPage();
-        } else {
-            $("#" + _idContentPortrait).util_applyFullPage();
+$.fn.util_amendContentBasedOnOrientation = function() {
+    var html = "";
+
+    if($("orientation.portrait").is(":visible")) {
+        if ($(this).find(".slide").length > 0) {
+            // We are in portrait mode, and the content is formatted for landscape - so amend.
+            $(this).find(".slide").each(function() {
+                var active = ($(this).hasClass("active")) ? " active" : "";
+                html += "<div class='" + _fpClassSection + active + "'>" + $(this).html() + "</div>";
+            });
         }
+    } else {
+        if ($(this).find(".slide").length <= 0) {
+            // We are in landscape mode, and the content is formatted for portrait - so amend.
+            $(this).find(".section").each(function() {
+                var active = ($(this).hasClass("active")) ? " active" : "";
+                html += "<div class='" + _fpClassSlide + active + "'>" + $(this).html() + "</div>";
+            });
+            html += "<div class='" + _fpClassSection + "'>" + html + "</div>";
+        }
+    }
+
+    if (html != "") {
+        $(this).util_removeFullPage();
+        $(this).empty();
+        $(this).append(html);
+        $(this).util_applyFullPage();
     }
 };
 
