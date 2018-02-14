@@ -27,6 +27,10 @@ body {
     background-size: cover;
 }
 
+.colBlue {
+    color: rgb(0, 252, 254);
+}
+
 rLoopContentData {
     display: none;
     width: 0;
@@ -314,14 +318,14 @@ orientation {
     position: relative;
     width: 50%;
     height: 40px;
-    padding: 15px 0px 15px 30px;
+    padding: 15px 0px 15px 50px;
 }
 #rLoopMenu .section-right {
     float: left;
     position: relative;
     width: 50%;
     height: 40px;
-    padding: 15px 30px 15px 0px;
+    padding: 15px 50px 15px 0px;
 }
 #rLoopLogo {
     height: 100%;
@@ -329,10 +333,17 @@ orientation {
 
 /* Content Styles */
 #rLoopContent .intro {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
 }
 #rLoopContent .loaded .intro {
-    display: block;
+    -webkit-transition: opacity 1s 0s, visibility 0s 0s;
+    -moz-transition: opacity 1s 0s, visibility 0s 0s;
+    -ms-transition: opacity 1s 0s, visibility 0s 0s;
+    -o-transition: opacity 1s 0s, visibility 0s 0s;
+    transition: opacity 1s 0s, visibility 0s 0s;
+    opacity: 1 !important;
+    visibility: visible;
 }
 
 
