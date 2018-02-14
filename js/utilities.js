@@ -208,7 +208,25 @@ $.fn.util_applyFullPage = function() {
     $(this).fullpage({
         css3: true,
         controlArrows: false,
-        scrollingSpeed: 750
+        scrollingSpeed: 750,
+        loopHorizontal: false,
+        continuousHorizontal: false,
+
+        afterLoad: function(anchorLink, index){
+            var loadedSection = $(this);
+            if (loadedSection.hasClass("loading")) loadedSection.removeClass('loading');
+            if (!loadedSection.hasClass("loaded")) loadedSection.addClass('loaded');
+        },
+        onLeave: function(index, nextIndex, direction){
+            var leavingSection = $(this);
+            var nextSection = leavingSection.parent().find("." + _classSection + ":eq(" + nextIndex + ")");
+            if (!nextSection.hasClass("loaded") && !nextSection.hasClass("loading")) nextSection.addClass('loading');
+        },
+        onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
+            var leavingSlide = $(this);
+            var nextSlide = leavingSlide.parent().find("." + _classSlide + ":eq(" + slideIndex + ")");
+            if (!nextSlide.hasClass("loaded") && !nextSlide.hasClass("loading")) nextSlide.addClass('loading');
+        }
     });
 };
 

@@ -327,6 +327,14 @@ orientation {
     height: 100%;
 }
 
+/* Content Styles */
+#rLoopContent .intro {
+    display: none;
+}
+#rLoopContent .loaded .intro {
+    display: block;
+}
+
 
 /* Full Page Overrides */
 .intro {
