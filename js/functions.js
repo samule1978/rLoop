@@ -44,7 +44,7 @@ $.fn.showLoadingAnimation = function() {
 };
 
 $.fn.finishedLoading = function() {
-    return $(".pre-load-outer").hasClass("finished");
+    return $("body").hasClass("loaded");
 };
 /******* FINISH -- Loading Functionality *******/
 
@@ -57,4 +57,7 @@ $.fn.finishedLoading = function() {
 $.fn.setup = function() {
     // Finalise Content.
     $(this).util_finaliseContent();
+
+    // Add loaded class to body.
+    $("body").addClass("loaded");
 };

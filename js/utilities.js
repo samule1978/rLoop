@@ -4,7 +4,6 @@
  */
 
 /******* Variables *******/
-var version = "Version: 2.0.0.18.0";
 var isMobile = false;
 
 /******* Constants *******/
@@ -86,11 +85,15 @@ $.fn.util_portrait = function() {
     return $("orientation.portrait").is(":visible");
 };
 
+$.fn.util_generateRLoopMenu = function() {
+    return ($("rLoopMenuSection").length > 0) ? $("rLoopMenuSection").html() : "";
+};
+
 $.fn.util_generateRLoopContent = function(contentType, sequenceType) {
     var rLoopHtml = "";
 
-    if ($("rLoopContentSection[data-sequence='" + sequenceType + "']").length > 0) {
-        $("rLoopContentSection[data-sequence='" + sequenceType + "']").each(function() {
+    if ($("rLoopContentSection[data-type='" + sequenceType + "']").length > 0) {
+        $("rLoopContentSection[data-type='" + sequenceType + "']").each(function() {
             if (contentType == _portrait) {
                 rLoopHtml += "<div class='" + _fpClassSection + "'>" + $(this).html() + "</div>";
             } else if (contentType == _landscape) {
@@ -104,6 +107,8 @@ $.fn.util_generateRLoopContent = function(contentType, sequenceType) {
 
 $.fn.util_initialiseContent = function() {
     if ($("#main").length <= 0) $("body").append("<div id='main'></div>");
+
+    $("#main").append($(this).util_generateRLoopMenu());
 
     var rLoopHtml = "";
 
@@ -146,7 +151,7 @@ $.fn.util_finaliseContent = function() {
 
     $("#" + _idRLoopContent).util_applyFullPage();
 
-    $("rLoopContentData").remove();
+    //$("rLoopContentData").remove();
 };
 
 $.fn.util_displayContentBasedOnOrientationChange = function() {
@@ -188,7 +193,7 @@ $.fn.util_amendContentBasedOnOrientation = function() {
 
             $("#" + _idRLoopContent).util_removeFullPage();
             if (!$("#" + _idOrientationContainer).hasClass(_classSection)) $("#" + _idOrientationContainer).addClass(_classSection);
-            
+
             if (activeIndex != -1) {
                 var selectedItem = $("#" + _idOrientationContainer).find("." + _classSlide + ":eq(" + activeIndex + ")");
                 if (!selectedItem.hasClass(_classActive)) selectedItem.addClass(_classActive);
