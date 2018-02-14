@@ -151,7 +151,7 @@ $.fn.util_displayContentBasedOnOrientationChange = function() {
     }
 };
 
-$.fn.util_amendContentBasedOnOrientation = function() {
+/*$.fn.util_amendContentBasedOnOrientation = function() {
     var html = "";
 
     if($("orientation.portrait").is(":visible")) {
@@ -178,6 +178,31 @@ $.fn.util_amendContentBasedOnOrientation = function() {
         $(this).empty();
         $(this).append(html);
         $(this).util_applyFullPage();
+    }
+};*/
+
+$.fn.util_amendContentBasedOnOrientation = function() {
+
+    if($("orientation.portrait").is(":visible")) {
+        if ($(this).find(".slide").length > 0) {
+            // We are in portrait mode, and the content is formatted for landscape - so amend.
+            $(this).find(".slide").each(function() {
+                $(this).util_removeFullPage();
+                $(this).removeClass(_fpClassSlide);
+                $(this).addClass(_fpClassSection);
+                $(this).util_applyFullPage();
+            });
+        }
+    } else {
+        if ($(this).find(".slide").length <= 0) {
+            // We are in landscape mode, and the content is formatted for portrait - so amend.
+            $(this).find(".section").each(function() {
+                $(this).util_removeFullPage();
+                $(this).removeClass(_fpClassSection);
+                $(this).addClass(_fpClassSlide);
+                $(this).util_applyFullPage();
+            });
+        }
     }
 };
 
