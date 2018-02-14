@@ -156,37 +156,33 @@ $.fn.util_displayContentBasedOnOrientationChange = function() {
 };
 
 $.fn.util_amendContentBasedOnOrientation = function() {
+    var activeIndex = -1;
+
     if($("orientation.portrait").is(":visible")) {
         if ($("#" + _idOrientationContainer).find("." + _classSlide).length > 0) {
             // We are in portrait mode, and the content is formatted for landscape - so amend.
-            $("#" + _idRLoopContent).util_removeFullPage();
-
-            $("#" + _idOrientationContainer).removeClass(_classSection);
-
-            $("#" + _idOrientationContainer).find("." + _classSlide).each(function() {
+            $("#" + _idOrientationContainer).find("." + _classSlide).each(function(index) {
                 $(this).removeClass(_classSlide);
-                var active = ($(this).hasClass(_classActive)) ? " " + _classActive : "";
-                $(this).addClass(_classSection + active);
+                $(this).addClass(_classSection);
+                if ($(this).hasClass(_classActive)) activeIndex = index;
             });
 
-            $("#" + _idRLoopContent).util_applyFullPage();
+            //$("#" + _idRLoopContent).util_removeFullPage();
+            if ($("#" + _idOrientationContainer).hasClass(_classSection)) $("#" + _idOrientationContainer).removeClass(_classSection);
+            //$("#" + _idRLoopContent).util_applyFullPage();
         }
     } else {
         if ($("#" + _idOrientationContainer).find("." + _classSlide).length <= 0) {
             // We are in landscape mode, and the content is formatted for portrait - so amend.
-            $("#" + _idRLoopContent).util_removeFullPage();
-
-            $("#" + _idOrientationContainer).removeClass(_classSection);
-
-            $("#" + _idOrientationContainer).find("." + _classSection).each(function() {
+            $("#" + _idOrientationContainer).find("." + _classSection).each(function(index) {
                 $(this).removeClass(_classSection);
-                var active = ($(this).hasClass(_classActive)) ? " " + _classActive : "";
-                $(this).addClass(_classSlide + active);
+                $(this).addClass(_classSlide);
+                if ($(this).hasClass(_classActive)) activeIndex = index;
             });
 
-            $("#" + _idOrientationContainer).addClass(_classSection);
-
-            $("#" + _idRLoopContent).util_applyFullPage();
+            //$("#" + _idRLoopContent).util_removeFullPage();
+            if (!$("#" + _idOrientationContainer).hasClass(_classSection)) $("#" + _idOrientationContainer).addClass(_classSection);
+            //$("#" + _idRLoopContent).util_applyFullPage();
         }
     }
 };
