@@ -167,9 +167,14 @@ $.fn.util_amendContentBasedOnOrientation = function() {
                 if ($(this).hasClass(_classActive)) activeIndex = index;
             });
 
-            //$("#" + _idRLoopContent).util_removeFullPage();
+            $("#" + _idRLoopContent).util_removeFullPage();
             if ($("#" + _idOrientationContainer).hasClass(_classSection)) $("#" + _idOrientationContainer).removeClass(_classSection);
-            //$("#" + _idRLoopContent).util_applyFullPage();
+            $("#" + _idRLoopContent).util_applyFullPage();
+
+            if (activeIndex != -1) {
+                var selectedItem = $("#" + _idOrientationContainer).find("." + _classSection + ":eq(" + activeIndex + ")");
+                if (!selectedItem.hasClass(_classActive)) selectedItem.addClass(_classActive);
+            }
         }
     } else {
         if ($("#" + _idOrientationContainer).find("." + _classSlide).length <= 0) {
@@ -180,9 +185,14 @@ $.fn.util_amendContentBasedOnOrientation = function() {
                 if ($(this).hasClass(_classActive)) activeIndex = index;
             });
 
-            //$("#" + _idRLoopContent).util_removeFullPage();
+            $("#" + _idRLoopContent).util_removeFullPage();
             if (!$("#" + _idOrientationContainer).hasClass(_classSection)) $("#" + _idOrientationContainer).addClass(_classSection);
-            //$("#" + _idRLoopContent).util_applyFullPage();
+            $("#" + _idRLoopContent).util_applyFullPage();
+
+            if (activeIndex != -1) {
+                var selectedItem = $("#" + _idOrientationContainer).find("." + _classSlide + ":eq(" + activeIndex + ")");
+                if (!selectedItem.hasClass(_classActive)) selectedItem.addClass(_classActive);
+            }
         }
     }
 };
