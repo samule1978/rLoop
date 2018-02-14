@@ -136,7 +136,7 @@ $.fn.util_finaliseContent = function() {
             $("#plcLandscapeSection").append(rLoopHtml);
         } else {
             rLoopHtml = $(this).util_generateRLoopContent(_landscape, _postLoad);
-            $("#plcLandscapeSection .section").append(rLoopHtml);
+            $("#plcLandscapeSection").append(rLoopHtml);
         }
     }
 

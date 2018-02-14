@@ -41,8 +41,8 @@
           <file leaf-file-name="utilities.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/utilities.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="96">
-                  <caret line="156" column="38" lean-forward="false" selection-start-line="156" selection-start-column="38" selection-end-line="156" selection-end-column="38" />
+                <state relative-caret-position="363">
+                  <caret line="138" column="35" lean-forward="false" selection-start-line="138" selection-start-column="35" selection-end-line="138" selection-end-column="35" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                     <element signature="e#2628#3352#0" expanded="false" />
@@ -72,7 +72,7 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="472">
+                <state relative-caret-position="449">
                   <caret line="79" column="18" lean-forward="true" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="18" />
                   <folding />
                 </state>
@@ -94,7 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>showGyroAnimation</find>
       <find>'.spinlogo-wrap'</find>
       <find>animateOnMobile</find>
       <find>animateOnDesktop</find>
@@ -124,6 +123,7 @@
       <find>_idContentPortrait</find>
       <find>util_amendContentBasedOnOrientation</find>
       <find>util_initialiseContent</find>
+      <find>clone</find>
     </findStrings>
     <replaceStrings>
       <replace>preloader</replace>
@@ -413,12 +413,12 @@
       <workItem from="1518363754006" duration="667000" />
       <workItem from="1518425088410" duration="24671000" />
       <workItem from="1518517659646" duration="12096000" />
-      <workItem from="1518600880226" duration="8164000" />
+      <workItem from="1518600880226" duration="8960000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="303044000" />
+    <option name="totallyTimeSpent" value="303840000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="987" extended-state="6" />
@@ -811,7 +811,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
+        <state relative-caret-position="449">
           <caret line="79" column="18" lean-forward="true" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="18" />
           <folding />
         </state>
@@ -837,8 +837,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/utilities.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="156" column="38" lean-forward="false" selection-start-line="156" selection-start-column="38" selection-end-line="156" selection-end-column="38" />
+        <state relative-caret-position="363">
+          <caret line="138" column="35" lean-forward="false" selection-start-line="138" selection-start-column="35" selection-end-line="138" selection-end-column="35" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#2628#3352#0" expanded="false" />
