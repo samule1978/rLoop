@@ -169,13 +169,14 @@ $.fn.util_amendContentBasedOnOrientation = function() {
         if ($(this).find(".slide").length <= 0) {
             // We are in landscape mode, and the content is formatted for portrait - so amend.
             $("#" + _idRLoopContent).util_removeFullPage();
-            $(this).addClass(_fpClassSection);
+            $(this).removeClass(_fpClassSection);
 
             $(this).find(".section").each(function() {
                 $(this).removeClass(_fpClassSection);
                 $(this).addClass(_fpClassSlide);
             });
 
+            $(this).addClass(_fpClassSection);
             $("#" + _idRLoopContent).util_applyFullPage();
         }
     }
