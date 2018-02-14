@@ -174,6 +174,7 @@ $.fn.util_amendContentBasedOnOrientation = function() {
             if (activeIndex != -1) {
                 var selectedItem = $("#" + _idOrientationContainer).find("." + _classSection + ":eq(" + activeIndex + ")");
                 if (!selectedItem.hasClass(_classActive)) selectedItem.addClass(_classActive);
+                alert(selectedItem.attr("class"));
             }
         }
     } else {
@@ -192,6 +193,7 @@ $.fn.util_amendContentBasedOnOrientation = function() {
             if (activeIndex != -1) {
                 var selectedItem = $("#" + _idOrientationContainer).find("." + _classSlide + ":eq(" + activeIndex + ")");
                 if (!selectedItem.hasClass(_classActive)) selectedItem.addClass(_classActive);
+                alert(selectedItem.attr("class"));
             }
         }
     }
