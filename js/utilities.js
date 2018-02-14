@@ -109,10 +109,10 @@ $.fn.util_initialiseContent = function() {
     } else {
         if($("orientation.portrait").is(":visible")) {
             rLoopHtml = $(this).util_generateRLoopContent(_portrait, _preLoad);
-            rLoopHtml = "<div id='" + _idRLoopContent + "'>" + rLoopHtml + "</div>";
+            rLoopHtml = "<div id='" + _idRLoopContent + "'><div id='plcLandscapeSection'>" + rLoopHtml + "</div></div>";
         } else {
             rLoopHtml = $(this).util_generateRLoopContent(_landscape, _preLoad);
-            rLoopHtml = "<div id='" + _idRLoopContent + "'><div class='" + _fpClassSection + "'>" + rLoopHtml + "</div></div>";
+            rLoopHtml = "<div id='" + _idRLoopContent + "'><div id='plcLandscapeSection' class='" + _fpClassSection + "'>" + rLoopHtml + "</div></div>";
         }
 
         $("#" + _idRLoopContent).util_displayContentBasedOnOrientationChange();
@@ -133,10 +133,10 @@ $.fn.util_finaliseContent = function() {
     } else {
         if($("orientation.portrait").is(":visible")) {
             rLoopHtml = $(this).util_generateRLoopContent(_portrait, _postLoad);
-            $("#" + _idRLoopContent).append(rLoopHtml);
+            $("#plcLandscapeSection").append(rLoopHtml);
         } else {
             rLoopHtml = $(this).util_generateRLoopContent(_landscape, _postLoad);
-            $("#" + _idRLoopContent + " .section").append(rLoopHtml);
+            $("#plcLandscapeSection .section").append(rLoopHtml);
         }
     }
 
@@ -152,6 +152,32 @@ $.fn.util_displayContentBasedOnOrientationChange = function() {
 };
 
 $.fn.util_amendContentBasedOnOrientation = function() {
+    if($("orientation.portrait").is(":visible")) {
+        if ($(this).find(".slide").length > 0) {
+            // We are in portrait mode, and the content is formatted for landscape - so amend.
+            $(this).find(".slide").each(function() {
+                $(this).util_removeFullPage();
+                $(this).removeClass(_fpClassSlide);
+                $(this).addClass(_fpClassSection);
+                $("#plcLandscapeSection").removeClass(_fpClassSection);
+                $(this).util_applyFullPage();
+            });
+        }
+    } else {
+        if ($(this).find(".slide").length <= 0) {
+            // We are in landscape mode, and the content is formatted for portrait - so amend.
+            $(this).find(".section").each(function() {
+                $(this).util_removeFullPage();
+                $(this).removeClass(_fpClassSection);
+                $(this).addClass(_fpClassSlide);
+                $("#plcLandscapeSection").addClass(_fpClassSection);
+                $(this).util_applyFullPage();
+            });
+
+        }
+    }
+};
+/*$.fn.util_amendContentBasedOnOrientation = function() {
     var html = "";
 
     if($("orientation.portrait").is(":visible")) {
@@ -179,7 +205,7 @@ $.fn.util_amendContentBasedOnOrientation = function() {
         $(this).append(html);
         $(this).util_applyFullPage();
     }
-};
+};*/
 
 $.fn.util_applyFullPage = function() {
     $(this).fullpage({
