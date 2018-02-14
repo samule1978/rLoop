@@ -161,7 +161,8 @@ $.fn.util_amendContentBasedOnOrientation = function() {
 
             $(this).find(".slide").each(function() {
                 $(this).removeClass("slide");
-                $(this).addClass("section");
+                var active = ($(this).hasClass("active")) ? " active" : "";
+                $(this).addClass("section" + active);
             });
 
             $("#" + _idRLoopContent).util_applyFullPage();
@@ -175,7 +176,8 @@ $.fn.util_amendContentBasedOnOrientation = function() {
 
             $(this).find(".section").each(function() {
                 $(this).removeClass("section");
-                $(this).addClass("slide");
+                var active = ($(this).hasClass("active")) ? " active" : "";
+                $(this).addClass("slide" + active);
             });
 
             $(this).addClass("section");
