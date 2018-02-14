@@ -181,6 +181,7 @@ $.fn.util_amendContentBasedOnOrientation = function() {
             });
 
             $("#plcLandscapeSection").addClass("section");
+            
             $("#" + _idRLoopContent).util_applyFullPage();
         }
     }
