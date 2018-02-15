@@ -218,14 +218,18 @@ $.fn.util_applyFullPage = function() {
             if (!loadedSection.hasClass("loaded")) loadedSection.addClass('loaded');
         },
         onLeave: function(index, nextIndex, direction){
-            var leavingSection = $(this);
-            var nextSection = leavingSection.parent().find("." + _classSection + ":eq(" + nextIndex + ")");
-            if (!nextSection.hasClass("loaded") && !nextSection.hasClass("loading")) nextSection.addClass('loading');
+            if((!isMobile) || (isMobile && $("orientation.portrait").is(":visible"))) {
+                var leavingSection = $(this);
+                var nextSection = leavingSection.parent().find("." + _classSection + ":eq(" + nextIndex + ")");
+                if (!nextSection.hasClass("loaded") && !nextSection.hasClass("loading")) nextSection.addClass('loading');
+            }
         },
         onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
-            var leavingSlide = $(this);
-            var nextSlide = leavingSlide.parent().find("." + _classSlide + ":eq(" + slideIndex + ")");
-            if (!nextSlide.hasClass("loaded") && !nextSlide.hasClass("loading")) nextSlide.addClass('loading');
+            if(isMobile && $("orientation.landscape").is(":visible")) {
+                var leavingSlide = $(this);
+                var nextSlide = leavingSlide.parent().find("." + _classSlide + ":eq(" + slideIndex + ")");
+                if (!nextSlide.hasClass("loaded") && !nextSlide.hasClass("loading")) nextSlide.addClass('loading');
+            }
         }
     });
 };
