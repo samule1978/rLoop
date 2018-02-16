@@ -108,8 +108,6 @@ $.fn.util_generateRLoopContent = function(contentType, sequenceType) {
 $.fn.util_initialiseContent = function() {
     if ($("#main").length <= 0) $("body").append("<div id='main'></div>");
 
-    $("#main").append($(this).util_generateRLoopMenu());
-
     var rLoopHtml = "";
 
     if (!isMobile) {
@@ -150,6 +148,8 @@ $.fn.util_finaliseContent = function() {
     }
 
     $("#" + _idRLoopContent).util_applyFullPage();
+
+    $("#main").append($(this).util_generateRLoopMenu());
 
     $("rLoopContentData").remove();
 };

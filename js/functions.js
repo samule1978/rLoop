@@ -7,32 +7,35 @@
 /******* Variables *******/
 var width = 100,
     perfData = window.performance.timing, // The PerformanceTiming interface represents timing-related performance information for the given page.
-    EstimatedTime = -(perfData.loadEventEnd - perfData.navigationStart),
-    time = parseInt((EstimatedTime/1000)%60)*100;
+    pageLoadTime = -(perfData.loadEventEnd - perfData.navigationStart),
+    time = parseInt((pageLoadTime/1000)%60)*100;
 
 /******* Functions *******/
 $.fn.showLoadingAnimation = function() {
-    var initialDelay = 3000;
+    var tlLoader = new TimelineMax();
 
-    setTimeout(function(){
-        $(".headline-top").animate({
-            opacity: 1
-        }, initialDelay - 1000);
+    var duration = 3;
+    var timeToLoad = ((time/1000) < duration) ? duration : (time/1000) - duration;
 
-        $(".headline-bottom").animate({
-            opacity: 1
-        }, initialDelay);
-    }, 0);
+    var headlineTop = $(".headline-top");
+    var headlineBottom = $(".headline-bottom");
+    var loader = $(".loader");
+    var loadbar = $(".loadbar");
+    var hyperLoop = $(".hyper-loop");
+    var headlineWrapBottom = $(".headline-wrap.bottom");
+    var preLoadInnerBottom = $(".pre-load-inner-bottom");
 
-    $(".loadbar").delay(initialDelay).animate({
-            width: width + "%"
-        },
-        {
-            step: function(now, fx) {
-                $(".hyper-loop").util_clipPathRectLeftToRight(now);
-            }
-        }, time);
+    tlLoader.to(headlineTop, duration-1, {opacity:1})
+            .to(headlineBottom, duration, {opacity:1}, '-=' + duration-1)
+            .to(loadbar, timeToLoad, {width:"100%"})
+            .to(hyperLoop, timeToLoad, {clipPath:"polygon(0 0, 100% 0, 100% 100%, 0 100%)"}, '-=' + timeToLoad)
+            .to(loader, 2, {opacity:0}, '+=1')
+            .to(headlineWrapBottom, 4, {top:-100, opacity:0, ease:Elastic.easeOut})
+            .to(preLoadInnerBottom, 4, {visibility:"hidden", opacity:0, ease:Elastic.easeOut});
 
+
+
+    // Finish Loading Animation
     // Finish Loading Animation
     setTimeout(function(){
         $(".pre-load-outer").addClass("hide").queue(function(){
@@ -40,11 +43,7 @@ $.fn.showLoadingAnimation = function() {
                 $(this).setup();
             });
         });
-    }, (time >= initialDelay) ? time : initialDelay);
-};
-
-$.fn.finishedLoading = function() {
-    return $("body").hasClass("loaded");
+    }, (time >= (duration*1000)) ? time : (duration*1000));
 };
 /******* FINISH -- Loading Functionality *******/
 
@@ -57,7 +56,4 @@ $.fn.finishedLoading = function() {
 $.fn.setup = function() {
     // Finalise Content.
     $(this).util_finaliseContent();
-
-    // Add loaded class to body.
-    $("body").addClass("loaded");
 };
