@@ -36,7 +36,7 @@ $.fn.anim_Start_SceneOne = function() {
                                         oClipPath:"polygon(0 0, 100% 0, 100% 100%, 0 100%)",
                                         clipPath:"polygon(0 0, 100% 0, 100% 100%, 0 100%)"}, '-=' + timeToLoad)
             .fromTo(loader, 2, {opacity:1}, {opacity:0}, '+=1')
-            .to(headlineWrapBottom, 3, {top:-100, opacity:0, ease:Elastic.easeOut})
+            .to(headlineWrapBottom, 3, {top:-100, opacity:0})
             .fromTo(preLoadInnerBottom, 1, {opacity:1}, {opacity:0})
             .fromTo(rLoopMenu, 2, {opacity:0}, {opacity:1});
 };
