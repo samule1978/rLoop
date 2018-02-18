@@ -11,7 +11,8 @@ var perfData = window.performance.timing, // The PerformanceTiming interface rep
 
 /******* Functions *******/
 $.fn.anim_Start_SceneOne = function() {
-    var tlLoader = new TimelineMax({onComplete:$(this).anim_Finish_SceneOne});
+    //var tlLoader = new TimelineMax({onComplete:$(this).anim_Finish_SceneOne});
+    var tlLoader = new TimelineMax();
 
     var initialDelay = 1;
 
@@ -35,9 +36,10 @@ $.fn.anim_Start_SceneOne = function() {
                                         oClipPath:"polygon(0 0, 100% 0, 100% 100%, 0 100%)",
                                         clipPath:"polygon(0 0, 100% 0, 100% 100%, 0 100%)"}, '-=' + timeToLoad)
             .fromTo(loader, 2, {opacity:1}, {opacity:0}, '+=1')
-            .to(headlineWrapBottom, 3, {top:-100, opacity:0})
-            .fromTo(preLoadInnerBottom, 1, {opacity:1}, {opacity:0})
-            .fromTo(rLoopMenu, 2, {opacity:0}, {opacity:1});
+            .fromTo(rLoopMenu, 1, {opacity:0}, {opacity:1, onComplete:$(this).anim_Finish_SceneOne})
+            .to(headlineWrapBottom, 2, {top:-100, opacity:0})
+            .fromTo(preLoadInnerBottom, 1, {opacity:1}, {opacity:0});
+
 };
 $.fn.anim_Finish_SceneOne = function() {
     $("#" + _idRLoopContent).util_disableScrollFullPage(false);

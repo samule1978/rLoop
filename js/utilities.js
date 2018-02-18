@@ -54,7 +54,7 @@ $.fn.util_initialiseContent = function() {
     $("#" + _idRLoopContent).util_disableScrollFullPage(true);
 
     if (isMobile) {
-        //$(this).util_amendContentBasedOnOrientation();
+        $(this).util_amendContentBasedOnOrientation();
         $(this).util_displayContentBasedOnOrientationChange();
     }
 };
