@@ -5,8 +5,7 @@
 
 /******* START -- Loading Functionality *******/
 /******* Variables *******/
-var width = 100,
-    perfData = window.performance.timing, // The PerformanceTiming interface represents timing-related performance information for the given page.
+var perfData = window.performance.timing, // The PerformanceTiming interface represents timing-related performance information for the given page.
     pageLoadTime = -(perfData.loadEventEnd - perfData.navigationStart),
     time = parseInt((pageLoadTime/1000)%60)*100;
 

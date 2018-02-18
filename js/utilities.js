@@ -22,38 +22,6 @@ $.fn.util_isMobile = function() {
     );
 }
 
-$.fn.util_clipPathPolygon = function(topLeft, topRight, bottomLeft, bottomRight) {
-    $(this).css({
-        '-webkit-clip-path' : 'polygon(0 ' + topLeft + '%, 100% ' + topRight + '%, 100% ' + bottomRight + '%, 0 ' + bottomLeft + '%)',
-        '-moz-clip-path'    : 'polygon(0 ' + topLeft + '%, 100% ' + topRight + '%, 100% ' + bottomRight + '%, 0 ' + bottomLeft + '%)',
-        '-ms-clip-path'     : 'polygon(0 ' + topLeft + '%, 100% ' + topRight + '%, 100% ' + bottomRight + '%, 0 ' + bottomLeft + '%)',
-        '-o-clip-path'      : 'polygon(0 ' + topLeft + '%, 100% ' + topRight + '%, 100% ' + bottomRight + '%, 0 ' + bottomLeft + '%)',
-        'clip-path'         : 'polygon(0 ' + topLeft + '%, 100% ' + topRight + '%, 100% ' + bottomRight + '%, 0 ' + bottomLeft + '%)'
-    });
-
-    return $(this);
-};
-
-$.fn.util_clipPathRectLeftToRight = function(percentage) {
-    $(this).css({
-        '-webkit-clip-path' : 'polygon(0 0, ' + percentage + '% 0, ' + percentage + '% 100%, 0 100%)',
-        '-moz-clip-path'    : 'polygon(0 0, ' + percentage + '% 0, ' + percentage + '% 100%, 0 100%)',
-        '-ms-clip-path'     : 'polygon(0 0, ' + percentage + '% 0, ' + percentage + '% 100%, 0 100%)',
-        '-o-clip-path'      : 'polygon(0 0, ' + percentage + '% 0, ' + percentage + '% 100%, 0 100%)',
-        'clip-path'         : 'polygon(0 0, ' + percentage + '% 0, ' + percentage + '% 100%, 0 100%)'
-    });
-
-    return $(this);
-};
-
-$.fn.util_constrain = function(value, boundary) {
-    // Because we don't want to have the device upside down
-    // We constrain the y value to the range [-boundary,boundary]
-    if (value >  boundary) { value =  boundary};
-    if (value < -boundary) { value = -boundary};
-    return value;
-};
-
 $.fn.util_showStars = function(show) {
     if (show) {
         $(this).prepend("<div class='stars'></div><div class='twinkling'></div>");
@@ -101,7 +69,6 @@ $.fn.util_amendContentBasedOnOrientation = function() {
     var activeIndex = -1;
 
     if($("orientation.portrait").is(":visible")) {
-        alert("portrait");
         if ($("#" + _idOrientationContainer).find("." + _classSlide).length > 0) {
             // We are in portrait mode, and the content is formatted for landscape - so amend.
             $("#" + _idOrientationContainer).find("." + _classSlide).each(function(index) {
@@ -121,7 +88,6 @@ $.fn.util_amendContentBasedOnOrientation = function() {
             $("#" + _idRLoopContent).util_applyFullPage();
         }
     } else {
-        alert("landscape");
         if ($("#" + _idOrientationContainer).find("." + _classSlide).length <= 0) {
             // We are in landscape mode, and the content is formatted for portrait - so amend.
             $("#" + _idOrientationContainer).find("." + _classSection).each(function(index) {
