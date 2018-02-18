@@ -20,6 +20,6 @@ $.fn.initialise = function() {
     // Initialise Content.
     $("body").util_initialiseContent();
 
-    // Show loading animation.
-    $(this).showLoadingAnimation();
+    // Start animation.
+    $(this).anim_Start_SceneOne();
 };

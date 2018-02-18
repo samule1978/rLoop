@@ -7,17 +7,12 @@
 var isMobile = false;
 
 /******* Constants *******/
+var _idRLoopMenu = "rLoopMenu";
 var _idRLoopContent = "rLoopContent";
 var _idOrientationContainer = "plcLandscapeSection";
-var _preLoad = "pre-load";
-var _postLoad = "post-load";
-var _portrait = "portrait";
-var _landscape = "landscape";
 var _classSection = "section";
 var _classSlide = "slide";
 var _classActive = "active";
-var _fpClassSection = _classSection + " fp-section fp-table";
-var _fpClassSlide = _classSlide;
 
 /******* Functions *******/
 $.fn.util_isMobile = function() {
@@ -85,73 +80,15 @@ $.fn.util_portrait = function() {
     return $("orientation.portrait").is(":visible");
 };
 
-$.fn.util_generateRLoopMenu = function() {
-    return ($("rLoopMenuSection").length > 0) ? $("rLoopMenuSection").html() : "";
-};
-
-$.fn.util_generateRLoopContent = function(contentType, sequenceType) {
-    var rLoopHtml = "";
-
-    if ($("rLoopContentSection[data-type='" + sequenceType + "']").length > 0) {
-        $("rLoopContentSection[data-type='" + sequenceType + "']").each(function() {
-            if (contentType == _portrait) {
-                rLoopHtml += "<div class='" + _fpClassSection + "'>" + $(this).html() + "</div>";
-            } else if (contentType == _landscape) {
-                rLoopHtml += "<div class='" + _fpClassSlide + "'>" + $(this).html() + "</div>";
-            }
-        });
-    }
-
-    return rLoopHtml;
-};
-
 $.fn.util_initialiseContent = function() {
-    if ($("#main").length <= 0) $("body").append("<div id='main'></div>");
+    $("#" + _idRLoopMenu).css("opacity:0;");
+    $("#" + _idRLoopContent).util_applyFullPage();
+    $("#" + _idRLoopContent).util_disableScrollFullPage(true);
 
-    var rLoopHtml = "";
-
-    if (!isMobile) {
-        rLoopHtml = $(this).util_generateRLoopContent(_portrait, _preLoad);
-        rLoopHtml = "<div id='" + _idRLoopContent + "'>" + rLoopHtml + "</div>";
-    } else {
-        if($("orientation.portrait").is(":visible")) {
-            rLoopHtml = $(this).util_generateRLoopContent(_portrait, _preLoad);
-            rLoopHtml = "<div id='" + _idRLoopContent + "'><div id='" + _idOrientationContainer + "'>" + rLoopHtml + "</div></div>";
-        } else {
-            rLoopHtml = $(this).util_generateRLoopContent(_landscape, _preLoad);
-            rLoopHtml = "<div id='" + _idRLoopContent + "'><div id='" + _idOrientationContainer + "' class='" + _fpClassSection + "'>" + rLoopHtml + "</div></div>";
-        }
-
+    if (isMobile) {
+        $(this).util_amendContentBasedOnOrientation();
         $(this).util_displayContentBasedOnOrientationChange();
     }
-
-    $("#main").append(rLoopHtml);
-    $("#" + _idRLoopContent).util_applyFullPage();
-};
-
-$.fn.util_finaliseContent = function() {
-    $("#" + _idRLoopContent).util_removeFullPage();
-
-    var rLoopHtml = "";
-
-    if (!isMobile) {
-        rLoopHtml = $(this).util_generateRLoopContent(_portrait, _postLoad);
-        $("#" + _idRLoopContent).append(rLoopHtml);
-    } else {
-        if($("orientation.portrait").is(":visible")) {
-            rLoopHtml = $(this).util_generateRLoopContent(_portrait, _postLoad);
-            
-        } else {
-            rLoopHtml = $(this).util_generateRLoopContent(_landscape, _postLoad);
-        }
-        $("#" + _idOrientationContainer).append(rLoopHtml);
-    }
-
-    $("#" + _idRLoopContent).util_applyFullPage();
-
-    $("#main").append($(this).util_generateRLoopMenu());
-
-    $("rLoopContentData").remove();
 };
 
 $.fn.util_displayContentBasedOnOrientationChange = function() {
@@ -230,10 +167,20 @@ $.fn.util_applyFullPage = function() {
                 var nextSlide = leavingSlide.parent().find("." + _classSlide + ":eq(" + slideIndex + ")");
                 if (!nextSlide.hasClass("loaded") && !nextSlide.hasClass("loading")) nextSlide.addClass('loading');
             }
+        },
+        afterRender: function(){
+
         }
     });
 };
 
 $.fn.util_removeFullPage = function() {
     if ($(this).fullpage) $(this).fullpage.destroy(true);
+};
+
+$.fn.util_disableScrollFullPage = function(disable) {
+    if ($(this).fullpage) {
+        $(this).fullpage.setMouseWheelScrolling(!disable);
+        $(this).fullpage.setAllowScrolling(!disable);
+    }
 };

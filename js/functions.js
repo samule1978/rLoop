@@ -11,11 +11,12 @@ var width = 100,
     time = parseInt((pageLoadTime/1000)%60)*100;
 
 /******* Functions *******/
-$.fn.showLoadingAnimation = function() {
-    var tlLoader = new TimelineMax();
+$.fn.anim_Start_SceneOne = function() {
+    var tlLoader = new TimelineMax({onComplete:$(this).anim_Finish_SceneOne});
 
-    var duration = 3;
-    var timeToLoad = ((time/1000) < duration) ? duration : (time/1000) - duration;
+    var initialDelay = 1;
+
+    var timeToLoad = ((time/1000) < initialDelay) ? initialDelay : (time/1000) - initialDelay;
 
     var headlineTop = $(".headline-top");
     var headlineBottom = $(".headline-bottom");
@@ -24,36 +25,21 @@ $.fn.showLoadingAnimation = function() {
     var hyperLoop = $(".hyper-loop");
     var headlineWrapBottom = $(".headline-wrap.bottom");
     var preLoadInnerBottom = $(".pre-load-inner-bottom");
+    var rLoopMenu = $("#" + _idRLoopMenu);
 
-    tlLoader.to(headlineTop, duration-1, {opacity:1})
-            .to(headlineBottom, duration, {opacity:1}, '-=' + duration-1)
+    tlLoader.to(headlineTop, initialDelay, {opacity:1, delay:initialDelay})
+            .to(headlineBottom, initialDelay+1, {opacity:1}, '-=' + initialDelay)
             .to(loadbar, timeToLoad, {width:"100%"})
-            .to(hyperLoop, timeToLoad, {clipPath:"polygon(0 0, 100% 0, 100% 100%, 0 100%)"}, '-=' + timeToLoad)
-            .to(loader, 2, {opacity:0}, '+=1')
-            .to(headlineWrapBottom, 4, {top:-100, opacity:0, ease:Elastic.easeOut})
-            .to(preLoadInnerBottom, 4, {visibility:"hidden", opacity:0, ease:Elastic.easeOut});
-
-
-
-    // Finish Loading Animation
-    // Finish Loading Animation
-    setTimeout(function(){
-        $(".pre-load-outer").addClass("hide").queue(function(){
-            $(this).dequeue().delay(3000).addClass("finished").queue(function(){
-                $(this).setup();
-            });
-        });
-    }, (time >= (duration*1000)) ? time : (duration*1000));
+            .to(hyperLoop, timeToLoad, {webkitClipPath:"polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+                                        mozClipPath:"polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+                                        msClipPath:"polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+                                        oClipPath:"polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+                                        clipPath:"polygon(0 0, 100% 0, 100% 100%, 0 100%)"}, '-=' + timeToLoad)
+            .fromTo(loader, 2, {opacity:1}, {opacity:0}, '+=1')
+            .to(headlineWrapBottom, 3, {top:-100, opacity:0, ease:Elastic.easeOut})
+            .fromTo(preLoadInnerBottom, 1, {opacity:1}, {opacity:0})
+            .fromTo(rLoopMenu, 2, {opacity:0}, {opacity:1});
 };
-/******* FINISH -- Loading Functionality *******/
-
-
-
-/******* START -- Page Functionality *******/
-/******* Variables *******/
-
-/******* Functions *******/
-$.fn.setup = function() {
-    // Finalise Content.
-    $(this).util_finaliseContent();
+$.fn.anim_Finish_SceneOne = function() {
+    $("#" + _idRLoopContent).util_disableScrollFullPage(false);
 };
