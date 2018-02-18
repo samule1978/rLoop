@@ -86,7 +86,7 @@ $.fn.util_initialiseContent = function() {
     $("#" + _idRLoopContent).util_disableScrollFullPage(true);
 
     if (isMobile) {
-        $(this).util_amendContentBasedOnOrientation();
+        //$(this).util_amendContentBasedOnOrientation();
         $(this).util_displayContentBasedOnOrientationChange();
     }
 };
@@ -101,6 +101,7 @@ $.fn.util_amendContentBasedOnOrientation = function() {
     var activeIndex = -1;
 
     if($("orientation.portrait").is(":visible")) {
+        alert("portrait");
         if ($("#" + _idOrientationContainer).find("." + _classSlide).length > 0) {
             // We are in portrait mode, and the content is formatted for landscape - so amend.
             $("#" + _idOrientationContainer).find("." + _classSlide).each(function(index) {
@@ -120,6 +121,7 @@ $.fn.util_amendContentBasedOnOrientation = function() {
             $("#" + _idRLoopContent).util_applyFullPage();
         }
     } else {
+        alert("landscape");
         if ($("#" + _idOrientationContainer).find("." + _classSlide).length <= 0) {
             // We are in landscape mode, and the content is formatted for portrait - so amend.
             $("#" + _idOrientationContainer).find("." + _classSection).each(function(index) {
