@@ -8,6 +8,8 @@ $(document).ready(function () {
 });
 
 $.fn.initialise = function() {
+    debugMobileLandscapeOnDesktop = false;
+
     // Set mobile flag.
     isMobile = $(this).util_isMobile();
 

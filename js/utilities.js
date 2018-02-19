@@ -5,6 +5,7 @@
 
 /******* Variables *******/
 var isMobile = false;
+var debugMobileLandscapeOnDesktop = false;
 
 /******* Constants *******/
 var _idRLoopMenu = "rLoopMenu";
@@ -57,7 +58,7 @@ $.fn.util_initialiseContent = function() {
 };
 
 $.fn.util_displayContentBasedOnOrientationChange = function() {
-    if (isMobile) $(this).util_amendContentBasedOnOrientation();
+    if (isMobile || debugMobileLandscapeOnDesktop) $(this).util_amendContentBasedOnOrientation();
 
     window.onresize = function (event) {
         if (isMobile) $(this).util_amendContentBasedOnOrientation();
@@ -112,7 +113,7 @@ $.fn.util_amendContentBasedOnOrientation = function() {
 $.fn.util_applyFullPage = function() {
     $(this).fullpage({
         css3: true,
-        controlArrows: false,
+        controlArrows: (debugMobileLandscapeOnDesktop) ? true : false,
         scrollingSpeed: 750,
         loopHorizontal: false,
         continuousHorizontal: false,
