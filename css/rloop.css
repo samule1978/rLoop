@@ -297,6 +297,11 @@ body .reflect {
     overflow: hidden;
 }
 
+.section,
+.slide {
+    position: relative;
+}
+
 #sceneOne .bg-pod {
     background-image: url(../img/bg/pod_conv.jpg), url(../img/bg/pod_h.png), url(../img/bg/pod_v.png);
     background-position: 50% 0, 0 0, 50% 0%;
@@ -311,7 +316,7 @@ body .reflect {
     padding: 0px;
     -webkit-text-size-adjust: none;
     overflow: hidden;
-    position: fixed;
+    position: absolute;
     opacity: 0;
 }
 
