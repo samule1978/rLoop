@@ -60,9 +60,8 @@ $.fn.util_displayContentBasedOnOrientationChange = function() {
     window.onresize = function (event) {
         if (isMobile) {
             $(this).util_amendContentBasedOnOrientation();
-
         }
-        $(this).resize_Scenes();
+        //$(this).resize_Scenes();
     }
 };
 
