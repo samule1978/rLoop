@@ -311,7 +311,7 @@ body .reflect {
     padding: 0px;
     -webkit-text-size-adjust: none;
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     opacity: 0;
 }
 
