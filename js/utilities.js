@@ -53,19 +53,16 @@ $.fn.util_initialiseContent = function() {
     $("#" + _idRLoopContent).util_applyFullPage();
     $("#" + _idRLoopContent).util_disableScrollFullPage(true);
 
-    if (isMobile) {
-        $(this).util_amendContentBasedOnOrientation();
-        $(this).util_displayContentBasedOnOrientationChange();
-    }
-
-    window.onresize = function (event) {
-        $(this).resize_SceneOne();
-    }
+    $(this).util_displayContentBasedOnOrientationChange();
 };
 
 $.fn.util_displayContentBasedOnOrientationChange = function() {
     window.onresize = function (event) {
-        $(this).util_amendContentBasedOnOrientation();
+        if (isMobile) {
+            $(this).util_amendContentBasedOnOrientation();
+
+        }
+        $(this).resize_Scenes();
     }
 };
 
