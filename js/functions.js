@@ -23,9 +23,11 @@ $.fn.anim_Start_SceneOne = function() {
     var loader = $(".loader");
     var loadbar = $(".loadbar");
     var hyperLoop = $(".hyper-loop");
+    var headlineWrapTop = $(".headline-wrap.top");
     var headlineWrapBottom = $(".headline-wrap.bottom");
     var preLoadInnerBottom = $(".pre-load-inner-bottom");
     var rLoopMenu = $("#" + _idRLoopMenu);
+    var rLoopMenuBorder = $("#" + _idRLoopMenu + " .menu-border");
 
     tlLoader.to(headlineTop, initialDelay, {opacity:1, delay:initialDelay})
             .to(headlineBottom, initialDelay+1, {opacity:1}, '-=' + initialDelay)
@@ -37,8 +39,12 @@ $.fn.anim_Start_SceneOne = function() {
                                         clipPath:"polygon(0 0, 100% 0, 100% 100%, 0 100%)"}, '-=' + timeToLoad)
             .fromTo(loader, 2, {opacity:1}, {opacity:0}, '+=1')
             .fromTo(rLoopMenu, 1, {opacity:0}, {opacity:1, onComplete:$(this).anim_Finish_SceneOne})
-            .to(headlineWrapBottom, 2, {top:-100, opacity:0})
-            .fromTo(preLoadInnerBottom, 1, {opacity:1}, {opacity:0});
+            .to(headlineWrapTop, 2, {bottom:-30})
+            .to(headlineWrapBottom, 2, {top:-100, opacity:0}, '-=2')
+            .fromTo(preLoadInnerBottom, 1, {opacity:1}, {opacity:0})
+            .to(headlineBottom, 0, {opacity:0})
+            .to(headlineWrapTop, 2, {top:100})
+            .to(rLoopMenuBorder, 2, {width:"100%"}, '-=2');
 
 };
 $.fn.anim_Finish_SceneOne = function() {
