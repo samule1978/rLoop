@@ -50,7 +50,7 @@ $.fn.anim_Start_SceneOne = function() {
             .to(headlineWrapTop, 2, {top:100})
             .to(rLoopMenuBorder, 2, {width:"100%"}, '-=2')
             .to(bgPod, 3, {opacity:1}, '-=2')
-            .to(preLoadOuter, 5, {background:"rgba(0, 0, 0, 0.5)"}, '-=3');
+            //.to(preLoadOuter, 5, {background:"rgba(0, 0, 0, 0.5)"}, '-=3');
 
 };
 $.fn.anim_Finish_SceneOne = function() {
