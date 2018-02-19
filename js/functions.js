@@ -31,6 +31,7 @@ $.fn.anim_Start_SceneOne = function() {
     var rLoopMenu = $("#" + _idRLoopMenu);
     var rLoopMenuBorder = $("#" + _idRLoopMenu + " .menu-border");
     var bgPod = $(".bg-pod");
+    var preLoadOuter = $(".pre-load-outer");
 
     tlLoader.to(headlineTop, initialDelay, {opacity:1, delay:initialDelay})
             .to(headlineBottom, initialDelay+1, {opacity:1}, '-=' + initialDelay)
@@ -48,7 +49,8 @@ $.fn.anim_Start_SceneOne = function() {
             .to(headlineBottom, 0, {opacity:0})
             .to(headlineWrapTop, 2, {top:100})
             .to(rLoopMenuBorder, 2, {width:"100%"}, '-=2')
-            .to(bgPod, 3, {opacity:1}, '-=2');
+            .to(bgPod, 3, {opacity:1}, '-=2')
+            .to(preLoadOuter, 5, {background:"rgba(0, 0, 0, 0.5)"}, '-=3');
 
 };
 $.fn.anim_Finish_SceneOne = function() {
