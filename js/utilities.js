@@ -57,11 +57,13 @@ $.fn.util_initialiseContent = function() {
 };
 
 $.fn.util_displayContentBasedOnOrientationChange = function() {
+    //$(this).util_amendContentBasedOnOrientation();
+
     window.onresize = function (event) {
         if (isMobile) {
             $(this).util_amendContentBasedOnOrientation();
         }
-        //$(this).resize_Scenes();
+        $(this).resize_Scenes();
     }
 };
 
