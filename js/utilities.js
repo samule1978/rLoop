@@ -57,6 +57,10 @@ $.fn.util_initialiseContent = function() {
         $(this).util_amendContentBasedOnOrientation();
         $(this).util_displayContentBasedOnOrientationChange();
     }
+
+    window.onresize = function (event) {
+        $(this).resize_SceneOne();
+    }
 };
 
 $.fn.util_displayContentBasedOnOrientationChange = function() {
