@@ -302,11 +302,8 @@ body .reflect {
     position: relative;
 }
 
-#sceneOne .bg-pod {
-    background-image: url(../img/bg/pod_conv.jpg), url(../img/bg/pod_h.png), url(../img/bg/pod_v.png);
-    background-position: 50% 0, 0 0, 50% 0%;
+.scene-bg {
     background-repeat: no-repeat, no-repeat, no-repeat;
-    background-size: 56.03vw 40.02vw, 100vw 40.02vw, 56.03vw 100vh;
     background-attachment: fixed;
     background-color: black;
     color: white;
@@ -317,6 +314,41 @@ body .reflect {
     -webkit-text-size-adjust: none;
     overflow: hidden;
     position: absolute;
+}
+
+/* Portrait */
+@media screen and (orientation:portrait) {
+    .section-graphics {
+        width: 100%;
+        height: 50%;
+        top:0px;
+    }
+    .section-content {
+        width: 100%;
+        height: 50%;
+        bottom: 0px;
+    }
+}
+
+/* Landscape */
+@media screen and (orientation:landscape) {
+    .section-graphics {
+        width: 50%;
+        height: 100%;
+        right: 0px;
+        top:0px;
+        position: absolute;
+    }
+    .section-content {
+        width: 50%;
+        left: 0px;
+    }
+}
+
+
+#sceneOne .bg-pod {
+    background-image: url(../img/bg/pod_conv.jpg), url(../img/bg/pod_h.png), url(../img/bg/pod_v.png);
+    background-position: -10000px -10000px, -10000px -10000px, -10000px -10000px;
     opacity: 0;
 }
 
