@@ -14,6 +14,9 @@ var _idOrientationContainer = "plcLandscapeSection";
 var _classSection = "section";
 var _classSlide = "slide";
 var _classActive = "active";
+var _ctrlLoad = "load";
+var _ctrlStart = "start";
+var _ctrlStop = "stop";
 
 /******* Functions *******/
 $.fn.util_isMobile = function() {
@@ -114,26 +117,51 @@ $.fn.util_applyFullPage = function() {
     $(this).fullpage({
         css3: true,
         controlArrows: (debugMobileLandscapeOnDesktop) ? true : false,
-        scrollingSpeed: 750,
+        scrollingSpeed: 1000,
         loopHorizontal: false,
         continuousHorizontal: false,
 
         afterLoad: function(anchorLink, index){
             var loadedSection = $(this);
+
+            switch(loadedSection.attr('id')) {
+                case "sceneTwo":
+                    if (!loadedSection.hasClass("loaded")) {
+                        $(this).anim_Load_SceneTwo();
+                    } else {
+                        $(this).anim_Start_SceneTwo();
+                    }
+                    break;
+                default:
+                    break;
+            }
+
             if (loadedSection.hasClass("loading")) loadedSection.removeClass('loading');
             if (!loadedSection.hasClass("loaded")) loadedSection.addClass('loaded');
         },
         onLeave: function(index, nextIndex, direction){
+            var leavingSection = $(this);
+            var nextSection = leavingSection.parent().find("." + _classSection + ":eq(" + nextIndex + ")");
+
+            if (leavingSection.hasClass("loaded")) {
+                switch(leavingSection.attr('id')) {
+                    case "sceneTwo":
+                        $(this).anim_Stop_SceneTwo();
+                        break;
+                    default:
+                        break;
+                }
+            }
+
             if((!isMobile) || (isMobile && $("orientation.portrait").is(":visible"))) {
-                var leavingSection = $(this);
-                var nextSection = leavingSection.parent().find("." + _classSection + ":eq(" + nextIndex + ")");
                 if (!nextSection.hasClass("loaded") && !nextSection.hasClass("loading")) nextSection.addClass('loading');
             }
         },
         onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
+            var leavingSlide = $(this);
+            var nextSlide = leavingSlide.parent().find("." + _classSlide + ":eq(" + slideIndex + ")");
+
             if(isMobile && $("orientation.landscape").is(":visible")) {
-                var leavingSlide = $(this);
-                var nextSlide = leavingSlide.parent().find("." + _classSlide + ":eq(" + slideIndex + ")");
                 if (!nextSlide.hasClass("loaded") && !nextSlide.hasClass("loading")) nextSlide.addClass('loading');
             }
         },

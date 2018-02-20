@@ -55,8 +55,6 @@ $.fn.anim_Start_SceneOne = function() {
 };
 $.fn.anim_Finish_SceneOne = function() {
     $("#" + _idRLoopContent).util_disableScrollFullPage(false);
-
-    $(this).anim_Start_SceneTwo();
 };
 $.fn.resize_SceneOne = function() {
     function set_css(elem_id, style) {
@@ -116,8 +114,9 @@ $.fn.resize_SceneOne = function() {
     });
 };
 
-$.fn.anim_Start_SceneTwo = function() {
-    var ringOne = new addCoinDots({
+var ringOne, ringTwo, ringThree;
+$.fn.anim_Load_SceneTwo = function() {
+    ringOne = new addCoinDots({
         parent:document.getElementById('sceneTwo').getElementsByClassName('section-graphics')[0],
         radius:100,
         dotSize:10,
@@ -125,7 +124,7 @@ $.fn.anim_Start_SceneTwo = function() {
         colors:["#00fcff","#60fdff","#93fdff","#d3feff"], //have as many or as few colors as you want.
         animationOffset: 1.8, //jump 1.8 seconds into the animation for a more active part of the spinning initially (just looks a bit better in my opinion)
     });
-    var ringTwo = new addCoinDots({
+    ringTwo = new addCoinDots({
         parent:document.getElementById('sceneTwo').getElementsByClassName('section-graphics')[0],
         radius:125,
         dotSize:7.5,
@@ -133,7 +132,7 @@ $.fn.anim_Start_SceneTwo = function() {
         colors:["#d3feff","#00fcff","#60fdff","#93fdff"], //have as many or as few colors as you want.
         animationOffset: 1.5, //jump 1.8 seconds into the animation for a more active part of the spinning initially (just looks a bit better in my opinion)
     });
-    var ringThree = new addCoinDots({
+    ringThree = new addCoinDots({
         parent:document.getElementById('sceneTwo').getElementsByClassName('section-graphics')[0],
         radius:150,
         dotSize:5,
@@ -217,6 +216,16 @@ $.fn.anim_Start_SceneTwo = function() {
             return this;
         };
     }
+};
+$.fn.anim_Start_SceneTwo = function() {
+    ringOne.active(true);
+    ringTwo.active(true);
+    ringThree.active(true);
+};
+$.fn.anim_Stop_SceneTwo = function() {
+    ringOne.active(false);
+    ringTwo.active(false);
+    ringThree.active(false);
 };
 
 $.fn.resize_Scenes = function() {
