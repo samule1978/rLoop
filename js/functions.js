@@ -13,8 +13,8 @@ var perfData = window.performance.timing, // The PerformanceTiming interface rep
 $.fn.anim_Start_SceneOne = function() {
     $(this).resize_SceneOne();
 
-    var tlLoader = new TimelineMax({onComplete:$(this).anim_Finish_SceneOne});
-    //var tlLoader = new TimelineMax();
+    //var tlLoader = new TimelineMax({onComplete:$(this).anim_Finish_SceneOne});
+    var tlLoader = new TimelineMax();
 
     var initialDelay = 1;
 
@@ -48,7 +48,7 @@ $.fn.anim_Start_SceneOne = function() {
             .fromTo(preLoadInnerBottom, 1, {opacity:1}, {opacity:0})
             .to(headlineBottom, 0, {opacity:0})
             .to(headlineWrapTop, 2, {top:100})
-            .to(rLoopMenuBorder, 2, {width:"100%"}, '-=2')
+            .to(rLoopMenuBorder, 2, {width:"100%", onComplete:$(this).anim_Finish_SceneOne}, '-=2')
             .to(bgPod, 3, {opacity:1}, '-=2')
             .to(preLoadOuter, 5, {background:"rgba(0, 0, 0, 0.3)"}, '-=3');
 
@@ -114,28 +114,42 @@ $.fn.resize_SceneOne = function() {
     });
 };
 
-var ringOne, ringTwo, ringThree;
+var ringOne, ringTwo, ringThree, initialRadius;
 $.fn.anim_Load_SceneTwo = function() {
+    var percentageHeight = 30;
+    $("#sceneTwo .section-graphics").empty(); // Must empty to ensure nothing is inside when we add animations (especially when scene reloaded/resized).
+    $("#sceneTwo .section-graphics").css({
+        'background-image'      : 'url(img/assets/coin.png)',
+        'background-position'   : '50% 50%',
+        'background-repeat'     : 'no-repeat',
+        'background-size'       : 'auto ' + percentageHeight + '%'
+    });
+    var coinHeight = ($("#sceneTwo .section-graphics").innerHeight() / 100) * percentageHeight;
+    var initialDotSize = 10;
+    initialRadius = (coinHeight / 2) + 30;
+
+    var container = document.getElementById('sceneTwo').getElementsByClassName('section-graphics')[0];
+
     ringOne = new addCoinDots({
-        parent:document.getElementById('sceneTwo').getElementsByClassName('section-graphics')[0],
-        radius:100,
-        dotSize:10,
+        parent:container,
+        radius:initialRadius,
+        dotSize:initialDotSize,
         dotCount:15,
         colors:["#00fcff","#60fdff","#93fdff","#d3feff"], //have as many or as few colors as you want.
         animationOffset: 1.8, //jump 1.8 seconds into the animation for a more active part of the spinning initially (just looks a bit better in my opinion)
     });
     ringTwo = new addCoinDots({
-        parent:document.getElementById('sceneTwo').getElementsByClassName('section-graphics')[0],
-        radius:125,
-        dotSize:7.5,
+        parent:container,
+        radius:(initialRadius + 20),
+        dotSize:initialDotSize - 2.5,
         dotCount:20,
         colors:["#d3feff","#00fcff","#60fdff","#93fdff"], //have as many or as few colors as you want.
         animationOffset: 1.5, //jump 1.8 seconds into the animation for a more active part of the spinning initially (just looks a bit better in my opinion)
     });
     ringThree = new addCoinDots({
-        parent:document.getElementById('sceneTwo').getElementsByClassName('section-graphics')[0],
-        radius:150,
-        dotSize:5,
+        parent:container,
+        radius:(initialRadius + 40),
+        dotSize:initialDotSize - 5,
         dotCount:25,
         colors:["#93fdff","d3feff","#00fcff","#60fdff"], //have as many or as few colors as you want.
         animationOffset: 1.2, //jump 1.8 seconds into the animation for a more active part of the spinning initially (just looks a bit better in my opinion)
@@ -218,14 +232,30 @@ $.fn.anim_Load_SceneTwo = function() {
     }
 };
 $.fn.anim_Start_SceneTwo = function() {
-    ringOne.active(true);
+    /*ringOne.active(true);
     ringTwo.active(true);
-    ringThree.active(true);
+    ringThree.active(true);*/
+    $(this).anim_Load_SceneTwo();
 };
 $.fn.anim_Stop_SceneTwo = function() {
     ringOne.active(false);
     ringTwo.active(false);
     ringThree.active(false);
+};
+
+$.fn.anim_Start_Scene_Content = function(scene) {
+    var tlLoader = new TimelineMax();
+
+    var sceneContent = scene.find(".section-content");
+
+    tlLoader.fromTo(sceneContent, 1, {opacity:0}, {opacity:1});
+};
+$.fn.anim_Stop_Scene_Content = function(scene) {
+    var tlLoader = new TimelineMax();
+
+    var sceneContent = scene.find(".section-content");
+
+    tlLoader.fromTo(sceneContent, 1, {opacity:1}, {opacity:0});
 };
 
 $.fn.resize_Scenes = function() {

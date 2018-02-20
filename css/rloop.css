@@ -316,6 +316,8 @@ body .reflect {
     position: absolute;
 }
 
+.section-content { opacity: 0; }
+
 /* Portrait */
 @media screen and (orientation:portrait) {
     .section-graphics {
@@ -351,7 +353,6 @@ body .reflect {
     background-position: -10000px -10000px, -10000px -10000px, -10000px -10000px;
     opacity: 0;
 }
-
 
 /* Full Page Overrides */
 #rLoopContent .intro {

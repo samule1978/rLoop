@@ -117,7 +117,7 @@ $.fn.util_applyFullPage = function() {
     $(this).fullpage({
         css3: true,
         controlArrows: (debugMobileLandscapeOnDesktop) ? true : false,
-        scrollingSpeed: 1000,
+        scrollingSpeed: 750,
         loopHorizontal: false,
         continuousHorizontal: false,
 
@@ -131,8 +131,8 @@ $.fn.util_applyFullPage = function() {
                     } else {
                         $(this).anim_Start_SceneTwo();
                     }
-                    break;
                 default:
+                    $(this).anim_Start_Scene_Content(loadedSection);
                     break;
             }
 
@@ -147,8 +147,8 @@ $.fn.util_applyFullPage = function() {
                 switch(leavingSection.attr('id')) {
                     case "sceneTwo":
                         $(this).anim_Stop_SceneTwo();
-                        break;
                     default:
+                        $(this).anim_Stop_Scene_Content(leavingSection);
                         break;
                 }
             }
