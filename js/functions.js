@@ -120,13 +120,30 @@ $.fn.anim_Start_SceneTwo = function() {
     var ringOne = new addCoinDots({
         parent:document.getElementById('sceneTwo').getElementsByClassName('section-graphics')[0],
         radius:100,
-        dotSize:7,
-        dotCount:20,
+        dotSize:10,
+        dotCount:15,
         colors:["#00fcff","#60fdff","#93fdff","#d3feff"], //have as many or as few colors as you want.
         animationOffset: 1.8, //jump 1.8 seconds into the animation for a more active part of the spinning initially (just looks a bit better in my opinion)
     });
-
+    var ringTwo = new addCoinDots({
+        parent:document.getElementById('sceneTwo').getElementsByClassName('section-graphics')[0],
+        radius:125,
+        dotSize:7.5,
+        dotCount:20,
+        colors:["#d3feff","#00fcff","#60fdff","#93fdff"], //have as many or as few colors as you want.
+        animationOffset: 1.5, //jump 1.8 seconds into the animation for a more active part of the spinning initially (just looks a bit better in my opinion)
+    });
+    var ringThree = new addCoinDots({
+        parent:document.getElementById('sceneTwo').getElementsByClassName('section-graphics')[0],
+        radius:150,
+        dotSize:5,
+        dotCount:25,
+        colors:["#93fdff","d3feff","#00fcff","#60fdff"], //have as many or as few colors as you want.
+        animationOffset: 1.2, //jump 1.8 seconds into the animation for a more active part of the spinning initially (just looks a bit better in my opinion)
+    });
     ringOne.active(true);
+    ringTwo.active(true);
+    ringThree.active(true);
 
     //this is the whole preloader class/function
     function addCoinDots(options) {
