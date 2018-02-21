@@ -6,6 +6,7 @@
 /******* Variables *******/
 var isMobile = false;
 var debugMobileLandscapeOnDesktop = false;
+var sceneOneInitialised, sceneTwoInitialised, sceneThreeInitialised, sceneFourInitialised, sceneFiveInitialised = false
 
 /******* Constants *******/
 var _idRLoopMenu = "rLoopMenu";
@@ -48,8 +49,11 @@ $.fn.util_setDeviceType = function(mobile) {
     $("html").addClass(device);
 };
 
-$.fn.util_portrait = function() {
+$.fn.util_isPortrait = function() {
     return $("orientation.portrait").is(":visible");
+};
+$.fn.util_isLandscape = function() {
+    return $("orientation.landscape").is(":visible");
 };
 
 $.fn.util_initialiseContent = function() {
@@ -126,11 +130,13 @@ $.fn.util_applyFullPage = function() {
 
             switch(loadedSection.attr('id')) {
                 case "sceneTwo":
-                    if (!loadedSection.hasClass("loaded")) {
-                        $(this).anim_Load_SceneTwo();
-                    } else {
-                        $(this).anim_Start_SceneTwo();
-                    }
+                    $(this).anim_Start_SceneTwo();
+                case "sceneThree":
+                    $(this).anim_Start_SceneThree();
+                case "sceneFour":
+                    $(this).anim_Start_SceneFour();
+                case "sceneFive":
+                    $(this).anim_Start_SceneFour();
                 default:
                     $(this).anim_Start_Scene_Content(loadedSection);
                     break;
@@ -147,22 +153,55 @@ $.fn.util_applyFullPage = function() {
                 switch(leavingSection.attr('id')) {
                     case "sceneTwo":
                         $(this).anim_Stop_SceneTwo();
+                    case "sceneThree":
+                        $(this).anim_Stop_SceneThree();
+                    case "sceneFour":
+                        $(this).anim_Stop_SceneFour();
+                    case "sceneFive":
+                        $(this).anim_Stop_SceneFour();
                     default:
                         $(this).anim_Stop_Scene_Content(leavingSection);
                         break;
                 }
             }
 
-            if((!isMobile) || (isMobile && $("orientation.portrait").is(":visible"))) {
+            if((!isMobile) || (isMobile && $(this).util_isPortrait())) {
                 if (!nextSection.hasClass("loaded") && !nextSection.hasClass("loading")) nextSection.addClass('loading');
             }
         },
         onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
-            var leavingSlide = $(this);
-            var nextSlide = leavingSlide.parent().find("." + _classSlide + ":eq(" + slideIndex + ")");
+            if((isMobile || debugMobileLandscapeOnDesktop) && $(this).util_isLandscape()) {
+                var leavingSlide = $(this);
+                var nextSlide = leavingSlide.parent().find("." + _classSlide + ":eq(" + nextSlideIndex + ")");
 
-            if(isMobile && $("orientation.landscape").is(":visible")) {
-                if (!nextSlide.hasClass("loaded") && !nextSlide.hasClass("loading")) nextSlide.addClass('loading');
+                if (!nextSlide.hasClass("loaded")) nextSlide.addClass('loaded');
+
+                switch(leavingSlide.attr('id')) {
+                    case "sceneTwo":
+                        $(this).anim_Stop_SceneTwo();
+                    case "sceneThree":
+                        $(this).anim_Stop_SceneThree();
+                    case "sceneFour":
+                        $(this).anim_Stop_SceneFour();
+                    case "sceneFive":
+                        $(this).anim_Stop_SceneFour();
+                    default:
+                        $(this).anim_Stop_Scene_Content(leavingSlide);
+                        break;
+                }
+                switch(nextSlide.attr('id')) {
+                    case "sceneTwo":
+                        $(this).anim_Start_SceneTwo();
+                    case "sceneThree":
+                        $(this).anim_Start_SceneThree();
+                    case "sceneFour":
+                        $(this).anim_Start_SceneFour();
+                    case "sceneFive":
+                        $(this).anim_Start_SceneFour();
+                    default:
+                        $(this).anim_Start_Scene_Content(nextSlide);
+                        break;
+                }
             }
         },
         afterRender: function(){

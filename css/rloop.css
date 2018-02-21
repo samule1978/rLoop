@@ -31,6 +31,13 @@ body {
     color: rgb(0, 252, 254);
 }
 
+h1 {
+    font-size: 40px;
+}
+p {
+    font-size: 30px;
+}
+
 rLoopContentData {
     display: none;
     width: 0;
@@ -322,7 +329,7 @@ body .reflect {
 @media screen and (orientation:portrait) {
     .section-graphics {
         width: 100%;
-        height: 50%;
+        height: 100%;
         top:0px;
     }
     .section-content {
@@ -330,12 +337,16 @@ body .reflect {
         height: 50%;
         bottom: 0px;
     }
+
+    #sceneTwo .section-graphics {
+        height: 30%;
+    }
 }
 
 /* Landscape */
 @media screen and (orientation:landscape) {
     .section-graphics {
-        width: 50%;
+        width: 100%;
         height: 100%;
         right: 0px;
         top:0px;
@@ -344,6 +355,10 @@ body .reflect {
     .section-content {
         width: 50%;
         left: 0px;
+    }
+
+    #sceneTwo .section-graphics {
+        width: 30%;
     }
 }
 

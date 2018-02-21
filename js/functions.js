@@ -52,6 +52,7 @@ $.fn.anim_Start_SceneOne = function() {
             .to(bgPod, 3, {opacity:1}, '-=2')
             .to(preLoadOuter, 5, {background:"rgba(0, 0, 0, 0.3)"}, '-=3');
 
+    sceneOneInitialised = true;
 };
 $.fn.anim_Finish_SceneOne = function() {
     $("#" + _idRLoopContent).util_disableScrollFullPage(false);
@@ -114,51 +115,84 @@ $.fn.resize_SceneOne = function() {
     });
 };
 
-var ringOne, ringTwo, ringThree, initialRadius;
-$.fn.anim_Load_SceneTwo = function() {
-    var percentageHeight = 30;
+var ringOne, ringTwo, ringThree, ringFour;
+$.fn.anim_Start_SceneTwo = function() {
     $("#sceneTwo .section-graphics").empty(); // Must empty to ensure nothing is inside when we add animations (especially when scene reloaded/resized).
-    $("#sceneTwo .section-graphics").css({
-        'background-image'      : 'url(img/assets/coin.png)',
-        'background-position'   : '50% 50%',
-        'background-repeat'     : 'no-repeat',
-        'background-size'       : 'auto ' + percentageHeight + '%'
-    });
-    var coinHeight = ($("#sceneTwo .section-graphics").innerHeight() / 100) * percentageHeight;
-    var initialDotSize = 10;
-    initialRadius = (coinHeight / 2) + 30;
 
     var container = document.getElementById('sceneTwo').getElementsByClassName('section-graphics')[0];
+
+    var percentageHeight = 70;
+    var coinHeight = ($(this).util_isPortrait()) ? ($("#sceneTwo .section-graphics").innerHeight() / 100) * percentageHeight : ($("#sceneTwo .section-graphics").innerWidth() / 100) * percentageHeight;
+    var initialRadius = (coinHeight / 2) + 40;
+    var initialDotSize = 10;
+    var initialDotCount = 20;
+
+    var rTokenContainerObject = document.createElement("div");
+    rTokenContainerObject.setAttribute("id", "rTokenContainer");
+    rTokenContainerObject.setAttribute("style", "position: absolute; width: 100%; height: 100%; background-image: url(img/assets/coin.png); background-position: 50% 50%; background-repeat: no-repeat; background-size: " + percentageHeight + "%;");
+    container.appendChild(rTokenContainerObject);
+
+    container = document.getElementById('rTokenContainer');
+
+    var rTokenContainer = $("#rTokenContainer");
+    var tokenEaseTime = 1;
+    if (!sceneTwoInitialised) {
+        TweenMax.fromTo(rTokenContainer, tokenEaseTime, {opacity:1, transform:"scale(0)"}, {opacity:1, transform:"scale(1)", ease: SlowMo.ease.config(0.1, 2, false)});
+    }
 
     ringOne = new addCoinDots({
         parent:container,
         radius:initialRadius,
         dotSize:initialDotSize,
-        dotCount:15,
-        colors:["#00fcff","#60fdff","#93fdff","#d3feff"], //have as many or as few colors as you want.
-        animationOffset: 1.8, //jump 1.8 seconds into the animation for a more active part of the spinning initially (just looks a bit better in my opinion)
+        dotCount:initialDotCount,
+        colors:["#00fcff"],
+        animationOffset: 1.8,
     });
     ringTwo = new addCoinDots({
         parent:container,
-        radius:(initialRadius + 20),
+        radius:(initialRadius + 40),
         dotSize:initialDotSize - 2.5,
-        dotCount:20,
-        colors:["#d3feff","#00fcff","#60fdff","#93fdff"], //have as many or as few colors as you want.
-        animationOffset: 1.5, //jump 1.8 seconds into the animation for a more active part of the spinning initially (just looks a bit better in my opinion)
+        dotCount:initialDotCount + 5,
+        colors:["#60fdff"],
+        animationOffset: 1.6,
     });
     ringThree = new addCoinDots({
         parent:container,
-        radius:(initialRadius + 40),
+        radius:(initialRadius + 80),
         dotSize:initialDotSize - 5,
-        dotCount:25,
-        colors:["#93fdff","d3feff","#00fcff","#60fdff"], //have as many or as few colors as you want.
-        animationOffset: 1.2, //jump 1.8 seconds into the animation for a more active part of the spinning initially (just looks a bit better in my opinion)
+        dotCount:initialDotCount + 10,
+        colors:["#93fdff"],
+        animationOffset: 1.4,
     });
-    ringOne.active(true);
-    ringTwo.active(true);
-    ringThree.active(true);
+    ringFour = new addCoinDots({
+        parent:container,
+        radius:(initialRadius + 120),
+        dotSize:initialDotSize - 7.5,
+        dotCount:initialDotCount + 15,
+        colors:["#93fdff"],
+        animationOffset: 1.2,
+    });
 
-    //this is the whole preloader class/function
+    if (!sceneTwoInitialised) {
+        setTimeout(function() {
+            ringOne.active(true);
+        }, tokenEaseTime * 1000);
+        setTimeout(function() {
+            ringTwo.active(true);
+        }, tokenEaseTime * 2000);
+        setTimeout(function() {
+            ringThree.active(true);
+        }, tokenEaseTime * 3000);
+        setTimeout(function() {
+            ringFour.active(true);
+        }, tokenEaseTime * 4000);
+    } else {
+        ringOne.active(true);
+        ringTwo.active(true);
+        ringThree.active(true);
+        ringFour.active(true);
+    }
+
     function addCoinDots(options) {
         options = options || {};
         var parent = options.parent || document.body,
@@ -230,17 +264,32 @@ $.fn.anim_Load_SceneTwo = function() {
             return this;
         };
     }
-};
-$.fn.anim_Start_SceneTwo = function() {
-    /*ringOne.active(true);
-    ringTwo.active(true);
-    ringThree.active(true);*/
-    $(this).anim_Load_SceneTwo();
+
+    sceneTwoInitialised = true;
 };
 $.fn.anim_Stop_SceneTwo = function() {
     ringOne.active(false);
     ringTwo.active(false);
     ringThree.active(false);
+    ringFour.active(false);
+};
+
+$.fn.anim_Start_SceneThree = function() {
+    sceneThreeInitialised = true;
+};
+$.fn.anim_Stop_SceneThree = function() {
+};
+
+$.fn.anim_Start_SceneFour = function() {
+    sceneFourInitialised = true;
+};
+$.fn.anim_Stop_SceneFour = function() {
+};
+
+$.fn.anim_Start_SceneFive = function() {
+    sceneFiveInitialised = true;
+};
+$.fn.anim_Stop_SceneFive = function() {
 };
 
 $.fn.anim_Start_Scene_Content = function(scene) {
