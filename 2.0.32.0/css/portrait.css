@@ -1,0 +1,16 @@
+/* Portrait */
+@media screen and (orientation:portrait) {
+    orientation.portrait {
+        display: block;
+    }
+    orientation.landscape {
+        display: none;
+    }
+
+    .mobile #rLoopContentPortrait {
+        display: block;
+    }
+    .mobile #rLoopContentLandscape {
+        display: none;
+    }
+}
