@@ -121,7 +121,7 @@ $.fn.util_applyFullPage = function() {
     $(this).fullpage({
         css3: true,
         controlArrows: (debugMobileLandscapeOnDesktop) ? true : false,
-        scrollingSpeed: 750,
+        scrollingSpeed: 1000,
         loopHorizontal: false,
         continuousHorizontal: false,
 

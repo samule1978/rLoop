@@ -121,7 +121,7 @@ $.fn.anim_Start_SceneTwo = function() {
 
     var container = document.getElementById('sceneTwo').getElementsByClassName('section-graphics')[0];
 
-    var percentageHeight = 70;
+    var percentageHeight = ($(this).util_isPortrait()) ? 30 : 70;
     var coinHeight = ($(this).util_isPortrait()) ? ($("#sceneTwo .section-graphics").innerHeight() / 100) * percentageHeight : ($("#sceneTwo .section-graphics").innerWidth() / 100) * percentageHeight;
     var initialRadius = (coinHeight / 2) + 40;
     var initialDotSize = 10;
@@ -129,7 +129,7 @@ $.fn.anim_Start_SceneTwo = function() {
 
     var rTokenContainerObject = document.createElement("div");
     rTokenContainerObject.setAttribute("id", "rTokenContainer");
-    rTokenContainerObject.setAttribute("style", "position: absolute; width: 100%; height: 100%; background-image: url(img/assets/coin.png); background-position: 50% 50%; background-repeat: no-repeat; background-size: " + percentageHeight + "%;");
+    rTokenContainerObject.setAttribute("style", "position: relative; width: 100%; height: 100%; background-image: url(img/assets/coin.png); background-position: 50% 50%; background-repeat: no-repeat; background-size: " + percentageHeight + "%;");
     container.appendChild(rTokenContainerObject);
 
     container = document.getElementById('rTokenContainer');
