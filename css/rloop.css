@@ -330,21 +330,22 @@ body .reflect {
     .section-graphics {
         width: 100%;
         height: 50%;
-        top:0px;
+        bottom:0px;
         position: absolute;
     }
     .section-content {
         width: 100%;
         height: 50%;
-        /*bottom:0px;
-        position: absolute;*/
+        top:70px;
+        position: absolute;
     }
 
-    #sceneTwo .section-content {
-        height: 70%;
-    }
     #sceneTwo .section-graphics {
         height: 30%;
+        bottom: -15%;
+    }
+    #sceneTwo .section-content {
+        height: 70%;
     }
 }
 
@@ -360,16 +361,14 @@ body .reflect {
     .section-content {
         width: 50%;
         height: auto;
-        /*height: 50%;
-        bottom:0px;
-        position: absolute;*/
     }
 
-    #sceneTwo .section-content {
-        width: 70%;
-    }
     #sceneTwo .section-graphics {
         width: 30%;
+        right: -15%;
+    }
+    #sceneTwo .section-content {
+        width: 70%;
     }
 }
 

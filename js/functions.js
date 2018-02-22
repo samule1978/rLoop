@@ -123,15 +123,26 @@ $.fn.anim_Start_SceneTwo = function() {
 
     var container = document.getElementById('sceneTwo').getElementsByClassName('section-graphics')[0];
 
-    var percentageHeight = 70;
-    var coinHeight = ($(this).util_isPortrait()) ? ($("#sceneTwo .section-graphics").innerHeight() / 100) * percentageHeight : ($("#sceneTwo .section-graphics").innerWidth() / 100) * percentageHeight;
+    var percentageHeight = 100;
+    var coinHeight = 0;
+    if ($("#sceneTwo .section-graphics").innerWidth() > $("#sceneTwo .section-graphics").innerHeight()) {
+        coinHeight = ($("#sceneTwo .section-graphics").innerHeight() / 100) * percentageHeight;
+    } else {
+        coinHeight = ($("#sceneTwo .section-graphics").innerWidth() / 100) * percentageHeight;
+    }
     var initialRadius = (coinHeight / 2) + 40;
     var initialDotSize = 10;
     var initialDotCount = 20;
 
     var rTokenContainerObject = document.createElement("div");
+    var backgroundSize = "";
     rTokenContainerObject.setAttribute("id", "rTokenContainer");
-    rTokenContainerObject.setAttribute("style", "position: relative; width: 100%; height: 100%; background-image: url(img/assets/coin.png); background-position: 50% 50%; background-repeat: no-repeat; background-size: " + percentageHeight + "%;");
+    if ($("#sceneTwo .section-graphics").innerWidth() > $("#sceneTwo .section-graphics").innerHeight()) {
+        backgroundSize = "background-size: auto " + percentageHeight + "%;";
+    } else {
+        backgroundSize = "background-size: " + percentageHeight + "% auto;";
+    }
+    rTokenContainerObject.setAttribute("style", "position: absolute; width: 100%; height: 100%; background-image: url(img/assets/coin.png); background-position: 50% 50%; background-repeat: no-repeat;" + backgroundSize);
     container.appendChild(rTokenContainerObject);
 
     container = document.getElementById('rTokenContainer');
@@ -140,6 +151,8 @@ $.fn.anim_Start_SceneTwo = function() {
     var tokenEaseTime = 1;
     if (!sceneTwoInitialised) {
         TweenMax.fromTo(rTokenContainer, tokenEaseTime, {opacity:1, transform:"scale(0)"}, {opacity:1, transform:"scale(1)", ease: SlowMo.ease.config(0.1, 2, false)});
+    } else {
+        TweenMax.fromTo(rTokenContainer, tokenEaseTime, {opacity:0}, {opacity:1});
     }
 
     ringOne = new addCoinDots({
@@ -273,6 +286,10 @@ $.fn.anim_Start_SceneTwo = function() {
     }
 };
 $.fn.anim_Stop_SceneTwo = function() {
+    var rTokenContainer = $("#rTokenContainer");
+    var tokenEaseTime = 1;
+    TweenMax.fromTo(rTokenContainer, tokenEaseTime, {opacity:1}, {opacity:0});
+
     ringOne.active(false);
     ringTwo.active(false);
     ringThree.active(false);
