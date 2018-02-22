@@ -179,14 +179,14 @@ $.fn.anim_Start_SceneTwo = function() {
         colors:["#93fdff"],
         animationOffset: 1.4,
     });
-    /*ringFour = new addCoinDots({
+    ringFour = new addCoinDots({
         parent:container,
         radius:(initialRadius + 120),
         dotSize:initialDotSize - 7.5,
         dotCount:initialDotCount + 15,
         colors:["#93fdff"],
         animationOffset: 1.2,
-    });*/
+    });
 
     if (!sceneTwoInitialised) {
         setTimeout(function() {
@@ -198,14 +198,14 @@ $.fn.anim_Start_SceneTwo = function() {
         setTimeout(function() {
             ringThree.active(true);
         }, tokenEaseTime * 1500);
-        /*setTimeout(function() {
+        setTimeout(function() {
             ringFour.active(true);
-        }, tokenEaseTime * 2000);*/
+        }, tokenEaseTime * 2000);
     } else {
         ringOne.active(true);
         ringTwo.active(true);
         ringThree.active(true);
-        //ringFour.active(true);
+        ringFour.active(true);
     }
 
     function addCoinDots(options) {
@@ -293,7 +293,7 @@ $.fn.anim_Stop_SceneTwo = function() {
     ringOne.active(false);
     ringTwo.active(false);
     ringThree.active(false);
-    //ringFour.active(false);
+    ringFour.active(false);
 };
 
 $.fn.anim_Start_SceneThree = function() {
@@ -345,5 +345,16 @@ $.fn.anim_Stop_Scene_Content = function(scene) {
 };
 
 $.fn.resize_Scenes = function() {
-    $(this).resize_SceneOne();
+    var activeSection = $(".section.active");
+    switch(activeSection.attr('id')) {
+        case "sceneOne":
+            $(this).resize_SceneOne();
+        case "sceneTwo":
+            $(this).anim_Start_SceneTwo();
+        case "sceneThree":
+        case "sceneFour":
+        case "sceneFive":
+        default:
+            break;
+    }
 };
