@@ -66,7 +66,9 @@ $.fn.util_displayContentBasedOnOrientationChange = function() {
     if (isMobile || debugMobileLandscapeOnDesktop) $(this).util_amendContentBasedOnOrientation();
 
     window.onresize = function (event) {
-        if (isMobile) $(this).util_amendContentBasedOnOrientation();
+        if (isMobile) {
+            $(this).util_amendContentBasedOnOrientation();
+        }
         $(this).resize_Scenes();
     }
 };
@@ -94,6 +96,15 @@ $.fn.util_amendContentBasedOnOrientation = function() {
             $("#" + _idRLoopContent).util_applyFullPage();
         }
     } else {
+        $(window).scrollTop(0);
+        $('.section').css('height', window.innerHeight + 'px');
+
+        // Additional timeOut for iPhone Plus in landscape with multiple tabs opened
+        setTimeout(function() {
+            $('.section').css('height', window.innerHeight + 'px');
+            $(window).scrollTop(0);
+        }, 400);
+        
         if ($("#" + _idOrientationContainer).find("." + _classSlide).length <= 0) {
             // We are in landscape mode, and the content is formatted for portrait - so amend.
             $("#" + _idOrientationContainer).find("." + _classSection).each(function(index) {
