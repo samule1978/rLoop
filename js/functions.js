@@ -117,7 +117,7 @@ $.fn.resize_SceneOne = function() {
 
 var ringOne, ringTwo, ringThree, ringFour;
 $.fn.anim_Start_SceneTwo = function() {
-    if (!sceneTwoInitialised) $("#" + _idRLoopContent).util_disableScrollFullPage(false);
+    if (!sceneTwoInitialised) $("#" + _idRLoopContent).util_disableScrollFullPage(true);
 
     $("#sceneTwo .section-graphics").empty(); // Must empty to ensure nothing is inside when we add animations (especially when scene reloaded/resized).
 
@@ -281,7 +281,7 @@ $.fn.anim_Start_SceneTwo = function() {
     }
 
     if (!sceneTwoInitialised) {
-        $("#" + _idRLoopContent).util_disableScrollFullPage(false);
+        $("#" + _idRLoopContent).util_disableScrollFullPage(false, sectionScrollDelay);
         sceneTwoInitialised = true;
     }
 };
@@ -300,7 +300,7 @@ $.fn.anim_Start_SceneThree = function() {
     if (!sceneThreeInitialised) $("#" + _idRLoopContent).util_disableScrollFullPage(true);
 
     if (!sceneThreeInitialised) {
-        $("#" + _idRLoopContent).util_disableScrollFullPage(false);
+        $("#" + _idRLoopContent).util_disableScrollFullPage(false, sectionScrollDelay);
         sceneThreeInitialised = true;
     }
 };
@@ -311,7 +311,7 @@ $.fn.anim_Start_SceneFour = function() {
     if (!sceneFourInitialised) $("#" + _idRLoopContent).util_disableScrollFullPage(true);
 
     if (!sceneFourInitialised) {
-        $("#" + _idRLoopContent).util_disableScrollFullPage(false);
+        $("#" + _idRLoopContent).util_disableScrollFullPage(false, sectionScrollDelay);
         sceneFourInitialised = true;
     }
 };
@@ -322,7 +322,7 @@ $.fn.anim_Start_SceneFive = function() {
     if (!sceneFiveInitialised) $("#" + _idRLoopContent).util_disableScrollFullPage(true);
 
     if (!sceneFiveInitialised) {
-        $("#" + _idRLoopContent).util_disableScrollFullPage(false);
+        $("#" + _idRLoopContent).util_disableScrollFullPage(false, sectionScrollDelay);
         sceneFiveInitialised = true;
     }
 };
@@ -348,13 +348,18 @@ $.fn.resize_Scenes = function() {
     var activeSection = $(".section.active");
     switch(activeSection.attr('id')) {
         case "sceneOne":
-            $(this).resize_SceneOne();
+            break;
         case "sceneTwo":
             $(this).anim_Start_SceneTwo();
+            break;
         case "sceneThree":
+            break;
         case "sceneFour":
+            break;
         case "sceneFive":
+            break;
         default:
             break;
     }
+    $(this).resize_SceneOne();
 };

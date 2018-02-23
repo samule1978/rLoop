@@ -341,11 +341,11 @@ body .reflect {
     }
 
     #sceneTwo .section-graphics {
-        height: 30%;
+        height: 40%;
         bottom: -15%;
     }
     #sceneTwo .section-content {
-        height: 70%;
+        height: 60%;
     }
 }
 
@@ -364,11 +364,11 @@ body .reflect {
     }
 
     #sceneTwo .section-graphics {
-        width: 30%;
+        width: 40%;
         right: -15%;
     }
     #sceneTwo .section-content {
-        width: 70%;
+        width: 60%;
     }
 }
 

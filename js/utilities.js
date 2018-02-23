@@ -15,6 +15,7 @@ var _classActive = "active";
 var isMobile = false;
 var debugMobileLandscapeOnDesktop = false;
 var sceneOneInitialised, sceneTwoInitialised, sceneThreeInitialised, sceneFourInitialised, sceneFiveInitialised = false;
+var sectionScrollDelay = 3000;
 
 /******* Functions *******/
 $.fn.util_isMobile = function() {
@@ -128,16 +129,20 @@ $.fn.util_applyFullPage = function() {
             switch(loadedSection.attr('id')) {
                 case "sceneTwo":
                     $(this).anim_Start_SceneTwo();
+                    break;
                 case "sceneThree":
                     $(this).anim_Start_SceneThree();
+                    break;
                 case "sceneFour":
                     $(this).anim_Start_SceneFour();
+                    break;
                 case "sceneFive":
-                    $(this).anim_Start_SceneFour();
+                    $(this).anim_Start_SceneFive();
+                    break;
                 default:
-                    $(this).anim_Start_Scene_Content(loadedSection);
                     break;
             }
+            $(this).anim_Start_Scene_Content(loadedSection);
 
             if (loadedSection.hasClass("loading")) loadedSection.removeClass('loading');
             if (!loadedSection.hasClass("loaded")) loadedSection.addClass('loaded');
@@ -150,24 +155,28 @@ $.fn.util_applyFullPage = function() {
                 switch(leavingSection.attr('id')) {
                     case "sceneTwo":
                         $(this).anim_Stop_SceneTwo();
+                        break;
                     case "sceneThree":
                         $(this).anim_Stop_SceneThree();
+                        break;
                     case "sceneFour":
                         $(this).anim_Stop_SceneFour();
+                        break;
                     case "sceneFive":
-                        $(this).anim_Stop_SceneFour();
+                        $(this).anim_Stop_SceneFive();
+                        break;
                     default:
-                        $(this).anim_Stop_Scene_Content(leavingSection);
                         break;
                 }
+                $(this).anim_Stop_Scene_Content(leavingSection);
             }
 
-            if((!isMobile) || (isMobile && $(this).util_isPortrait())) {
+            if((!isMobile) || (isMobile && $("orientation.portrait").is(":visible"))) {
                 if (!nextSection.hasClass("loaded") && !nextSection.hasClass("loading")) nextSection.addClass('loading');
             }
         },
         onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
-            if((isMobile || debugMobileLandscapeOnDesktop) && $(this).util_isLandscape()) {
+            if((isMobile || debugMobileLandscapeOnDesktop) && $("orientation.landscape").is(":visible")) {
                 var leavingSlide = $(this);
                 var nextSlide = leavingSlide.parent().find("." + _classSlide + ":eq(" + nextSlideIndex + ")");
 
@@ -176,29 +185,38 @@ $.fn.util_applyFullPage = function() {
                 switch(leavingSlide.attr('id')) {
                     case "sceneTwo":
                         $(this).anim_Stop_SceneTwo();
+                        break;
                     case "sceneThree":
                         $(this).anim_Stop_SceneThree();
+                        break;
                     case "sceneFour":
                         $(this).anim_Stop_SceneFour();
+                        break;
                     case "sceneFive":
-                        $(this).anim_Stop_SceneFour();
+                        $(this).anim_Stop_SceneFive();
+                        break;
                     default:
-                        $(this).anim_Stop_Scene_Content(leavingSlide);
                         break;
                 }
+                $(this).anim_Stop_Scene_Content(leavingSlide);
+
                 switch(nextSlide.attr('id')) {
                     case "sceneTwo":
                         $(this).anim_Start_SceneTwo();
+                        break;
                     case "sceneThree":
                         $(this).anim_Start_SceneThree();
+                        break;
                     case "sceneFour":
                         $(this).anim_Start_SceneFour();
+                        break;
                     case "sceneFive":
-                        $(this).anim_Start_SceneFour();
+                        $(this).anim_Start_SceneFive();
+                        break;
                     default:
-                        $(this).anim_Start_Scene_Content(nextSlide);
                         break;
                 }
+                $(this).anim_Start_Scene_Content(nextSlide);
             }
         },
         afterRender: function(){
@@ -211,9 +229,16 @@ $.fn.util_removeFullPage = function() {
     if ($(this).fullpage) $(this).fullpage.destroy(true);
 };
 
-$.fn.util_disableScrollFullPage = function(disable) {
+$.fn.util_disableScrollFullPage = function(disable, delay) {
     if ($(this).fullpage) {
-        $(this).fullpage.setMouseWheelScrolling(!disable);
-        $(this).fullpage.setAllowScrolling(!disable);
+        if (delay) {
+            setTimeout(function() {
+                $(this).fullpage.setMouseWheelScrolling(!disable);
+                $(this).fullpage.setAllowScrolling(!disable);
+            }, delay);
+        } else {
+            $(this).fullpage.setMouseWheelScrolling(!disable);
+            $(this).fullpage.setAllowScrolling(!disable);
+        }
     }
 };
