@@ -363,3 +363,11 @@ $.fn.resize_Scenes = function() {
     }
     $(this).resize_SceneOne();
 };
+
+$.fn.showSceneLockTimer = function(show, duration) {
+    if (show) {
+        $(this).prepend("<div class='scene-lock-timer'><svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg'><circle class='bgCircle' r='20' cx='20' cy='20'></circle><circle class='fgCircle' r='10' cx='20' cy='20' style='stroke-width: 20px; stroke-dasharray: 10px, 63px;'></circle></svg></div>");
+    } else {
+        $(this).remove(".scene-lock-timer");
+    }
+}

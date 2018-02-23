@@ -24,4 +24,6 @@ $.fn.initialise = function() {
 
     // Start animation.
     $(this).anim_Start_SceneOne();
+
+    $(".section-right").showSceneLockTimer(true);
 };
