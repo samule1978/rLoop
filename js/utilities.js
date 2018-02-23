@@ -15,7 +15,7 @@ var _classActive = "active";
 var isMobile = false;
 var debugMobileLandscapeOnDesktop = false;
 var sceneOneInitialised, sceneTwoInitialised, sceneThreeInitialised, sceneFourInitialised, sceneFiveInitialised = false;
-var sectionScrollDelay = 3000;
+var sectionScrollDelay = 2000;
 
 /******* Functions *******/
 $.fn.util_isMobile = function() {

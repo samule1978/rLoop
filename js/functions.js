@@ -374,10 +374,9 @@ $.fn.showSceneLockTimer = function(duration) {
     var reqOpacity = 0.5;
     var hideDuration = 1;
     $(this).prepend("<div class='scene-lock-timer' style='opacity:" + reqOpacity + ";width:" + height + "px;height:" + height + "px;'><svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg'><circle class='bgCircle' r='" + (height / 2) + "' cx='" + (height / 2) + "' cy='" + (height / 2) + "'></circle><circle class='fgCircle' r='" + ((height / 2) / 2) + "' cx='" + (height / 2) + "' cy='" + (height / 2) + "' style='stroke-width: " + (height / 2) + "px; stroke-dasharray: " + startPx + "px, " + (height * 1.5) + "px;'></circle></svg></div>");
-    TweenMax.fromTo($(".fgCircle"), (duration ? (duration - hideDuration) : 1), {strokeDasharray:startPx + "px, " + (height * 1.5) + "px"}, {strokeDasharray:stopPx + "px, " + (height * 1.5) + "px", onComplete:hideSceneLockTimer});
+    TweenMax.fromTo($(".fgCircle"), (duration ? (duration - hideDuration) : 1), {scale:1, strokeDasharray:startPx + "px, " + (height * 1.5) + "px"}, {scale:1, strokeDasharray:stopPx + "px, " + (height * 1.5) + "px", onComplete:hideSceneLockTimer});
 
     function hideSceneLockTimer() {
-        TweenMax.fromTo($(".scene-lock-timer"), hideDuration, {opacity:reqOpacity, scale:1}, {opacity:0, scale:0});
-
+        TweenMax.fromTo($(".scene-lock-timer"), hideDuration, {opacity:reqOpacity, scale:1}, {opacity:0, scale:0, ease: SlowMo.ease.config(0.1, 2, false)});
     }
 }
