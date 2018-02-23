@@ -1,0 +1,16 @@
+/* Landscape */
+@media screen and (orientation:landscape) {
+    orientation.portrait {
+        display: none;
+    }
+    orientation.landscape {
+        display: block;
+    }
+
+    .mobile #rLoopContentPortrait {
+        display: none;
+    }
+    .mobile #rLoopContentLandscape {
+        display: block;
+    }
+}

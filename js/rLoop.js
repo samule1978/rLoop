@@ -13,6 +13,11 @@ $.fn.initialise = function() {
     // Set mobile flag.
     isMobile = $(this).util_isMobile();
 
+    if (isMobile) {
+        /mobile/i.test(navigator.userAgent) && !location.hash &&
+        setTimeout(function () {   window.scrollTo(0, 1); }, 1000);​
+    }
+
     // Set device type.
     $(this).util_setDeviceType(isMobile);
 
@@ -24,6 +29,4 @@ $.fn.initialise = function() {
 
     // Start animation.
     $(this).anim_Start_SceneOne();
-
-    $(".section-right").showSceneLockTimer(true);
 };
