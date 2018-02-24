@@ -270,9 +270,9 @@ body .reflect {
     display: block;
     position: fixed;
     width: 100%;
-    height: 70px;
+    height: 80px;
     z-index: 11;
-    border-bottom: solid 1.5px #2B2B2B;
+    /*border-bottom: solid 1.5px #2B2B2B;*/
     background: rgba(0, 0, 0, .50);
     top: 0;
     left: 0;
@@ -284,7 +284,7 @@ body .reflect {
     width: 50%;
     height: 100%;
 }
-#rLoopLogo {
+#rLoopMenu .container-logo {
     height: 60%;
     position: absolute;
     top: 50%;
@@ -295,9 +295,13 @@ body .reflect {
     transform: translate(0%,-50%);
     padding-left: 50px;
 }
+#rLoopLogo {
+    height: 100%;
+    position: relative;
+}
 #rLoopMenu .menu-border {
     width: 0%;
-    height: 0.7px;
+    height: 1.5px;
     background: rgba(0, 252, 254, 0.78);
     position: absolute;
     bottom: 0;
@@ -432,10 +436,10 @@ body .reflect {
     transform: rotate(-90deg);
 }
 .scene-lock-timer svg .bgCircle {
-    fill: transparent;
+    fill: #000000;
 }
 .scene-lock-timer svg .fgCircle {
-    fill: transparent;
+    fill: #000000;
     stroke: rgba(0, 252, 254, 1);
 }
 
