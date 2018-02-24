@@ -365,7 +365,7 @@ $.fn.resize_Scenes = function() {
 };
 
 $.fn.showSceneLockTimer = function(duration) {
-    var percentageHeight = 40;
+    var percentageHeight = 100;
     var height = ($(this).innerHeight() / 100) * percentageHeight;
     var startPx = 0;
     var stopPx = (height * 1.5) + 3;

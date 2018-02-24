@@ -243,7 +243,7 @@ $.fn.util_disableScrollFullPage = function(disable, delay) {
     if ($(this).fullpage) {
         if (delay) {
             //$(".section-right").showSceneLockTimer(delay/1000);
-            $(".section-right").showSceneLockTimer(delay/1000);
+            $(".container-logo").showSceneLockTimer(delay/1000);
             setTimeout(function() {
                 $(this).fullpage.setMouseWheelScrolling(!disable);
                 $(this).fullpage.setAllowScrolling(!disable);

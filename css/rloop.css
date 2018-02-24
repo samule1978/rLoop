@@ -419,16 +419,15 @@ body .reflect {
     background: none;
     border-radius: 50%;
     overflow: hidden;
-    float: right;
-    right: 0px;
-    margin-right: 10px;
-    top: 50%;
-    -webkit-transform: translate(0%,-50%);
-    -moz-transform: translate(0%,-50%);
-    -ms-transform: translate(0%,-50%);
-    -o-transform: translate(0%,-50%);
-    transform: translate(0%,-50%);
+    right: -9%;
+    top: -3%;
+    -webkit-transform: translate(0%,-49.83%) scale(0.18);
+    -moz-transform: translate(0%,-49.83%) scale(0.18);
+    -ms-transform: translate(0%,-49.83) scale(0.18);
+    -o-transform: translate(0%,-49.83%) scale(0.18);
+    transform: translate(0%,0%) scale(0.18);
     position: absolute;
+    z-index: 1;
 }
 .scene-lock-timer svg {
     width: 100%;
