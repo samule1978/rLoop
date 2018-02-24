@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90f050f4-5f5e-46b9-a025-b617daeebec7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/rloop.css" afterPath="$PROJECT_DIR$/css/rloop.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/functions.js" afterPath="$PROJECT_DIR$/js/functions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/utilities.js" afterPath="$PROJECT_DIR$/js/utilities.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -88,8 +85,8 @@
               <file leaf-file-name="rloop.css" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/css/rloop.css">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="124">
-                      <caret line="421" column="13" lean-forward="false" selection-start-line="421" selection-start-column="13" selection-end-line="421" selection-end-column="13" />
+                    <state relative-caret-position="182">
+                      <caret line="422" column="11" lean-forward="false" selection-start-line="422" selection-start-column="11" selection-end-line="422" selection-end-column="11" />
                       <folding />
                     </state>
                   </provider>
@@ -530,12 +527,12 @@
       <workItem from="1519307845056" duration="5406000" />
       <workItem from="1519385201871" duration="371000" />
       <workItem from="1519385786971" duration="11895000" />
-      <workItem from="1519491528241" duration="4378000" />
+      <workItem from="1519491528241" duration="4718000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="421553000" />
+    <option name="totallyTimeSpent" value="421893000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="987" extended-state="6" />
@@ -966,8 +963,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/rloop.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="421" column="13" lean-forward="false" selection-start-line="421" selection-start-column="13" selection-end-line="421" selection-end-column="13" />
+        <state relative-caret-position="182">
+          <caret line="422" column="11" lean-forward="false" selection-start-line="422" selection-start-column="11" selection-end-line="422" selection-end-column="11" />
           <folding />
         </state>
       </provider>

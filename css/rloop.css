@@ -270,7 +270,7 @@ body .reflect {
     display: block;
     position: fixed;
     width: 100%;
-    height: 80px;
+    height: 70px;
     z-index: 11;
     /*border-bottom: solid 1.5px #2B2B2B;*/
     background: rgba(0, 0, 0, .50);
@@ -420,12 +420,12 @@ body .reflect {
     border-radius: 50%;
     overflow: hidden;
     right: -9%;
-    top: -3%;
-    -webkit-transform: translate(0%,-49.83%) scale(0.18);
-    -moz-transform: translate(0%,-49.83%) scale(0.18);
-    -ms-transform: translate(0%,-49.83) scale(0.18);
-    -o-transform: translate(0%,-49.83%) scale(0.18);
-    transform: translate(0%,0%) scale(0.18);
+    top: -2%;
+    -webkit-transform: scale(0.19);
+    -moz-transform: scale(0.19);
+    -ms-transform: scale(0.19);
+    -o-transform: scale(0.19);
+    transform: scale(0.19);
     position: absolute;
     z-index: 1;
 }

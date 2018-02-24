@@ -1,0 +1,60 @@
+/* Intro Animation */
+/*.hide .headline-wrap.top {
+    -webkit-transition: bottom 1s 1s, opacity 3s 2s;
+    -moz-transition: bottom 1s 1s, opacity 3s 2s;
+    -ms-transition: bottom 1s 1s, opacity 3s 2s;
+    -o-transition: bottom 1s 1s, opacity 3s 2s;
+    transition: bottom 1s 1s, opacity 3s 2s;
+    bottom: -100px !important;
+    opacity: 0 !important;
+}*/
+.hide .headline-wrap.bottom {
+    -webkit-transition: top 1s 1s, opacity 3s 2s;
+    -moz-transition: top 1s 1s, opacity 3s 2s;
+    -ms-transition: top 1s 1s, opacity 3s 2s;
+    -o-transition: top 1s 1s, opacity 3s 2s;
+    transition: top 1s 1s, opacity 3s 2s;
+    top: -100px !important;
+    opacity: 0 !important;
+}
+.hide .loader {
+    -webkit-transition: opacity 1s linear 1s;
+    -moz-transition: opacity 1s linear 1s;
+    -ms-transition: opacity 1s linear 1s;
+    -o-transition: opacity 1s linear 1s;
+    transition: opacity 1s linear 1s;
+    opacity: 0 !important;
+}
+/*.pre-load-outer.hide {
+    -webkit-transition: opacity 2s 2s, visibility 0s 7s;
+    -moz-transition: opacity 2s 2s, visibility 0s 7s;
+    -ms-transition: opacity 2s 2s, visibility 0s 7s;
+    -o-transition: opacity 2s 2s, visibility 0s 7s;
+    transition: opacity 2s 2s, visibility 0s 7s;
+    opacity: 0 !important;
+    visibility: hidden;
+}*/
+.hide .pre-load-inner-bottom {
+    -webkit-transition: opacity 2s 2s, visibility 0s 7s;
+    -moz-transition: opacity 2s 2s, visibility 0s 7s;
+    -ms-transition: opacity 2s 2s, visibility 0s 7s;
+    -o-transition: opacity 2s 2s, visibility 0s 7s;
+    transition: opacity 2s 2s, visibility 0s 7s;
+    opacity: 0 !important;
+    visibility: hidden;
+}
+
+/* Content Animation */
+#rLoopContent .intro {
+    opacity: 0;
+    visibility: hidden;
+}
+#rLoopContent .loaded .intro {
+    -webkit-transition: opacity 1s 0s, visibility 0s 0s;
+    -moz-transition: opacity 1s 0s, visibility 0s 0s;
+    -ms-transition: opacity 1s 0s, visibility 0s 0s;
+    -o-transition: opacity 1s 0s, visibility 0s 0s;
+    transition: opacity 1s 0s, visibility 0s 0s;
+    opacity: 1 !important;
+    visibility: visible;
+}

@@ -1,0 +1,444 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400');
+
+/*font-family: 'Open Sans', sans-serif;*/
+font-family: 'Roboto Slab', serif;
+font-family: 'Roboto', sans-serif;
+
+html{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family:  'Roboto Slab', serif;
+    color: white;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    -webkit-text-size-adjust: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: auto;
+
+    background-image: url(../img/bg/section2bg.jpg);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.colBlue {
+    color: rgb(0, 252, 254);
+}
+
+h1 {
+    font-size: 40px;
+}
+p {
+    font-size: 30px;
+}
+
+rLoopContentData {
+    display: none;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+orientation {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+/* Portrait */
+@media screen and (orientation:portrait) {
+    orientation.portrait {
+        display: block;
+    }
+    orientation.landscape {
+        display: none;
+    }
+}
+
+/* Landscape */
+@media screen and (orientation:landscape) {
+    orientation.portrait {
+        display: none;
+    }
+    orientation.landscape {
+        display: block;
+    }
+}
+
+body .reflect {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+
+    -moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: FlipV;
+    -ms-filter: "FlipV";
+}
+
+/* Loading Styles */
+#rLoopContent .pre-load-outer {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+}
+#rLoopContent .pre-load-inner-top {
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    overflow: hidden;
+}
+#rLoopContent .pre-load-inner-bottom {
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 2;
+    overflow: hidden;
+    border-top: solid 1.5px #2B2B2B;
+}
+
+#rLoopContent .headline-wrap {
+    width: 300px;
+    height: 80px;
+    position: absolute;
+    margin: 0px auto;
+}
+#rLoopContent .headline-wrap.top {
+    bottom: 20px;
+    left: 0;
+    right: 0;
+}
+#rLoopContent .headline-wrap.bottom {
+    top: 20px;
+    left: 0;
+    right: 0;
+}
+#rLoopContent .headline-top {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+}
+#rLoopContent .headline-bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    opacity: 0;
+}
+
+#rLoopContent .hyper-loop {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    -moz-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    -ms-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    -o-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+}
+#rLoopContent .hyper-loop-white {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+#rLoopContent .race-is-on {
+    width: 100%;
+}
+
+#rLoopContent .loader {
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin : auto;
+    z-index: 3;
+}
+#rLoopContent .loader:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#rLoopContent .trackbar {
+    position: relative;
+    background-color: #000000;/*#ebebeb;*/
+
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+}
+#rLoopContent .loadbar {
+    width: 0%;
+    height: 100%;
+    background-color: rgb(0, 252, 254);
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+#rLoopContent .headline-overlay {
+    background: rgba(0, 0, 0, .50);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+/* Stars Animation */
+.stars,
+.twinkling {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    display:block;
+}
+.stars {
+    background:#000000 url(../img/assets/anim_stars.png) repeat top center;
+    z-index:0;
+}
+.twinkling {
+    background:transparent url(../img/assets/anim_twinkling.png) repeat top center;
+    z-index:1;
+
+    -moz-animation:move-twink-back 200s linear infinite;
+    -ms-animation:move-twink-back 200s linear infinite;
+    -o-animation:move-twink-back 200s linear infinite;
+    -webkit-animation:move-twink-back 200s linear infinite;
+    animation:move-twink-back 200s linear infinite;
+}
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+#main {
+    position: relative;
+    z-index: 10;
+}
+
+/* Menu Styles */
+.loaded #rLoopMenu {
+    display: block;
+}
+#rLoopMenu {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    z-index: 11;
+    /*border-bottom: solid 1.5px #2B2B2B;*/
+    background: rgba(0, 0, 0, .50);
+    top: 0;
+    left: 0;
+}
+#rLoopMenu .section-left,
+#rLoopMenu .section-right {
+    float: left;
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+#rLoopMenu .container-logo {
+    height: 60%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0%,-50%);
+    -moz-transform: translate(0%,-50%);
+    -ms-transform: translate(0%,-50%);
+    -o-transform: translate(0%,-50%);
+    transform: translate(0%,-50%);
+    padding-left: 50px;
+}
+#rLoopLogo {
+    height: 100%;
+    position: relative;
+}
+#rLoopMenu .menu-border {
+    width: 0%;
+    height: 1.5px;
+    background: rgba(0, 252, 254, 0.78);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.section,
+.slide {
+    position: relative;
+}
+
+.scene-bg {
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-attachment: fixed;
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    -webkit-text-size-adjust: none;
+    overflow: hidden;
+    position: absolute;
+}
+
+.section-content { opacity: 0; }
+
+/* Portrait */
+@media screen and (orientation:portrait) {
+    .section-graphics {
+        width: 100%;
+        height: 50%;
+        bottom:0px;
+        position: absolute;
+    }
+    .section-content {
+        width: 100%;
+        height: 50%;
+        top:70px;
+        position: absolute;
+    }
+
+    #sceneTwo .section-graphics {
+        height: 40%;
+        bottom: -15%;
+    }
+    #sceneTwo .section-content {
+        height: 60%;
+    }
+}
+
+/* Landscape */
+@media screen and (orientation:landscape) {
+    .section-graphics {
+        width: 50%;
+        height: 100%;
+        right: 0px;
+        top:0px;
+        position: absolute;
+    }
+    .section-content {
+        width: 50%;
+        height: auto;
+    }
+
+    #sceneTwo .section-graphics {
+        width: 40%;
+        right: -15%;
+    }
+    #sceneTwo .section-content {
+        width: 60%;
+    }
+}
+
+
+#sceneOne .bg-pod {
+    background-image: url(../img/bg/pod_conv.jpg), url(../img/bg/pod_h.png), url(../img/bg/pod_v.png);
+    background-position: -10000px -10000px, -10000px -10000px, -10000px -10000px;
+    opacity: 0;
+}
+
+/* Full Page Overrides */
+#rLoopContent .intro {
+    padding: 0px 55px;
+}
+#rLoopContent .fp-controlArrow.fp-prev {
+    left: 15px;
+    width: 6vh;
+    height: 6vh;
+    border: none;
+
+    background: url(../img/btn/arrow.png) no-repeat center center;
+    background-size: cover;
+
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+}
+#rLoopContent .fp-controlArrow.fp-next {
+    right: 15px;
+    width: 6vh;
+    height: 6vh;
+    border: none;
+
+    background: url(../img/btn/arrow.png) no-repeat center center;
+    background-size: cover;
+
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+}
+
+.scene-lock-timer {
+    background: none;
+    border-radius: 50%;
+    overflow: hidden;
+    right: -9%;
+    top: -2%;
+    -webkit-transform: scale(0.19);
+    -moz-transform: scale(0.19);
+    -ms-transform: scale(0.19);
+    -o-transform: scale(0.19);
+    transform: scale(0.19);
+    position: absolute;
+    z-index: 1;
+}
+.scene-lock-timer svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+.scene-lock-timer svg .bgCircle {
+    fill: #000000;
+}
+.scene-lock-timer svg .fgCircle {
+    fill: #000000;
+    stroke: rgba(0, 252, 254, 1);
+}
+
