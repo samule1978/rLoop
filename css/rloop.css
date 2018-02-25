@@ -293,7 +293,7 @@ body .reflect {
     -ms-transform: translate(0%,-50%);
     -o-transform: translate(0%,-50%);
     transform: translate(0%,-50%);
-    padding-left: 50px;
+    padding-left: 30px;
 }
 #rLoopLogo {
     height: 100%;
@@ -415,11 +415,13 @@ body .reflect {
     transform: rotate(-90deg);
 }
 
+
+/* Scene Scroll Animations */
 .scene-lock-timer {
     background: none;
     border-radius: 50%;
     overflow: hidden;
-    right: -9%;
+    right: -10%;
     top: -2%;
     -webkit-transform: scale(0.19);
     -moz-transform: scale(0.19);
@@ -440,5 +442,51 @@ body .reflect {
 .scene-lock-timer svg .fgCircle {
     fill: #000000;
     stroke: rgba(0, 252, 254, 1);
+}
+#pageScrollAnim {
+    height: 60%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0%,-50%) scaleY(-1);
+    -moz-transform: translate(0%,-50%) scaleY(-1);
+    -ms-transform: translate(0%,-50%) scaleY(-1);
+    -o-transform: translate(0%,-50%) scaleY(-1);
+    transform: translate(0%,-50%) scaleY(-1);
+    right: 15px;
+}
+#pageScrollAnim .mouse {
+    max-width: 2.5rem;
+    width: auto;
+    height: 100%;
+}
+#pageScrollAnim .scroll {
+    animation-name: scroll;
+    animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(0.650, -0.550, 0.250, 1.500);
+    animation-iteration-count: infinite;
+    transform-origin: 50% 20.5px;
+    will-change: transform;
+}
+@keyframes scroll {
+    0%, 20% {
+        transform: translateY(0) scaleY(1);
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(36px) scaleY(2);
+        opacity: 0.01;
+    }
+}
+@media screen and (orientation:landscape) {
+    .mobile #pageScrollAnim {
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        right: 30px;
+    }
 }
 

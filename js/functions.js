@@ -364,6 +364,7 @@ $.fn.resize_Scenes = function() {
     $(this).resize_SceneOne();
 };
 
+var pageScrollAnimTimer;
 $.fn.showSceneLockTimer = function(duration) {
     var percentageHeight = 100;
     var height = ($(this).innerHeight() / 100) * percentageHeight;
@@ -375,12 +376,38 @@ $.fn.showSceneLockTimer = function(duration) {
 
     $(".scene-lock-timer").remove();
 
+    $(this).showPageScrollAnim(false);
     TweenMax.fromTo(rLoopMenuBorder, (duration ? (duration - hideDuration) : 1), {width:"0%"}, {width:"100%"});
 
-    $(this).prepend("<div class='scene-lock-timer' style='opacity:" + reqOpacity + ";width:" + height + "px;height:" + height + "px;'><svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg'><circle class='bgCircle' r='" + (height / 2) + "' cx='" + (height / 2) + "' cy='" + (height / 2) + "'></circle><circle class='fgCircle' r='" + ((height / 2) / 2) + "' cx='" + (height / 2) + "' cy='" + (height / 2) + "' style='stroke-width: " + (height / 2) + "px; stroke-dasharray: " + startPx + "px, " + (height * 1.5) + "px;'></circle></svg></div>");
-    TweenMax.fromTo($(".fgCircle"), (duration ? (duration - hideDuration) : 1), {scale:1, strokeDasharray:startPx + "px, " + (height * 1.5) + "px"}, {scale:1, strokeDasharray:stopPx + "px, " + (height * 1.5) + "px", onComplete:hideSceneLockTimer});
+    $(this).prepend("<div class='scene-lock-timer' style='opacity:" + reqOpacity + ";width:" + height + "px;height:" + height + "px;'><svg class='svg-img' xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg'><circle class='bgCircle' r='" + (height / 2) + "' cx='" + (height / 2) + "' cy='" + (height / 2) + "'></circle><circle class='fgCircle' r='" + ((height / 2) / 2) + "' cx='" + (height / 2) + "' cy='" + (height / 2) + "' style='stroke-width: " + (height / 2) + "px; stroke-dasharray: " + startPx + "px, " + (height * 1.5) + "px;'></circle></svg></div>");
+    TweenMax.fromTo($(".fgCircle"), (duration ? (duration - hideDuration) : 1), {scale:1, strokeDasharray:startPx + "px, " + (height * 1.5) + "px"}, {scale:1, strokeDasharray:stopPx + "px, " + (height * 1.5) + "px", onComplete:finishSceneLockTimer});
 
-    function hideSceneLockTimer() {
-        //TweenMax.fromTo($(".scene-lock-timer"), hideDuration, {opacity:reqOpacity, scale:1}, {opacity:0, scale:0, ease: SlowMo.ease.config(0.1, 2, false)});
+    function finishSceneLockTimer() {
+        $(".section-right").showPageScrollAnim(true);
+        pageScrollAnimTimer = setTimeout(function() {
+            $(this).showPageScrollAnim(false);
+        }, 4500);
+    }
+}
+$.fn.showPageScrollAnim = function(show) {
+    if (show) {
+        var pageScrollAnimHtml = "<div id='pageScrollAnim'>"
+            + "<svg class='svg-img mouse' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 76 130' preserveAspectRatio='xMidYmid meet'>"
+            + "<g fill='none' fill-rule='evenodd'>"
+            + "<rect width='70' height='118' x='1.5' y='1.5' stroke='#FFF' stroke-width='4' rx='36'/>"
+            + "<circle class='scroll' cx='36.5' cy='31.5' r='10' fill='rgba(0, 252, 254, 0.78)'/>"
+            + "</svg>"
+            + "</div>";
+        removePageScrollAnim();
+        $(this).prepend(pageScrollAnimHtml);
+    } else {
+        if (pageScrollAnimTimer) clearTimeout(pageScrollAnimTimer);
+        if ($("#pageScrollAnim")) {
+            TweenMax.fromTo($("#pageScrollAnim"), 0.5, {opacity:1}, {opacity:0, onComplete:removePageScrollAnim});
+        }
+    }
+
+    function removePageScrollAnim() {
+        if ($("#pageScrollAnim")) $("#pageScrollAnim").remove();
     }
 }
