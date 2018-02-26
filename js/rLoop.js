@@ -8,7 +8,7 @@ $(document).ready(function () {
 });
 
 $.fn.initialise = function() {
-    incognito = true;
+    incognito = false;
     debugMobileLandscapeOnDesktop = false;
 
     // Set mobile flag.
