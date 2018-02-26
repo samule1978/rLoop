@@ -395,8 +395,10 @@ $.fn.showSceneLockTimer = function(duration) {
 }
 $.fn.showPageScrollAnim = function(show) {
     if (show) {
-        var pageScrollAnimHtml = "<div id='pageScrollAnim'>"
-            + "<svg class='svg-img mouse' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 76 130'>"
+        var last = ($(".section.active").hasClass("section-last")) ? true : false;
+        var pageScrollAnimHtml;
+        pageScrollAnimHtml = (last) ? "<div id='pageScrollAnim' class='last'>" : "<div id='pageScrollAnim'>";
+        pageScrollAnimHtml += "<svg class='svg-img mouse' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 76 130'>"
             + "<g fill='none' fill-rule='evenodd'>"
             + "<rect width='70' height='118' x='1.5' y='1.5' stroke='rgba(255, 255, 255, 0.5)' stroke-width='4' rx='36'/>"
             + "<circle class='scroll' cx='36.5' cy='36.5' r='15' fill='rgba(0, 252, 254, 0.78)'/>"
@@ -408,7 +410,7 @@ $.fn.showPageScrollAnim = function(show) {
     } else {
         if (pageScrollAnimTimer) clearTimeout(pageScrollAnimTimer);
         if ($("#pageScrollAnim")) {
-            TweenMax.fromTo($("#pageScrollAnim"), 0.5, {opacity:1}, {opacity:0, onComplete:removePageScrollAnim});
+            //TweenMax.fromTo($("#pageScrollAnim"), 0.5, {opacity:1}, {opacity:0, onComplete:removePageScrollAnim});
         }
     }
 

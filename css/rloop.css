@@ -454,7 +454,7 @@ body .reflect {
     -o-transform: translate(0%,-50%) scaleY(-1);
     transform: translate(0%,-50%) scaleY(-1);
 }
-.section-last #pageScrollAnim {
+#pageScrollAnim.last {
     top: 50%;
     -webkit-transform: translate(0%,-50%) scaleY(1);
     -moz-transform: translate(0%,-50%) scaleY(1);
@@ -497,7 +497,7 @@ body .reflect {
         -o-transform: translate(0%,-50%) rotate(90deg);
         transform: translate(0%,-50%) rotate(90deg);
     }
-    .mobile .section-last #pageScrollAnim {
+    .mobile #pageScrollAnim.last {
         -webkit-transform: translate(0%,-50%) rotate(-90deg);
         -moz-transform: translate(0%,-50%) rotate(-90deg);
         -ms-transform: translate(0%,-50%) rotate(-90deg);
