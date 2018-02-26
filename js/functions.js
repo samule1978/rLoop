@@ -56,7 +56,6 @@ $.fn.anim_Start_SceneOne = function() {
     sceneOneInitialised = true;
 };
 $.fn.anim_Finish_SceneOne = function() {
-    $(this).showPageScrollAnim(false);
     $("#" + _idRLoopContent).util_disableScrollFullPage(false);
 };
 $.fn.resize_SceneOne = function() {
@@ -321,11 +320,13 @@ $.fn.anim_Stop_SceneFour = function() {
 };
 
 $.fn.anim_Start_SceneFive = function() {
-    if (!sceneFiveInitialised) $("#" + _idRLoopContent).util_disableScrollFullPage(true);
+    if (!sceneFiveInitialised) {
+        $("#" + _idRLoopContent).util_disableScrollFullPage(true);
+    }
 
     if (!sceneFiveInitialised) {
-        //$("#" + _idRLoopContent).util_disableScrollFullPage(false, sectionScrollDelay);
-        $("#" + _idRLoopContent).util_disableScrollFullPage(false);
+        $("#" + _idRLoopContent).util_disableScrollFullPage(false, sectionScrollDelay);
+        //$("#" + _idRLoopContent).util_disableScrollFullPage(false);
         sceneFiveInitialised = true;
     }
 };
@@ -407,7 +408,7 @@ $.fn.showPageScrollAnim = function(show) {
     } else {
         if (pageScrollAnimTimer) clearTimeout(pageScrollAnimTimer);
         if ($("#pageScrollAnim")) {
-            TweenMax.fromTo($("#pageScrollAnim"), 0.5, {opacity:1}, {opacity:0, onComplete:removePageScrollAnim});
+            //TweenMax.fromTo($("#pageScrollAnim"), 0.5, {opacity:1}, {opacity:0, onComplete:removePageScrollAnim});
         }
     }
 
