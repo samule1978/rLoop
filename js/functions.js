@@ -13,8 +13,8 @@ var perfData = window.performance.timing, // The PerformanceTiming interface rep
 $.fn.anim_Start_SceneOne = function() {
     $(this).resize_SceneOne();
 
-    //var tlLoader = new TimelineMax({onComplete:$(this).anim_Finish_SceneOne});
-    var tlLoader = new TimelineMax();
+    var tlLoader = new TimelineMax({onComplete:$(this).anim_Finish_SceneOne});
+    //var tlLoader = new TimelineMax();
 
     var initialDelay = 1;
 
@@ -48,7 +48,8 @@ $.fn.anim_Start_SceneOne = function() {
             .fromTo(preLoadInnerBottom, 1, {opacity:1}, {opacity:0})
             .to(headlineBottom, 0, {opacity:0})
             .to(headlineWrapTop, 1, {top:100})
-            .to(rLoopMenuBorder, 1, {width:"100%", onComplete:$(this).anim_Finish_SceneOne}, '-=1')
+            //.to(rLoopMenuBorder, 1, {width:"100%", onComplete:$(this).anim_Finish_SceneOne}, '-=1')
+            .to(rLoopMenuBorder, 1, {width:"100%"}, '-=1')
             .to(bgPod, 1, {opacity:1}, '-=1')
             .to(preLoadOuter, 2, {background:"rgba(0, 0, 0, 0.3)"}, '-=1');
 
