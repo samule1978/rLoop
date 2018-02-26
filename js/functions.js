@@ -56,6 +56,7 @@ $.fn.anim_Start_SceneOne = function() {
     sceneOneInitialised = true;
 };
 $.fn.anim_Finish_SceneOne = function() {
+    $(this).showPageScrollAnim(false);
     $("#" + _idRLoopContent).util_disableScrollFullPage(false);
 };
 $.fn.resize_SceneOne = function() {
