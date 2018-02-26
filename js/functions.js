@@ -410,7 +410,7 @@ $.fn.showPageScrollAnim = function(show) {
     } else {
         if (pageScrollAnimTimer) clearTimeout(pageScrollAnimTimer);
         if ($("#pageScrollAnim")) {
-            //TweenMax.fromTo($("#pageScrollAnim"), 0.5, {opacity:1}, {opacity:0, onComplete:removePageScrollAnim});
+            TweenMax.fromTo($("#pageScrollAnim"), 0.5, {opacity:1}, {opacity:0, onComplete:removePageScrollAnim});
         }
     }
 
